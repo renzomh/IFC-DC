@@ -1,0 +1,963 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 30.75, 43.75" name="SSIA2013">
+  <DataContextMoniker Name="/SSIA2013DataContext" />
+  <nestedChildShapes>
+    <classShape Id="d2f662bb-0031-49c8-be82-e18856bfa54c" absoluteBounds="3.5, 30.125, 2, 1.0016910807291666">
+      <DataClassMoniker Name="/SSIA2013DataContext/Administrativo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="808c2d60-c03c-4081-ac6e-b533431c2df7" absoluteBounds="3.515, 30.585, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fec2fd6a-5834-4d89-a43b-103ff11c6da1" absoluteBounds="0.75, 6.375, 2, 2.9247054036458335">
+      <DataClassMoniker Name="/SSIA2013DataContext/Rubrica" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cde4c8bb-6bd7-4cec-82e5-220fe49809e2" absoluteBounds="0.765, 6.835, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3a690830-4795-4054-96b4-4edce9a47b31" absoluteBounds="9, 32.375, 2, 2.5401025390625023">
+      <DataClassMoniker Name="/SSIA2013DataContext/Alumno" />
+      <nestedChildShapes>
+        <elementListCompartment Id="16128d52-301f-43de-b022-77b15a15fa4d" absoluteBounds="9.015, 32.835, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1ab89051-c4bf-4e46-8f8e-bdcaa63e1273" absoluteBounds="11.75, 29.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/SSIA2013DataContext/AlumnoxGrupo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2d66df8c-134c-4cb8-9839-b9dbd9ba4c28" absoluteBounds="11.765, 30.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c0f5a0f4-ed44-43bf-a79d-441add415d88" absoluteBounds="3.5, 31.875, 2, 1.0016910807291701">
+      <DataClassMoniker Name="/SSIA2013DataContext/Apoderado" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3c427cc1-f408-401b-b1a6-9884df03aa9d" absoluteBounds="3.515, 32.335, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5e17fecc-f636-485a-9e50-4fae88e4c1f0" absoluteBounds="11.75, 39.625, 2, 1.7708968098958309">
+      <DataClassMoniker Name="/SSIA2013DataContext/Archivo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2d35b92a-f00a-49c3-9955-0868c8980b59" absoluteBounds="11.765, 40.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ac39eae7-9ee4-42aa-acd8-22f8bc296f32" absoluteBounds="14.5, 39.75, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/SSIA2013DataContext/ArchivoxGrupo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ea7e27c3-ee6b-4ce1-8b0c-78f3a249eeb7" absoluteBounds="14.515, 40.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c955433b-24ba-4fa5-ba81-5536371196fa" absoluteBounds="6.25, 33, 2, 1.7708968098958309">
+      <DataClassMoniker Name="/SSIA2013DataContext/Carrera" />
+      <nestedChildShapes>
+        <elementListCompartment Id="45fd98c3-3a4a-4c4f-9286-95e124090bf0" absoluteBounds="6.265, 33.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="00771c0b-9c4b-4e95-9e86-69dfa40099ba" absoluteBounds="12, 26.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/SSIA2013DataContext/Competencia" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e1721dc7-5a34-463c-872a-d947feb6a53c" absoluteBounds="12.015, 27.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ab606106-3094-4a71-a4ca-a7074ed9d033" absoluteBounds="17.5, 29, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/SSIA2013DataContext/CoordinadorxCurso" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2c4ffb66-12ae-4ab3-ae34-94bedf5bbc23" absoluteBounds="17.515, 29.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="36aa15dc-9eed-444d-b8ac-6d520abf9ba0" absoluteBounds="17.5, 38.5, 2, 1.5785953776041595">
+      <DataClassMoniker Name="/SSIA2013DataContext/CriterioxResultadoRubrica" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e84e34c7-c59f-430a-a3c5-201456162efc" absoluteBounds="17.515, 38.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0066367b-5ec8-4714-81d7-f240a24f85a9" absoluteBounds="28.5, 30.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/SSIA2013DataContext/CriterioxRubrica" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b17dda33-c3c1-4c45-8dff-55a04e9e2e2c" absoluteBounds="28.515, 31.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5639787e-b4c6-42b2-bc81-44a4601d2aa4" absoluteBounds="9, 38.875, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/SSIA2013DataContext/Curricula" />
+      <nestedChildShapes>
+        <elementListCompartment Id="04ee66c9-1217-4efe-816c-1e93cdb9fe8e" absoluteBounds="9.015, 39.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5f318d7c-99f0-44f4-8f01-ad72e7d2b884" absoluteBounds="14.75, 25.5, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/SSIA2013DataContext/Curso" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8e9e8aaa-ee96-440b-ac67-a629524934ef" absoluteBounds="14.765, 25.96, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f41b2a8d-c521-49f2-8897-19588969fc1b" absoluteBounds="17.5, 25.5, 2, 1.0016910807291666">
+      <DataClassMoniker Name="/SSIA2013DataContext/CursoControl" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b76ef0e6-2415-48a4-85df-af58ed4c6acc" absoluteBounds="17.515, 25.96, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ad149486-9fe6-438b-98d9-27c810ecf992" absoluteBounds="17.5, 27.25, 2, 1.0016910807291666">
+      <DataClassMoniker Name="/SSIA2013DataContext/CursoVerificacion" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f1828c97-4d32-44ec-9c9d-87822c95d545" absoluteBounds="17.515, 27.71, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5da2f4d4-91df-4c88-8bea-a37a2d6db2be" absoluteBounds="20.25, 23.125, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/SSIA2013DataContext/CursoxEvaluacion" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fddf97b7-346c-47d3-8ef7-acc3cd29b642" absoluteBounds="20.265, 23.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="61c7cdb9-8d53-4cb8-8f6d-ef36f59478a4" absoluteBounds="11.75, 35.875, 2, 1.5785953776041595">
+      <DataClassMoniker Name="/SSIA2013DataContext/CursoxEvaluacionxAlumno" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cf26333a-2f39-47ce-bcfe-f2d6cab619a5" absoluteBounds="11.765, 36.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="78270305-9bb5-4c06-b5dd-030f10222596" absoluteBounds="11.75, 42.125, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/SSIA2013DataContext/CursoxResultadoPrograma" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ed0de45c-d6b4-449c-8af4-602acc2a5286" absoluteBounds="11.765, 42.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1f452359-cd95-4376-854e-70ebe617ea66" absoluteBounds="11.75, 33, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/SSIA2013DataContext/DelegadoxSeccionxCurso" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1793b318-fcb1-4140-baa9-896c94d3b71a" absoluteBounds="11.765, 33.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="56b682e2-637e-4ca3-b274-e54189f3d351" absoluteBounds="17.5, 32.125, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/SSIA2013DataContext/DetalleCurricula" />
+      <nestedChildShapes>
+        <elementListCompartment Id="073bf1a5-8527-44c5-93cc-b30af4bde79b" absoluteBounds="17.515, 32.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2847908e-3a3b-4cc9-b0f5-04280ed557b3" absoluteBounds="3.5, 33.625, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/SSIA2013DataContext/Escuela" />
+      <nestedChildShapes>
+        <elementListCompartment Id="439c77c7-fee7-4e37-a90d-d9d186adea86" absoluteBounds="3.515, 34.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="96ff0ccd-c115-47dc-b714-a3b7701bed0c" absoluteBounds="17.5, 20.25, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/SSIA2013DataContext/Evaluacion" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ef417a33-1b7b-432e-923e-4e0ac5dc7821" absoluteBounds="17.515, 20.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="70a88732-ca29-47fd-9bfa-459090a332a9" absoluteBounds="14.75, 32.75, 2, 1.7708968098958309">
+      <DataClassMoniker Name="/SSIA2013DataContext/Grupo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c462508b-e564-42c0-8788-1c95e934a7d1" absoluteBounds="14.765, 33.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9ae182f1-f6cd-4bb6-b3be-d885a8825738" absoluteBounds="20.25, 19.625, 2, 2.3478011067708309">
+      <DataClassMoniker Name="/SSIA2013DataContext/HorarioxSeccionxCurso" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bd8af7ea-1c44-4437-ac48-ea47d678db2f" absoluteBounds="20.265, 20.085, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7aa31731-95a4-4dfa-8870-c2edb6f89f85" absoluteBounds="17.5, 17.125, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/SSIA2013DataContext/Local" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5043a5b8-3fff-4e1b-97be-baeee172fb5e" absoluteBounds="17.515, 17.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="42c05e4b-6254-4ed2-84e0-21759365e366" absoluteBounds="20.25, 27.5, 2, 1.7708968098958309">
+      <DataClassMoniker Name="/SSIA2013DataContext/Logro" />
+      <nestedChildShapes>
+        <elementListCompartment Id="64bda319-8a61-4e9d-aad3-b306b3025319" absoluteBounds="20.265, 27.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5031f523-9d77-4065-a231-4c507e4e87d4" absoluteBounds="14.75, 29.75, 2, 1.7708968098958309">
+      <DataClassMoniker Name="/SSIA2013DataContext/Matricula" />
+      <nestedChildShapes>
+        <elementListCompartment Id="55b9c889-e453-4600-9b8d-780b6233d4c8" absoluteBounds="14.765, 30.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fd0c29ac-8810-4199-b5b6-f3163ded81d4" absoluteBounds="6.25, 29.625, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/SSIA2013DataContext/Periodo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a44d09fb-3663-4ccf-887f-44f1ab1965a7" absoluteBounds="6.265, 30.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7874552d-0290-4f58-bd79-55e785f3d736" absoluteBounds="0.75, 32.25, 2, 3.1170068359375023">
+      <DataClassMoniker Name="/SSIA2013DataContext/Persona" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e497949b-cb17-4251-ad10-627cdb23cad5" absoluteBounds="0.765, 32.71, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4ae9483b-b1d9-4ccd-9152-6607fd4ca9e5" absoluteBounds="3.5, 38.375, 2, 1.7708968098958309">
+      <DataClassMoniker Name="/SSIA2013DataContext/Profesor" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b678bccf-2d99-4471-b43f-63ed8697afd2" absoluteBounds="3.515, 38.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="63299249-db4c-4e87-a25d-34b47a4c848c" absoluteBounds="20.25, 30.875, 2, 1.3862939453125058">
+      <DataClassMoniker Name="/SSIA2013DataContext/ProfesorxSeccionxCurso" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3493ef61-a2dd-4d58-8910-81f0596cc7db" absoluteBounds="20.265, 31.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="64deaf21-d406-4a7a-b7e7-038a30fccdd1" absoluteBounds="9, 36.125, 2, 1.5785953776041737">
+      <DataClassMoniker Name="/SSIA2013DataContext/ResultadoPrograma" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3d640307-87a7-4bc5-b516-54a66a5c8d13" absoluteBounds="9.015, 36.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="97043b03-840a-4f71-94a6-9a9af1db5c24" absoluteBounds="14.75, 42.125, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/SSIA2013DataContext/ResultadoProgramaxCursoxEvaluacion" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fa7f274d-484c-426e-9098-4caacb4f3ade" absoluteBounds="14.765, 42.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d24bfc30-be9a-44bc-85fa-b57649c28355" absoluteBounds="14.75, 36.25, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/SSIA2013DataContext/ResultadoRubrica" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a9da7640-7ba7-4be9-9414-66aaa5d4fe97" absoluteBounds="14.765, 36.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0cbb03f1-7ac9-4882-8461-b6d3e14b964f" absoluteBounds="23, 23.125, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/SSIA2013DataContext/Rubrica1" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1fbd92a7-4b50-4f66-ad9b-e3c7b50aa424" absoluteBounds="23.015, 23.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b7d7537e-635a-4062-af0d-f13e963bf188" absoluteBounds="25.75, 30.25, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/SSIA2013DataContext/RubricaxVersion" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4c146e7f-83f1-4c10-ba59-4ea29a6ae6c8" absoluteBounds="25.765, 30.71, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="39891512-0128-4c04-8bbd-0414a6259e7d" absoluteBounds="17.5, 23.125, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/SSIA2013DataContext/SeccionxCurso" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f9630bb3-447d-4120-9feb-626737c9dfc1" absoluteBounds="17.515, 23.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ba808e60-6c73-479b-a248-fd6b1b87e4fa" absoluteBounds="17.75, 36.125, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/SSIA2013DataContext/SeccionxCursoxResultadoPrograma" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b8cd8acb-896b-4be4-8e82-da98138e127c" absoluteBounds="17.765, 36.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="67d9aead-8a42-49f9-a388-d06fb8707b2f" absoluteBounds="9, 29, 2, 1.7708968098958309">
+      <DataClassMoniker Name="/SSIA2013DataContext/SubArea" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8fedf097-4248-4dc3-b57f-1b0d4a7d6044" absoluteBounds="9.015, 29.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cc03a8d9-d3fc-48e9-9cb6-d1d80a4aa2d7" absoluteBounds="12, 24.25, 2, 1.1939925130208309">
+      <DataClassMoniker Name="/SSIA2013DataContext/TipoCurso" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7e5078da-c49e-4d12-9b18-8dfe7d5f6e3a" absoluteBounds="12.015, 24.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2b46fddd-efd8-4fee-9e98-07fb32de5190" absoluteBounds="23, 26.25, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/SSIA2013DataContext/Trabajo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="92f28fc6-37a3-4579-aebf-5577977714dc" absoluteBounds="23.015, 26.71, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e3c5f80f-50fc-4bab-844d-9ffee22bc41d" absoluteBounds="9.25, 15.125, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/SSIA2013DataContext/AlumnosGrupo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="24260753-1949-4fd3-849f-7da795424408" absoluteBounds="9.265, 15.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="589f9a16-e1da-47a9-82a7-29e3acebdbaf" absoluteBounds="6.5, 17.125, 2, 1.7708968098958309">
+      <DataClassMoniker Name="/SSIA2013DataContext/Archivo1" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7e106e06-7d00-4676-94c8-5b8c83f0da60" absoluteBounds="6.515, 17.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b823d8e2-9d0e-4075-b3f5-6b058506fef7" absoluteBounds="9.25, 12.5, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/SSIA2013DataContext/ArchivosGrupo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d3fa8977-75b2-4e01-a7c0-f8eb3a4920ca" absoluteBounds="9.265, 12.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0166fb5e-d61a-41b0-a5d0-010fef8eceed" absoluteBounds="12, 15, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/SSIA2013DataContext/EvaluacionesAlumnosGrupoProfesor" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a10bb971-ab6d-4922-a609-6b4501dc1b02" absoluteBounds="12.015, 15.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9ad2868d-bb6f-4e86-8bf3-555e9fca03f0" absoluteBounds="9.25, 17.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/SSIA2013DataContext/EvaluacionesGruposProfesor" />
+      <nestedChildShapes>
+        <elementListCompartment Id="46f8c511-b69b-4016-9999-706528bb158f" absoluteBounds="9.265, 17.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="410eea8d-8ce5-4abc-aa87-86b452289698" absoluteBounds="9.75, 8.375, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/SSIA2013DataContext/EvaluacionesOutcomeProfesor" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8a74d227-ff04-47d9-9d31-553f83fd30e6" absoluteBounds="9.765, 8.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cb5452b5-7f57-435c-abf6-9d166251b778" absoluteBounds="6.5, 14, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/SSIA2013DataContext/Grupo1" />
+      <nestedChildShapes>
+        <elementListCompartment Id="566ee7d7-3c9e-4065-ad63-e75172e592c3" absoluteBounds="6.515, 14.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7db13904-dfe8-4844-9b1b-2773b4cf7a83" absoluteBounds="3.75, 12.625, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/SSIA2013DataContext/Trabajo1" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a532a35e-ebea-41fb-8a7f-2f17e13b0f01" absoluteBounds="3.765, 13.085, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ec254124-019e-4a92-857c-0de98854ad97" absoluteBounds="6.5, 10.875, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/SSIA2013DataContext/TrabajosOutcomeAlumno" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7a210036-30b5-4f0f-b983-a08f4f06c71e" absoluteBounds="6.515, 11.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1e6cfdcc-dea1-4a87-bbe0-4e0fa1f3f07d" absoluteBounds="3.5, 0.75, 2, 1.9631982421875">
+      <DataClassMoniker Name="/SSIA2013DataContext/CriterioRubrica" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e6b23bbe-47df-42b2-bc06-ff92ca736c67" absoluteBounds="3.515, 1.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b8aae964-5fd6-46a7-912f-b10199cc6aea" absoluteBounds="6.25, 5.75, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/SSIA2013DataContext/Evaluacione" />
+      <nestedChildShapes>
+        <elementListCompartment Id="149edaa8-96a3-427f-a120-57f58c7e52c4" absoluteBounds="6.265, 6.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="92a3a097-fea2-46eb-acf0-60424d4ecfbd" absoluteBounds="0.75, 4.125, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/SSIA2013DataContext/GruposNivele" />
+      <nestedChildShapes>
+        <elementListCompartment Id="59d03bb4-ab68-4dcf-b964-b4489d94ab5b" absoluteBounds="0.765, 4.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4f7fceca-d454-4ffa-8593-4550ee87fcf0" absoluteBounds="3.5, 4, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/SSIA2013DataContext/Nivele" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e4294ddc-4444-4fbe-9125-ac14bb2aec66" absoluteBounds="3.515, 4.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="aaf57029-cbc8-4c60-9874-cdce306af6b5" absoluteBounds="6.25, 2.25, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/SSIA2013DataContext/PerformancesRubrica" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d1b74b7a-638e-4f0b-9350-e40babc5c892" absoluteBounds="6.265, 2.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e374a134-ae56-4302-a2ca-f873edfabd40" absoluteBounds="9, 2.5, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/SSIA2013DataContext/RespuestasRubrica" />
+      <nestedChildShapes>
+        <elementListCompartment Id="94630e8e-2159-4e37-b8a4-76d269915603" absoluteBounds="9.015, 2.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0265096c-3250-492f-bc20-7b0b5802ef6c" absoluteBounds="9, 6.125, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/SSIA2013DataContext/ResultadosRubrica" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ba1d522c-c426-46c6-ac5e-12b0f6573cdc" absoluteBounds="9.015, 6.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(10.9676923076923 : 32.375); (11.375 : 31.9676923076923); (11.375 : 30.6642976888021); (11.75 : 30.6642976888021)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Alumno/Alumno_AlumnoxGrupo" />
+      <nodes>
+        <classShapeMoniker Id="3a690830-4795-4054-96b4-4edce9a47b31" />
+        <classShapeMoniker Id="1ab89051-c4bf-4e46-8f8e-bdcaa63e1273" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 32.6258455403646); (8.63541666666667 : 32.6258455403646 : JumpStart); (8.95833333333333 : 32.6258455403646 : JumpEnd); (9 : 32.6258455403646)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Apoderado/Apoderado_Alumno" />
+      <nodes>
+        <classShapeMoniker Id="c0f5a0f4-ed44-43bf-a79d-441add415d88" />
+        <classShapeMoniker Id="3a690830-4795-4054-96b4-4edce9a47b31" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.9507692307692 : 34.9151025390625); (11.375 : 35.3393333082933); (11.375 : 40.5104484049479); (11.3854166666667 : 40.5104484049479 : JumpStart); (11.6458333333333 : 40.5104484049479 : JumpEnd); (11.75 : 40.5104484049479)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Alumno/Alumno_Archivo" />
+      <nodes>
+        <classShapeMoniker Id="3a690830-4795-4054-96b4-4edce9a47b31" />
+        <classShapeMoniker Id="5e17fecc-f636-485a-9e50-4fae88e4c1f0" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.75 : 40.4431469726563); (14.1666666666667 : 40.4431469726563 : JumpStart); (14.3333333333333 : 40.4431469726563 : JumpEnd); (14.5 : 40.4431469726563)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Archivo/Archivo_ArchivoxGrupo" />
+      <nodes>
+        <classShapeMoniker Id="5e17fecc-f636-485a-9e50-4fae88e4c1f0" />
+        <classShapeMoniker Id="ac39eae7-9ee4-42aa-acd8-22f8bc296f32" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 33.8854484049479); (8.63541666666667 : 33.8854484049479 : JumpStart); (8.89583333333333 : 33.8854484049479 : JumpEnd); (9 : 33.8854484049479)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Carrera/Carrera_Alumno" />
+      <nodes>
+        <classShapeMoniker Id="c955433b-24ba-4fa5-ba81-5536371196fa" />
+        <classShapeMoniker Id="3a690830-4795-4054-96b4-4edce9a47b31" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.22139320537861 : 33); (8.625 : 32.5963932053786); (8.625 : 27.8277498372396); (9.91666666666667 : 27.8277498372396 : JumpStart); (10.0833333333333 : 27.8277498372396 : JumpEnd); (12 : 27.8277498372396)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Carrera/Carrera_Competencia" />
+      <nodes>
+        <classShapeMoniker Id="c955433b-24ba-4fa5-ba81-5536371196fa" />
+        <classShapeMoniker Id="00771c0b-9c4b-4e95-9e86-69dfa40099ba" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(29.5 : 32.4535953776042); (29.5 : 39.2892976888021); (19.5 : 39.2892976888021)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/CriterioxRubrica/CriterioxRubrica_CriterioxResultadoRubrica" />
+      <nodes>
+        <classShapeMoniker Id="0066367b-5ec8-4714-81d7-f240a24f85a9" />
+        <classShapeMoniker Id="36aa15dc-9eed-444d-b8ac-6d520abf9ba0" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(29.2024234637921 : 30.875); (29.2024234637921 : 30.625); (29.8117468474559 : 30.625); (29.8117468474559 : 30.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SSIA2013DataContext/CriterioxRubrica/CriterioxRubrica_CriterioxRubrica" />
+      <nodes>
+        <classShapeMoniker Id="0066367b-5ec8-4714-81d7-f240a24f85a9" />
+        <classShapeMoniker Id="0066367b-5ec8-4714-81d7-f240a24f85a9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.25 : 34.7708968098958); (7.25 : 39.8565991210938); (9 : 39.8565991210938)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Carrera/Carrera_Curricula" />
+      <nodes>
+        <classShapeMoniker Id="c955433b-24ba-4fa5-ba81-5536371196fa" />
+        <classShapeMoniker Id="5639787e-b4c6-42b2-bc81-44a4601d2aa4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(16.75 : 28.1370183559695); (16.8160744349011 : 28.2030927908707 : JumpStart); (16.9339255650989 : 28.3209439210684 : JumpEnd); (17.1285744349011 : 28.5155927908707 : JumpStart); (17.2464255650989 : 28.6334439210684 : JumpEnd); (17.3125 : 28.6995183559695); (17.3125 : 29.7892976888021); (17.3229166666667 : 29.7892976888021 : JumpStart); (17.4895833333333 : 29.7892976888021 : JumpEnd); (17.5 : 29.7892976888021)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Curso/Curso_CoordinadorxCurso" />
+      <nodes>
+        <classShapeMoniker Id="5f318d7c-99f0-44f4-8f01-ad72e7d2b884" />
+        <classShapeMoniker Id="ab606106-3094-4a71-a4ca-a7074ed9d033" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(16.75 : 26.0008455403646); (16.7916666666667 : 26.0008455403646 : JumpStart); (16.9583333333333 : 26.0008455403646 : JumpEnd); (17.1041666666667 : 26.0008455403646 : JumpStart); (17.2708333333333 : 26.0008455403646 : JumpEnd); (17.3229166666667 : 26.0008455403646 : JumpStart); (17.4895833333333 : 26.0008455403646 : JumpEnd); (17.5 : 26.0008455403646)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Curso/Curso_CursoControl" />
+      <nodes>
+        <classShapeMoniker Id="5f318d7c-99f0-44f4-8f01-ad72e7d2b884" />
+        <classShapeMoniker Id="f41b2a8d-c521-49f2-8897-19588969fc1b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(16.75 : 27.7099494856771); (16.7916666666667 : 27.7099494856771 : JumpStart); (16.9583333333333 : 27.7099494856771 : JumpEnd); (17.1041666666667 : 27.7099494856771 : JumpStart); (17.2708333333333 : 27.7099494856771 : JumpEnd); (17.3229166666667 : 27.7099494856771 : JumpStart); (17.4895833333333 : 27.7099494856771 : JumpEnd); (17.5 : 27.7099494856771)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Curso/Curso_CursoVerificacion" />
+      <nodes>
+        <classShapeMoniker Id="5f318d7c-99f0-44f4-8f01-ad72e7d2b884" />
+        <classShapeMoniker Id="ad149486-9fe6-438b-98d9-27c810ecf992" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11 : 34.913563077524); (11.5625 : 35.476063077524); (11.5625 : 36.6642976888021); (11.75 : 36.6642976888021)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Alumno/Alumno_CursoxEvaluacionxAlumno" />
+      <nodes>
+        <classShapeMoniker Id="3a690830-4795-4054-96b4-4edce9a47b31" />
+        <classShapeMoniker Id="61c7cdb9-8d53-4cb8-8f6d-ef36f59478a4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(20.2767136910056 : 24.7035953776042); (19.875 : 25.1053090686098); (19.875 : 35.5); (17.3958333333333 : 35.5 : JumpStart); (16.9166666666667 : 35.5 : JumpEnd); (15.8333333333333 : 35.5 : JumpStart); (15.6666666666667 : 35.5 : JumpEnd); (14.3333333333333 : 35.5 : JumpStart); (14.1666666666667 : 35.5 : JumpEnd); (14.125 : 35.5); (13.75 : 35.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SSIA2013DataContext/CursoxEvaluacion/CursoxEvaluacion_CursoxEvaluacionxAlumno" />
+      <nodes>
+        <classShapeMoniker Id="5da2f4d4-91df-4c88-8bea-a37a2d6db2be" />
+        <classShapeMoniker Id="61c7cdb9-8d53-4cb8-8f6d-ef36f59478a4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(15.718748 : 28.2324039713542); (15.718748 : 29.5); (14.25 : 29.5); (14.25 : 42.8181469726563); (13.75 : 42.8181469726563)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Curso/Curso_CursoxResultadoPrograma" />
+      <nodes>
+        <classShapeMoniker Id="5f318d7c-99f0-44f4-8f01-ad72e7d2b884" />
+        <classShapeMoniker Id="78270305-9bb5-4c06-b5dd-030f10222596" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11 : 33.6931469726563); (11.75 : 33.6931469726563)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Alumno/Alumno_DelegadoxSeccionxCurso" />
+      <nodes>
+        <classShapeMoniker Id="3a690830-4795-4054-96b4-4edce9a47b31" />
+        <classShapeMoniker Id="1f452359-cd95-4376-854e-70ebe617ea66" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11 : 38.876509152494); (11.376509152494 : 38.5); (11.3854166666667 : 38.5 : JumpStart); (11.6458333333333 : 38.5 : JumpEnd); (14.1666666666667 : 38.5 : JumpStart); (14.3333333333333 : 38.5 : JumpEnd); (16.5729166666667 : 38.5 : JumpStart); (16.7395833333333 : 38.5 : JumpEnd); (16.9166666666667 : 38.5 : JumpStart); (17.0833333333333 : 38.5 : JumpEnd); (17.125 : 38.5); (17.125 : 34.4631982421875); (17.1285744349011 : 34.4596238072864 : JumpStart); (17.2464255650989 : 34.3417726770886 : JumpEnd); (17.5 : 34.0881982421875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SSIA2013DataContext/Curricula/Curricula_DetalleCurricula" />
+      <nodes>
+        <classShapeMoniker Id="5639787e-b4c6-42b2-bc81-44a4601d2aa4" />
+        <classShapeMoniker Id="56b682e2-637e-4ca3-b274-e54189f3d351" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(16.7176923076923 : 28.2324039713542); (16.8160744349011 : 28.330786098563 : JumpStart); (16.9339255650989 : 28.4486372287607 : JumpEnd); (17.125 : 28.6397116636619); (17.125 : 33.0753471210937); (17.5 : 33.0753471210937)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Curso/Curso_DetalleCurricula" />
+      <nodes>
+        <classShapeMoniker Id="5f318d7c-99f0-44f4-8f01-ad72e7d2b884" />
+        <classShapeMoniker Id="56b682e2-637e-4ca3-b274-e54189f3d351" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 34.1979484049479); (6.25 : 34.1979484049479)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Escuela/Escuela_Carrera" />
+      <nodes>
+        <classShapeMoniker Id="2847908e-3a3b-4cc9-b0f5-04280ed557b3" />
+        <classShapeMoniker Id="c955433b-24ba-4fa5-ba81-5536371196fa" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(19.5 : 21.6362939453125); (19.875 : 22.0112939453125); (19.875 : 23.8830456888021); (20.25 : 23.8830456888021)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Evaluacion/Evaluacion_CursoxEvaluacion" />
+      <nodes>
+        <classShapeMoniker Id="96ff0ccd-c115-47dc-b714-a3b7701bed0c" />
+        <classShapeMoniker Id="5da2f4d4-91df-4c88-8bea-a37a2d6db2be" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14.75 : 32.75); (14.375 : 32.375); (14.375 : 30.6642976888021); (14.3333333333333 : 30.6642976888021 : JumpStart); (14.1666666666667 : 30.6642976888021 : JumpEnd); (13.75 : 30.6642976888021)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Grupo/Grupo_AlumnoxGrupo" />
+      <nodes>
+        <classShapeMoniker Id="70a88732-ca29-47fd-9bfa-459090a332a9" />
+        <classShapeMoniker Id="1ab89051-c4bf-4e46-8f8e-bdcaa63e1273" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(16.75 : 34.4595955357071); (16.8160744349011 : 34.5256699706082 : JumpStart); (16.9339255650989 : 34.643521100806 : JumpEnd); (16.9410744349011 : 34.6506699706082 : JumpStart); (17.0589255650989 : 34.768521100806 : JumpEnd); (17.0660744349011 : 34.7756699706082 : JumpStart); (17.2464255650989 : 34.956021100806 : JumpEnd); (17.3125 : 35.0220955357071); (17.3125 : 39.375); (17.2708333333333 : 39.375 : JumpStart); (17.1041666666667 : 39.375 : JumpEnd); (16.875 : 39.375); (16.5 : 39.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SSIA2013DataContext/Grupo/Grupo_ArchivoxGrupo" />
+      <nodes>
+        <classShapeMoniker Id="70a88732-ca29-47fd-9bfa-459090a332a9" />
+        <classShapeMoniker Id="ac39eae7-9ee4-42aa-acd8-22f8bc296f32" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11 : 32.8750025); (14.1666666666667 : 32.8750025 : JumpStart); (14.3333333333333 : 32.8750025 : JumpEnd); (14.75 : 32.8750025)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Alumno/Alumno_Grupo" />
+      <nodes>
+        <classShapeMoniker Id="3a690830-4795-4054-96b4-4edce9a47b31" />
+        <classShapeMoniker Id="70a88732-ca29-47fd-9bfa-459090a332a9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(19.5 : 17.8181469726563); (21.25 : 17.8181469726563); (21.25 : 19.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Local/Local_HorarioxSeccionxCurso" />
+      <nodes>
+        <classShapeMoniker Id="7aa31731-95a4-4dfa-8870-c2edb6f89f85" />
+        <classShapeMoniker Id="9ae182f1-f6cd-4bb6-b3be-d885a8825738" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11 : 32.4088451538462); (11.4088451538462 : 32); (14.1666666666667 : 32 : JumpStart); (14.4583333333333 : 32 : JumpEnd); (15.75 : 32); (15.75 : 31.5208968098958)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Alumno/Alumno_Matricula" />
+      <nodes>
+        <classShapeMoniker Id="3a690830-4795-4054-96b4-4edce9a47b31" />
+        <classShapeMoniker Id="5031f523-9d77-4065-a231-4c507e4e87d4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 31.5715855647536); (8.56607443490112 : 31.8876599996547 : JumpStart); (8.71517556509888 : 32.0367611298525 : JumpEnd); (8.875 : 32.1965855647536); (8.875 : 33.2556469726563); (9 : 33.2556469726563)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Periodo/Periodo_Alumno" />
+      <nodes>
+        <classShapeMoniker Id="fd0c29ac-8810-4199-b5b6-f3163ded81d4" />
+        <classShapeMoniker Id="3a690830-4795-4054-96b4-4edce9a47b31" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.25 : 29.625); (7.25 : 28.3978772558594); (8.54166666666667 : 28.3978772558594 : JumpStart); (8.70833333333333 : 28.3978772558594 : JumpEnd); (9.91666666666667 : 28.3978772558594 : JumpStart); (10.0833333333333 : 28.3978772558594 : JumpEnd); (12 : 28.3978772558594)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Periodo/Periodo_Competencia" />
+      <nodes>
+        <classShapeMoniker Id="fd0c29ac-8810-4199-b5b6-f3163ded81d4" />
+        <classShapeMoniker Id="00771c0b-9c4b-4e95-9e86-69dfa40099ba" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.781252 : 29.625); (7.781252 : 28.75); (8.54166666666667 : 28.75 : JumpStart); (8.70833333333333 : 28.75 : JumpEnd); (9.91666666666667 : 28.75 : JumpStart); (10.0833333333333 : 28.75 : JumpEnd); (11.5 : 28.75); (11.5 : 29.25); (15.6354146666667 : 29.25 : JumpStart); (15.8020813333333 : 29.25 : JumpEnd); (16.7916666666667 : 29.25 : JumpStart); (16.9583333333333 : 29.25 : JumpEnd); (17 : 29.25); (17 : 30.2151985332031); (17.0416666666667 : 30.2151985332031 : JumpStart); (17.2708333333333 : 30.2151985332031 : JumpEnd); (17.3229166666667 : 30.2151985332031 : JumpStart); (17.4895833333333 : 30.2151985332031 : JumpEnd); (17.5 : 30.2151985332031)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Periodo/Periodo_CoordinadorxCurso" />
+      <nodes>
+        <classShapeMoniker Id="fd0c29ac-8810-4199-b5b6-f3163ded81d4" />
+        <classShapeMoniker Id="ab606106-3094-4a71-a4ca-a7074ed9d033" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.19110405273437 : 31.5881982421875); (8.26497828678466 : 31.6620724762378 : JumpStart); (8.38282941698241 : 31.7799236064355 : JumpEnd); (8.56607443490112 : 31.9631686243543 : JumpStart); (8.71517556509888 : 32.112269754552 : JumpEnd); (8.8125 : 32.2095941894531); (8.8125 : 39.3345475605469); (9 : 39.3345475605469)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Periodo/Periodo_Curricula" />
+      <nodes>
+        <classShapeMoniker Id="fd0c29ac-8810-4199-b5b6-f3163ded81d4" />
+        <classShapeMoniker Id="5639787e-b4c6-42b2-bc81-44a4601d2aa4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.22885786508413 : 31.5881982421875); (8.24553004027144 : 31.6048704173748 : JumpStart); (8.3633811704692 : 31.7227215475726 : JumpEnd); (8.56607443490112 : 31.9254148120045 : JumpStart); (8.71517556509888 : 32.0745159422022 : JumpEnd); (8.71875 : 32.0780903771034); (8.71875 : 39.3345475605469); (9 : 39.3345475605469)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Periodo/Periodo_Curricula1" />
+      <nodes>
+        <classShapeMoniker Id="fd0c29ac-8810-4199-b5b6-f3163ded81d4" />
+        <classShapeMoniker Id="5639787e-b4c6-42b2-bc81-44a4601d2aa4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 31.503628702524); (8.40625 : 31.9631982421875); (8.40625 : 31.7708968098958); (8.54166666666667 : 31.7708968098958 : JumpStart); (8.73958333333333 : 31.7708968098958 : JumpEnd); (11.2916666666667 : 31.7708968098958 : JumpStart); (11.4583333333333 : 31.7708968098958 : JumpEnd); (14.1666666666667 : 31.7708968098958 : JumpStart); (14.4583333333333 : 31.7708968098958 : JumpEnd); (14.5 : 31.7708968098958); (14.75 : 31.5208968098958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SSIA2013DataContext/Periodo/Periodo_Matricula" />
+      <nodes>
+        <classShapeMoniker Id="fd0c29ac-8810-4199-b5b6-f3163ded81d4" />
+        <classShapeMoniker Id="5031f523-9d77-4065-a231-4c507e4e87d4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 32.25); (1.75 : 30.6258455403646); (2.19791916666667 : 30.6258455403646 : JumpStart); (2.36458583333333 : 30.6258455403646 : JumpEnd); (3.5 : 30.6258455403646)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Persona/Persona_Administrativo" />
+      <nodes>
+        <classShapeMoniker Id="7874552d-0290-4f58-bd79-55e785f3d736" />
+        <classShapeMoniker Id="d2f662bb-0031-49c8-be82-e18856bfa54c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 35.220400390625); (7.16666666666667 : 35.220400390625 : JumpStart); (7.33333333333333 : 35.220400390625 : JumpEnd); (7.69791916666667 : 35.220400390625 : JumpStart); (7.86458583333333 : 35.220400390625 : JumpEnd); (8.63541666666667 : 35.220400390625 : JumpStart); (8.89583333333333 : 35.220400390625 : JumpEnd); (9.95259365384615 : 35.220400390625); (9.95259365384615 : 34.9151025390625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Persona/Persona_Alumno" />
+      <nodes>
+        <classShapeMoniker Id="7874552d-0290-4f58-bd79-55e785f3d736" />
+        <classShapeMoniker Id="3a690830-4795-4054-96b4-4edce9a47b31" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 32.5633455403646); (3.5 : 32.5633455403646)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Persona/Persona_Apoderado" />
+      <nodes>
+        <classShapeMoniker Id="7874552d-0290-4f58-bd79-55e785f3d736" />
+        <classShapeMoniker Id="c0f5a0f4-ed44-43bf-a79d-441add415d88" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 33.28125); (6.25 : 33.28125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Persona/Persona_Carrera" />
+      <nodes>
+        <classShapeMoniker Id="7874552d-0290-4f58-bd79-55e785f3d736" />
+        <classShapeMoniker Id="c955433b-24ba-4fa5-ba81-5536371196fa" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 34.3181469726563); (3.5 : 34.3181469726563)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Persona/Persona_Escuela" />
+      <nodes>
+        <classShapeMoniker Id="7874552d-0290-4f58-bd79-55e785f3d736" />
+        <classShapeMoniker Id="2847908e-3a3b-4cc9-b0f5-04280ed557b3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 38.8547742802734); (7.16666666666667 : 38.8547742802734 : JumpStart); (7.33333333333333 : 38.8547742802734 : JumpEnd); (8.5 : 38.8547742802734); (8.5 : 38.625); (8.63541666666667 : 38.625 : JumpStart); (8.89583333333333 : 38.625 : JumpEnd); (11.1681758191607 : 38.625 : JumpStart); (11.6458333333333 : 38.625 : JumpEnd); (14.1666666666667 : 38.625 : JumpStart); (14.3333333333333 : 38.625 : JumpEnd); (16.5729166666667 : 38.625 : JumpStart); (16.7395833333333 : 38.625 : JumpEnd); (17 : 38.625); (17 : 30.9535953776042); (17.0416666666667 : 30.9535953776042 : JumpStart); (17.2708333333333 : 30.9535953776042 : JumpEnd); (18.5 : 30.9535953776042); (18.5 : 30.5785953776042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Profesor/Profesor_CoordinadorxCurso" />
+      <nodes>
+        <classShapeMoniker Id="4ae9483b-b1d9-4ccd-9152-6607fd4ca9e5" />
+        <classShapeMoniker Id="ab606106-3094-4a71-a4ca-a7074ed9d033" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 35.3670068359375); (1.75 : 39.2604484049479); (3.5 : 39.2604484049479)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Persona/Persona_Profesor" />
+      <nodes>
+        <classShapeMoniker Id="7874552d-0290-4f58-bd79-55e785f3d736" />
+        <classShapeMoniker Id="4ae9483b-b1d9-4ccd-9152-6607fd4ca9e5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 38.40625); (7.16666666666667 : 38.40625 : JumpStart); (7.33333333333333 : 38.40625 : JumpEnd); (8.63541666666667 : 38.40625 : JumpStart); (8.89583333333333 : 38.40625 : JumpEnd); (11.2916666666667 : 38.40625 : JumpStart); (11.6458333333333 : 38.40625 : JumpEnd); (14.1666666666667 : 38.40625 : JumpStart); (14.3333333333333 : 38.40625 : JumpEnd); (16.5729166666667 : 38.40625 : JumpStart); (16.7395833333333 : 38.40625 : JumpEnd); (16.9166666666667 : 38.40625 : JumpStart); (17.3958333333333 : 38.40625 : JumpEnd); (17.5104166666667 : 38.40625 : JumpStart); (17.6770833333333 : 38.40625 : JumpEnd); (21.25 : 38.40625); (21.25 : 32.2612939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Profesor/Profesor_ProfesorxSeccionxCurso" />
+      <nodes>
+        <classShapeMoniker Id="4ae9483b-b1d9-4ccd-9152-6607fd4ca9e5" />
+        <classShapeMoniker Id="63299249-db4c-4e87-a25d-34b47a4c848c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.974499613131 : 37.7035953776042); (11.3160744349011 : 38.0451701993743 : JumpStart); (11.4339255650989 : 38.163021329572 : JumpEnd); (11.5625 : 38.2915957644732); (11.5625 : 42.8181469726563); (11.75 : 42.8181469726563)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/ResultadoPrograma/ResultadoPrograma_CursoxResultadoPrograma" />
+      <nodes>
+        <classShapeMoniker Id="64deaf21-d406-4a7a-b7e7-038a30fccdd1" />
+        <classShapeMoniker Id="78270305-9bb5-4c06-b5dd-030f10222596" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.7812525 : 34.7708968098958); (7.7812525 : 36.9142976888021); (8.63541666666667 : 36.9142976888021 : JumpStart); (8.89583333333333 : 36.9142976888021 : JumpEnd); (9 : 36.9142976888021)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Carrera/Carrera_ResultadoPrograma" />
+      <nodes>
+        <classShapeMoniker Id="c955433b-24ba-4fa5-ba81-5536371196fa" />
+        <classShapeMoniker Id="64deaf21-d406-4a7a-b7e7-038a30fccdd1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(20.25 : 24.6780949907352); (19.849499613131 : 25.0785953776042); (18.5833333333333 : 25.0785953776042 : JumpStart); (18.4166666666667 : 25.0785953776042 : JumpEnd); (17.4895833333333 : 25.0785953776042 : JumpStart); (17.3229166666667 : 25.0785953776042 : JumpEnd); (17.1875 : 25.0785953776042); (17.1875 : 41.6875); (16.75 : 42.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SSIA2013DataContext/CursoxEvaluacion/CursoxEvaluacion_ResultadoProgramaxCursoxEvaluacion" />
+      <nodes>
+        <classShapeMoniker Id="5da2f4d4-91df-4c88-8bea-a37a2d6db2be" />
+        <classShapeMoniker Id="97043b03-840a-4f71-94a6-9a9af1db5c24" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11 : 37.6465220831831); (11.3160744349011 : 37.9625965180842 : JumpStart); (11.4339255650989 : 38.080447648282 : JumpEnd); (11.46875 : 38.1152720831831); (11.46875 : 41.75); (11.4791666666667 : 41.75 : JumpStart); (11.6458333333333 : 41.75 : JumpEnd); (14.1666666666667 : 41.75 : JumpStart); (14.3333333333333 : 41.75 : JumpEnd); (14.375 : 41.75); (14.75 : 42.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SSIA2013DataContext/ResultadoPrograma/ResultadoPrograma_ResultadoProgramaxCursoxEvaluacion" />
+      <nodes>
+        <classShapeMoniker Id="64deaf21-d406-4a7a-b7e7-038a30fccdd1" />
+        <classShapeMoniker Id="97043b03-840a-4f71-94a6-9a9af1db5c24" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(16.75 : 37.89349609375); (16.9166666666667 : 37.89349609375 : JumpStart); (17.3958333333333 : 37.89349609375 : JumpEnd); (17.59375 : 37.89349609375); (17.59375 : 38.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/ResultadoRubrica/ResultadoRubrica_CriterioxResultadoRubrica" />
+      <nodes>
+        <classShapeMoniker Id="d24bfc30-be9a-44bc-85fa-b57649c28355" />
+        <classShapeMoniker Id="36aa15dc-9eed-444d-b8ac-6d520abf9ba0" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11 : 34.8643323082933); (11.1757702307692 : 35.0401025390625); (14.1666666666667 : 35.0401025390625 : JumpStart); (14.3333333333333 : 35.0401025390625 : JumpEnd); (15.75 : 35.0401025390625); (15.75 : 36.25)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Alumno/Alumno_ResultadoRubrica" />
+      <nodes>
+        <classShapeMoniker Id="3a690830-4795-4054-96b4-4edce9a47b31" />
+        <classShapeMoniker Id="d24bfc30-be9a-44bc-85fa-b57649c28355" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 38.71875); (7.16666666666667 : 38.71875 : JumpStart); (7.33333333333333 : 38.71875 : JumpEnd); (8.63541666666667 : 38.71875 : JumpStart); (8.89583333333333 : 38.71875 : JumpEnd); (11.0744258191607 : 38.71875 : JumpStart); (11.2410924858273 : 38.71875 : JumpEnd); (11.2916666666667 : 38.71875 : JumpStart); (11.6458333333333 : 38.71875 : JumpEnd); (14.1666666666667 : 38.71875 : JumpStart); (14.3333333333333 : 38.71875 : JumpEnd); (16.65625 : 38.71875); (16.65625 : 38.2131982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Profesor/Profesor_ResultadoRubrica" />
+      <nodes>
+        <classShapeMoniker Id="4ae9483b-b1d9-4ccd-9152-6607fd4ca9e5" />
+        <classShapeMoniker Id="d24bfc30-be9a-44bc-85fa-b57649c28355" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(23 : 23.8181469726563); (22.5 : 23.8181469726563); (22.5 : 35.875); (21.3333333333333 : 35.875 : JumpStart); (21.1666666666667 : 35.875 : JumpEnd); (20.0833333333333 : 35.875 : JumpStart); (19.9166666666667 : 35.875 : JumpEnd); (18.8020813333333 : 35.875 : JumpStart); (18.6354146666667 : 35.875 : JumpEnd); (17.3958333333333 : 35.875 : JumpStart); (16.9166666666667 : 35.875 : JumpEnd); (16.281252 : 35.875); (16.281252 : 36.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Rubrica1/Rubrica1_ResultadoRubrica" />
+      <nodes>
+        <classShapeMoniker Id="0cbb03f1-7ac9-4882-8461-b6d3e14b964f" />
+        <classShapeMoniker Id="d24bfc30-be9a-44bc-85fa-b57649c28355" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(22.25 : 23.4090734863281); (23 : 23.4090734863281)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/CursoxEvaluacion/CursoxEvaluacion_Rubrica1" />
+      <nodes>
+        <classShapeMoniker Id="5da2f4d4-91df-4c88-8bea-a37a2d6db2be" />
+        <classShapeMoniker Id="0cbb03f1-7ac9-4882-8461-b6d3e14b964f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(27.75 : 31.6642976888021); (28.5 : 31.6642976888021)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/RubricaxVersion/RubricaxVersion_CriterioxRubrica" />
+      <nodes>
+        <classShapeMoniker Id="b7d7537e-635a-4062-af0d-f13e963bf188" />
+        <classShapeMoniker Id="0066367b-5ec8-4714-81d7-f240a24f85a9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(26.75 : 30.25); (26.75 : 23.8181469726563); (25 : 23.8181469726563)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/RubricaxVersion/RubricaxVersion_Rubrica1" />
+      <nodes>
+        <classShapeMoniker Id="b7d7537e-635a-4062-af0d-f13e963bf188" />
+        <classShapeMoniker Id="0cbb03f1-7ac9-4882-8461-b6d3e14b964f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 38.390625); (7.16666666666667 : 38.390625 : JumpStart); (7.33333333333333 : 38.390625 : JumpEnd); (8.63541666666667 : 38.390625 : JumpStart); (8.89583333333333 : 38.390625 : JumpEnd); (11.2916666666667 : 38.390625 : JumpStart); (11.6458333333333 : 38.390625 : JumpEnd); (14.1666666666667 : 38.390625 : JumpStart); (14.3333333333333 : 38.390625 : JumpEnd); (16.5729166666667 : 38.390625 : JumpStart); (16.7395833333333 : 38.390625 : JumpEnd); (16.9166666666667 : 38.390625 : JumpStart); (17.3958333333333 : 38.390625 : JumpEnd); (17.5104166666667 : 38.390625 : JumpStart); (17.6770833333333 : 38.390625 : JumpEnd); (26.75 : 38.390625); (26.75 : 32.9824039713542)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Profesor/Profesor_RubricaxVersion" />
+      <nodes>
+        <classShapeMoniker Id="4ae9483b-b1d9-4ccd-9152-6607fd4ca9e5" />
+        <classShapeMoniker Id="b7d7537e-635a-4062-af0d-f13e963bf188" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 38.421875); (7.16666666666667 : 38.421875 : JumpStart); (7.33333333333333 : 38.421875 : JumpEnd); (8.63541666666667 : 38.421875 : JumpStart); (8.89583333333333 : 38.421875 : JumpEnd); (11.2916666666667 : 38.421875 : JumpStart); (11.6458333333333 : 38.421875 : JumpEnd); (14.1666666666667 : 38.421875 : JumpStart); (14.3333333333333 : 38.421875 : JumpEnd); (16.5729166666667 : 38.421875 : JumpStart); (16.7395833333333 : 38.421875 : JumpEnd); (16.9166666666667 : 38.421875 : JumpStart); (17.0833333333333 : 38.421875 : JumpEnd); (17.1041666666667 : 38.421875 : JumpStart); (17.3958333333333 : 38.421875 : JumpEnd); (26.2187475 : 38.421875); (26.2187475 : 32.9824039713542)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Profesor/Profesor_RubricaxVersion1" />
+      <nodes>
+        <classShapeMoniker Id="4ae9483b-b1d9-4ccd-9152-6607fd4ca9e5" />
+        <classShapeMoniker Id="b7d7537e-635a-4062-af0d-f13e963bf188" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(25 : 24.1959729589844); (26.2187475 : 24.1959729589844); (26.2187475 : 30.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Rubrica1/Rubrica1_RubricaxVersion" />
+      <nodes>
+        <classShapeMoniker Id="0cbb03f1-7ac9-4882-8461-b6d3e14b964f" />
+        <classShapeMoniker Id="b7d7537e-635a-4062-af0d-f13e963bf188" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(19.5 : 23.441522844401); (19.7916666666667 : 23.441522844401 : JumpStart); (19.9583333333333 : 23.441522844401 : JumpEnd); (20.25 : 23.441522844401)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/SeccionxCurso/SeccionxCurso_CursoxEvaluacion" />
+      <nodes>
+        <classShapeMoniker Id="39891512-0128-4c04-8bbd-0414a6259e7d" />
+        <classShapeMoniker Id="5da2f4d4-91df-4c88-8bea-a37a2d6db2be" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(18.5 : 24.7035953776042); (18.5 : 25.25); (17.4895833333333 : 25.25 : JumpStart); (17.3229166666667 : 25.25 : JumpEnd); (17.2708333333333 : 25.25 : JumpStart); (17.1041666666667 : 25.25 : JumpEnd); (16.875 : 25.25); (16.875 : 34.7708968098958); (14.3333333333333 : 34.7708968098958 : JumpStart); (14.1666666666667 : 34.7708968098958 : JumpEnd); (14.125 : 34.7708968098958); (14.125 : 33.6931469726563); (13.75 : 33.6931469726563)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/SeccionxCurso/SeccionxCurso_DelegadoxSeccionxCurso" />
+      <nodes>
+        <classShapeMoniker Id="39891512-0128-4c04-8bbd-0414a6259e7d" />
+        <classShapeMoniker Id="1f452359-cd95-4376-854e-70ebe617ea66" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(19.5 : 23.1869285109675); (19.8160744349011 : 22.8708540760664 : JumpStart); (19.9339255650989 : 22.7530029458687 : JumpEnd); (20.0625 : 22.6244285109675); (20.0625 : 20.7989005533854); (20.25 : 20.7989005533854)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/SeccionxCurso/SeccionxCurso_HorarioxSeccionxCurso" />
+      <nodes>
+        <classShapeMoniker Id="39891512-0128-4c04-8bbd-0414a6259e7d" />
+        <classShapeMoniker Id="9ae182f1-f6cd-4bb6-b3be-d885a8825738" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(19.5 : 24.6647366452324); (20.1875 : 25.3522366452324); (20.1875 : 28.3854484049479); (20.25 : 28.3854484049479)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/SeccionxCurso/SeccionxCurso_Logro" />
+      <nodes>
+        <classShapeMoniker Id="39891512-0128-4c04-8bbd-0414a6259e7d" />
+        <classShapeMoniker Id="42c05e4b-6254-4ed2-84e0-21759365e366" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(17.5303566034155 : 24.7035953776042); (17.40625 : 24.8277019810196); (17.40625 : 30.5843969554036); (17.2708333333333 : 30.5843969554036 : JumpStart); (17.0416666666667 : 30.5843969554036 : JumpEnd); (16.9583333333333 : 30.5843969554036 : JumpStart); (16.7916666666667 : 30.5843969554036 : JumpEnd); (16.75 : 30.5843969554036)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/SeccionxCurso/SeccionxCurso_Matricula" />
+      <nodes>
+        <classShapeMoniker Id="39891512-0128-4c04-8bbd-0414a6259e7d" />
+        <classShapeMoniker Id="5031f523-9d77-4065-a231-4c507e4e87d4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(19.5 : 24.7035953776042); (20.09375 : 25.2973453776042); (20.09375 : 31.5681469726563); (20.25 : 31.5681469726563)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/SeccionxCurso/SeccionxCurso_ProfesorxSeccionxCurso" />
+      <nodes>
+        <classShapeMoniker Id="39891512-0128-4c04-8bbd-0414a6259e7d" />
+        <classShapeMoniker Id="63299249-db4c-4e87-a25d-34b47a4c848c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(15.75 : 25.5); (15.75 : 23.9142976888021); (17.5 : 23.9142976888021)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Curso/Curso_SeccionxCurso" />
+      <nodes>
+        <classShapeMoniker Id="5f318d7c-99f0-44f4-8f01-ad72e7d2b884" />
+        <classShapeMoniker Id="39891512-0128-4c04-8bbd-0414a6259e7d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.7187475 : 29.625); (6.7187475 : 23.488396344401); (17.5 : 23.488396344401)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Periodo/Periodo_SeccionxCurso" />
+      <nodes>
+        <classShapeMoniker Id="fd0c29ac-8810-4199-b5b6-f3163ded81d4" />
+        <classShapeMoniker Id="39891512-0128-4c04-8bbd-0414a6259e7d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(19.4914998710437 : 24.7035953776042); (20.03125 : 25.2433455065605); (20.03125 : 35.75); (20.125 : 35.75); (19.75 : 36.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SSIA2013DataContext/SeccionxCurso/SeccionxCurso_SeccionxCursoxResultadoPrograma" />
+      <nodes>
+        <classShapeMoniker Id="39891512-0128-4c04-8bbd-0414a6259e7d" />
+        <classShapeMoniker Id="ba808e60-6c73-479b-a248-fd6b1b87e4fa" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11 : 36.8545090415915); (11.25 : 36.8545090415915); (11.25 : 35.625); (11.2916666666667 : 35.625 : JumpStart); (11.4583333333333 : 35.625 : JumpEnd); (11.4791666666667 : 35.625 : JumpStart); (11.6458333333333 : 35.625 : JumpEnd); (13.9166666666667 : 35.625 : JumpStart); (14.0833333333333 : 35.625 : JumpEnd); (14.1666666666667 : 35.625 : JumpStart); (14.3333333333333 : 35.625 : JumpEnd); (15.6666666666667 : 35.625 : JumpStart); (15.8333333333333 : 35.625 : JumpEnd); (16.9166666666667 : 35.625 : JumpStart); (17.3958333333333 : 35.625 : JumpEnd); (18.718748 : 35.625); (18.718748 : 36.125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/ResultadoPrograma/ResultadoPrograma_SeccionxCursoxResultadoPrograma" />
+      <nodes>
+        <classShapeMoniker Id="64deaf21-d406-4a7a-b7e7-038a30fccdd1" />
+        <classShapeMoniker Id="ba808e60-6c73-479b-a248-fd6b1b87e4fa" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10 : 29); (10 : 26.09375); (14.75 : 26.09375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/SubArea/SubArea_Curso" />
+      <nodes>
+        <classShapeMoniker Id="67d9aead-8a42-49f9-a388-d06fb8707b2f" />
+        <classShapeMoniker Id="5f318d7c-99f0-44f4-8f01-ad72e7d2b884" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 33.0599370458734); (8.65625 : 32.6536870458734); (8.65625 : 29.8854484049479); (9 : 29.8854484049479)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Carrera/Carrera_SubArea" />
+      <nodes>
+        <classShapeMoniker Id="c955433b-24ba-4fa5-ba81-5536371196fa" />
+        <classShapeMoniker Id="67d9aead-8a42-49f9-a388-d06fb8707b2f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.2812525 : 32.25); (2.2812525 : 29.28125); (6.63541416666667 : 29.28125 : JumpStart); (6.80208083333333 : 29.28125 : JumpEnd); (7.16666666666667 : 29.28125 : JumpStart); (7.33333333333333 : 29.28125 : JumpEnd); (7.69791866666667 : 29.28125 : JumpStart); (7.86458533333333 : 29.28125 : JumpEnd); (8.54166666666667 : 29.28125 : JumpStart); (8.70833333333333 : 29.28125 : JumpEnd); (9 : 29.28125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Persona/Persona_SubArea" />
+      <nodes>
+        <classShapeMoniker Id="7874552d-0290-4f58-bd79-55e785f3d736" />
+        <classShapeMoniker Id="67d9aead-8a42-49f9-a388-d06fb8707b2f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14 : 24.8469962565104); (15.2187475 : 24.8469962565104); (15.2187475 : 25.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/TipoCurso/TipoCurso_Curso" />
+      <nodes>
+        <classShapeMoniker Id="cc03a8d9-d3fc-48e9-9cb6-d1d80a4aa2d7" />
+        <classShapeMoniker Id="5f318d7c-99f0-44f4-8f01-ad72e7d2b884" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(24 : 28.9824039713542); (24 : 34.2738943889473); (22.5833333333333 : 34.2738943889473 : JumpStart); (22.4166666666667 : 34.2738943889473 : JumpEnd); (21.3333333333333 : 34.2738943889473 : JumpStart); (21.1666666666667 : 34.2738943889473 : JumpEnd); (20.1145833333333 : 34.2738943889473 : JumpStart); (19.7916666666667 : 34.2738943889473 : JumpEnd); (17.3976371865735 : 34.2738943889473 : JumpStart); (17.1041666666667 : 34.2738943889473 : JumpEnd); (17.0833333333333 : 34.2738943889473 : JumpStart); (16.7916666666667 : 34.2738943889473 : JumpEnd); (16.75 : 34.2738943889473)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Trabajo/Trabajo_Grupo" />
+      <nodes>
+        <classShapeMoniker Id="2b46fddd-efd8-4fee-9e98-07fb32de5190" />
+        <classShapeMoniker Id="70a88732-ca29-47fd-9bfa-459090a332a9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(22.25 : 24.7035953776042); (22.4410744349011 : 24.8946698125053 : JumpStart); (22.5589255650989 : 25.012520942703 : JumpEnd); (22.625 : 25.0785953776042); (22.625 : 27.6162019856771); (23 : 27.6162019856771)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/CursoxEvaluacion/CursoxEvaluacion_Trabajo" />
+      <nodes>
+        <classShapeMoniker Id="5da2f4d4-91df-4c88-8bea-a37a2d6db2be" />
+        <classShapeMoniker Id="2b46fddd-efd8-4fee-9e98-07fb32de5190" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(22.25 : 31.5681469726563); (22.4166666666667 : 31.5681469726563 : JumpStart); (22.5833333333333 : 31.5681469726563 : JumpEnd); (23.4687475 : 31.5681469726563); (23.4687475 : 28.9824039713542)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/ProfesorxSeccionxCurso/ProfesorxSeccionxCurso_Trabajo" />
+      <nodes>
+        <classShapeMoniker Id="63299249-db4c-4e87-a25d-34b47a4c848c" />
+        <classShapeMoniker Id="2b46fddd-efd8-4fee-9e98-07fb32de5190" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 17.125); (8.875 : 16.75); (8.875 : 13.0969962565104); (9.25 : 13.0969962565104)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Archivo1/Archivo1_ArchivosGrupo" />
+      <nodes>
+        <classShapeMoniker Id="589f9a16-e1da-47a9-82a7-29e3acebdbaf" />
+        <classShapeMoniker Id="b823d8e2-9d0e-4075-b3f5-6b058506fef7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.25 : 15.8181469726562); (12 : 15.8181469726562)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/AlumnosGrupo/AlumnosGrupo_EvaluacionesAlumnosGrupoProfesor" />
+      <nodes>
+        <classShapeMoniker Id="e3c5f80f-50fc-4bab-844d-9ffee22bc41d" />
+        <classShapeMoniker Id="0166fb5e-d61a-41b0-a5d0-010fef8eceed" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 15.5440991210938); (8.79166666666667 : 15.5440991210938 : JumpStart); (8.95833333333333 : 15.5440991210938 : JumpEnd); (9.25 : 15.5440991210938)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Grupo1/Grupo1_AlumnosGrupo" />
+      <nodes>
+        <classShapeMoniker Id="cb5452b5-7f57-435c-abf6-9d166251b778" />
+        <classShapeMoniker Id="e3c5f80f-50fc-4bab-844d-9ffee22bc41d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.5 : 14); (7.5 : 13.4267468847656); (8.79166666666667 : 13.4267468847656 : JumpStart); (8.95833333333333 : 13.4267468847656 : JumpEnd); (9.25 : 13.4267468847656)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Grupo1/Grupo1_ArchivosGrupo" />
+      <nodes>
+        <classShapeMoniker Id="cb5452b5-7f57-435c-abf6-9d166251b778" />
+        <classShapeMoniker Id="b823d8e2-9d0e-4075-b3f5-6b058506fef7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 15.9012809899339); (8.81607443490112 : 16.217355424835 : JumpStart); (8.93392556509888 : 16.3352065550328 : JumpEnd); (9.0625 : 16.4637809899339); (9.0625 : 18.2892976888021); (9.25 : 18.2892976888021)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Grupo1/Grupo1_EvaluacionesGruposProfesor" />
+      <nodes>
+        <classShapeMoniker Id="cb5452b5-7f57-435c-abf6-9d166251b778" />
+        <classShapeMoniker Id="9ad2868d-bb6f-4e86-8bf3-555e9fca03f0" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 14.6787019856771); (6.5 : 14.6787019856771)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Trabajo1/Trabajo1_Grupo1" />
+      <nodes>
+        <classShapeMoniker Id="7db13904-dfe8-4844-9b1b-2773b4cf7a83" />
+        <classShapeMoniker Id="cb5452b5-7f57-435c-abf6-9d166251b778" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.75 : 12.625); (4.75 : 11.5681469726562); (6.5 : 11.5681469726562)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Trabajo1/Trabajo1_TrabajosOutcomeAlumno" />
+      <nodes>
+        <classShapeMoniker Id="7db13904-dfe8-4844-9b1b-2773b4cf7a83" />
+        <classShapeMoniker Id="ec254124-019e-4a92-857c-0de98854ad97" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.20863627929687 : 2.7131982421875); (4.20863627929687 : 2.9631982421875); (4.80523818359375 : 2.9631982421875); (4.80523818359375 : 2.7131982421875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SSIA2013DataContext/CriterioRubrica/CriterioRubrica_CriterioRubrica" />
+      <nodes>
+        <classShapeMoniker Id="1e6cfdcc-dea1-4a87-bbe0-4e0fa1f3f07d" />
+        <classShapeMoniker Id="1e6cfdcc-dea1-4a87-bbe0-4e0fa1f3f07d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 6.37653746153846); (3.125 : 6.00153746153846); (3.125 : 1.73159912109375); (3.5 : 1.73159912109375)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Rubrica/Rubrica_CriterioRubrica" />
+      <nodes>
+        <classShapeMoniker Id="fec2fd6a-5834-4d89-a43b-103ff11c6da1" />
+        <classShapeMoniker Id="1e6cfdcc-dea1-4a87-bbe0-4e0fa1f3f07d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 7.07612035186298); (6.25 : 7.07612035186298)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Rubrica/Rubrica_Evaluacione" />
+      <nodes>
+        <classShapeMoniker Id="fec2fd6a-5834-4d89-a43b-103ff11c6da1" />
+        <classShapeMoniker Id="b8aae964-5fd6-46a7-912f-b10199cc6aea" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 4.125); (1.75 : 2.25365118164062); (3.04166666666667 : 2.25365118164062 : JumpStart); (3.20833333333333 : 2.25365118164062 : JumpEnd); (3.5 : 2.25365118164062)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/GruposNivele/GruposNivele_CriterioRubrica" />
+      <nodes>
+        <classShapeMoniker Id="92a3a097-fea2-46eb-acf0-60424d4ecfbd" />
+        <classShapeMoniker Id="1e6cfdcc-dea1-4a87-bbe0-4e0fa1f3f07d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.72199625651042); (3.04166666666667 : 4.72199625651042 : JumpStart); (3.20833333333333 : 4.72199625651042 : JumpEnd); (3.5 : 4.72199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/GruposNivele/GruposNivele_Nivele" />
+      <nodes>
+        <classShapeMoniker Id="92a3a097-fea2-46eb-acf0-60424d4ecfbd" />
+        <classShapeMoniker Id="4f7fceca-d454-4ffa-8593-4550ee87fcf0" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 2.48159912109375); (6.25 : 2.48159912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/CriterioRubrica/CriterioRubrica_PerformancesRubrica" />
+      <nodes>
+        <classShapeMoniker Id="1e6cfdcc-dea1-4a87-bbe0-4e0fa1f3f07d" />
+        <classShapeMoniker Id="aaf57029-cbc8-4c60-9874-cdce306af6b5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 4.70359587760417); (7.25 : 4.70359587760417); (7.25 : 4.02089680989583)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Nivele/Nivele_PerformancesRubrica" />
+      <nodes>
+        <classShapeMoniker Id="4f7fceca-d454-4ffa-8593-4550ee87fcf0" />
+        <classShapeMoniker Id="aaf57029-cbc8-4c60-9874-cdce306af6b5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 5.75); (8.625 : 5.375); (8.625 : 3.09699625651042); (9 : 3.09699625651042)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Evaluacione/Evaluacione_RespuestasRubrica" />
+      <nodes>
+        <classShapeMoniker Id="b8aae964-5fd6-46a7-912f-b10199cc6aea" />
+        <classShapeMoniker Id="e374a134-ae56-4302-a2ca-f873edfabd40" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 2.73599812825521); (9 : 2.73599812825521)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/PerformancesRubrica/PerformancesRubrica_RespuestasRubrica" />
+      <nodes>
+        <classShapeMoniker Id="aaf57029-cbc8-4c60-9874-cdce306af6b5" />
+        <classShapeMoniker Id="e374a134-ae56-4302-a2ca-f873edfabd40" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 6.72199625651042); (9 : 6.72199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SSIA2013DataContext/Evaluacione/Evaluacione_ResultadosRubrica" />
+      <nodes>
+        <classShapeMoniker Id="b8aae964-5fd6-46a7-912f-b10199cc6aea" />
+        <classShapeMoniker Id="0265096c-3250-492f-bc20-7b0b5802ef6c" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SolutionLintAnalysisReport>
+	<Application Name="Visual Lint Enterprise Edition" Version="4.0.7.208" Url="http://www.riverblade.co.uk/products/visual_lint" LicencedUser=""/>
+	<User Name="Renzo" Computer="RENZO-PC"/>
+	<Categories>
+		<Category Level="0" DisplayName="Warning" DisplayNamePlural="Warnings" Severity="1" Icon="Warning" XmlElement="Warning" IsFatal="0" BuiltInLevel="1" ForegroundColour="160,128,0" BackgroundColour="">
+			<Issues/>
+		</Category>
+		<Category Level="1" DisplayName="Critical Warning" DisplayNamePlural="Critical Warnings" Severity="2" Icon="WarningOrange" XmlElement="CriticalWarning" IsFatal="0" BuiltInLevel="2" ForegroundColour="160,128,0" BackgroundColour="">
+			<Issues/>
+		</Category>
+		<Category Level="2" DisplayName="Error" DisplayNamePlural="Errors" Severity="3" Icon="Error" XmlElement="Error" IsFatal="0" BuiltInLevel="3" ForegroundColour="160,0,0" BackgroundColour="">
+			<Issues/>
+		</Category>
+		<Category Level="3" DisplayName="Critical Error" DisplayNamePlural="Critical Errors" Severity="4" Icon="ErrorOrange" XmlElement="CriticalError" IsFatal="0" BuiltInLevel="4" ForegroundColour="160,0,0" BackgroundColour="">
+			<Issues/>
+		</Category>
+		<Category Level="4" DisplayName="Fatal Error" DisplayNamePlural="Fatal Errors" Severity="999" Icon="HandRed" XmlElement="FatalError" IsFatal="1" BuiltInLevel="999" ForegroundColour="0,0,0" BackgroundColour="224,128,128">
+			<Issues/>
+		</Category>
+	</Categories>
+	<Solution AnalysisTool="Microsoft (R) FxCop Command-Line Tool, Version 1.36 (9.0.30729.1)&#xA;" PathName="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\SSIA2013.sln" FileName="SSIA2013.sln" Configuration="Debug|Mixed Platforms" Status="Partial (93%)" AnalysisTime="" LastAnalysed="">
+		<Issues Count="1523">
+			<Categories ChartFileName="SSIA2013.sln_categories.png">
+				<Category Name="Warnings" Count="320" Percentage="21.01"/>
+				<Category Name="Critical Warnings" Count="0" Percentage="0.00"/>
+				<Category Name="Errors" Count="1197" Percentage="78.59"/>
+				<Category Name="Critical Errors" Count="6" Percentage="0.39"/>
+				<Category Name="Fatal Errors" Count="0" Percentage="0.00"/>
+			</Categories>
+			<Messages ChartFileName="SSIA2013.sln_issues.png">
+				<Message Message="CA1002" MessageTitle="" Category="2" CategoryName="" Count="18"/>
+				<Message Message="CA1014" MessageTitle="" Category="2" CategoryName="" Count="5"/>
+				<Message Message="CA1056" MessageTitle="" Category="2" CategoryName="" Count="2"/>
+				<Message Message="CA1707" MessageTitle="" Category="2" CategoryName="" Count="284"/>
+				<Message Message="CA1709" MessageTitle="" Category="2" CategoryName="" Count="823"/>
+				<Message Message="CA1715" MessageTitle="" Category="2" CategoryName="" Count="1"/>
+				<Message Message="CA1726" MessageTitle="" Category="2" CategoryName="" Count="2"/>
+				<Message Message="CA1801" MessageTitle="" Category="0" CategoryName="" Count="10"/>
+				<Message Message="CA1822" MessageTitle="" Category="0" CategoryName="" Count="62"/>
+				<Message Message="CA2200" MessageTitle="" Category="2" CategoryName="" Count="62"/>
+				<Message Message="CA2210" MessageTitle="" Category="3" CategoryName="" Count="6"/>
+				<Message Message="CA2227" MessageTitle="" Category="0" CategoryName="" Count="248"/>
+			</Messages>
+		</Issues>
+		<Projects>
+			<Project Name="SSIA2013" PathName="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\SSIA2013\SSIA2013.csproj" FileName="SSIA2013.csproj" Configuration="Debug|Any CPU" Status="Complete" AnalysisTime="" LastAnalysed="Tuesday, September 10, 2013, 00:27:43" resultsfile="SSIA2013_SSIA2013.csproj/index.html">
+				<Issues Count="1">
+					<Categories>
+						<Category Name="Warnings" Count="0" Percentage="0.00"/>
+						<Category Name="Critical Warnings" Count="0" Percentage="0.00"/>
+						<Category Name="Errors" Count="0" Percentage="0.00"/>
+						<Category Name="Critical Errors" Count="1" Percentage="100.00"/>
+						<Category Name="Fatal Errors" Count="0" Percentage="0.00"/>
+					</Categories>
+					<Messages>
+						<Message Message="CA1002" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						<Message Message="CA1014" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						<Message Message="CA1056" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						<Message Message="CA1707" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						<Message Message="CA1709" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						<Message Message="CA1715" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						<Message Message="CA1726" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						<Message Message="CA1801" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						<Message Message="CA1822" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						<Message Message="CA2200" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						<Message Message="CA2210" MessageTitle="" Category="3" CategoryName="" Count="1"/>
+						<Message Message="CA2227" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+					</Messages>
+				</Issues>
+			</Project>
+			<Project Name="UPC.SSIA2013.BL.BC" PathName="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC\UPC.SSIA2013.BL.BC.csproj" FileName="UPC.SSIA2013.BL.BC.csproj" Configuration="Debug|Any CPU" Status="Complete" AnalysisTime="" LastAnalysed="Tuesday, September 10, 2013, 00:27:49" resultsfile="UPC.SSIA2013.BL.BC_UPC.SSIA2013.BL.BC.csproj/index.html">
+				<Issues Count="102">
+					<Categories>
+						<Category Name="Warnings" Count="30" Percentage="29.41"/>
+						<Category Name="Critical Warnings" Count="0" Percentage="0.00"/>
+						<Category Name="Errors" Count="71" Percentage="69.61"/>
+						<Category Name="Critical Errors" Count="1" Percentage="0.98"/>
+						<Category Name="Fatal Errors" Count="0" Percentage="0.00"/>
+					</Categories>
+					<Messages>
+						<Message Message="CA1002" MessageTitle="" Category="2" CategoryName="" Count="8"/>
+						<Message Message="CA1014" MessageTitle="" Category="2" CategoryName="" Count="1"/>
+						<Message Message="CA1056" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						<Message Message="CA1707" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						<Message Message="CA1709" MessageTitle="" Category="2" CategoryName="" Count="32"/>
+						<Message Message="CA1715" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						<Message Message="CA1726" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						<Message Message="CA1801" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						<Message Message="CA1822" MessageTitle="" Category="0" CategoryName="" Count="30"/>
+						<Message Message="CA2200" MessageTitle="" Category="2" CategoryName="" Count="30"/>
+						<Message Message="CA2210" MessageTitle="" Category="3" CategoryName="" Count="1"/>
+						<Message Message="CA2227" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+					</Messages>
+				</Issues>
+			</Project>
+			<Project Name="UPC.SSIA2013.DL.DALC" PathName="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.DL.DALC\UPC.SSIA2013.DL.DALC.csproj" FileName="UPC.SSIA2013.DL.DALC.csproj" Configuration="Debug|Any CPU" Status="Complete" AnalysisTime="" LastAnalysed="Tuesday, September 10, 2013, 00:27:52" resultsfile="UPC.SSIA2013.DL.DALC_UPC.SSIA2013.DL.DALC.csproj/index.html">
+				<Issues Count="134">
+					<Categories>
+						<Category Name="Warnings" Count="42" Percentage="31.34"/>
+						<Category Name="Critical Warnings" Count="0" Percentage="0.00"/>
+						<Category Name="Errors" Count="91" Percentage="67.91"/>
+						<Category Name="Critical Errors" Count="1" Percentage="0.75"/>
+						<Category Name="Fatal Errors" Count="0" Percentage="0.00"/>
+					</Categories>
+					<Messages>
+						<Message Message="CA1002" MessageTitle="" Category="2" CategoryName="" Count="10"/>
+						<Message Message="CA1014" MessageTitle="" Category="2" CategoryName="" Count="1"/>
+						<Message Message="CA1056" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						<Message Message="CA1707" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						<Message Message="CA1709" MessageTitle="" Category="2" CategoryName="" Count="48"/>
+						<Message Message="CA1715" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						<Message Message="CA1726" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						<Message Message="CA1801" MessageTitle="" Category="0" CategoryName="" Count="10"/>
+						<Message Message="CA1822" MessageTitle="" Category="0" CategoryName="" Count="32"/>
+						<Message Message="CA2200" MessageTitle="" Category="2" CategoryName="" Count="32"/>
+						<Message Message="CA2210" MessageTitle="" Category="3" CategoryName="" Count="1"/>
+						<Message Message="CA2227" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+					</Messages>
+				</Issues>
+			</Project>
+			<Project Name="UPC.SSIA2013.DL.DataModel" PathName="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.DL.DataModel\UPC.SSIA2013.DL.DataModel.csproj" FileName="UPC.SSIA2013.DL.DataModel.csproj" Configuration="Debug|Any CPU" Status="Complete" AnalysisTime="" LastAnalysed="Tuesday, September 10, 2013, 00:28:02" resultsfile="UPC.SSIA2013.DL.DataModel_UPC.SSIA2013.DL.DataModel.csproj/index.html">
+				<Issues Count="1262">
+					<Categories>
+						<Category Name="Warnings" Count="238" Percentage="18.86"/>
+						<Category Name="Critical Warnings" Count="0" Percentage="0.00"/>
+						<Category Name="Errors" Count="1023" Percentage="81.06"/>
+						<Category Name="Critical Errors" Count="1" Percentage="0.08"/>
+						<Category Name="Fatal Errors" Count="0" Percentage="0.00"/>
+					</Categories>
+					<Messages>
+						<Message Message="CA1002" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						<Message Message="CA1014" MessageTitle="" Category="2" CategoryName="" Count="1"/>
+						<Message Message="CA1056" MessageTitle="" Category="2" CategoryName="" Count="2"/>
+						<Message Message="CA1707" MessageTitle="" Category="2" CategoryName="" Count="284"/>
+						<Message Message="CA1709" MessageTitle="" Category="2" CategoryName="" Count="734"/>
+						<Message Message="CA1715" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						<Message Message="CA1726" MessageTitle="" Category="2" CategoryName="" Count="2"/>
+						<Message Message="CA1801" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						<Message Message="CA1822" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						<Message Message="CA2200" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						<Message Message="CA2210" MessageTitle="" Category="3" CategoryName="" Count="1"/>
+						<Message Message="CA2227" MessageTitle="" Category="0" CategoryName="" Count="238"/>
+					</Messages>
+				</Issues>
+			</Project>
+			<Project Name="UPC.SSIA2013.SI.DataContracts" PathName="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.SI.DataContracts\UPC.SSIA2013.SI.DataContracts.csproj" FileName="UPC.SSIA2013.SI.DataContracts.csproj" Configuration="Debug|Any CPU" Status="Complete" AnalysisTime="" LastAnalysed="Tuesday, September 10, 2013, 00:27:58" resultsfile="UPC.SSIA2013.SI.DataContracts_UPC.SSIA2013.SI.DataContracts.csproj/index.html">
+				<Issues Count="18">
+					<Categories>
+						<Category Name="Warnings" Count="10" Percentage="55.56"/>
+						<Category Name="Critical Warnings" Count="0" Percentage="0.00"/>
+						<Category Name="Errors" Count="7" Percentage="38.89"/>
+						<Category Name="Critical Errors" Count="1" Percentage="5.56"/>
+						<Category Name="Fatal Errors" Count="0" Percentage="0.00"/>
+					</Categories>
+					<Messages>
+						<Message Message="CA1002" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						<Message Message="CA1014" MessageTitle="" Category="2" CategoryName="" Count="1"/>
+						<Message Message="CA1056" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						<Message Message="CA1707" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						<Message Message="CA1709" MessageTitle="" Category="2" CategoryName="" Count="6"/>
+						<Message Message="CA1715" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						<Message Message="CA1726" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						<Message Message="CA1801" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						<Message Message="CA1822" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						<Message Message="CA2200" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						<Message Message="CA2210" MessageTitle="" Category="3" CategoryName="" Count="1"/>
+						<Message Message="CA2227" MessageTitle="" Category="0" CategoryName="" Count="10"/>
+					</Messages>
+				</Issues>
+			</Project>
+			<Project Name="UPC.SSIA2013.SI.ServiceContracts" PathName="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.SI.ServiceContracts\UPC.SSIA2013.SI.ServiceContracts.csproj" FileName="UPC.SSIA2013.SI.ServiceContracts.csproj" Configuration="Debug|Any CPU" Status="Complete" AnalysisTime="" LastAnalysed="Tuesday, September 10, 2013, 00:28:04" resultsfile="UPC.SSIA2013.SI.ServiceContracts_UPC.SSIA2013.SI.ServiceContracts.csproj/index.html">
+				<Issues Count="6">
+					<Categories>
+						<Category Name="Warnings" Count="0" Percentage="0.00"/>
+						<Category Name="Critical Warnings" Count="0" Percentage="0.00"/>
+						<Category Name="Errors" Count="5" Percentage="83.33"/>
+						<Category Name="Critical Errors" Count="1" Percentage="16.67"/>
+						<Category Name="Fatal Errors" Count="0" Percentage="0.00"/>
+					</Categories>
+					<Messages>
+						<Message Message="CA1002" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						<Message Message="CA1014" MessageTitle="" Category="2" CategoryName="" Count="1"/>
+						<Message Message="CA1056" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						<Message Message="CA1707" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						<Message Message="CA1709" MessageTitle="" Category="2" CategoryName="" Count="3"/>
+						<Message Message="CA1715" MessageTitle="" Category="2" CategoryName="" Count="1"/>
+						<Message Message="CA1726" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						<Message Message="CA1801" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						<Message Message="CA1822" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						<Message Message="CA2200" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						<Message Message="CA2210" MessageTitle="" Category="3" CategoryName="" Count="1"/>
+						<Message Message="CA2227" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+					</Messages>
+				</Issues>
+			</Project>
+			<Project Name="UPC.SSIA2013.SI.ServiceImplementation" PathName="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.SI.ServiceImplementation\UPC.SSIA2013.SI.ServiceImplementation.csproj" FileName="UPC.SSIA2013.SI.ServiceImplementation.csproj" Configuration="Debug|Any CPU" Status="Not analysed" AnalysisTime="" LastAnalysed="" resultsfile="">
+				<Issues Count="0">
+					<Categories>
+						<Category Name="Warnings" Count="0" Percentage="0.00"/>
+						<Category Name="Critical Warnings" Count="0" Percentage="0.00"/>
+						<Category Name="Errors" Count="0" Percentage="0.00"/>
+						<Category Name="Critical Errors" Count="0" Percentage="0.00"/>
+						<Category Name="Fatal Errors" Count="0" Percentage="0.00"/>
+					</Categories>
+					<Messages>
+						<Message Message="CA1002" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						<Message Message="CA1014" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						<Message Message="CA1056" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						<Message Message="CA1707" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						<Message Message="CA1709" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						<Message Message="CA1715" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						<Message Message="CA1726" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						<Message Message="CA1801" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						<Message Message="CA1822" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						<Message Message="CA2200" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						<Message Message="CA2210" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						<Message Message="CA2227" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+					</Messages>
+				</Issues>
+			</Project>
+		</Projects>
+	</Solution>
+</SolutionLintAnalysisReport>

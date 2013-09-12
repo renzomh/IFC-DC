@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProjectLintAnalysisReport>
+	<Categories>
+		<Category Level="0" DisplayName="Warning" DisplayNamePlural="Warnings" Severity="1" Icon="Warning" XmlElement="Warning" IsFatal="0" BuiltInLevel="1" ForegroundColour="160,128,0" BackgroundColour="">
+			<Issues/>
+		</Category>
+		<Category Level="1" DisplayName="Critical Warning" DisplayNamePlural="Critical Warnings" Severity="2" Icon="WarningOrange" XmlElement="CriticalWarning" IsFatal="0" BuiltInLevel="2" ForegroundColour="160,128,0" BackgroundColour="">
+			<Issues/>
+		</Category>
+		<Category Level="2" DisplayName="Error" DisplayNamePlural="Errors" Severity="3" Icon="Error" XmlElement="Error" IsFatal="0" BuiltInLevel="3" ForegroundColour="160,0,0" BackgroundColour="">
+			<Issues/>
+		</Category>
+		<Category Level="3" DisplayName="Critical Error" DisplayNamePlural="Critical Errors" Severity="4" Icon="ErrorOrange" XmlElement="CriticalError" IsFatal="0" BuiltInLevel="4" ForegroundColour="160,0,0" BackgroundColour="">
+			<Issues/>
+		</Category>
+		<Category Level="4" DisplayName="Fatal Error" DisplayNamePlural="Fatal Errors" Severity="999" Icon="HandRed" XmlElement="FatalError" IsFatal="1" BuiltInLevel="999" ForegroundColour="0,0,0" BackgroundColour="224,128,128">
+			<Issues/>
+		</Category>
+	</Categories>
+	<Application Name="Visual Lint Enterprise Edition" Version="4.0.7.208" Url="http://www.riverblade.co.uk/products/visual_lint" LicencedUser=""/>
+	<User Name="Renzo" Computer="RENZO-PC"/>
+	<Solution PathName="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\SSIA2013.sln" FileName="SSIA2013.sln" Configuration="Debug|Mixed Platforms">
+		<Project Name="SSIA2013" PathName="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\SSIA2013\SSIA2013.csproj" FileName="SSIA2013.csproj" Configuration="Debug|Any CPU" Status="Complete" AnalysisTime="" LastAnalysed="Tuesday, September 10, 2013, 00:27:43" AnalysisTool="Microsoft (R) FxCop Command-Line Tool, Version 1.36 (9.0.30729.1)&#xA;">
+			<Issues Count="1">
+				<Categories ChartFileName="SSIA2013.csproj_categories.png">
+					<Category Name="Warnings" Count="0" Percentage="0.00"/>
+					<Category Name="Critical Warnings" Count="0" Percentage="0.00"/>
+					<Category Name="Errors" Count="0" Percentage="0.00"/>
+					<Category Name="Critical Errors" Count="1" Percentage="100.00"/>
+					<Category Name="Fatal Errors" Count="0" Percentage="0.00"/>
+				</Categories>
+				<Messages ChartFileName="SSIA2013.csproj_issues.png">
+					<Message Message="CA2210" MessageTitle="" Category="3" CategoryName="" Count="1"/>
+				</Messages>
+			</Issues>
+			<Files>
+				<File FileName="AssemblyInfo.cs" Status="Complete" resultsfile="AssemblyInfo.cs.html">
+					<Issues Count="1">
+						<Categories>
+							<Category Name="Warnings" Count="0" Percentage="0.00"/>
+							<Category Name="Critical Warnings" Count="0" Percentage="0.00"/>
+							<Category Name="Errors" Count="0" Percentage="0.00"/>
+							<Category Name="Critical Errors" Count="1" Percentage="100.00"/>
+							<Category Name="Fatal Errors" Count="0" Percentage="0.00"/>
+						</Categories>
+						<Messages>
+							<Message Message="CA2210" MessageTitle="" Category="3" CategoryName="" Count="1"/>
+						</Messages>
+					</Issues>
+				</File>
+			</Files>
+		</Project>
+	</Solution>
+</ProjectLintAnalysisReport>

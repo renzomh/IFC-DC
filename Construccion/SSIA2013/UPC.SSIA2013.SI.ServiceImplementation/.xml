@@ -1,0 +1,438 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft fxcop 1.36\Xml\FxCopReport.xsl"?>
+<FxCopReport Version="1.36">
+ <Namespaces>
+  <Namespace Name="UPC.SSIA2013.SI.ServiceImplementation">
+   <Messages>
+    <Message Id="SSIA" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2013-09-11 21:55:35Z" FixCategory="Breaking">
+     <Issue Name="Namespace" Certainty="85" Level="Error">Correct the casing of 'SSIA' in namespace name 'UPC.SSIA2013.SI.ServiceImplementation' by changing it to 'Ssia'.</Issue>
+    </Message>
+    <Message Id="UPC" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2013-09-11 21:55:35Z" FixCategory="Breaking">
+     <Issue Name="Namespace" Certainty="85" Level="Error">Correct the casing of 'UPC' in namespace name 'UPC.SSIA2013.SI.ServiceImplementation' by changing it to 'Upc'.</Issue>
+    </Message>
+   </Messages>
+  </Namespace>
+ </Namespaces>
+ <Targets>
+  <Target Name="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.SI.ServiceImplementation\bin\Debug\UPC.SSIA2013.SI.ServiceImplementation.dll">
+   <Modules>
+    <Module Name="upc.ssia2013.si.serviceimplementation.dll">
+     <Messages>
+      <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Status="Active" Created="2013-09-11 21:55:35Z" FixCategory="NonBreaking">
+       <Issue Name="NoStrongName" Certainty="95" Level="CriticalError">Sign 'UPC.SSIA2013.SI.ServiceImplementation.dll' with a strong name key.</Issue>
+      </Message>
+      <Message Id="SSIA" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2013-09-11 21:55:35Z" FixCategory="Breaking">
+       <Issue Name="Assembly" Certainty="85" Level="Error">Correct the casing of 'SSIA' in assembly name 'UPC.SSIA2013.SI.ServiceImplementation.dll' by changing it to 'Ssia'.</Issue>
+      </Message>
+      <Message Id="UPC" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2013-09-11 21:55:35Z" FixCategory="Breaking">
+       <Issue Name="Assembly" Certainty="85" Level="Error">Correct the casing of 'UPC' in assembly name 'UPC.SSIA2013.SI.ServiceImplementation.dll' by changing it to 'Upc'.</Issue>
+      </Message>
+      <Message TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014" Status="Active" Created="2013-09-11 21:55:35Z" FixCategory="NonBreaking">
+       <Issue Certainty="95" Level="Error">Mark 'UPC.SSIA2013.SI.ServiceImplementation.dll' with CLSCompliant(true) because it exposes externally visible types.</Issue>
+      </Message>
+     </Messages>
+     <Namespaces>
+      <Namespace Name="UPC.SSIA2013.SI.ServiceImplementation">
+       <Types>
+        <Type Name="SSIA2013ServiceImplementation" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message Id="SSIA" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2013-09-11 21:55:35Z" FixCategory="Breaking">
+           <Issue Name="Type" Certainty="85" Level="Error">Correct the casing of 'SSIA' in type name 'SSIA2013ServiceImplementation' by changing it to 'Ssia'.</Issue>
+          </Message>
+         </Messages>
+         <Members>
+          <Member Name="#UPC.SSIA2013.SI.ServiceContracts.SSIA2013ServiceContracts.WSEditarAccionMejora(UPC.SSIA2013.SI.DataContracts.AccionMejoraDC)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2013-09-11 21:55:35Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.SI.ServiceImplementation" File="SSIA2013ServiceImplementation.cs" Line="153">Make 'SSIA2013ServiceImplementation' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'SSIA2013ServiceContracts.WSEditarAccionMejora(AccionMejoraDC)' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UPC.SSIA2013.SI.ServiceContracts.SSIA2013ServiceContracts.WSEditarHallazgo(UPC.SSIA2013.SI.DataContracts.HallazgoDC)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2013-09-11 21:55:35Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.SI.ServiceImplementation" File="SSIA2013ServiceImplementation.cs" Line="117">Make 'SSIA2013ServiceImplementation' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'SSIA2013ServiceContracts.WSEditarHallazgo(HallazgoDC)' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UPC.SSIA2013.SI.ServiceContracts.SSIA2013ServiceContracts.WSEliminarAccionMejora(UPC.SSIA2013.SI.DataContracts.AccionMejoraDC)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2013-09-11 21:55:35Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.SI.ServiceImplementation" File="SSIA2013ServiceImplementation.cs" Line="161">Make 'SSIA2013ServiceImplementation' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'SSIA2013ServiceContracts.WSEliminarAccionMejora(AccionMejoraDC)' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UPC.SSIA2013.SI.ServiceContracts.SSIA2013ServiceContracts.WSEliminarHallazgo(UPC.SSIA2013.SI.DataContracts.HallazgoDC)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2013-09-11 21:55:35Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.SI.ServiceImplementation" File="SSIA2013ServiceImplementation.cs" Line="125">Make 'SSIA2013ServiceImplementation' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'SSIA2013ServiceContracts.WSEliminarHallazgo(HallazgoDC)' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UPC.SSIA2013.SI.ServiceContracts.SSIA2013ServiceContracts.WSListarAccionesMejoraxInformeFinCiclo(UPC.SSIA2013.SI.DataContracts.AccionMejoraDC)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2013-09-11 21:55:35Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.SI.ServiceImplementation" File="SSIA2013ServiceImplementation.cs" Line="145">Make 'SSIA2013ServiceImplementation' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'SSIA2013ServiceContracts.WSListarAccionesMejoraxInformeFinCiclo(AccionMejoraDC)' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UPC.SSIA2013.SI.ServiceContracts.SSIA2013ServiceContracts.WSListarCursosxProfesor(UPC.SSIA2013.SI.DataContracts.CursoxProfesorDC)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2013-09-11 21:55:35Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.SI.ServiceImplementation" File="SSIA2013ServiceImplementation.cs" Line="43">Make 'SSIA2013ServiceImplementation' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'SSIA2013ServiceContracts.WSListarCursosxProfesor(CursoxProfesorDC)' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UPC.SSIA2013.SI.ServiceContracts.SSIA2013ServiceContracts.WSListarHallazgosxInformeFinCiclo(UPC.SSIA2013.SI.DataContracts.HallazgoDC)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2013-09-11 21:55:35Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.SI.ServiceImplementation" File="SSIA2013ServiceImplementation.cs" Line="109">Make 'SSIA2013ServiceImplementation' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'SSIA2013ServiceContracts.WSListarHallazgosxInformeFinCiclo(HallazgoDC)' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UPC.SSIA2013.SI.ServiceContracts.SSIA2013ServiceContracts.WSListarLogroxCurso(UPC.SSIA2013.SI.DataContracts.LogroDC)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2013-09-11 21:55:35Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.SI.ServiceImplementation" File="SSIA2013ServiceImplementation.cs" Line="55">Make 'SSIA2013ServiceImplementation' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'SSIA2013ServiceContracts.WSListarLogroxCurso(LogroDC)' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UPC.SSIA2013.SI.ServiceContracts.SSIA2013ServiceContracts.WSListarResultadoProgramaxCurso(UPC.SSIA2013.SI.DataContracts.ResultadoProgramaxCursoDC)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2013-09-11 21:55:35Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.SI.ServiceImplementation" File="SSIA2013ServiceImplementation.cs" Line="24">Make 'SSIA2013ServiceImplementation' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'SSIA2013ServiceContracts.WSListarResultadoProgramaxCurso(ResultadoProgramaxCursoDC)' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UPC.SSIA2013.SI.ServiceContracts.SSIA2013ServiceContracts.WSObtenerInformeFinCiclo(UPC.SSIA2013.SI.DataContracts.InformeFinCicloDC)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2013-09-11 21:55:35Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.SI.ServiceImplementation" File="SSIA2013ServiceImplementation.cs" Line="81">Make 'SSIA2013ServiceImplementation' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'SSIA2013ServiceContracts.WSObtenerInformeFinCiclo(InformeFinCicloDC)' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UPC.SSIA2013.SI.ServiceContracts.SSIA2013ServiceContracts.WSObtenerInformeFinCicloxProfesorxCursoxPeriodo(UPC.SSIA2013.SI.DataContracts.InformeFinCicloDC)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2013-09-11 21:55:35Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.SI.ServiceImplementation" File="SSIA2013ServiceImplementation.cs" Line="89">Make 'SSIA2013ServiceImplementation' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'SSIA2013ServiceContracts.WSObtenerInformeFinCicloxProfesorxCursoxPeriodo(InformeFinCicloDC)' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UPC.SSIA2013.SI.ServiceContracts.SSIA2013ServiceContracts.WSObtenerPeriodoActual()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2013-09-11 21:55:35Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.SI.ServiceImplementation" File="SSIA2013ServiceImplementation.cs" Line="184">Make 'SSIA2013ServiceImplementation' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'SSIA2013ServiceContracts.WSObtenerPeriodoActual()' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UPC.SSIA2013.SI.ServiceContracts.SSIA2013ServiceContracts.WSObtenerPersona(UPC.SSIA2013.SI.DataContracts.PersonaDC)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2013-09-11 21:55:35Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.SI.ServiceImplementation" File="SSIA2013ServiceImplementation.cs" Line="173">Make 'SSIA2013ServiceImplementation' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'SSIA2013ServiceContracts.WSObtenerPersona(PersonaDC)' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UPC.SSIA2013.SI.ServiceContracts.SSIA2013ServiceContracts.WSObtenerProfesor(UPC.SSIA2013.SI.DataContracts.ProfesorDC)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2013-09-11 21:55:35Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.SI.ServiceImplementation" File="SSIA2013ServiceImplementation.cs" Line="35">Make 'SSIA2013ServiceImplementation' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'SSIA2013ServiceContracts.WSObtenerProfesor(ProfesorDC)' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UPC.SSIA2013.SI.ServiceContracts.SSIA2013ServiceContracts.WSRegistrarAccionMejora(UPC.SSIA2013.SI.DataContracts.AccionMejoraDC)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2013-09-11 21:55:35Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.SI.ServiceImplementation" File="SSIA2013ServiceImplementation.cs" Line="137">Make 'SSIA2013ServiceImplementation' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'SSIA2013ServiceContracts.WSRegistrarAccionMejora(AccionMejoraDC)' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UPC.SSIA2013.SI.ServiceContracts.SSIA2013ServiceContracts.WSRegistrarHallazgo(UPC.SSIA2013.SI.DataContracts.HallazgoDC)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2013-09-11 21:55:35Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.SI.ServiceImplementation" File="SSIA2013ServiceImplementation.cs" Line="101">Make 'SSIA2013ServiceImplementation' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'SSIA2013ServiceContracts.WSRegistrarHallazgo(HallazgoDC)' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UPC.SSIA2013.SI.ServiceContracts.SSIA2013ServiceContracts.WSRegistrarInformeFinCiclo(UPC.SSIA2013.SI.DataContracts.InformeFinCicloDC)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2013-09-11 21:55:35Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.SI.ServiceImplementation" File="SSIA2013ServiceImplementation.cs" Line="67">Make 'SSIA2013ServiceImplementation' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'SSIA2013ServiceContracts.WSRegistrarInformeFinCiclo(InformeFinCicloDC)' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="TranslatorHelper" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="StaticHolderTypesShouldNotHaveConstructors" Category="Microsoft.Design" CheckId="CA1053" Status="Active" Created="2013-09-11 21:55:35Z" FixCategory="Breaking">
+           <Issue Certainty="90" Level="Error">Remove the public constructors from 'TranslatorHelper'.</Issue>
+          </Message>
+         </Messages>
+         <Members>
+          <Member Name="#parseDate(System.Nullable`1&lt;System.DateTime&gt;)" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2013-09-11 21:55:35Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.SI.ServiceImplementation" File="TranslatorHelper.cs" Line="15">'TranslatorHelper.parseDate(DateTime?)' appears to have no upstream public or protected callers.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#TranslateAccionesMejoraLRToAccionesMejoraCollection(System.Collections.Generic.List`1&lt;UPC.SSIA2013.DL.DataModel.spListarAccionesMejoraxHallazgoResult&gt;)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2013-09-11 21:55:35Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.SI.ServiceImplementation" File="TranslatorHelper.cs" Line="23">Change 'List&lt;spListarAccionesMejoraxHallazgoResult&gt;' in 'TranslatorHelper.TranslateAccionesMejoraLRToAccionesMejoraCollection(List&lt;spListarAccionesMejoraxHallazgoResult&gt;)' to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2013-09-11 21:55:35Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.SI.ServiceImplementation" File="TranslatorHelper.cs" Line="39">'TranslatorHelper.TranslateAccionesMejoraLRToAccionesMejoraCollection(List&lt;spListarAccionesMejoraxHallazgoResult&gt;)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#TranslateAccionMejoraLRToAccionMejoraDC(UPC.SSIA2013.DL.DataModel.spListarAccionesMejoraxHallazgoResult)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2013-09-11 21:55:35Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.SI.ServiceImplementation" File="TranslatorHelper.cs" Line="62">'TranslatorHelper.TranslateAccionMejoraLRToAccionMejoraDC(spListarAccionesMejoraxHallazgoResult)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#TranslateCursosxProfesorLRToCursosxProfesorCollection(System.Collections.Generic.List`1&lt;UPC.SSIA2013.DL.DataModel.spListarCursosxProfesorResult&gt;)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2013-09-11 21:55:35Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.SI.ServiceImplementation" File="TranslatorHelper.cs" Line="280">Change 'List&lt;spListarCursosxProfesorResult&gt;' in 'TranslatorHelper.TranslateCursosxProfesorLRToCursosxProfesorCollection(List&lt;spListarCursosxProfesorResult&gt;)' to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2013-09-11 21:55:35Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.SI.ServiceImplementation" File="TranslatorHelper.cs" Line="296">'TranslatorHelper.TranslateCursosxProfesorLRToCursosxProfesorCollection(List&lt;spListarCursosxProfesorResult&gt;)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#TranslateCursoxProfesorLRToCursoxProfesorDC(UPC.SSIA2013.DL.DataModel.spListarCursosxProfesorResult)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2013-09-11 21:55:35Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.SI.ServiceImplementation" File="TranslatorHelper.cs" Line="318">'TranslatorHelper.TranslateCursoxProfesorLRToCursoxProfesorDC(spListarCursosxProfesorResult)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#TranslateHallazgosLRToHallazgosCollection(System.Collections.Generic.List`1&lt;UPC.SSIA2013.DL.DataModel.spListarHallazgosxInformeFinCicloResult&gt;)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2013-09-11 21:55:35Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.SI.ServiceImplementation" File="TranslatorHelper.cs" Line="326">Change 'List&lt;spListarHallazgosxInformeFinCicloResult&gt;' in 'TranslatorHelper.TranslateHallazgosLRToHallazgosCollection(List&lt;spListarHallazgosxInformeFinCicloResult&gt;)' to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2013-09-11 21:55:35Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.SI.ServiceImplementation" File="TranslatorHelper.cs" Line="342">'TranslatorHelper.TranslateHallazgosLRToHallazgosCollection(List&lt;spListarHallazgosxInformeFinCicloResult&gt;)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#TranslateHallazgoxInformeFinCicloLRToHallazgoDC(UPC.SSIA2013.DL.DataModel.spListarHallazgosxInformeFinCicloResult)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2013-09-11 21:55:35Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.SI.ServiceImplementation" File="TranslatorHelper.cs" Line="364">'TranslatorHelper.TranslateHallazgoxInformeFinCicloLRToHallazgoDC(spListarHallazgosxInformeFinCicloResult)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#TranslateHallazgoxInformeFinCicloLRToHallazgoDC(UPC.SSIA2013.DL.DataModel.spObtenerResultadoProgramaxCursoResult)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2013-09-11 21:55:35Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.SI.ServiceImplementation" File="TranslatorHelper.cs" Line="108">'TranslatorHelper.TranslateHallazgoxInformeFinCicloLRToHallazgoDC(spObtenerResultadoProgramaxCursoResult)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#TranslateInformeFinCicloLRToInformeFinCicloDC(UPC.SSIA2013.DL.DataModel.spObtenerInformeFinCicloResult)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2013-09-11 21:55:35Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.SI.ServiceImplementation" File="TranslatorHelper.cs" Line="214">'TranslatorHelper.TranslateInformeFinCicloLRToInformeFinCicloDC(spObtenerInformeFinCicloResult)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#TranslateInformeFinCicloLRToInformeFinCicloxProfesorxCursoxPeriodoDC(UPC.SSIA2013.DL.DataModel.spObtenerInformeFinCicloxProfesorxCursoxPeriodoResult)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2013-09-11 21:55:35Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.SI.ServiceImplementation" File="TranslatorHelper.cs" Line="245">'TranslatorHelper.TranslateInformeFinCicloLRToInformeFinCicloxProfesorxCursoxPeriodoDC(spObtenerInformeFinCicloxProfesorxCursoxPeriodoResult)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#TranslateLogroLRToLogroDC(UPC.SSIA2013.DL.DataModel.spObtenerLogroxCursoResult)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2013-09-11 21:55:35Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.SI.ServiceImplementation" File="TranslatorHelper.cs" Line="272">'TranslatorHelper.TranslateLogroLRToLogroDC(spObtenerLogroxCursoResult)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#TranslatePeriodoLRToPeriodoDC(UPC.SSIA2013.DL.DataModel.spObtenerPeriodoActualResult)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="ex" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2013-09-11 21:55:35Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.SI.ServiceImplementation" File="TranslatorHelper.cs" Line="181">'TranslatorHelper.TranslatePeriodoLRToPeriodoDC(spObtenerPeriodoActualResult)' declares a variable, 'ex', of type 'Exception', which is never used or is only assigned to. Use this variable or remove it.</Issue>
+            </Message>
+            <Message Id="System.Int32.Parse(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-09-11 21:55:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.SI.ServiceImplementation" File="TranslatorHelper.cs" Line="174">Because the behavior of 'int.Parse(string)' could vary based on the current user's locale settings, replace this call in 'TranslatorHelper.TranslatePeriodoLRToPeriodoDC(spObtenerPeriodoActualResult)' with a call to 'int.Parse(string, IFormatProvider)'. If the result of 'int.Parse(string, IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message Id="System.Int32.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-09-11 21:55:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.SI.ServiceImplementation" File="TranslatorHelper.cs" Line="174">Because the behavior of 'int.ToString()' could vary based on the current user's locale settings, replace this call in 'TranslatorHelper.TranslatePeriodoLRToPeriodoDC(spObtenerPeriodoActualResult)' with a call to 'int.ToString(IFormatProvider)'. If the result of 'int.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#TranslatePersonaLRToPersonaDC(UPC.SSIA2013.DL.DataModel.spObtenerPersonaResult)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2013-09-11 21:55:35Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.SI.ServiceImplementation" File="TranslatorHelper.cs" Line="159">'TranslatorHelper.TranslatePersonaLRToPersonaDC(spObtenerPersonaResult)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+            <Message Id="System.Int32.Parse(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-09-11 21:55:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.SI.ServiceImplementation" File="TranslatorHelper.cs" Line="154">Because the behavior of 'int.Parse(string)' could vary based on the current user's locale settings, replace this call in 'TranslatorHelper.TranslatePersonaLRToPersonaDC(spObtenerPersonaResult)' with a call to 'int.Parse(string, IFormatProvider)'. If the result of 'int.Parse(string, IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message Id="System.Int32.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2013-09-11 21:55:35Z" FixCategory="DependsOnFix">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.SI.ServiceImplementation" File="TranslatorHelper.cs" Line="154">Because the behavior of 'int.ToString()' could vary based on the current user's locale settings, replace this call in 'TranslatorHelper.TranslatePersonaLRToPersonaDC(spObtenerPersonaResult)' with a call to 'int.ToString(IFormatProvider)'. If the result of 'int.ToString(IFormatProvider)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#TranslateProfesorLRToProfesorDC(UPC.SSIA2013.DL.DataModel.spObtenerProfesorResult)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2013-09-11 21:55:35Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.SI.ServiceImplementation" File="TranslatorHelper.cs" Line="135">'TranslatorHelper.TranslateProfesorLRToProfesorDC(spObtenerProfesorResult)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#TranslateResultadoProgramasxCursoLRToResultadoProgramaCollection(System.Collections.Generic.List`1&lt;UPC.SSIA2013.DL.DataModel.spObtenerResultadoProgramaxCursoResult&gt;)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2013-09-11 21:55:35Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.SI.ServiceImplementation" File="TranslatorHelper.cs" Line="70">Change 'List&lt;spObtenerResultadoProgramaxCursoResult&gt;' in 'TranslatorHelper.TranslateResultadoProgramasxCursoLRToResultadoProgramaCollection(List&lt;spObtenerResultadoProgramaxCursoResult&gt;)' to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2013-09-11 21:55:35Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.SI.ServiceImplementation" File="TranslatorHelper.cs" Line="86">'TranslatorHelper.TranslateResultadoProgramasxCursoLRToResultadoProgramaCollection(List&lt;spObtenerResultadoProgramaxCursoResult&gt;)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210">
+   <Name>Assemblies should have valid strong names</Name>
+   <Description>Either the assembly has no strong name, an invalid one, or the strong name is valid only because of the computer configuration. The assembly should not be deployed in this state. The most common causes of this are: 1) The assembly's contents were modified after it was signed. 2) The signing process failed. 3) The assembly was delay-signed. 4) A registry key existed that allowed the check to pass (where it would not have otherwise).</Description>
+   <Resolution Name="NoStrongName">Sign {0} with a strong name key.</Resolution>
+   <Owner />
+   <Url>http://msdn2.microsoft.com/library/ms182127(VS.90).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalError</MessageLevel>
+   <File Name="DesignRules.dll" Version="9.0.0.0" />
+  </Rule>
+  <Rule TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811">
+   <Name>Avoid uncalled private code</Name>
+   <Description>There is uncalled code that is not externally visible and is not a known runtime entry point. If this violation fires in error, please send a problem report to the Visual Studio Code Analysis team.</Description>
+   <Resolution Name="Default">{0} appears to have no upstream public or protected callers.</Resolution>
+   <Owner />
+   <Url>http://msdn2.microsoft.com/library/ms182264(VS.90).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="PerformanceRules.dll" Version="9.0.0.0" />
+  </Rule>
+  <Rule TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002">
+   <Name>Do not expose generic lists</Name>
+   <Description>Do not expose List&lt;T&gt; in object models. Use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt; instead. List&lt;T&gt; is meant to be used from implementation, not in object model API. List&lt;T&gt; is optimized for performance at the cost of long term versioning. For example, if you return List&lt;T&gt; to the client code, you will not ever be able to receive notifications when client code modifies the collection.</Description>
+   <Resolution Name="Default">Change {0} in {1} to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Resolution>
+   <Owner />
+   <Url>http://msdn2.microsoft.com/library/ms182142(VS.90).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="DesignRules.dll" Version="9.0.0.0" />
+  </Rule>
+  <Rule TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709">
+   <Name>Identifiers should be cased correctly</Name>
+   <Description>Type, namespace, and member identifiers are Pascal-cased. Parameter identifiers are camel-cased. Two letter acronyms within these identifiers should be upper-cased, for example, use System.IO instead of System.Io. Acronyms of three or more letters should be Pascal-cased, for example, use System.Xml instead of System.XML. The pascal-casing convention capitalizes the first letter of each word, as in BackColor. The camel-casing convention formats the first letter of the first word in lowercase and capitalizes the first letter of all subsequent words, as in backgroundColor. Although it may be common practice for some two letter acronyms to not be fully capitalized, violations of this rule should not be excluded for this reason. For example, 'DbConnection', is common but incorrect; use DBConnection. A violation of this rule might be required for compatibility with existing, non-managed symbol schemes. In general, however, these symbols should not be visible outside the assembly that uses them.</Description>
+   <Resolution Name="Assembly">Correct the casing of '{0}' in assembly name {1} by changing it to '{2}'.</Resolution>
+   <Resolution Name="Namespace">Correct the casing of '{0}' in namespace name '{1}' by changing it to '{2}'.</Resolution>
+   <Resolution Name="Type">Correct the casing of '{0}' in type name {1} by changing it to '{2}'.</Resolution>
+   <Owner />
+   <Url>http://msdn2.microsoft.com/library/ms182240(VS.90).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="85">Error</MessageLevel>
+   <File Name="NamingRules.dll" Version="9.0.0.0" />
+  </Rule>
+  <Rule TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033">
+   <Name>Interface methods should be callable by child types</Name>
+   <Description>Explicit method implementations are defined with private accessibility. Classes that derive from classes with explicit method implementations and choose to re-declare them on the class will not be able to call into the base class implementation unless the base class has provided an alternate method with appropriate accessibility. When overriding a base class method that has been hidden by explicit interface implementation, in order to call into the base class implementation, a derived class must cast the base pointer to the relevant interface. When calling through this reference, however, the derived class implementation will actually be invoked, resulting in recursion and an eventual stack overflow.</Description>
+   <Resolution Name="Default">Make {0} sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of {1} and is visible to derived classes.</Resolution>
+   <Owner />
+   <Url>http://msdn2.microsoft.com/library/ms182153(VS.90).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="DesignRules.dll" Version="9.0.0.0" />
+  </Rule>
+  <Rule TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014">
+   <Name>Mark assemblies with CLSCompliantAttribute</Name>
+   <Description>Assemblies should explicitly state their CLS compliance using the CLSCompliant attribute. An assembly without this attribute is not CLS-compliant. Assemblies, modules, and types can be CLS-compliant even if some parts of the assembly, module, or type are not CLS-compliant. The following rules apply: 1) If the element is marked CLSCompliant, any noncompliant members must have the CLSCompliant attribute present with its argument set to false. 2) A comparable CLS-compliant alternative member must be supplied for each member that is not CLS-compliant.</Description>
+   <Resolution Name="Default">Mark {0} with CLSCompliant(true) because it exposes externally visible types.</Resolution>
+   <Owner />
+   <Url>http://msdn2.microsoft.com/library/ms182156(VS.90).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="DesignRules.dll" Version="9.0.0.0" />
+  </Rule>
+  <Rule TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804">
+   <Name>Remove unused locals</Name>
+   <Description>Remove locals that are not used or are only assigned to in method implementations.</Description>
+   <Resolution Name="Default">{0} declares a variable, {1}, of type {2}, which is never used or is only assigned to. Use this variable or remove it.</Resolution>
+   <Owner />
+   <Url>http://msdn2.microsoft.com/library/ms182278(VS.90).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Warning</MessageLevel>
+   <File Name="PerformanceRules.dll" Version="9.0.0.0" />
+  </Rule>
+  <Rule TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200">
+   <Name>Rethrow to preserve stack details</Name>
+   <Description>Use the IL rethrow instruction to preserve original stack details when re-raising a caught exception.</Description>
+   <Resolution Name="Default">{0} rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Resolution>
+   <Owner />
+   <Url>http://msdn2.microsoft.com/library/ms182363(VS.90).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="UsageRules.dll" Version="9.0.0.0" />
+  </Rule>
+  <Rule TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305">
+   <Name>Specify IFormatProvider</Name>
+   <Description>If an overload exists that takes an IFormatProvider argument, it should always be called in favor of an overload that does not. Some methods in the runtime convert a value to or from a string representation and take a string parameter that contains one or more characters, called format specifiers, which indicate how the value is to be converted. If the meaning of the format specifier varies by culture, a formatting object supplies the actual characters used in the string representation. In scenarios where sorting and comparison behavior should never change between cultures, specify CultureInfo.InvariantCulture, otherwise, specify CultureInfo.CurrentCulture.</Description>
+   <Resolution Name="Default">Because the behavior of {0} could vary based on the current user's locale settings, replace this call in {1} with a call to {2}. If the result of {2} will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Resolution>
+   <Owner />
+   <Url>http://msdn2.microsoft.com/library/ms182190(VS.90).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="GlobalizationRules.dll" Version="9.0.0.0" />
+  </Rule>
+  <Rule TypeName="StaticHolderTypesShouldNotHaveConstructors" Category="Microsoft.Design" CheckId="CA1053">
+   <Name>Static holder types should not have constructors</Name>
+   <Description>Instances of types that define only static members do not need to be created. Many compilers will automatically add a public default constructor if no constructor is specified. To prevent this, adding an empty private constructor may be required.</Description>
+   <Resolution Name="Default">Remove the public constructors from {0}.</Resolution>
+   <Owner />
+   <Url>http://msdn2.microsoft.com/library/ms182169(VS.90).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="90">Error</MessageLevel>
+   <File Name="DesignRules.dll" Version="9.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">Category</String>
+  <String Key="Certainty">Certainty</String>
+  <String Key="CollapseAll">Collapse All</String>
+  <String Key="CheckId">Check Id</String>
+  <String Key="Error">Error</String>
+  <String Key="Errors">error(s)</String>
+  <String Key="ExpandAll">Expand All</String>
+  <String Key="Help">Help</String>
+  <String Key="Line">Line</String>
+  <String Key="Messages">message(s)</String>
+  <String Key="LocationNotStoredInPdb">[Location not stored in Pdb]</String>
+  <String Key="Project">Project</String>
+  <String Key="Resolution">Resolution</String>
+  <String Key="Rule">Rule</String>
+  <String Key="RuleFile">Rule File</String>
+  <String Key="RuleDescription">Rule Description</String>
+  <String Key="Source">Source</String>
+  <String Key="Status">Status</String>
+  <String Key="Target">Target</String>
+  <String Key="Warning">Warning</String>
+  <String Key="Warnings">warning(s)</String>
+  <String Key="ReportTitle">Code Analysis Report</String>
+ </Localized>
+</FxCopReport>

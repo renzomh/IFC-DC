@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProjectLintAnalysisReport>
+	<Categories>
+		<Category Level="0" DisplayName="Warning" DisplayNamePlural="Warnings" Severity="1" Icon="Warning" XmlElement="Warning" IsFatal="0" BuiltInLevel="1" ForegroundColour="160,128,0" BackgroundColour="">
+			<Issues/>
+		</Category>
+		<Category Level="1" DisplayName="Critical Warning" DisplayNamePlural="Critical Warnings" Severity="2" Icon="WarningOrange" XmlElement="CriticalWarning" IsFatal="0" BuiltInLevel="2" ForegroundColour="160,128,0" BackgroundColour="">
+			<Issues/>
+		</Category>
+		<Category Level="2" DisplayName="Error" DisplayNamePlural="Errors" Severity="3" Icon="Error" XmlElement="Error" IsFatal="0" BuiltInLevel="3" ForegroundColour="160,0,0" BackgroundColour="">
+			<Issues/>
+		</Category>
+		<Category Level="3" DisplayName="Critical Error" DisplayNamePlural="Critical Errors" Severity="4" Icon="ErrorOrange" XmlElement="CriticalError" IsFatal="0" BuiltInLevel="4" ForegroundColour="160,0,0" BackgroundColour="">
+			<Issues/>
+		</Category>
+		<Category Level="4" DisplayName="Fatal Error" DisplayNamePlural="Fatal Errors" Severity="999" Icon="HandRed" XmlElement="FatalError" IsFatal="1" BuiltInLevel="999" ForegroundColour="0,0,0" BackgroundColour="224,128,128">
+			<Issues/>
+		</Category>
+	</Categories>
+	<Application Name="Visual Lint Enterprise Edition" Version="4.0.7.208" Url="http://www.riverblade.co.uk/products/visual_lint" LicencedUser=""/>
+	<User Name="Renzo" Computer="RENZO-PC"/>
+	<Solution PathName="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\SSIA2013.sln" FileName="SSIA2013.sln" Configuration="Debug|Mixed Platforms">
+		<Project Name="UPC.SSIA2013.SI.DataContracts" PathName="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.SI.DataContracts\UPC.SSIA2013.SI.DataContracts.csproj" FileName="UPC.SSIA2013.SI.DataContracts.csproj" Configuration="Debug|Any CPU" Status="Complete" AnalysisTime="" LastAnalysed="Tuesday, September 10, 2013, 00:27:58" AnalysisTool="Microsoft (R) FxCop Command-Line Tool, Version 1.36 (9.0.30729.1)&#xA;">
+			<Issues Count="18">
+				<Categories ChartFileName="UPC.SSIA2013.SI.DataContracts.csproj_categories.png">
+					<Category Name="Warnings" Count="10" Percentage="55.56"/>
+					<Category Name="Critical Warnings" Count="0" Percentage="0.00"/>
+					<Category Name="Errors" Count="7" Percentage="38.89"/>
+					<Category Name="Critical Errors" Count="1" Percentage="5.56"/>
+					<Category Name="Fatal Errors" Count="0" Percentage="0.00"/>
+				</Categories>
+				<Messages ChartFileName="UPC.SSIA2013.SI.DataContracts.csproj_issues.png">
+					<Message Message="CA1014" MessageTitle="" Category="2" CategoryName="" Count="1"/>
+					<Message Message="CA1709" MessageTitle="" Category="2" CategoryName="" Count="6"/>
+					<Message Message="CA2210" MessageTitle="" Category="3" CategoryName="" Count="1"/>
+					<Message Message="CA2227" MessageTitle="" Category="0" CategoryName="" Count="10"/>
+				</Messages>
+			</Issues>
+			<Files>
+				<File FileName="AccionMejoraCollectionDC.cs" Status="Complete" resultsfile="AccionMejoraCollectionDC.cs.html">
+					<Issues Count="1">
+						<Categories>
+							<Category Name="Warnings" Count="1" Percentage="100.00"/>
+							<Category Name="Critical Warnings" Count="0" Percentage="0.00"/>
+							<Category Name="Errors" Count="0" Percentage="0.00"/>
+							<Category Name="Critical Errors" Count="0" Percentage="0.00"/>
+							<Category Name="Fatal Errors" Count="0" Percentage="0.00"/>
+						</Categories>
+						<Messages>
+							<Message Message="CA1014" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+							<Message Message="CA1709" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+							<Message Message="CA2210" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+							<Message Message="CA2227" MessageTitle="" Category="0" CategoryName="" Count="1"/>
+						</Messages>
+					</Issues>
+				</File>
+				<File FileName="AccionMejoraDC.cs" Status="Complete" resultsfile="AccionMejoraDC.cs.html">
+					<Issues Count="0">
+						<Categories>
+							<Category Name="Warnings" Count="0" Percentage="0.00"/>
+							<Category Name="Critical Warnings" Count="0" Percentage="0.00"/>
+							<Category Name="Errors" Count="0" Percentage="0.00"/>
+							<Category Name="Critical Errors" Count="0" Percentage="0.00"/>
+							<Category Name="Fatal Errors" Count="0" Percentage="0.00"/>
+						</Categories>
+						<Messages>
+							<Message Message="CA1014" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+							<Message Message="CA1709" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+							<Message Message="CA2210" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+							<Message Message="CA2227" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						</Messages>
+					</Issues>
+				</File>
+				<File FileName="CursoxProfesorCollectionDC.cs" Status="Complete" resultsfile="CursoxProfesorCollectionDC.cs.html">
+					<Issues Count="1">
+						<Categories>
+							<Category Name="Warnings" Count="1" Percentage="100.00"/>
+							<Category Name="Critical Warnings" Count="0" Percentage="0.00"/>
+							<Category Name="Errors" Count="0" Percentage="0.00"/>
+							<Category Name="Critical Errors" Count="0" Percentage="0.00"/>
+							<Category Name="Fatal Errors" Count="0" Percentage="0.00"/>
+						</Categories>
+						<Messages>
+							<Message Message="CA1014" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+							<Message Message="CA1709" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+							<Message Message="CA2210" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+							<Message Message="CA2227" MessageTitle="" Category="0" CategoryName="" Count="1"/>
+						</Messages>
+					</Issues>
+				</File>
+				<File FileName="CursoxProfesorDC.cs" Status="Complete" resultsfile="CursoxProfesorDC.cs.html">
+					<Issues Count="0">
+						<Categories>
+							<Category Name="Warnings" Count="0" Percentage="0.00"/>
+							<Category Name="Critical Warnings" Count="0" Percentage="0.00"/>
+							<Category Name="Errors" Count="0" Percentage="0.00"/>
+							<Category Name="Critical Errors" Count="0" Percentage="0.00"/>
+							<Category Name="Fatal Errors" Count="0" Percentage="0.00"/>
+						</Categories>
+						<Messages>
+							<Message Message="CA1014" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+							<Message Message="CA1709" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+							<Message Message="CA2210" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+							<Message Message="CA2227" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						</Messages>
+					</Issues>
+				</File>
+				<File FileName="HallazgoCollectionDC.cs" Status="Complete" resultsfile="HallazgoCollectionDC.cs.html">
+					<Issues Count="1">
+						<Categories>
+							<Category Name="Warnings" Count="1" Percentage="100.00"/>
+							<Category Name="Critical Warnings" Count="0" Percentage="0.00"/>
+							<Category Name="Errors" Count="0" Percentage="0.00"/>
+							<Category Name="Critical Errors" Count="0" Percentage="0.00"/>
+							<Category Name="Fatal Errors" Count="0" Percentage="0.00"/>
+						</Categories>
+						<Messages>
+							<Message Message="CA1014" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+							<Message Message="CA1709" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+							<Message Message="CA2210" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+							<Message Message="CA2227" MessageTitle="" Category="0" CategoryName="" Count="1"/>
+						</Messages>
+					</Issues>
+				</File>
+				<File FileName="HallazgoDC.cs" Status="Complete" resultsfile="HallazgoDC.cs.html">
+					<Issues Count="0">
+						<Categories>
+							<Category Name="Warnings" Count="0" Percentage="0.00"/>
+							<Category Name="Critical Warnings" Count="0" Percentage="0.00"/>
+							<Category Name="Errors" Count="0" Percentage="0.00"/>
+							<Category Name="Critical Errors" Count="0" Percentage="0.00"/>
+							<Category Name="Fatal Errors" Count="0" Percentage="0.00"/>
+						</Categories>
+						<Messages>
+							<Message Message="CA1014" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+							<Message Message="CA1709" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+							<Message Message="CA2210" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+							<Message Message="CA2227" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						</Messages>
+					</Issues>
+				</File>
+				<File FileName="InformeFinCicloDC.cs" Status="Complete" resultsfile="InformeFinCicloDC.cs.html">
+					<Issues Count="0">
+						<Categories>
+							<Category Name="Warnings" Count="0" Percentage="0.00"/>
+							<Category Name="Critical Warnings" Count="0" Percentage="0.00"/>
+							<Category Name="Errors" Count="0" Percentage="0.00"/>
+							<Category Name="Critical Errors" Count="0" Percentage="0.00"/>
+							<Category Name="Fatal Errors" Count="0" Percentage="0.00"/>
+						</Categories>
+						<Messages>
+							<Message Message="CA1014" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+							<Message Message="CA1709" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+							<Message Message="CA2210" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+							<Message Message="CA2227" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						</Messages>
+					</Issues>
+				</File>
+				<File FileName="LogroDC.cs" Status="Complete" resultsfile="LogroDC.cs.html">
+					<Issues Count="0">
+						<Categories>
+							<Category Name="Warnings" Count="0" Percentage="0.00"/>
+							<Category Name="Critical Warnings" Count="0" Percentage="0.00"/>
+							<Category Name="Errors" Count="0" Percentage="0.00"/>
+							<Category Name="Critical Errors" Count="0" Percentage="0.00"/>
+							<Category Name="Fatal Errors" Count="0" Percentage="0.00"/>
+						</Categories>
+						<Messages>
+							<Message Message="CA1014" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+							<Message Message="CA1709" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+							<Message Message="CA2210" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+							<Message Message="CA2227" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						</Messages>
+					</Issues>
+				</File>
+				<File FileName="PeriodoCollectionDC.cs" Status="Complete" resultsfile="PeriodoCollectionDC.cs.html">
+					<Issues Count="2">
+						<Categories>
+							<Category Name="Warnings" Count="1" Percentage="50.00"/>
+							<Category Name="Critical Warnings" Count="0" Percentage="0.00"/>
+							<Category Name="Errors" Count="1" Percentage="50.00"/>
+							<Category Name="Critical Errors" Count="0" Percentage="0.00"/>
+							<Category Name="Fatal Errors" Count="0" Percentage="0.00"/>
+						</Categories>
+						<Messages>
+							<Message Message="CA1014" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+							<Message Message="CA1709" MessageTitle="" Category="2" CategoryName="" Count="1"/>
+							<Message Message="CA2210" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+							<Message Message="CA2227" MessageTitle="" Category="0" CategoryName="" Count="1"/>
+						</Messages>
+					</Issues>
+				</File>
+				<File FileName="PeriodoDC.cs" Status="Complete" resultsfile="PeriodoDC.cs.html">
+					<Issues Count="0">
+						<Categories>
+							<Category Name="Warnings" Count="0" Percentage="0.00"/>
+							<Category Name="Critical Warnings" Count="0" Percentage="0.00"/>
+							<Category Name="Errors" Count="0" Percentage="0.00"/>
+							<Category Name="Critical Errors" Count="0" Percentage="0.00"/>
+							<Category Name="Fatal Errors" Count="0" Percentage="0.00"/>
+						</Categories>
+						<Messages>
+							<Message Message="CA1014" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+							<Message Message="CA1709" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+							<Message Message="CA2210" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+							<Message Message="CA2227" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						</Messages>
+					</Issues>
+				</File>
+				<File FileName="ProfesorDC.cs" Status="Complete" resultsfile="ProfesorDC.cs.html">
+					<Issues Count="1">
+						<Categories>
+							<Category Name="Warnings" Count="0" Percentage="0.00"/>
+							<Category Name="Critical Warnings" Count="0" Percentage="0.00"/>
+							<Category Name="Errors" Count="1" Percentage="100.00"/>
+							<Category Name="Critical Errors" Count="0" Percentage="0.00"/>
+							<Category Name="Fatal Errors" Count="0" Percentage="0.00"/>
+						</Categories>
+						<Messages>
+							<Message Message="CA1014" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+							<Message Message="CA1709" MessageTitle="" Category="2" CategoryName="" Count="1"/>
+							<Message Message="CA2210" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+							<Message Message="CA2227" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						</Messages>
+					</Issues>
+				</File>
+				<File FileName="AssemblyInfo.cs" Status="Complete" resultsfile="AssemblyInfo.cs.html">
+					<Issues Count="11">
+						<Categories>
+							<Category Name="Warnings" Count="5" Percentage="45.45"/>
+							<Category Name="Critical Warnings" Count="0" Percentage="0.00"/>
+							<Category Name="Errors" Count="5" Percentage="45.45"/>
+							<Category Name="Critical Errors" Count="1" Percentage="9.09"/>
+							<Category Name="Fatal Errors" Count="0" Percentage="0.00"/>
+						</Categories>
+						<Messages>
+							<Message Message="CA1014" MessageTitle="" Category="2" CategoryName="" Count="1"/>
+							<Message Message="CA1709" MessageTitle="" Category="2" CategoryName="" Count="4"/>
+							<Message Message="CA2210" MessageTitle="" Category="3" CategoryName="" Count="1"/>
+							<Message Message="CA2227" MessageTitle="" Category="0" CategoryName="" Count="5"/>
+						</Messages>
+					</Issues>
+				</File>
+				<File FileName="ResultadoProgramaxCursoCollectionDC.cs" Status="Complete" resultsfile="ResultadoProgramaxCursoCollectionDC.cs.html">
+					<Issues Count="1">
+						<Categories>
+							<Category Name="Warnings" Count="1" Percentage="100.00"/>
+							<Category Name="Critical Warnings" Count="0" Percentage="0.00"/>
+							<Category Name="Errors" Count="0" Percentage="0.00"/>
+							<Category Name="Critical Errors" Count="0" Percentage="0.00"/>
+							<Category Name="Fatal Errors" Count="0" Percentage="0.00"/>
+						</Categories>
+						<Messages>
+							<Message Message="CA1014" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+							<Message Message="CA1709" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+							<Message Message="CA2210" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+							<Message Message="CA2227" MessageTitle="" Category="0" CategoryName="" Count="1"/>
+						</Messages>
+					</Issues>
+				</File>
+				<File FileName="ResultadoProgramaxCursoDC.cs" Status="Complete" resultsfile="ResultadoProgramaxCursoDC.cs.html">
+					<Issues Count="0">
+						<Categories>
+							<Category Name="Warnings" Count="0" Percentage="0.00"/>
+							<Category Name="Critical Warnings" Count="0" Percentage="0.00"/>
+							<Category Name="Errors" Count="0" Percentage="0.00"/>
+							<Category Name="Critical Errors" Count="0" Percentage="0.00"/>
+							<Category Name="Fatal Errors" Count="0" Percentage="0.00"/>
+						</Categories>
+						<Messages>
+							<Message Message="CA1014" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+							<Message Message="CA1709" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+							<Message Message="CA2210" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+							<Message Message="CA2227" MessageTitle="" Category="0" CategoryName="" Count="0"/>
+						</Messages>
+					</Issues>
+				</File>
+			</Files>
+		</Project>
+	</Solution>
+</ProjectLintAnalysisReport>

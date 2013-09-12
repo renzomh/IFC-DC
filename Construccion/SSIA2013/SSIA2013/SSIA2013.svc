@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="UPC.SSIA2013.SI.ServiceImplementation.SSIA2013ServiceImplementation" %>

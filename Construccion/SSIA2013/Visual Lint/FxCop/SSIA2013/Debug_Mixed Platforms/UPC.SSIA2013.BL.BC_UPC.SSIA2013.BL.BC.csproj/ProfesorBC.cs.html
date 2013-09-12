@@ -1,0 +1,754 @@
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<title>
+          Analysis Results for file ProfesorBC.cs</title>
+<style>
+	      body			         { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt; color: #000080; }
+	      h1        			 { font-size: 14pt; font-weight: bold; } 
+	      table     			 { font-size: 8pt; }
+	      .table_caption		 { text-align: left; font-size: 10pt; font-weight: bold; }
+	      .caption		 		 { text-align: center; font-size: 10pt; font-weight: bold; text-decoration:none; }
+	      .count			     { font-size: 8pt; font-style: italic; color: #0000ff; }	
+          td.pagetitle           { border-top: blue thin ridge; background: lightblue; border-bottom: blue thin ridge; }
+        </style><script language="JavaScript">
+
+function collapsenode(item)
+{
+        if (item.style.display == '')
+        {
+                item.style.display = 'none';
+        }
+        else
+        {
+                item.style.display = '';
+        }
+}
+</script><script language="JavaScript">
+          //
+
+//-----------------------------------------------------------------------------
+// sortTable(id, col, rev)
+//
+//  id  - ID of the TABLE, TBODY, THEAD or TFOOT element to be sorted.
+//  col - Index of the column to sort, 0 = first column, 1 = second column,
+//        etc.
+//  rev - If true, the column is sorted in reverse (descending) order
+//        initially.
+//
+// Note: the first column (index 0) is used as a secondary sort column and
+// always sorted in ascending order.
+//-----------------------------------------------------------------------------
+
+function sortTable(id, col, rev) {
+
+  // Get the table or table section to sort.
+  var tblEl = document.getElementById(id);
+
+  // The first time this function is called for a given table, set up an
+  // array of reverse sort flags.
+  if (tblEl.reverseSort == null) {
+
+    tblEl.reverseSort = new Array();
+
+    // Also, assume the team name column is initially sorted.
+    tblEl.lastColumn = 0;
+  }
+
+  // If this column has not been sorted before, set the initial sort direction.
+  if (tblEl.reverseSort[col] == null)
+    tblEl.reverseSort[col] = rev;
+
+  // If this column was the last one sorted, reverse its sort direction.
+  if (col == tblEl.lastColumn)
+    tblEl.reverseSort[col] = !tblEl.reverseSort[col];
+
+  // Remember this column as the last one sorted.
+  tblEl.lastColumn = col;
+
+  // Set the table display style to "none" - necessary for Netscape 6 browsers.
+
+  var oldDsply = tblEl.style.display;
+  tblEl.style.display = "none";
+
+  // Sort the rows based on the content of the specified column using a
+  // selection sort.
+
+  var tmpEl;
+  var i, j;
+  var minVal, minIdx;
+  var testVal;
+  var cmp;
+
+  for (i = 0; i < tblEl.rows.length - 1; i++) {
+
+    // Assume the current row has the minimum value.
+    minIdx = i;
+    minVal = getTextValue(tblEl.rows[i].cells[col]);
+
+    // Search the rows that follow the current one for a smaller value.
+    for (j = i + 1; j < tblEl.rows.length; j++)
+	{
+      testVal = getTextValue(tblEl.rows[j].cells[col]);
+      cmp = compareValues(minVal, testVal);
+
+      // Negate the comparison result if the reverse sort flag is set.
+
+      if (tblEl.reverseSort[col])
+        cmp = -cmp;
+
+      // Sort by the second column if those values are equal.
+      if (cmp == 0 && col != 0)
+
+        cmp = compareValues(getTextValue(tblEl.rows[minIdx].cells[1]),
+                            getTextValue(tblEl.rows[j].cells[1]));
+
+      // If this row has a smaller value than the current minimum, remember its
+      // position and update the current minimum value.
+
+      if (cmp > 0)
+	  {
+        minIdx = j;
+        minVal = testVal;
+      }
+    }
+
+    // By now, we have the row with the smallest value. Remove it from the
+    // table and insert it before the current row.
+    if (minIdx > i)
+	{
+      tmpEl = tblEl.removeChild(tblEl.rows[minIdx]);
+      tblEl.insertBefore(tmpEl, tblEl.rows[i]);
+    }
+  }
+
+  // Make it look pretty.
+//  makePretty(tblEl, col);
+
+  // Set rankings.
+  setRanks(tblEl, col, rev);
+
+  // Restore the table's display style.
+  tblEl.style.display = oldDsply;
+
+  return false;
+}
+
+//-----------------------------------------------------------------------------
+// Functions to get and compare values during a sort.
+//-----------------------------------------------------------------------------
+
+// This code is necessary for browsers that don't reflect the DOM constants
+// (like IE).
+if (document.ELEMENT_NODE == null)
+{
+  document.ELEMENT_NODE = 1;
+  document.TEXT_NODE = 3;
+}
+
+function getTextValue(el)
+{
+  var i;
+  var s;
+
+  // Find and concatenate the values of all text nodes contained within the element.
+  s = "";
+
+  for (i = 0; i < el.childNodes.length; i++)
+    if (el.childNodes[i].nodeType == document.TEXT_NODE)
+      s += el.childNodes[i].nodeValue;
+    else if (el.childNodes[i].nodeType == document.ELEMENT_NODE &&
+             el.childNodes[i].tagName == "BR")
+      s += " ";
+    else
+      // Use recursion to get text within sub-elements.
+      s += getTextValue(el.childNodes[i]);
+
+  return normalizeString(s);
+}
+
+function compareValues(v1, v2)
+{
+  var f1, f2;
+
+  // If the values are numeric, convert them to floats.
+  f1 = parseFloat(v1);
+  f2 = parseFloat(v2);
+  if (!isNaN(f1) && !isNaN(f2))
+  {
+    v1 = f1;
+    v2 = f2;
+  }
+
+  // Compare the two values.
+  if (v1 == v2)
+    return 0;
+
+  if (v1 > v2)
+    return 1
+
+  return -1;
+}
+
+// Regular expressions for normalizing white space.
+var whtSpEnds = new RegExp("^\\s*|\\s*$", "g");
+var whtSpMult = new RegExp("\\s\\s+", "g");
+
+function normalizeString(s)
+{
+  s = s.replace(whtSpMult, " ");  // Collapse any multiple whites space.
+  s = s.replace(whtSpEnds, "");   // Remove leading or trailing white space.
+
+  return s;
+}
+
+//-----------------------------------------------------------------------------
+// Functions to update the table appearance after a sort.
+//-----------------------------------------------------------------------------
+
+// Style class names.
+var rowClsNm = "alternateRow";
+var colClsNm = "sortedColumn";
+
+// Regular expressions for setting class names.
+var rowTest = new RegExp(rowClsNm, "gi");
+var colTest = new RegExp(colClsNm, "gi");
+
+function setRanks(tblEl, col, rev)
+{
+  // Determine whether to start at the top row of the table and go down or
+  // at the bottom row and work up. This is based on the current sort
+  // direction of the column and its reversed flag.
+  var i    = 0;
+  var incr = 1;
+
+  if (tblEl.reverseSort[col])
+    rev = !rev;
+
+  if (rev)
+  {
+    incr = -1;
+    i = tblEl.rows.length - 1;
+  }
+
+  // Now go through each row in that direction and assign it a rank by
+  // counting 1, 2, 3...
+  var count   = 1;
+  var rank    = count;
+  var curVal;
+  var lastVal = null;
+
+  // Note that this loop is skipped if the table was sorted on the name
+  // column.
+
+  while (col > 0 && i >= 0 && i < tblEl.rows.length)
+  {
+    // Get the value of the sort column in this row.
+    curVal = getTextValue(tblEl.rows[i].cells[col]);
+
+    // On rows after the first, compare the sort value of this row to the
+    // previous one. If they differ, update the rank to match the current row
+    // count. (If they are the same, this row will get the same rank as the
+    // previous one.)
+
+    if (lastVal != null && compareValues(curVal, lastVal) != 0)
+        rank = count;
+
+    // Set the rank for this row.
+    tblEl.rows[i].rank = rank;
+
+    // Save the sort value of the current row for the next time around and bump
+    // the row counter and index.
+
+    lastVal = curVal;
+    count++;
+    i += incr;
+  }
+
+  
+  // Now go through each row (from top to bottom) and display its rank. Note
+  // that when two or more rows are tied, the rank is shown on the first of
+  // those rows only.
+  var rowEl, cellEl;
+  var lastRank = 0;
+
+  // Go through the rows from top to bottom.
+  for (i = 0; i < tblEl.rows.length; i++)
+  {
+    rowEl = tblEl.rows[i];
+    cellEl = rowEl.cells[0];
+  }
+}
+//</script></head>
+<body>
+<table width="100%" border="0">
+<tr>
+<td class="pagetitle" colSpan="2"><br><h1 align="center">Analysis Results for file ProfesorBC.cs</h1>
+</td>
+</tr>
+</table>
+<p><font class="table_caption"><a id="DynMessLink" name="summary" href="#" onclick="collapsenode(summary_h1);">Summary</a></font></p>
+<ul id="summary_h1"><table border="0">
+<tr><th align="left">Implementation file:</th><td>C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC\ProfesorBC.cs</td></tr>
+<tr>
+<th align="left">Project:</th>
+<td>C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC\UPC.SSIA2013.BL.BC.csproj [configuration: Debug|Any CPU]
+	</td>
+</tr>
+<tr>
+<th align="left">Solution:</th>
+<td>C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\SSIA2013.sln [configuration: Debug|Mixed Platforms]
+		</td>
+</tr>
+<tr><th align="left">Analysis Tool</th><td>Microsoft (R) FxCop Command-Line Tool, Version 1.36 (9.0.30729.1)
+</td></tr>
+<tr><th align="left">Analysis Status:</th><td>Complete</td></tr>
+<tr><th align="left">Last Analysed:</th><td>Tuesday, September 10, 2013, 00:27:48</td></tr>
+<tr><th align="left">Total Issues:</th><td>3<br></td></tr>
+<tr>
+<th align="left">    Warnings:</th>
+<td>1 (33.33%)</td>
+</tr>
+<tr>
+<th align="left">    Critical Warnings:</th>
+<td>0 (0.00%)</td>
+</tr>
+<tr>
+<th align="left">    Errors:</th>
+<td>2 (66.67%)</td>
+</tr>
+<tr>
+<th align="left">    Critical Errors:</th>
+<td>0 (0.00%)</td>
+</tr>
+<tr>
+<th align="left">    Fatal Errors:</th>
+<td>0 (0.00%)</td>
+</tr>
+<tr><th align="left">User:</th><td>Renzo</td></tr>
+<tr><th align="left">Computer:</th><td>RENZO-PC</td></tr>
+</table><br><br></ul>
+<p><font class="table_caption"><a id="DynMessLink" name="charts" href="#" onclick="collapsenode(charts_h1);">Charts</a></font></p>
+<ul id="charts_h1">
+<table border="0" width="950"><tr><td><div align="center">
+<p class="caption">Issue count by category</p><img border="0" src="ProfesorBC.cs_categories.png"><br><br><p class="caption">Issue count by ID</p><img border="0" src="ProfesorBC.cs_issues.png"><br></div></td></tr></table><br><br></ul>
+<p>
+<font class="table_caption"><a id="DynMessLink" name="analysis_results" href="#" onclick="collapsenode(analysis_results_h1);">Detailed Analysis Results</a></font>
+</p>
+<ul id="analysis_results_h1">
+<table border="0" cellpadding="3" cellspacing="0">
+<thead>
+<tr>
+<th align="left"><a href="" onclick="this.blur(); return sortTable('FilesBody', 0, false);" title="Order">Order</a></th>
+<th align="center"><a href="" onclick="this.blur(); return sortTable('FilesBody', 1, false);" title="Status">Category</a></th>
+<th align="center"><a href="" onclick="this.blur(); return sortTable('FilesBody', 2, false);" title="Status">Severity</a></th>
+<th align="center"><a href="" onclick="this.blur(); return sortTable('FilesBody', 3, false);" title="Status">Issue No.</a></th>
+<th align="center"><a href="" onclick="this.blur(); return sortTable('FilesBody', 4, false);" title="Issue count">Source File</a></th>
+<th align="center"><a href="" onclick="this.blur(); return sortTable('FilesBody', 5, false);" title="Issue count">Line No.</a></th>
+<th align="center"><a href="" onclick="this.blur(); return sortTable('FilesBody', 6, false);" title="Issue Text">Issue Text</a></th>
+</tr>
+</thead>
+<tbody id="FilesBody">
+<tr>
+<td align="center">1</td>
+<td align="center">Error</td>
+<td align="center">3</td>
+<td align="center">CA1709</td>
+<td align="left">C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC\ProfesorBC.cs</td>
+<td align="center">14</td>
+<td align="left">Correct the casing of 'obtener' in member name 'ProfesorBC.obtenerProfesor(string)' by changing it to 'Obtener'.</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">Warning</td>
+<td align="center">1</td>
+<td align="center">CA1822</td>
+<td align="left">C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC\ProfesorBC.cs</td>
+<td align="center">14</td>
+<td align="left">The 'this' parameter (or 'Me' in Visual Basic) of 'ProfesorBC.obtenerProfesor(string)' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">Error</td>
+<td align="center">3</td>
+<td align="center">CA2200</td>
+<td align="left">C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC\ProfesorBC.cs</td>
+<td align="center">22</td>
+<td align="left">'ProfesorBC.obtenerProfesor(string)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</td>
+</tr>
+</tbody>
+<tfoot></tfoot>
+</table><br><br></ul>
+<p><font class="table_caption"><a id="DynMessLink" name="raw_analysis_results" href="#" onclick="collapsenode(raw_analysis_results_h1);">Raw Analysis Results</a></font></p><br><ul id="raw_analysis_results_h1" style="display:none;">
+<pre>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft fxcop 1.36\Xml\FxCopReport.xsl"?&gt;
+&lt;FxCopReport Version="1.36"&gt;
+ &lt;Namespaces&gt;
+  &lt;Namespace Name="UPC.SSIA2013.BL.BC"&gt;
+   &lt;Messages&gt;
+    &lt;Message Id="SSIA" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2013-09-10 05:27:41Z" FixCategory="Breaking"&gt;
+     &lt;Issue Name="Namespace" Certainty="85" Level="Error"&gt;Correct the casing of 'SSIA' in namespace name 'UPC.SSIA2013.BL.BC' by changing it to 'Ssia'.&lt;/Issue&gt;
+    &lt;/Message&gt;
+    &lt;Message Id="UPC" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2013-09-10 05:27:41Z" FixCategory="Breaking"&gt;
+     &lt;Issue Name="Namespace" Certainty="85" Level="Error"&gt;Correct the casing of 'UPC' in namespace name 'UPC.SSIA2013.BL.BC' by changing it to 'Upc'.&lt;/Issue&gt;
+    &lt;/Message&gt;
+   &lt;/Messages&gt;
+  &lt;/Namespace&gt;
+ &lt;/Namespaces&gt;
+ &lt;Targets&gt;
+  &lt;Target Name="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC\bin\Debug\UPC.SSIA2013.BL.BC.dll"&gt;
+   &lt;Modules&gt;
+    &lt;Module Name="upc.ssia2013.bl.bc.dll"&gt;
+     &lt;Messages&gt;
+      &lt;Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Status="Active" Created="2013-09-10 05:27:41Z" FixCategory="NonBreaking"&gt;
+       &lt;Issue Name="NoStrongName" Certainty="95" Level="CriticalError"&gt;Sign 'UPC.SSIA2013.BL.BC.dll' with a strong name key.&lt;/Issue&gt;
+      &lt;/Message&gt;
+      &lt;Message Id="SSIA" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2013-09-10 05:27:41Z" FixCategory="Breaking"&gt;
+       &lt;Issue Name="Assembly" Certainty="85" Level="Error"&gt;Correct the casing of 'SSIA' in assembly name 'UPC.SSIA2013.BL.BC.dll' by changing it to 'Ssia'.&lt;/Issue&gt;
+      &lt;/Message&gt;
+      &lt;Message Id="UPC" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2013-09-10 05:27:41Z" FixCategory="Breaking"&gt;
+       &lt;Issue Name="Assembly" Certainty="85" Level="Error"&gt;Correct the casing of 'UPC' in assembly name 'UPC.SSIA2013.BL.BC.dll' by changing it to 'Upc'.&lt;/Issue&gt;
+      &lt;/Message&gt;
+      &lt;Message TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014" Status="Active" Created="2013-09-10 05:27:41Z" FixCategory="NonBreaking"&gt;
+       &lt;Issue Certainty="95" Level="Error"&gt;Mark 'UPC.SSIA2013.BL.BC.dll' with CLSCompliant(true) because it exposes externally visible types.&lt;/Issue&gt;
+      &lt;/Message&gt;
+     &lt;/Messages&gt;
+     &lt;Namespaces&gt;
+      &lt;Namespace Name="UPC.SSIA2013.BL.BC"&gt;
+       &lt;Types&gt;
+        &lt;Type Name="AccionMejoraBC" Kind="Class" Accessibility="Public" ExternallyVisible="True"&gt;
+         &lt;Members&gt;
+          &lt;Member Name="#editarAccionMejora(System.Int32,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True"&gt;
+           &lt;Messages&gt;
+            &lt;Message Id="editar" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2013-09-10 05:27:41Z" FixCategory="Breaking"&gt;
+             &lt;Issue Name="Member" Certainty="85" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC" File="AccionMejoraBC.cs" Line="43"&gt;Correct the casing of 'editar' in member name 'AccionMejoraBC.editarAccionMejora(int, string)' by changing it to 'Editar'.&lt;/Issue&gt;
+            &lt;/Message&gt;
+            &lt;Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2013-09-10 05:27:41Z" FixCategory="DependsOnFix"&gt;
+             &lt;Issue Certainty="95" Level="Warning" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC" File="AccionMejoraBC.cs" Line="43"&gt;The 'this' parameter (or 'Me' in Visual Basic) of 'AccionMejoraBC.editarAccionMejora(int, string)' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.&lt;/Issue&gt;
+            &lt;/Message&gt;
+            &lt;Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2013-09-10 05:27:41Z" FixCategory="NonBreaking"&gt;
+             &lt;Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC" File="AccionMejoraBC.cs" Line="51"&gt;'AccionMejoraBC.editarAccionMejora(int, string)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.&lt;/Issue&gt;
+            &lt;/Message&gt;
+           &lt;/Messages&gt;
+          &lt;/Member&gt;
+          &lt;Member Name="#eliminarAccionMejora(System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True"&gt;
+           &lt;Messages&gt;
+            &lt;Message Id="eliminar" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2013-09-10 05:27:41Z" FixCategory="Breaking"&gt;
+             &lt;Issue Name="Member" Certainty="85" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC" File="AccionMejoraBC.cs" Line="58"&gt;Correct the casing of 'eliminar' in member name 'AccionMejoraBC.eliminarAccionMejora(int)' by changing it to 'Eliminar'.&lt;/Issue&gt;
+            &lt;/Message&gt;
+            &lt;Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2013-09-10 05:27:41Z" FixCategory="DependsOnFix"&gt;
+             &lt;Issue Certainty="95" Level="Warning" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC" File="AccionMejoraBC.cs" Line="58"&gt;The 'this' parameter (or 'Me' in Visual Basic) of 'AccionMejoraBC.eliminarAccionMejora(int)' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.&lt;/Issue&gt;
+            &lt;/Message&gt;
+            &lt;Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2013-09-10 05:27:41Z" FixCategory="NonBreaking"&gt;
+             &lt;Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC" File="AccionMejoraBC.cs" Line="66"&gt;'AccionMejoraBC.eliminarAccionMejora(int)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.&lt;/Issue&gt;
+            &lt;/Message&gt;
+           &lt;/Messages&gt;
+          &lt;/Member&gt;
+          &lt;Member Name="#listarAccionesMejoraxInformeFinCiclo(System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True"&gt;
+           &lt;Messages&gt;
+            &lt;Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2013-09-10 05:27:41Z" FixCategory="Breaking"&gt;
+             &lt;Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC" File="AccionMejoraBC.cs" Line="28"&gt;Change 'List&amp;lt;spListarAccionesMejoraxHallazgoResult&amp;gt;' in 'AccionMejoraBC.listarAccionesMejoraxInformeFinCiclo(int)' to use Collection&amp;lt;T&amp;gt;, ReadOnlyCollection&amp;lt;T&amp;gt; or KeyedCollection&amp;lt;K,V&amp;gt;&lt;/Issue&gt;
+            &lt;/Message&gt;
+            &lt;Message Id="listar" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2013-09-10 05:27:41Z" FixCategory="Breaking"&gt;
+             &lt;Issue Name="Member" Certainty="85" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC" File="AccionMejoraBC.cs" Line="28"&gt;Correct the casing of 'listar' in member name 'AccionMejoraBC.listarAccionesMejoraxInformeFinCiclo(int)' by changing it to 'Listar'.&lt;/Issue&gt;
+            &lt;/Message&gt;
+            &lt;Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2013-09-10 05:27:41Z" FixCategory="DependsOnFix"&gt;
+             &lt;Issue Certainty="95" Level="Warning" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC" File="AccionMejoraBC.cs" Line="28"&gt;The 'this' parameter (or 'Me' in Visual Basic) of 'AccionMejoraBC.listarAccionesMejoraxInformeFinCiclo(int)' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.&lt;/Issue&gt;
+            &lt;/Message&gt;
+            &lt;Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2013-09-10 05:27:41Z" FixCategory="NonBreaking"&gt;
+             &lt;Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC" File="AccionMejoraBC.cs" Line="36"&gt;'AccionMejoraBC.listarAccionesMejoraxInformeFinCiclo(int)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.&lt;/Issue&gt;
+            &lt;/Message&gt;
+           &lt;/Messages&gt;
+          &lt;/Member&gt;
+          &lt;Member Name="#registrarAccionMejora(System.Int32,System.Int32,System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True"&gt;
+           &lt;Messages&gt;
+            &lt;Message Id="registrar" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2013-09-10 05:27:41Z" FixCategory="Breaking"&gt;
+             &lt;Issue Name="Member" Certainty="85" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC" File="AccionMejoraBC.cs" Line="13"&gt;Correct the casing of 'registrar' in member name 'AccionMejoraBC.registrarAccionMejora(int, int, string, string)' by changing it to 'Registrar'.&lt;/Issue&gt;
+            &lt;/Message&gt;
+            &lt;Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2013-09-10 05:27:41Z" FixCategory="DependsOnFix"&gt;
+             &lt;Issue Certainty="95" Level="Warning" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC" File="AccionMejoraBC.cs" Line="13"&gt;The 'this' parameter (or 'Me' in Visual Basic) of 'AccionMejoraBC.registrarAccionMejora(int, int, string, string)' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.&lt;/Issue&gt;
+            &lt;/Message&gt;
+            &lt;Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2013-09-10 05:27:41Z" FixCategory="NonBreaking"&gt;
+             &lt;Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC" File="AccionMejoraBC.cs" Line="21"&gt;'AccionMejoraBC.registrarAccionMejora(int, int, string, string)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.&lt;/Issue&gt;
+            &lt;/Message&gt;
+           &lt;/Messages&gt;
+          &lt;/Member&gt;
+         &lt;/Members&gt;
+        &lt;/Type&gt;
+        &lt;Type Name="CursoBC" Kind="Class" Accessibility="Public" ExternallyVisible="True"&gt;
+         &lt;Members&gt;
+          &lt;Member Name="#listarCursosxProfesor(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True"&gt;
+           &lt;Messages&gt;
+            &lt;Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2013-09-10 05:27:41Z" FixCategory="Breaking"&gt;
+             &lt;Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC" File="CursoBC.cs" Line="13"&gt;Change 'List&amp;lt;spListarCursosxProfesorResult&amp;gt;' in 'CursoBC.listarCursosxProfesor(string)' to use Collection&amp;lt;T&amp;gt;, ReadOnlyCollection&amp;lt;T&amp;gt; or KeyedCollection&amp;lt;K,V&amp;gt;&lt;/Issue&gt;
+            &lt;/Message&gt;
+            &lt;Message Id="listar" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2013-09-10 05:27:41Z" FixCategory="Breaking"&gt;
+             &lt;Issue Name="Member" Certainty="85" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC" File="CursoBC.cs" Line="13"&gt;Correct the casing of 'listar' in member name 'CursoBC.listarCursosxProfesor(string)' by changing it to 'Listar'.&lt;/Issue&gt;
+            &lt;/Message&gt;
+            &lt;Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2013-09-10 05:27:41Z" FixCategory="DependsOnFix"&gt;
+             &lt;Issue Certainty="95" Level="Warning" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC" File="CursoBC.cs" Line="13"&gt;The 'this' parameter (or 'Me' in Visual Basic) of 'CursoBC.listarCursosxProfesor(string)' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.&lt;/Issue&gt;
+            &lt;/Message&gt;
+            &lt;Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2013-09-10 05:27:41Z" FixCategory="NonBreaking"&gt;
+             &lt;Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC" File="CursoBC.cs" Line="21"&gt;'CursoBC.listarCursosxProfesor(string)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.&lt;/Issue&gt;
+            &lt;/Message&gt;
+           &lt;/Messages&gt;
+          &lt;/Member&gt;
+         &lt;/Members&gt;
+        &lt;/Type&gt;
+        &lt;Type Name="HallazgoBC" Kind="Class" Accessibility="Public" ExternallyVisible="True"&gt;
+         &lt;Members&gt;
+          &lt;Member Name="#editarHallazgo(System.Int32,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True"&gt;
+           &lt;Messages&gt;
+            &lt;Message Id="editar" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2013-09-10 05:27:41Z" FixCategory="Breaking"&gt;
+             &lt;Issue Name="Member" Certainty="85" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC" File="HallazgoBC.cs" Line="44"&gt;Correct the casing of 'editar' in member name 'HallazgoBC.editarHallazgo(int, string)' by changing it to 'Editar'.&lt;/Issue&gt;
+            &lt;/Message&gt;
+            &lt;Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2013-09-10 05:27:41Z" FixCategory="DependsOnFix"&gt;
+             &lt;Issue Certainty="95" Level="Warning" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC" File="HallazgoBC.cs" Line="44"&gt;The 'this' parameter (or 'Me' in Visual Basic) of 'HallazgoBC.editarHallazgo(int, string)' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.&lt;/Issue&gt;
+            &lt;/Message&gt;
+            &lt;Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2013-09-10 05:27:41Z" FixCategory="NonBreaking"&gt;
+             &lt;Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC" File="HallazgoBC.cs" Line="52"&gt;'HallazgoBC.editarHallazgo(int, string)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.&lt;/Issue&gt;
+            &lt;/Message&gt;
+           &lt;/Messages&gt;
+          &lt;/Member&gt;
+          &lt;Member Name="#eliminarHallazgo(System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True"&gt;
+           &lt;Messages&gt;
+            &lt;Message Id="eliminar" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2013-09-10 05:27:41Z" FixCategory="Breaking"&gt;
+             &lt;Issue Name="Member" Certainty="85" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC" File="HallazgoBC.cs" Line="59"&gt;Correct the casing of 'eliminar' in member name 'HallazgoBC.eliminarHallazgo(int)' by changing it to 'Eliminar'.&lt;/Issue&gt;
+            &lt;/Message&gt;
+            &lt;Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2013-09-10 05:27:41Z" FixCategory="DependsOnFix"&gt;
+             &lt;Issue Certainty="95" Level="Warning" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC" File="HallazgoBC.cs" Line="59"&gt;The 'this' parameter (or 'Me' in Visual Basic) of 'HallazgoBC.eliminarHallazgo(int)' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.&lt;/Issue&gt;
+            &lt;/Message&gt;
+            &lt;Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2013-09-10 05:27:41Z" FixCategory="NonBreaking"&gt;
+             &lt;Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC" File="HallazgoBC.cs" Line="67"&gt;'HallazgoBC.eliminarHallazgo(int)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.&lt;/Issue&gt;
+            &lt;/Message&gt;
+           &lt;/Messages&gt;
+          &lt;/Member&gt;
+          &lt;Member Name="#listarHallazgosxInformeFinCiclo(System.Nullable`1&amp;lt;System.Int32&amp;gt;)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True"&gt;
+           &lt;Messages&gt;
+            &lt;Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2013-09-10 05:27:41Z" FixCategory="Breaking"&gt;
+             &lt;Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC" File="HallazgoBC.cs" Line="29"&gt;Change 'List&amp;lt;spListarHallazgosxInformeFinCicloResult&amp;gt;' in 'HallazgoBC.listarHallazgosxInformeFinCiclo(int?)' to use Collection&amp;lt;T&amp;gt;, ReadOnlyCollection&amp;lt;T&amp;gt; or KeyedCollection&amp;lt;K,V&amp;gt;&lt;/Issue&gt;
+            &lt;/Message&gt;
+            &lt;Message Id="listar" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2013-09-10 05:27:41Z" FixCategory="Breaking"&gt;
+             &lt;Issue Name="Member" Certainty="85" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC" File="HallazgoBC.cs" Line="29"&gt;Correct the casing of 'listar' in member name 'HallazgoBC.listarHallazgosxInformeFinCiclo(int?)' by changing it to 'Listar'.&lt;/Issue&gt;
+            &lt;/Message&gt;
+            &lt;Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2013-09-10 05:27:41Z" FixCategory="DependsOnFix"&gt;
+             &lt;Issue Certainty="95" Level="Warning" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC" File="HallazgoBC.cs" Line="29"&gt;The 'this' parameter (or 'Me' in Visual Basic) of 'HallazgoBC.listarHallazgosxInformeFinCiclo(int?)' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.&lt;/Issue&gt;
+            &lt;/Message&gt;
+            &lt;Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2013-09-10 05:27:41Z" FixCategory="NonBreaking"&gt;
+             &lt;Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC" File="HallazgoBC.cs" Line="37"&gt;'HallazgoBC.listarHallazgosxInformeFinCiclo(int?)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.&lt;/Issue&gt;
+            &lt;/Message&gt;
+           &lt;/Messages&gt;
+          &lt;/Member&gt;
+          &lt;Member Name="#registrarHallazgo(System.Nullable`1&amp;lt;System.Int32&amp;gt;,System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True"&gt;
+           &lt;Messages&gt;
+            &lt;Message Id="registrar" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2013-09-10 05:27:41Z" FixCategory="Breaking"&gt;
+             &lt;Issue Name="Member" Certainty="85" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC" File="HallazgoBC.cs" Line="13"&gt;Correct the casing of 'registrar' in member name 'HallazgoBC.registrarHallazgo(int?, string, string)' by changing it to 'Registrar'.&lt;/Issue&gt;
+            &lt;/Message&gt;
+            &lt;Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2013-09-10 05:27:41Z" FixCategory="DependsOnFix"&gt;
+             &lt;Issue Certainty="95" Level="Warning" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC" File="HallazgoBC.cs" Line="13"&gt;The 'this' parameter (or 'Me' in Visual Basic) of 'HallazgoBC.registrarHallazgo(int?, string, string)' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.&lt;/Issue&gt;
+            &lt;/Message&gt;
+            &lt;Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2013-09-10 05:27:41Z" FixCategory="NonBreaking"&gt;
+             &lt;Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC" File="HallazgoBC.cs" Line="22"&gt;'HallazgoBC.registrarHallazgo(int?, string, string)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.&lt;/Issue&gt;
+            &lt;/Message&gt;
+           &lt;/Messages&gt;
+          &lt;/Member&gt;
+         &lt;/Members&gt;
+        &lt;/Type&gt;
+        &lt;Type Name="InformeFinCicloBC" Kind="Class" Accessibility="Public" ExternallyVisible="True"&gt;
+         &lt;Members&gt;
+          &lt;Member Name="#obtenerInformeFinCiclo(System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True"&gt;
+           &lt;Messages&gt;
+            &lt;Message Id="obtener" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2013-09-10 05:27:41Z" FixCategory="Breaking"&gt;
+             &lt;Issue Name="Member" Certainty="85" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC" File="InformeFinCicloBC.cs" Line="30"&gt;Correct the casing of 'obtener' in member name 'InformeFinCicloBC.obtenerInformeFinCiclo(int)' by changing it to 'Obtener'.&lt;/Issue&gt;
+            &lt;/Message&gt;
+            &lt;Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2013-09-10 05:27:41Z" FixCategory="DependsOnFix"&gt;
+             &lt;Issue Certainty="95" Level="Warning" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC" File="InformeFinCicloBC.cs" Line="30"&gt;The 'this' parameter (or 'Me' in Visual Basic) of 'InformeFinCicloBC.obtenerInformeFinCiclo(int)' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.&lt;/Issue&gt;
+            &lt;/Message&gt;
+            &lt;Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2013-09-10 05:27:41Z" FixCategory="NonBreaking"&gt;
+             &lt;Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC" File="InformeFinCicloBC.cs" Line="38"&gt;'InformeFinCicloBC.obtenerInformeFinCiclo(int)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.&lt;/Issue&gt;
+            &lt;/Message&gt;
+           &lt;/Messages&gt;
+          &lt;/Member&gt;
+          &lt;Member Name="#obtenerInformeFinCicloxProfesorxCursoxPeriodo(System.String,System.Int32,System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True"&gt;
+           &lt;Messages&gt;
+            &lt;Message Id="obtener" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2013-09-10 05:27:41Z" FixCategory="Breaking"&gt;
+             &lt;Issue Name="Member" Certainty="85" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC" File="InformeFinCicloBC.cs" Line="45"&gt;Correct the casing of 'obtener' in member name 'InformeFinCicloBC.obtenerInformeFinCicloxProfesorxCursoxPeriodo(string, int, int)' by changing it to 'Obtener'.&lt;/Issue&gt;
+            &lt;/Message&gt;
+            &lt;Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2013-09-10 05:27:41Z" FixCategory="DependsOnFix"&gt;
+             &lt;Issue Certainty="95" Level="Warning" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC" File="InformeFinCicloBC.cs" Line="45"&gt;The 'this' parameter (or 'Me' in Visual Basic) of 'InformeFinCicloBC.obtenerInformeFinCicloxProfesorxCursoxPeriodo(string, int, int)' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.&lt;/Issue&gt;
+            &lt;/Message&gt;
+            &lt;Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2013-09-10 05:27:41Z" FixCategory="NonBreaking"&gt;
+             &lt;Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC" File="InformeFinCicloBC.cs" Line="53"&gt;'InformeFinCicloBC.obtenerInformeFinCicloxProfesorxCursoxPeriodo(string, int, int)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.&lt;/Issue&gt;
+            &lt;/Message&gt;
+           &lt;/Messages&gt;
+          &lt;/Member&gt;
+          &lt;Member Name="#registrarInformeFinCiclo(System.String,System.Int32,System.Int32,System.String,System.String,System.String,System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True"&gt;
+           &lt;Messages&gt;
+            &lt;Message Id="registrar" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2013-09-10 05:27:41Z" FixCategory="Breaking"&gt;
+             &lt;Issue Name="Member" Certainty="85" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC" File="InformeFinCicloBC.cs" Line="14"&gt;Correct the casing of 'registrar' in member name 'InformeFinCicloBC.registrarInformeFinCiclo(string, int, int, string, string, string, int)' by changing it to 'Registrar'.&lt;/Issue&gt;
+            &lt;/Message&gt;
+            &lt;Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2013-09-10 05:27:41Z" FixCategory="DependsOnFix"&gt;
+             &lt;Issue Certainty="95" Level="Warning" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC" File="InformeFinCicloBC.cs" Line="14"&gt;The 'this' parameter (or 'Me' in Visual Basic) of 'InformeFinCicloBC.registrarInformeFinCiclo(string, int, int, string, string, string, int)' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.&lt;/Issue&gt;
+            &lt;/Message&gt;
+            &lt;Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2013-09-10 05:27:41Z" FixCategory="NonBreaking"&gt;
+             &lt;Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC" File="InformeFinCicloBC.cs" Line="23"&gt;'InformeFinCicloBC.registrarInformeFinCiclo(string, int, int, string, string, string, int)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.&lt;/Issue&gt;
+            &lt;/Message&gt;
+           &lt;/Messages&gt;
+          &lt;/Member&gt;
+         &lt;/Members&gt;
+        &lt;/Type&gt;
+        &lt;Type Name="LogroBC" Kind="Class" Accessibility="Public" ExternallyVisible="True"&gt;
+         &lt;Members&gt;
+          &lt;Member Name="#obtenerLogroxCurso(System.Nullable`1&amp;lt;System.Int32&amp;gt;)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True"&gt;
+           &lt;Messages&gt;
+            &lt;Message Id="obtener" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2013-09-10 05:27:41Z" FixCategory="Breaking"&gt;
+             &lt;Issue Name="Member" Certainty="85" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC" File="LogroBC.cs" Line="13"&gt;Correct the casing of 'obtener' in member name 'LogroBC.obtenerLogroxCurso(int?)' by changing it to 'Obtener'.&lt;/Issue&gt;
+            &lt;/Message&gt;
+            &lt;Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2013-09-10 05:27:41Z" FixCategory="DependsOnFix"&gt;
+             &lt;Issue Certainty="95" Level="Warning" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC" File="LogroBC.cs" Line="13"&gt;The 'this' parameter (or 'Me' in Visual Basic) of 'LogroBC.obtenerLogroxCurso(int?)' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.&lt;/Issue&gt;
+            &lt;/Message&gt;
+            &lt;Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2013-09-10 05:27:41Z" FixCategory="NonBreaking"&gt;
+             &lt;Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC" File="LogroBC.cs" Line="21"&gt;'LogroBC.obtenerLogroxCurso(int?)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.&lt;/Issue&gt;
+            &lt;/Message&gt;
+           &lt;/Messages&gt;
+          &lt;/Member&gt;
+         &lt;/Members&gt;
+        &lt;/Type&gt;
+        &lt;Type Name="ProfesorBC" Kind="Class" Accessibility="Public" ExternallyVisible="True"&gt;
+         &lt;Members&gt;
+          &lt;Member Name="#obtenerProfesor(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True"&gt;
+           &lt;Messages&gt;
+            &lt;Message Id="obtener" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2013-09-10 05:27:41Z" FixCategory="Breaking"&gt;
+             &lt;Issue Name="Member" Certainty="85" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC" File="ProfesorBC.cs" Line="14"&gt;Correct the casing of 'obtener' in member name 'ProfesorBC.obtenerProfesor(string)' by changing it to 'Obtener'.&lt;/Issue&gt;
+            &lt;/Message&gt;
+            &lt;Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2013-09-10 05:27:41Z" FixCategory="DependsOnFix"&gt;
+             &lt;Issue Certainty="95" Level="Warning" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC" File="ProfesorBC.cs" Line="14"&gt;The 'this' parameter (or 'Me' in Visual Basic) of 'ProfesorBC.obtenerProfesor(string)' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.&lt;/Issue&gt;
+            &lt;/Message&gt;
+            &lt;Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2013-09-10 05:27:41Z" FixCategory="NonBreaking"&gt;
+             &lt;Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC" File="ProfesorBC.cs" Line="22"&gt;'ProfesorBC.obtenerProfesor(string)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.&lt;/Issue&gt;
+            &lt;/Message&gt;
+           &lt;/Messages&gt;
+          &lt;/Member&gt;
+         &lt;/Members&gt;
+        &lt;/Type&gt;
+        &lt;Type Name="ResultadoProgramaBC" Kind="Class" Accessibility="Public" ExternallyVisible="True"&gt;
+         &lt;Members&gt;
+          &lt;Member Name="#listarResultadoProgramaxCurso(System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True"&gt;
+           &lt;Messages&gt;
+            &lt;Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2013-09-10 05:27:41Z" FixCategory="Breaking"&gt;
+             &lt;Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC" File="ResultadoProgramaBC.cs" Line="13"&gt;Change 'List&amp;lt;spObtenerResultadoProgramaxCursoResult&amp;gt;' in 'ResultadoProgramaBC.listarResultadoProgramaxCurso(int)' to use Collection&amp;lt;T&amp;gt;, ReadOnlyCollection&amp;lt;T&amp;gt; or KeyedCollection&amp;lt;K,V&amp;gt;&lt;/Issue&gt;
+            &lt;/Message&gt;
+            &lt;Message Id="listar" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2013-09-10 05:27:41Z" FixCategory="Breaking"&gt;
+             &lt;Issue Name="Member" Certainty="85" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC" File="ResultadoProgramaBC.cs" Line="13"&gt;Correct the casing of 'listar' in member name 'ResultadoProgramaBC.listarResultadoProgramaxCurso(int)' by changing it to 'Listar'.&lt;/Issue&gt;
+            &lt;/Message&gt;
+            &lt;Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2013-09-10 05:27:41Z" FixCategory="DependsOnFix"&gt;
+             &lt;Issue Certainty="95" Level="Warning" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC" File="ResultadoProgramaBC.cs" Line="13"&gt;The 'this' parameter (or 'Me' in Visual Basic) of 'ResultadoProgramaBC.listarResultadoProgramaxCurso(int)' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.&lt;/Issue&gt;
+            &lt;/Message&gt;
+            &lt;Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2013-09-10 05:27:41Z" FixCategory="NonBreaking"&gt;
+             &lt;Issue Certainty="95" Level="Error" Path="C:\Users\Renzo\Documents\TDP-1\Proyecto Rnz\PROYECTO_IFC_DIA_EXPOSICION\SSIA2013\UPC.SSIA2013.BL.BC" File="ResultadoProgramaBC.cs" Line="21"&gt;'ResultadoProgramaBC.listarResultadoProgramaxCurso(int)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.&lt;/Issue&gt;
+            &lt;/Message&gt;
+           &lt;/Messages&gt;
+          &lt;/Member&gt;
+         &lt;/Members&gt;
+        &lt;/Type&gt;
+       &lt;/Types&gt;
+      &lt;/Namespace&gt;
+     &lt;/Namespaces&gt;
+    &lt;/Module&gt;
+   &lt;/Modules&gt;
+  &lt;/Target&gt;
+ &lt;/Targets&gt;
+ &lt;Rules&gt;
+  &lt;Rule TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210"&gt;
+   &lt;Name&gt;Assemblies should have valid strong names&lt;/Name&gt;
+   &lt;Description&gt;Either the assembly has no strong name, an invalid one, or the strong name is valid only because of the computer configuration. The assembly should not be deployed in this state. The most common causes of this are: 1) The assembly's contents were modified after it was signed. 2) The signing process failed. 3) The assembly was delay-signed. 4) A registry key existed that allowed the check to pass (where it would not have otherwise).&lt;/Description&gt;
+   &lt;Resolution Name="NoStrongName"&gt;Sign {0} with a strong name key.&lt;/Resolution&gt;
+   &lt;Owner /&gt;
+   &lt;Url&gt;http://msdn2.microsoft.com/library/ms182127(VS.90).aspx&lt;/Url&gt;
+   &lt;Email&gt;[none]&lt;/Email&gt;
+   &lt;MessageLevel Certainty="95"&gt;CriticalError&lt;/MessageLevel&gt;
+   &lt;File Name="DesignRules.dll" Version="9.0.0.0" /&gt;
+  &lt;/Rule&gt;
+  &lt;Rule TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002"&gt;
+   &lt;Name&gt;Do not expose generic lists&lt;/Name&gt;
+   &lt;Description&gt;Do not expose List&amp;lt;T&amp;gt; in object models. Use Collection&amp;lt;T&amp;gt;, ReadOnlyCollection&amp;lt;T&amp;gt; or KeyedCollection&amp;lt;K,V&amp;gt; instead. List&amp;lt;T&amp;gt; is meant to be used from implementation, not in object model API. List&amp;lt;T&amp;gt; is optimized for performance at the cost of long term versioning. For example, if you return List&amp;lt;T&amp;gt; to the client code, you will not ever be able to receive notifications when client code modifies the collection.&lt;/Description&gt;
+   &lt;Resolution Name="Default"&gt;Change {0} in {1} to use Collection&amp;lt;T&amp;gt;, ReadOnlyCollection&amp;lt;T&amp;gt; or KeyedCollection&amp;lt;K,V&amp;gt;&lt;/Resolution&gt;
+   &lt;Owner /&gt;
+   &lt;Url&gt;http://msdn2.microsoft.com/library/ms182142(VS.90).aspx&lt;/Url&gt;
+   &lt;Email&gt;[none]&lt;/Email&gt;
+   &lt;MessageLevel Certainty="95"&gt;Error&lt;/MessageLevel&gt;
+   &lt;File Name="DesignRules.dll" Version="9.0.0.0" /&gt;
+  &lt;/Rule&gt;
+  &lt;Rule TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709"&gt;
+   &lt;Name&gt;Identifiers should be cased correctly&lt;/Name&gt;
+   &lt;Description&gt;Type, namespace, and member identifiers are Pascal-cased. Parameter identifiers are camel-cased. Two letter acronyms within these identifiers should be upper-cased, for example, use System.IO instead of System.Io. Acronyms of three or more letters should be Pascal-cased, for example, use System.Xml instead of System.XML. The pascal-casing convention capitalizes the first letter of each word, as in BackColor. The camel-casing convention formats the first letter of the first word in lowercase and capitalizes the first letter of all subsequent words, as in backgroundColor. Although it may be common practice for some two letter acronyms to not be fully capitalized, violations of this rule should not be excluded for this reason. For example, 'DbConnection', is common but incorrect; use DBConnection. A violation of this rule might be required for compatibility with existing, non-managed symbol schemes. In general, however, these symbols should not be visible outside the assembly that uses them.&lt;/Description&gt;
+   &lt;Resolution Name="Assembly"&gt;Correct the casing of '{0}' in assembly name {1} by changing it to '{2}'.&lt;/Resolution&gt;
+   &lt;Resolution Name="Member"&gt;Correct the casing of '{0}' in member name {1} by changing it to '{2}'.&lt;/Resolution&gt;
+   &lt;Resolution Name="Namespace"&gt;Correct the casing of '{0}' in namespace name '{1}' by changing it to '{2}'.&lt;/Resolution&gt;
+   &lt;Owner /&gt;
+   &lt;Url&gt;http://msdn2.microsoft.com/library/ms182240(VS.90).aspx&lt;/Url&gt;
+   &lt;Email&gt;[none]&lt;/Email&gt;
+   &lt;MessageLevel Certainty="85"&gt;Error&lt;/MessageLevel&gt;
+   &lt;File Name="NamingRules.dll" Version="9.0.0.0" /&gt;
+  &lt;/Rule&gt;
+  &lt;Rule TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014"&gt;
+   &lt;Name&gt;Mark assemblies with CLSCompliantAttribute&lt;/Name&gt;
+   &lt;Description&gt;Assemblies should explicitly state their CLS compliance using the CLSCompliant attribute. An assembly without this attribute is not CLS-compliant. Assemblies, modules, and types can be CLS-compliant even if some parts of the assembly, module, or type are not CLS-compliant. The following rules apply: 1) If the element is marked CLSCompliant, any noncompliant members must have the CLSCompliant attribute present with its argument set to false. 2) A comparable CLS-compliant alternative member must be supplied for each member that is not CLS-compliant.&lt;/Description&gt;
+   &lt;Resolution Name="Default"&gt;Mark {0} with CLSCompliant(true) because it exposes externally visible types.&lt;/Resolution&gt;
+   &lt;Owner /&gt;
+   &lt;Url&gt;http://msdn2.microsoft.com/library/ms182156(VS.90).aspx&lt;/Url&gt;
+   &lt;Email&gt;[none]&lt;/Email&gt;
+   &lt;MessageLevel Certainty="95"&gt;Error&lt;/MessageLevel&gt;
+   &lt;File Name="DesignRules.dll" Version="9.0.0.0" /&gt;
+  &lt;/Rule&gt;
+  &lt;Rule TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822"&gt;
+   &lt;Name&gt;Mark members as static&lt;/Name&gt;
+   &lt;Description&gt;Methods which do not access instance data or call instance methods can be marked as static (Shared in Visual Basic). After doing so, the compiler will emit non-virtual call sites to these members which will prevent a check at runtime for each call that ensures the current object pointer is non-null. This can result in a measurable performance gain for performance-sensitive code. In some cases, the failure to access the current object instance represents a correctness issue.&lt;/Description&gt;
+   &lt;Resolution Name="Default"&gt;The 'this' parameter (or 'Me' in Visual Basic) of {0} is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.&lt;/Resolution&gt;
+   &lt;Owner /&gt;
+   &lt;Url&gt;http://msdn2.microsoft.com/library/ms245046(VS.90).aspx&lt;/Url&gt;
+   &lt;Email&gt;[none]&lt;/Email&gt;
+   &lt;MessageLevel Certainty="95"&gt;Warning&lt;/MessageLevel&gt;
+   &lt;File Name="PerformanceRules.dll" Version="9.0.0.0" /&gt;
+  &lt;/Rule&gt;
+  &lt;Rule TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200"&gt;
+   &lt;Name&gt;Rethrow to preserve stack details&lt;/Name&gt;
+   &lt;Description&gt;Use the IL rethrow instruction to preserve original stack details when re-raising a caught exception.&lt;/Description&gt;
+   &lt;Resolution Name="Default"&gt;{0} rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.&lt;/Resolution&gt;
+   &lt;Owner /&gt;
+   &lt;Url&gt;http://msdn2.microsoft.com/library/ms182363(VS.90).aspx&lt;/Url&gt;
+   &lt;Email&gt;[none]&lt;/Email&gt;
+   &lt;MessageLevel Certainty="95"&gt;Error&lt;/MessageLevel&gt;
+   &lt;File Name="UsageRules.dll" Version="9.0.0.0" /&gt;
+  &lt;/Rule&gt;
+ &lt;/Rules&gt;
+ &lt;Localized&gt;
+  &lt;String Key="Category"&gt;Category&lt;/String&gt;
+  &lt;String Key="Certainty"&gt;Certainty&lt;/String&gt;
+  &lt;String Key="CollapseAll"&gt;Collapse All&lt;/String&gt;
+  &lt;String Key="CheckId"&gt;Check Id&lt;/String&gt;
+  &lt;String Key="Error"&gt;Error&lt;/String&gt;
+  &lt;String Key="Errors"&gt;error(s)&lt;/String&gt;
+  &lt;String Key="ExpandAll"&gt;Expand All&lt;/String&gt;
+  &lt;String Key="Help"&gt;Help&lt;/String&gt;
+  &lt;String Key="Line"&gt;Line&lt;/String&gt;
+  &lt;String Key="Messages"&gt;message(s)&lt;/String&gt;
+  &lt;String Key="LocationNotStoredInPdb"&gt;[Location not stored in Pdb]&lt;/String&gt;
+  &lt;String Key="Project"&gt;Project&lt;/String&gt;
+  &lt;String Key="Resolution"&gt;Resolution&lt;/String&gt;
+  &lt;String Key="Rule"&gt;Rule&lt;/String&gt;
+  &lt;String Key="RuleFile"&gt;Rule File&lt;/String&gt;
+  &lt;String Key="RuleDescription"&gt;Rule Description&lt;/String&gt;
+  &lt;String Key="Source"&gt;Source&lt;/String&gt;
+  &lt;String Key="Status"&gt;Status&lt;/String&gt;
+  &lt;String Key="Target"&gt;Target&lt;/String&gt;
+  &lt;String Key="Warning"&gt;Warning&lt;/String&gt;
+  &lt;String Key="Warnings"&gt;warning(s)&lt;/String&gt;
+  &lt;String Key="ReportTitle"&gt;Code Analysis Report&lt;/String&gt;
+ &lt;/Localized&gt;
+&lt;/FxCopReport&gt;
+</pre>
+</ul><br><br><hr><small><font color="navy">
+            Report produced by <b>Visual Lint Enterprise Edition</b>, version 4.0.7.208<br><br><a href="http://www.riverblade.co.uk/products/visual_lint" target="_blank">http://www.riverblade.co.uk/products/visual_lint</a></font></small></body>
+</html>
