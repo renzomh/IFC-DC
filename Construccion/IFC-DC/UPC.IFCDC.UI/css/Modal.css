@@ -1,0 +1,62 @@
+﻿.fondo-modal
+{
+    background: black;
+    filter: alpha(opacity=60);
+    opacity: .5;
+}
+
+.modal-form
+{
+    border-style: none;
+    border-color: inherit;
+    border-width: medium;
+    background: #BBCDE6  /*#C4CBDE*/;
+    padding: 0px 0px 30px 0px !important;
+    border-radius: 5px !important;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    width: auto;
+}
+
+.modal-blanco
+{
+    padding: 20px 20px 15px 20px;
+    background: white;
+    margin: 15px 15px 0px 15px;
+    width: auto;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+.modal-blanco div
+{
+    height: auto !important;
+    margin: 2px auto;
+}
+
+.modal-blanco label
+{
+    display: inline-block;
+    width: 120px;
+}
+
+.modal-form h4
+{
+    background: #002A5C;
+    color: White;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 13px;
+    border-radius: 5px 5px 0px 0px !important;
+    -moz-border-radius: 5px 5px 0px 0px;
+    -webkit-border-radius: 5px 5px 0px 0px;
+    font-family: Trebuchet MS, Tahoma, Verdana, Arial, sans-serif;
+    font-weight:bold;
+}
+
+.modal-botones
+{
+    margin: 0px 15px 0px 15px;
+}

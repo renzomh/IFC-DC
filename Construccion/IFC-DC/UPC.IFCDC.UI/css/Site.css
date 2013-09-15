@@ -1,0 +1,198 @@
+﻿body { color:#333333; font-family:Arial,Helvetica,sans-serif; font-size:11px; }
+#wrapper { margin:0 auto 0 auto; width:1056px; text-align:left; }
+#header { height:100px; position:relative; }    
+#UPCImageLogo { float:left;	margin:10px 0px 0px 0px; }
+#footer { position:relative; bottom:0px; background:#001844; color:White; height:94px; }
+#footerTexto01 { padding:30px 5px 5px 30px; font-size: 11px; width: 560px; color:White; float:left; }
+#UPCLogoBottom { float:right; padding-top: 24px;}
+#menu { background:#991436; height:31px; float:left; width:100%; position:relative;}
+#menu ul { clear:left; float:left; position:relative; left:50%; text-align:center;}
+#menu ul li { display:block; float:left; position:relative; right:50%;}
+#frmMinuta { margin:30px auto 30px auto; }
+#frmBuscarPerfil { margin:30px auto 30px auto; }
+#frmMantProfesor { margin:30px auto 30px auto; }
+#frmlogin { margin:30px auto 30px auto; width:500px; padding-top:100px; padding-bottom:150px; }
+.div-header-opciones { float:right; text-align:right; padding-top:22px; color:#7d7e81; width:250px; }
+.div-header-opciones a { text-decoration:none; color:#7d7e81 }
+.div-usuario { float:right; padding-left:30px; padding-top:44px; width: 500px; text-align:right;}
+.titulo-footer01{ font-size:13px;color:#b61d3a;font-weight:bold; }
+.titulo-footer02 { color:#20466f;font-weight:bold; }
+.textoInformativo { float:right; text-align:right; padding-bottom:5px; }
+
+.contenido {min-height:449px; }
+.displayInline {display:inline-block;  }
+
+/*=============menu vertical=================*/
+ul#dropdownmenu { position:relative; margin:0 auto; list-style:none; z-index:1001; }
+ul#dropdownmenu li { height:51px;float:left; }
+ul#dropdownmenu li a { font-size:13px !important; display:block; width:196px; color:White; text-decoration:none; text-align:center; height:31px; line-height:31px; outline:none; border:none; }
+ul#dropdownmenu li a:hover { background:#002B5C; }
+ul#dropdownmenu li ul { display:none; }
+ul#dropdownmenu li:hover ul { display:block; background:#991436; position:absolute; }
+ul#dropdownmenu li:hover ul li { float:none; }
+ul#dropdownmenu li ul li ul, ul#dropdownmenu li:hover ul li ul { display:none; }
+ul#dropdownmenu li:hover ul li:hover ul { display:block; top:0; left:50%; }
+.submenu01 { display: none; left: 0px !important; }
+.submenu01 li { height:31px !important; right: 0px !important; }
+.submenu01 li a { text-align:left !important; padding-left:5px; width:191px !important; }
+.hiddencol { display: none; }
+#headerTituloAplicacion { color:White; text-align:center; line-height:35px;	font-weight:bold; position:relative; font-size:12pt; height:35px; }
+.frmLogin-backround { background:url(../Imagenes/fondo/fondoLogin.png) no-repeat !important; width:501px; height:180px; }
+.textoLogin { border:1px solid #DDDDDD; margin-bottom:1px; padding:0.2em; width:220px; }
+.tdLogin { padding:10px 10px 10px 0px;}
+.tdRegistrarPerfil { padding:10px 10px 10px 0px; text-decoration:underline; font-size:12px; font-weight:bold;}
+/*==========================================*/
+
+/*---------------------------------------------------------------Botones-------------------------------------------*/
+.btn-agregar { background: url('../Imagenes/Botones/imb_Anadir.png') no-repeat;  width:90px; height:23px; border-style: none; border-color: inherit; border-width: medium; cursor:pointer; outline:none;}
+.btn-ingresar { background:url(../Imagenes/Botones/boton_ingresar.png) no-repeat; width:82px; height:23px; cursor:pointer; outline:none; border:none; }
+.btn-nuevo-usuario { background:url(../Imagenes/Botones/boton_nuevo_usuario.png) no-repeat; width:105px; height:23px; cursor:pointer; outline:none; border:none; }
+.btn-olvide-contrasenia { background:url(../Imagenes/Botones/boton_olvide_contrasenia.png) no-repeat; width:135px; height:23px;	cursor:pointer; outline:none; border:none; }
+.btn-guardar-enviar { background:url(../Imagenes/Botones/guardar-enviar.png) no-repeat; width:158px; height:23px; cursor:pointer; outline:none; border:none; }
+.btn-imprimir { background:url(../Imagenes/Botones/inprimir.png) no-repeat; width:90px; height:23px; cursor:pointer; outline:none; border:none; }
+.btn-guardar { background:url(../Imagenes/Botones/imb_Guardar.png) no-repeat; width:90px; height:23px; cursor:pointer; outline:none; border:none; }
+.btn-buscar { background: url('../Imagenes/Botones/buscar.png') no-repeat;  width:90px; height:23px; border-style: none; border-color: inherit; border-width: medium;  cursor:pointer; outline:none; }
+.btn-salir { background:url(../Imagenes/Botones/imb_Salir.png) no-repeat; width:90px; height:23px; cursor:pointer; outline:none; border:none; }
+.btn-terminar { background:url(../Imagenes/Botones/terminar.png) no-repeat; width:90px; height:23px; cursor:pointer; outline:none; border:none; }	
+.btn-exporta-excel { background:url(../Imagenes/Botones/exportar_excel.png) no-repeat; width:127px; height:23px; cursor:pointer; outline:none; border:none; }
+.btn-cancelar { background:url(../Imagenes/Botones/cancelar.png) no-repeat; width:90px; height:23px; cursor:pointer; outline:none; border:none; }
+.btn-enviar { background:url(../Imagenes/Botones/btn-enviar.png) no-repeat; width:92px; height:23px; cursor:pointer; outline:none; border:none; }
+.btn-sincronizar { background:url(../Imagenes/Botones/sincronizar.png) no-repeat; width:90px; height:23px; cursor:pointer; outline:none; border:none; }
+.btn-registrar { background:url(../Imagenes/Botones/btnRegistrar.png) no-repeat; width:92px; height:23px; cursor:pointer; outline:none; border:none; }
+.btn-reenviar { background:url(../Imagenes/Botones/btnReeenviar.png) no-repeat; width:91px; height:23px; cursor:pointer; outline:none; border:none; }
+.btn-anular { border-style: none; border-color: inherit; border-width: medium; background: url('../Imagenes/Botones/anular.png') no-repeat; cursor:pointer; outline:none; }
+.btnAnadir01 { background:url(../Imagenes/Botones/imb_Anadir.png) no-repeat; width:90px; height:23px; cursor:pointer; outline:none; border:none; }
+.btn-regresar { background:url(../Imagenes/Botones/imb_Regresar.png) no-repeat; width:90px; height:23px; cursor:pointer; outline:none; border:none; }
+.btn-agregar-agenda { width:90px; height:23px; }
+.btn-reutilizar { background:url(../Imagenes/Botones/imb_Reutilizar.png) no-repeat; width:90px; height:23px; cursor:pointer; outline:none; border:none; }
+/*----------------------------------------------------------------------------------------------------------------*/
+
+.CelesteClaro { background:#dfe9f4 }
+.imageFecha { height:21px; padding-left:6px; width:21px; }
+.btn_separator { height:23px; padding-bottom:5px; padding-top:5px; }
+.btn_separator02 { height:23px; padding-bottom:10px; padding-top:10px; }
+.btn_separator03 { height:23px; padding-bottom:3px; padding-top:3px; }
+.btn_separator04 { height:18px; padding-bottom:3px; padding-top:3px; }
+.btn_separator05 { height:10px; padding-bottom:3px; padding-top:3px; }
+.btn_separator06 { height:30px; padding-bottom:9px; padding-top:5px; }
+.TablaCeleste { border-top:1px solid #A4A7A9 !important; width:100%; padding:0px; border-left:1px solid #A4A7A9 !important; }
+.TablaCeleste td { padding:3px; border-bottom:1px solid #A4A7A9 !important; border-right:1px solid #A4A7A9 !important; color:#231F20; font-size:11px !important; }
+.TablaNested { border-bottom:0px solid #A4A7A9 !important; width:100%; padding:0px; border-left:0px solid #A4A7A9 !important; }
+.TablaNested td { padding:3px; border-bottom:1px solid #A4A7A9 !important; border-right:1px solid #A4A7A9 !important; color:#231F20; font-size:11px !important; }
+.TablaNested tr { border-bottom:1px solid #A4A7A9 !important; }
+.TablaNested td:last-child { border-right:0px solid #A4A7A9 !important; }
+.TablaNested tr:last-child td { border-bottom:0px solid #A4A7A9 !important; }
+.HeaderTabla { background:#d1d3d4; }
+.HeaderTabla th { border-bottom:1px solid #A4A7A9 !important; border-right:1px solid #A4A7A9 !important; text-align:center; padding:5px; color:#231f20; font-size:11px; }
+.ui-form-titlebar { padding: 0.2em 1em; }
+.ui-form-header-sub { background:repeat-x scroll 50% 50% #bbcde6; color: #0e3766; font-weight: bold; font-size:13px !important; }
+.ui-form-header-sub01 { background-color:none; padding-left:3px; color:#0e3766; font-weight:bold; font-size:13px !important; }
+.ui-form-content { background:none repeat scroll 0 0 transparent; border:0 none; padding:0px 1em 0px; padding-right:0px; }*
+.input_fecha01 { margin-bottom: 1px; padding:0.2em 0.2em 0.2em 0.3em; width:70px; border:1px solid #DDDDDD; }
+.RequeridoInput02 { border-left:1px solid #D10F3F !important; }
+.texto01 { border: 1px solid #DDDDDD;   margin-bottom: 1px;padding: 0.2em;font-size:11px; }
+.textoFecha01 { border: none;   margin-bottom: 1px;padding: 0.2em;font-size:11px; }
+.select01 { border:1px solid #DDDDDD; margin-bottom:1px; padding:0.2em 0.2em 0.2em 0.0em; width:309px; font-size:11px; }
+.selectPerfil { border:1px solid #DDDDDD; margin-bottom:1px; padding:0.2em 0.2em 0.2em 0.0em; width:250px; font-size:11px; }
+.selectNivelPerfil { border:1px solid #DDDDDD; margin-bottom:1px; padding:0.2em 0.2em 0.2em 0.0em; width:180px; font-size:11px; }
+.selectNumUsuariosPerfil { border:1px solid #DDDDDD; margin-bottom:1px; padding:0.2em 0.2em 0.2em 0.0em; width:50px; font-size:11px; }
+.texboxMinuta { border:1px solid #DDDDDD; margin-bottom:1px; padding:0.2em 0.2em 0.2em 0.3em; }
+.texboxPerfil { border:1px solid #DDDDDD; margin-bottom:1px; padding:0.2em 0.2em 0.2em 0.3em; }
+.texboxProfesor { border:1px solid #DDDDDD; margin-bottom:1px; padding:0.2em 0.2em 0.2em 0.3em; width:170px; }
+.texboxNumUsuariosPerfil { border:1px solid #DDDDDD; margin-bottom:1px; padding:0.2em 0.2em 0.2em 0.3em; }
+.textoBandeja { border:1px solid #DDDDDD; margin-bottom:1px; padding:0.2em 0.2em 0.2em 0.3em; width:301px; }
+.textoRegistrarMinuta { border:1px solid #DDDDDD; margin-bottom:1px; padding:0.2em 0.2em 0.2em 0.3em; width:301px; }
+.texBoxDefault { border:1px solid #DDDDDD; margin-bottom:7px; padding:0.2em}
+.texBoxDefault02 { border: 1px solid #DDDDDD; margin-bottom:1px; padding:0.2em}
+.botones-espacio { padding-left:50px; }
+.padding01 { padding: 0.2em 0px 0.2em 0px; height:25px; }
+.padding02 { padding: 0.4em 2px 0.4em 2px; height:25px; }
+.paddingLabel01 { padding-right:15px; }
+.paddingLabel02 { padding-right:5px; }
+.paddingLeft01 { padding-left:20px; }
+.tablaContenedor { padding-bottom:15px; padding-top:10px; }
+.espacio01 { height:20px; }
+.tdCentrado { text-align:center; }
+.tdAcciones { padding-left:3px !important; text-align:left !important}
+.tdPadding { padding-left:3px !important; padding-top:3px !important; padding-bottom:3px !important; text-align:left !important; }
+.textoCelda { background:none repeat scroll 0 0 transparent; border:none; font-size:11px !important; padding-left: 3px; }
+.tdSelect { font-size:11px !important; }
+.texto04 { border:1px solid #DDDDDD; margin-bottom:1px; padding:0.2em; width:250px; }
+.left { float:left; } 
+.clear { clear:both; }
+.right { float:right; }
+
+
+/*==============Modal================*/
+.ModalBlancoFondo01 { padding:20px; background:white; border-radius:5px; -moz-border-radius:5px;-webkit-border-radius:5px; }
+.ModalBlancoFondo03 { padding:10px; background:white; border-radius:5px; -moz-border-radius:5px;-webkit-border-radius:5px; }
+/*
+.ui-widget-header { background:#001844; border:1px solid #001844; }
+.ui-widget-content { background:#BBCDE6 !important; }
+.ui-dialog .ui-dialog-titlebar { padding:1em 1em; }
+.ui-dialog { padding:0 !important }
+.ui-widget-overlay { background:#000000 !important }         
+.ui-widget-content { border:0px !important; }
+.ui-dialog .ui-dialog-title { float:none !important; display: block; text-align: center !important; font-size:13px; }
+.ui-dialog .ui-dialog-content { padding: 0.5em 2.5em !important; }*/
+.padingtop15{ padding-top:15px !important; }
+.padding-bottom-5{ padding-bottom:5px; }
+.fila02 { margin:.4em 0; clear:both; }
+.fila02 label { width:120px; /*float:left;*/ margin-bottom:1px; padding:0.2em; }
+.input_text02 { margin-bottom:1px; padding:0.2em; width:200px; border:1px solid #DDDDDD; }
+.centrarRb { }
+.icoIndicador { height:18px; width:18px }
+.tituloTemaCelda { background:none repeat scroll 0 0 transparent; border:none; font-weight:bold; }
+.iconos {width:16px; height:16px; }
+.display-none { display: none; }
+.style1 { width:16px; height: 16px; }
+.ancho-alto-16 { width:16px; height: 16px; }
+.titHis { font-weight:bold;color:#0E3766 }
+.bold { font-weight:bold; }
+#gvTemas { table-layout: fixed !important; }
+#gvAcuerdos { table-layout: auto !important; }
+.titAnulado { font-weight:bold;color:Red }
+.textoRojo { color:Red;padding-left: 2px; }
+.error_texto { background:#F2F0D3 !important; border:1px solid red !important;}
+.padding-right-7 { padding-right:7px !important; }
+.float-none label { float:none !important; }
+.float-right { float:right !important; }
+.display-inline { display:inline !important; }
+.display-inlineblock { display:inline-block !important; }
+.width-200 { width:200px; }
+.width-115 { width:115px; }
+.min-height-35 { min-height:35px !important; }
+.modal { margin:.4em 0; clear:both; }
+.checkboxlist td { white-space:nowrap; padding: 0.2em 0px 0.2em 0px; display:inline !important; }
+.checkboxlist label { vertical-align:top; padding-left:2px; width:auto !important; display:inline !important; }
+.checkboxlist input { vertical-align:top; padding-left:0.2em !important; padding-top:0px; display:inline !important; }
+.radiobuttonlist td { padding: 0.2em 0px 0.2em 0px; }
+.radiobuttonlist label { vertical-align:top; padding-left:2px; width:auto !important; }
+.radiobuttonlist input { vertical-align:top; padding-left:0.2em !important; padding-top:0px; }
+.border-top-none { border-top-style:none !important; }
+.textoVerde { color:Green;padding-left: 2px; }
+.btn-guardar { cursor:pointer !important; }
+.btn-guardar-enviar { cursor:pointer !important; }
+.btn-imprimir { cursor:pointer !important; }
+.leyenda{color:#7d7e81; padding-left:10px; }
+/*#gvParticipantes { margin-top:15px; }
+#gvInformados { margin-top:15px; }
+#gvTemas { margin-top:15px; }*/
+.overflow { overflow:auto; max-height:350px !important; max-width:700px !important; }
+.overflow-hidden { overflow:hidden; }
+.vertical-align-middle { vertical-align:middle; }
+.margin-right15 {margin-right:15px;}  
+.margin-left15 {margin-left:15px;}
+.txtDescripcionAcuerdo { font-family:Arial,Helvetica,sans-serif }
+#Paginacion input[type=submit] { background: #DCE3E8; box-shadow: 3px 3px 3px rgba(0,0,0,0.1); color: #444751; padding: 0.4em; border-radius: 3px; border: 1px solid gainsboro; cursor: pointer; margin-right: 3px; font-size: 12px; }
+#Paginacion input[type=text] { width:50px; margin-right:10px; }
+#Paginacion { width:786px; margin:2px 0px; font-size:12px; margin-bottom:10px; }
+.TablaComentario td { border-bottom:0.5px dotted #B2B2B2; padding-top:5px; padding-bottom:5px; }
+.fechaComentario { color: #666666; font-size: 10px; }
+.margin-left85 {margin-left:85px;}
+.padding-top30 {padding-top:30px;}
+.padding-top50 {padding-top:50px;}
+/*.ui-multiselect-header { z-index:9999999 !important; }
+.ui-multiselect-menu { z-index:9999999 !important; width:219px !important; }-
+.ui-multiselect-checkboxes LABEL{ padding-left:10px; }*/
+.ui-multiselect-checkboxes LABEL span{ padding-left:5px; }

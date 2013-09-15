@@ -10,42 +10,33 @@
 namespace UPC.IFCDC.UI {
     
     
-    public partial class WebForm1 {
+    public partial class Site1 {
         
         /// <summary>
-        /// formularioLogin control.
+        /// head control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm formularioLogin;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
         
         /// <summary>
-        /// texto_usuario control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox texto_usuario;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// texto_password control.
+        /// ContentPlaceHolder1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox texto_password;
-        
-        /// <summary>
-        /// ingresar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ingresar;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
     }
 }
