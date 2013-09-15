@@ -9,6 +9,21 @@ namespace UPC.SSIA2013.BL.BC
 {
     public class InformeFinCicloBC
     {
+        public up_IFCDC_Obtener_InformeFinCicloResult obtenerInformeFinCiclo(String coordinadorId, int cursoId, int periodoId)
+        {
+            InformeFinCicloDALC objInformeFinCicloDALC;
+
+            try
+            {
+                objInformeFinCicloDALC = new InformeFinCicloDALC();
+                return objInformeFinCicloDALC.obtenerInformeFinCiclo(coordinadorId, cursoId, periodoId);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         /*
         public int registrarInformeFinCiclo(String profesorId, Int32 cursoId, Int32 periodoId, String comentarioInfraestructura,
                                         String comentarioAlumnos, String comentarioDelegados, Int32 calificacionDelegado)
@@ -41,20 +56,6 @@ namespace UPC.SSIA2013.BL.BC
                 throw ex;
             }
         }
-
-        public spObtenerInformeFinCicloxProfesorxCursoxPeriodoResult obtenerInformeFinCicloxProfesorxCursoxPeriodo(String profesorId, int cursoId, int periodoId)
-        {
-            InformeFinCicloDALC objInformeFinCicloDALC;
-
-            try
-            {
-                objInformeFinCicloDALC = new InformeFinCicloDALC();
-                return objInformeFinCicloDALC.obtenerInformeFinCicloxProfesorxCursoxPeriodo(profesorId, cursoId, periodoId);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }*/
+        */ 
     }
 }

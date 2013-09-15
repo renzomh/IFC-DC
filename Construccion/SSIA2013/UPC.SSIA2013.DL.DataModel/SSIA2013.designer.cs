@@ -33,9 +33,9 @@ namespace UPC.SSIA2013.DL.DataModel
     partial void InsertAdministrativo(Administrativo instance);
     partial void UpdateAdministrativo(Administrativo instance);
     partial void DeleteAdministrativo(Administrativo instance);
-    partial void InsertRubrica(Rubrica instance);
-    partial void UpdateRubrica(Rubrica instance);
-    partial void DeleteRubrica(Rubrica instance);
+    partial void InsertResultadosRubrica(ResultadosRubrica instance);
+    partial void UpdateResultadosRubrica(ResultadosRubrica instance);
+    partial void DeleteResultadosRubrica(ResultadosRubrica instance);
     partial void InsertAlumno(Alumno instance);
     partial void UpdateAlumno(Alumno instance);
     partial void DeleteAlumno(Alumno instance);
@@ -135,9 +135,9 @@ namespace UPC.SSIA2013.DL.DataModel
     partial void InsertResultadoRubrica(ResultadoRubrica instance);
     partial void UpdateResultadoRubrica(ResultadoRubrica instance);
     partial void DeleteResultadoRubrica(ResultadoRubrica instance);
-    partial void InsertRubrica1(Rubrica1 instance);
-    partial void UpdateRubrica1(Rubrica1 instance);
-    partial void DeleteRubrica1(Rubrica1 instance);
+    partial void InsertRubrica(Rubrica instance);
+    partial void UpdateRubrica(Rubrica instance);
+    partial void DeleteRubrica(Rubrica instance);
     partial void InsertRubricaxVersion(RubricaxVersion instance);
     partial void UpdateRubricaxVersion(RubricaxVersion instance);
     partial void DeleteRubricaxVersion(RubricaxVersion instance);
@@ -183,6 +183,9 @@ namespace UPC.SSIA2013.DL.DataModel
     partial void InsertTrabajosOutcomeAlumno(TrabajosOutcomeAlumno instance);
     partial void UpdateTrabajosOutcomeAlumno(TrabajosOutcomeAlumno instance);
     partial void DeleteTrabajosOutcomeAlumno(TrabajosOutcomeAlumno instance);
+    partial void InsertInformeFinCiclo(InformeFinCiclo instance);
+    partial void UpdateInformeFinCiclo(InformeFinCiclo instance);
+    partial void DeleteInformeFinCiclo(InformeFinCiclo instance);
     partial void InsertCriterioRubrica(CriterioRubrica instance);
     partial void UpdateCriterioRubrica(CriterioRubrica instance);
     partial void DeleteCriterioRubrica(CriterioRubrica instance);
@@ -201,9 +204,9 @@ namespace UPC.SSIA2013.DL.DataModel
     partial void InsertRespuestasRubrica(RespuestasRubrica instance);
     partial void UpdateRespuestasRubrica(RespuestasRubrica instance);
     partial void DeleteRespuestasRubrica(RespuestasRubrica instance);
-    partial void InsertResultadosRubrica(ResultadosRubrica instance);
-    partial void UpdateResultadosRubrica(ResultadosRubrica instance);
-    partial void DeleteResultadosRubrica(ResultadosRubrica instance);
+    partial void InsertRubrica1(Rubrica1 instance);
+    partial void UpdateRubrica1(Rubrica1 instance);
+    partial void DeleteRubrica1(Rubrica1 instance);
     #endregion
 		
 		public SSIA2013DataContext() : 
@@ -244,11 +247,11 @@ namespace UPC.SSIA2013.DL.DataModel
 			}
 		}
 		
-		public System.Data.Linq.Table<Rubrica> Rubricas
+		public System.Data.Linq.Table<ResultadosRubrica> ResultadosRubricas
 		{
 			get
 			{
-				return this.GetTable<Rubrica>();
+				return this.GetTable<ResultadosRubrica>();
 			}
 		}
 		
@@ -516,11 +519,11 @@ namespace UPC.SSIA2013.DL.DataModel
 			}
 		}
 		
-		public System.Data.Linq.Table<Rubrica1> Rubrica1s
+		public System.Data.Linq.Table<Rubrica> Rubricas
 		{
 			get
 			{
-				return this.GetTable<Rubrica1>();
+				return this.GetTable<Rubrica>();
 			}
 		}
 		
@@ -644,6 +647,14 @@ namespace UPC.SSIA2013.DL.DataModel
 			}
 		}
 		
+		public System.Data.Linq.Table<InformeFinCiclo> InformeFinCiclos
+		{
+			get
+			{
+				return this.GetTable<InformeFinCiclo>();
+			}
+		}
+		
 		public System.Data.Linq.Table<CriterioRubrica> CriterioRubricas
 		{
 			get
@@ -692,11 +703,11 @@ namespace UPC.SSIA2013.DL.DataModel
 			}
 		}
 		
-		public System.Data.Linq.Table<ResultadosRubrica> ResultadosRubricas
+		public System.Data.Linq.Table<Rubrica1> Rubrica1s
 		{
 			get
 			{
-				return this.GetTable<ResultadosRubrica>();
+				return this.GetTable<Rubrica1>();
 			}
 		}
 		
@@ -705,13 +716,6 @@ namespace UPC.SSIA2013.DL.DataModel
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), personaId);
 			return ((ISingleResult<up_IFCDC_Obtener_PersonaResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.[up.IFCDC_Listar_Cursos_x_Profesor]")]
-		public ISingleResult<up_IFCDC_Listar_Cursos_x_ProfesorResult> up_IFCDC_Listar_Cursos_x_Profesor([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ProfesorId", DbType="VarChar(50)")] string profesorId)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), profesorId);
-			return ((ISingleResult<up_IFCDC_Listar_Cursos_x_ProfesorResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.[up.IFCDC_Listar_ResultadoPrograma_x_Curso]")]
@@ -733,6 +737,20 @@ namespace UPC.SSIA2013.DL.DataModel
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((ISingleResult<up_IFCDC_Obtener_PeriodoActualResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.[up.IFCDC_Listar_Cursos_x_Profesor]")]
+		public ISingleResult<up_IFCDC_Listar_Cursos_x_ProfesorResult> up_IFCDC_Listar_Cursos_x_Profesor([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ProfesorId", DbType="VarChar(50)")] string profesorId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), profesorId);
+			return ((ISingleResult<up_IFCDC_Listar_Cursos_x_ProfesorResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.[up.IFCDC_Obtener_InformeFinCiclo]")]
+		public ISingleResult<up_IFCDC_Obtener_InformeFinCicloResult> up_IFCDC_Obtener_InformeFinCiclo([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CoordinadorId", DbType="VarChar(50)")] string coordinadorId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CursoId", DbType="Int")] System.Nullable<int> cursoId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PeriodoId", DbType="Int")] System.Nullable<int> periodoId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), coordinadorId, cursoId, periodoId);
+			return ((ISingleResult<up_IFCDC_Obtener_InformeFinCicloResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -839,316 +857,109 @@ namespace UPC.SSIA2013.DL.DataModel
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="RUBRICON.Rubricas")]
-	public partial class Rubrica : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="RUBRICON.ResultadosRubricas")]
+	public partial class ResultadosRubrica : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _RubricaId;
+		private int _EvaluacionId;
 		
-		private int _CursoId;
+		private string _Resultado;
 		
-		private string _CodigoEvaluacion;
-		
-		private string _Version;
-		
-		private string _Descripcion;
-		
-		private System.DateTime _FechaCreacion;
-		
-		private string _CreadorId;
-		
-		private string _Estado;
-		
-		private string _AprobadorId;
-		
-		private System.Nullable<System.DateTime> _FechaAprobacion;
-		
-		private bool _EsPrincipal;
-		
-		private EntitySet<CriterioRubrica> _CriterioRubricas;
-		
-		private EntitySet<Evaluacione> _Evaluaciones;
+		private EntityRef<Evaluacione> _Evaluacione;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnRubricaIdChanging(int value);
-    partial void OnRubricaIdChanged();
-    partial void OnCursoIdChanging(int value);
-    partial void OnCursoIdChanged();
-    partial void OnCodigoEvaluacionChanging(string value);
-    partial void OnCodigoEvaluacionChanged();
-    partial void OnVersionChanging(string value);
-    partial void OnVersionChanged();
-    partial void OnDescripcionChanging(string value);
-    partial void OnDescripcionChanged();
-    partial void OnFechaCreacionChanging(System.DateTime value);
-    partial void OnFechaCreacionChanged();
-    partial void OnCreadorIdChanging(string value);
-    partial void OnCreadorIdChanged();
-    partial void OnEstadoChanging(string value);
-    partial void OnEstadoChanged();
-    partial void OnAprobadorIdChanging(string value);
-    partial void OnAprobadorIdChanged();
-    partial void OnFechaAprobacionChanging(System.Nullable<System.DateTime> value);
-    partial void OnFechaAprobacionChanged();
-    partial void OnEsPrincipalChanging(bool value);
-    partial void OnEsPrincipalChanged();
+    partial void OnEvaluacionIdChanging(int value);
+    partial void OnEvaluacionIdChanged();
+    partial void OnResultadoChanging(string value);
+    partial void OnResultadoChanged();
     #endregion
 		
-		public Rubrica()
+		public ResultadosRubrica()
 		{
-			this._CriterioRubricas = new EntitySet<CriterioRubrica>(new Action<CriterioRubrica>(this.attach_CriterioRubricas), new Action<CriterioRubrica>(this.detach_CriterioRubricas));
-			this._Evaluaciones = new EntitySet<Evaluacione>(new Action<Evaluacione>(this.attach_Evaluaciones), new Action<Evaluacione>(this.detach_Evaluaciones));
+			this._Evaluacione = default(EntityRef<Evaluacione>);
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RubricaId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int RubricaId
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EvaluacionId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int EvaluacionId
 		{
 			get
 			{
-				return this._RubricaId;
+				return this._EvaluacionId;
 			}
 			set
 			{
-				if ((this._RubricaId != value))
+				if ((this._EvaluacionId != value))
 				{
-					this.OnRubricaIdChanging(value);
+					if (this._Evaluacione.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnEvaluacionIdChanging(value);
 					this.SendPropertyChanging();
-					this._RubricaId = value;
-					this.SendPropertyChanged("RubricaId");
-					this.OnRubricaIdChanged();
+					this._EvaluacionId = value;
+					this.SendPropertyChanged("EvaluacionId");
+					this.OnEvaluacionIdChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CursoId", DbType="Int NOT NULL")]
-		public int CursoId
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Resultado", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Resultado
 		{
 			get
 			{
-				return this._CursoId;
+				return this._Resultado;
 			}
 			set
 			{
-				if ((this._CursoId != value))
+				if ((this._Resultado != value))
 				{
-					this.OnCursoIdChanging(value);
+					this.OnResultadoChanging(value);
 					this.SendPropertyChanging();
-					this._CursoId = value;
-					this.SendPropertyChanged("CursoId");
-					this.OnCursoIdChanged();
+					this._Resultado = value;
+					this.SendPropertyChanged("Resultado");
+					this.OnResultadoChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoEvaluacion", DbType="VarChar(5) NOT NULL", CanBeNull=false)]
-		public string CodigoEvaluacion
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Evaluacione_ResultadosRubrica", Storage="_Evaluacione", ThisKey="EvaluacionId", OtherKey="EvaluacionId", IsForeignKey=true)]
+		public Evaluacione Evaluacione
 		{
 			get
 			{
-				return this._CodigoEvaluacion;
+				return this._Evaluacione.Entity;
 			}
 			set
 			{
-				if ((this._CodigoEvaluacion != value))
+				Evaluacione previousValue = this._Evaluacione.Entity;
+				if (((previousValue != value) 
+							|| (this._Evaluacione.HasLoadedOrAssignedValue == false)))
 				{
-					this.OnCodigoEvaluacionChanging(value);
 					this.SendPropertyChanging();
-					this._CodigoEvaluacion = value;
-					this.SendPropertyChanged("CodigoEvaluacion");
-					this.OnCodigoEvaluacionChanged();
+					if ((previousValue != null))
+					{
+						this._Evaluacione.Entity = null;
+						previousValue.ResultadosRubrica = null;
+					}
+					this._Evaluacione.Entity = value;
+					if ((value != null))
+					{
+						value.ResultadosRubrica = this;
+						this._EvaluacionId = value.EvaluacionId;
+					}
+					else
+					{
+						this._EvaluacionId = default(int);
+					}
+					this.SendPropertyChanged("Evaluacione");
 				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Version", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string Version
-		{
-			get
-			{
-				return this._Version;
-			}
-			set
-			{
-				if ((this._Version != value))
-				{
-					this.OnVersionChanging(value);
-					this.SendPropertyChanging();
-					this._Version = value;
-					this.SendPropertyChanged("Version");
-					this.OnVersionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion", DbType="VarChar(1000) NOT NULL", CanBeNull=false)]
-		public string Descripcion
-		{
-			get
-			{
-				return this._Descripcion;
-			}
-			set
-			{
-				if ((this._Descripcion != value))
-				{
-					this.OnDescripcionChanging(value);
-					this.SendPropertyChanging();
-					this._Descripcion = value;
-					this.SendPropertyChanged("Descripcion");
-					this.OnDescripcionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaCreacion", DbType="DateTime NOT NULL")]
-		public System.DateTime FechaCreacion
-		{
-			get
-			{
-				return this._FechaCreacion;
-			}
-			set
-			{
-				if ((this._FechaCreacion != value))
-				{
-					this.OnFechaCreacionChanging(value);
-					this.SendPropertyChanging();
-					this._FechaCreacion = value;
-					this.SendPropertyChanged("FechaCreacion");
-					this.OnFechaCreacionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreadorId", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
-		public string CreadorId
-		{
-			get
-			{
-				return this._CreadorId;
-			}
-			set
-			{
-				if ((this._CreadorId != value))
-				{
-					this.OnCreadorIdChanging(value);
-					this.SendPropertyChanging();
-					this._CreadorId = value;
-					this.SendPropertyChanged("CreadorId");
-					this.OnCreadorIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="VarChar(3) NOT NULL", CanBeNull=false)]
-		public string Estado
-		{
-			get
-			{
-				return this._Estado;
-			}
-			set
-			{
-				if ((this._Estado != value))
-				{
-					this.OnEstadoChanging(value);
-					this.SendPropertyChanging();
-					this._Estado = value;
-					this.SendPropertyChanged("Estado");
-					this.OnEstadoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AprobadorId", DbType="VarChar(20)")]
-		public string AprobadorId
-		{
-			get
-			{
-				return this._AprobadorId;
-			}
-			set
-			{
-				if ((this._AprobadorId != value))
-				{
-					this.OnAprobadorIdChanging(value);
-					this.SendPropertyChanging();
-					this._AprobadorId = value;
-					this.SendPropertyChanged("AprobadorId");
-					this.OnAprobadorIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaAprobacion", DbType="DateTime")]
-		public System.Nullable<System.DateTime> FechaAprobacion
-		{
-			get
-			{
-				return this._FechaAprobacion;
-			}
-			set
-			{
-				if ((this._FechaAprobacion != value))
-				{
-					this.OnFechaAprobacionChanging(value);
-					this.SendPropertyChanging();
-					this._FechaAprobacion = value;
-					this.SendPropertyChanged("FechaAprobacion");
-					this.OnFechaAprobacionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EsPrincipal", DbType="Bit NOT NULL")]
-		public bool EsPrincipal
-		{
-			get
-			{
-				return this._EsPrincipal;
-			}
-			set
-			{
-				if ((this._EsPrincipal != value))
-				{
-					this.OnEsPrincipalChanging(value);
-					this.SendPropertyChanging();
-					this._EsPrincipal = value;
-					this.SendPropertyChanged("EsPrincipal");
-					this.OnEsPrincipalChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Rubrica_CriterioRubrica", Storage="_CriterioRubricas", ThisKey="RubricaId", OtherKey="RubricaId")]
-		public EntitySet<CriterioRubrica> CriterioRubricas
-		{
-			get
-			{
-				return this._CriterioRubricas;
-			}
-			set
-			{
-				this._CriterioRubricas.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Rubrica_Evaluacione", Storage="_Evaluaciones", ThisKey="RubricaId", OtherKey="RubricaId")]
-		public EntitySet<Evaluacione> Evaluaciones
-		{
-			get
-			{
-				return this._Evaluaciones;
-			}
-			set
-			{
-				this._Evaluaciones.Assign(value);
 			}
 		}
 		
@@ -1170,30 +981,6 @@ namespace UPC.SSIA2013.DL.DataModel
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_CriterioRubricas(CriterioRubrica entity)
-		{
-			this.SendPropertyChanging();
-			entity.Rubrica = this;
-		}
-		
-		private void detach_CriterioRubricas(CriterioRubrica entity)
-		{
-			this.SendPropertyChanging();
-			entity.Rubrica = null;
-		}
-		
-		private void attach_Evaluaciones(Evaluacione entity)
-		{
-			this.SendPropertyChanging();
-			entity.Rubrica = this;
-		}
-		
-		private void detach_Evaluaciones(Evaluacione entity)
-		{
-			this.SendPropertyChanging();
-			entity.Rubrica = null;
 		}
 	}
 	
@@ -4357,6 +4144,8 @@ namespace UPC.SSIA2013.DL.DataModel
 		
 		private EntitySet<SeccionxCurso> _SeccionxCursos;
 		
+		private EntitySet<InformeFinCiclo> _InformeFinCiclos;
+		
 		private EntityRef<SubArea> _SubArea;
 		
 		private EntityRef<TipoCurso> _TipoCurso;
@@ -4395,6 +4184,7 @@ namespace UPC.SSIA2013.DL.DataModel
 			this._CursoxResultadoProgramas = new EntitySet<CursoxResultadoPrograma>(new Action<CursoxResultadoPrograma>(this.attach_CursoxResultadoProgramas), new Action<CursoxResultadoPrograma>(this.detach_CursoxResultadoProgramas));
 			this._DetalleCurriculas = new EntitySet<DetalleCurricula>(new Action<DetalleCurricula>(this.attach_DetalleCurriculas), new Action<DetalleCurricula>(this.detach_DetalleCurriculas));
 			this._SeccionxCursos = new EntitySet<SeccionxCurso>(new Action<SeccionxCurso>(this.attach_SeccionxCursos), new Action<SeccionxCurso>(this.detach_SeccionxCursos));
+			this._InformeFinCiclos = new EntitySet<InformeFinCiclo>(new Action<InformeFinCiclo>(this.attach_InformeFinCiclos), new Action<InformeFinCiclo>(this.detach_InformeFinCiclos));
 			this._SubArea = default(EntityRef<SubArea>);
 			this._TipoCurso = default(EntityRef<TipoCurso>);
 			OnCreated();
@@ -4718,6 +4508,19 @@ namespace UPC.SSIA2013.DL.DataModel
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Curso_InformeFinCiclo", Storage="_InformeFinCiclos", ThisKey="CursoId", OtherKey="CursoId")]
+		public EntitySet<InformeFinCiclo> InformeFinCiclos
+		{
+			get
+			{
+				return this._InformeFinCiclos;
+			}
+			set
+			{
+				this._InformeFinCiclos.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SubArea_Curso", Storage="_SubArea", ThisKey="SubAreaId", OtherKey="SubAreaId", IsForeignKey=true)]
 		public SubArea SubArea
 		{
@@ -4849,6 +4652,18 @@ namespace UPC.SSIA2013.DL.DataModel
 		}
 		
 		private void detach_SeccionxCursos(SeccionxCurso entity)
+		{
+			this.SendPropertyChanging();
+			entity.Curso = null;
+		}
+		
+		private void attach_InformeFinCiclos(InformeFinCiclo entity)
+		{
+			this.SendPropertyChanging();
+			entity.Curso = this;
+		}
+		
+		private void detach_InformeFinCiclos(InformeFinCiclo entity)
 		{
 			this.SendPropertyChanging();
 			entity.Curso = null;
@@ -5079,7 +4894,7 @@ namespace UPC.SSIA2013.DL.DataModel
 		
 		private EntitySet<ResultadoProgramaxCursoxEvaluacion> _ResultadoProgramaxCursoxEvaluacions;
 		
-		private EntitySet<Rubrica1> _Rubrica1s;
+		private EntitySet<Rubrica> _Rubricas;
 		
 		private EntitySet<Trabajo> _Trabajos;
 		
@@ -5105,7 +4920,7 @@ namespace UPC.SSIA2013.DL.DataModel
 		{
 			this._CursoxEvaluacionxAlumnos = new EntitySet<CursoxEvaluacionxAlumno>(new Action<CursoxEvaluacionxAlumno>(this.attach_CursoxEvaluacionxAlumnos), new Action<CursoxEvaluacionxAlumno>(this.detach_CursoxEvaluacionxAlumnos));
 			this._ResultadoProgramaxCursoxEvaluacions = new EntitySet<ResultadoProgramaxCursoxEvaluacion>(new Action<ResultadoProgramaxCursoxEvaluacion>(this.attach_ResultadoProgramaxCursoxEvaluacions), new Action<ResultadoProgramaxCursoxEvaluacion>(this.detach_ResultadoProgramaxCursoxEvaluacions));
-			this._Rubrica1s = new EntitySet<Rubrica1>(new Action<Rubrica1>(this.attach_Rubrica1s), new Action<Rubrica1>(this.detach_Rubrica1s));
+			this._Rubricas = new EntitySet<Rubrica>(new Action<Rubrica>(this.attach_Rubricas), new Action<Rubrica>(this.detach_Rubricas));
 			this._Trabajos = new EntitySet<Trabajo>(new Action<Trabajo>(this.attach_Trabajos), new Action<Trabajo>(this.detach_Trabajos));
 			this._Evaluacion = default(EntityRef<Evaluacion>);
 			this._SeccionxCurso = default(EntityRef<SeccionxCurso>);
@@ -5226,16 +5041,16 @@ namespace UPC.SSIA2013.DL.DataModel
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CursoxEvaluacion_Rubrica1", Storage="_Rubrica1s", ThisKey="CursoxEvaluacionId", OtherKey="CursoxEvaluacionId")]
-		public EntitySet<Rubrica1> Rubrica1s
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CursoxEvaluacion_Rubrica", Storage="_Rubricas", ThisKey="CursoxEvaluacionId", OtherKey="CursoxEvaluacionId")]
+		public EntitySet<Rubrica> Rubricas
 		{
 			get
 			{
-				return this._Rubrica1s;
+				return this._Rubricas;
 			}
 			set
 			{
-				this._Rubrica1s.Assign(value);
+				this._Rubricas.Assign(value);
 			}
 		}
 		
@@ -5364,13 +5179,13 @@ namespace UPC.SSIA2013.DL.DataModel
 			entity.CursoxEvaluacion = null;
 		}
 		
-		private void attach_Rubrica1s(Rubrica1 entity)
+		private void attach_Rubricas(Rubrica entity)
 		{
 			this.SendPropertyChanging();
 			entity.CursoxEvaluacion = this;
 		}
 		
-		private void detach_Rubrica1s(Rubrica1 entity)
+		private void detach_Rubricas(Rubrica entity)
 		{
 			this.SendPropertyChanging();
 			entity.CursoxEvaluacion = null;
@@ -7828,6 +7643,8 @@ namespace UPC.SSIA2013.DL.DataModel
 		
 		private EntitySet<SeccionxCurso> _SeccionxCursos;
 		
+		private EntitySet<InformeFinCiclo> _InformeFinCiclos;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -7855,6 +7672,7 @@ namespace UPC.SSIA2013.DL.DataModel
 			this._Curriculas1 = new EntitySet<Curricula>(new Action<Curricula>(this.attach_Curriculas1), new Action<Curricula>(this.detach_Curriculas1));
 			this._Matriculas = new EntitySet<Matricula>(new Action<Matricula>(this.attach_Matriculas), new Action<Matricula>(this.detach_Matriculas));
 			this._SeccionxCursos = new EntitySet<SeccionxCurso>(new Action<SeccionxCurso>(this.attach_SeccionxCursos), new Action<SeccionxCurso>(this.detach_SeccionxCursos));
+			this._InformeFinCiclos = new EntitySet<InformeFinCiclo>(new Action<InformeFinCiclo>(this.attach_InformeFinCiclos), new Action<InformeFinCiclo>(this.detach_InformeFinCiclos));
 			OnCreated();
 		}
 		
@@ -8069,6 +7887,19 @@ namespace UPC.SSIA2013.DL.DataModel
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Periodo_InformeFinCiclo", Storage="_InformeFinCiclos", ThisKey="PeriodoId", OtherKey="PeriodoId")]
+		public EntitySet<InformeFinCiclo> InformeFinCiclos
+		{
+			get
+			{
+				return this._InformeFinCiclos;
+			}
+			set
+			{
+				this._InformeFinCiclos.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -8172,6 +8003,18 @@ namespace UPC.SSIA2013.DL.DataModel
 			this.SendPropertyChanging();
 			entity.Periodo = null;
 		}
+		
+		private void attach_InformeFinCiclos(InformeFinCiclo entity)
+		{
+			this.SendPropertyChanging();
+			entity.Periodo = this;
+		}
+		
+		private void detach_InformeFinCiclos(InformeFinCiclo entity)
+		{
+			this.SendPropertyChanging();
+			entity.Periodo = null;
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Persona")]
@@ -8218,6 +8061,8 @@ namespace UPC.SSIA2013.DL.DataModel
 		
 		private EntitySet<SubArea> _SubAreas;
 		
+		private EntitySet<InformeFinCiclo> _InformeFinCiclos;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -8257,6 +8102,7 @@ namespace UPC.SSIA2013.DL.DataModel
 			this._Escuelas = new EntitySet<Escuela>(new Action<Escuela>(this.attach_Escuelas), new Action<Escuela>(this.detach_Escuelas));
 			this._Profesor = default(EntityRef<Profesor>);
 			this._SubAreas = new EntitySet<SubArea>(new Action<SubArea>(this.attach_SubAreas), new Action<SubArea>(this.detach_SubAreas));
+			this._InformeFinCiclos = new EntitySet<InformeFinCiclo>(new Action<InformeFinCiclo>(this.attach_InformeFinCiclos), new Action<InformeFinCiclo>(this.detach_InformeFinCiclos));
 			OnCreated();
 		}
 		
@@ -8655,6 +8501,19 @@ namespace UPC.SSIA2013.DL.DataModel
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Persona_InformeFinCiclo", Storage="_InformeFinCiclos", ThisKey="PersonaId", OtherKey="PersonaId")]
+		public EntitySet<InformeFinCiclo> InformeFinCiclos
+		{
+			get
+			{
+				return this._InformeFinCiclos;
+			}
+			set
+			{
+				this._InformeFinCiclos.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -8706,6 +8565,18 @@ namespace UPC.SSIA2013.DL.DataModel
 		}
 		
 		private void detach_SubAreas(SubArea entity)
+		{
+			this.SendPropertyChanging();
+			entity.Persona = null;
+		}
+		
+		private void attach_InformeFinCiclos(InformeFinCiclo entity)
+		{
+			this.SendPropertyChanging();
+			entity.Persona = this;
+		}
+		
+		private void detach_InformeFinCiclos(InformeFinCiclo entity)
 		{
 			this.SendPropertyChanging();
 			entity.Persona = null;
@@ -9746,7 +9617,7 @@ namespace UPC.SSIA2013.DL.DataModel
 		
 		private EntityRef<Profesor> _Profesor;
 		
-		private EntityRef<Rubrica1> _Rubrica1;
+		private EntityRef<Rubrica> _Rubrica;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -9771,7 +9642,7 @@ namespace UPC.SSIA2013.DL.DataModel
 			this._CriterioxResultadoRubricas = new EntitySet<CriterioxResultadoRubrica>(new Action<CriterioxResultadoRubrica>(this.attach_CriterioxResultadoRubricas), new Action<CriterioxResultadoRubrica>(this.detach_CriterioxResultadoRubricas));
 			this._Alumno = default(EntityRef<Alumno>);
 			this._Profesor = default(EntityRef<Profesor>);
-			this._Rubrica1 = default(EntityRef<Rubrica1>);
+			this._Rubrica = default(EntityRef<Rubrica>);
 			OnCreated();
 		}
 		
@@ -9806,7 +9677,7 @@ namespace UPC.SSIA2013.DL.DataModel
 			{
 				if ((this._RubricaId != value))
 				{
-					if (this._Rubrica1.HasLoadedOrAssignedValue)
+					if (this._Rubrica.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -9988,26 +9859,26 @@ namespace UPC.SSIA2013.DL.DataModel
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Rubrica1_ResultadoRubrica", Storage="_Rubrica1", ThisKey="RubricaId", OtherKey="RubricaId", IsForeignKey=true)]
-		public Rubrica1 Rubrica1
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Rubrica_ResultadoRubrica", Storage="_Rubrica", ThisKey="RubricaId", OtherKey="RubricaId", IsForeignKey=true)]
+		public Rubrica Rubrica
 		{
 			get
 			{
-				return this._Rubrica1.Entity;
+				return this._Rubrica.Entity;
 			}
 			set
 			{
-				Rubrica1 previousValue = this._Rubrica1.Entity;
+				Rubrica previousValue = this._Rubrica.Entity;
 				if (((previousValue != value) 
-							|| (this._Rubrica1.HasLoadedOrAssignedValue == false)))
+							|| (this._Rubrica.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._Rubrica1.Entity = null;
+						this._Rubrica.Entity = null;
 						previousValue.ResultadoRubricas.Remove(this);
 					}
-					this._Rubrica1.Entity = value;
+					this._Rubrica.Entity = value;
 					if ((value != null))
 					{
 						value.ResultadoRubricas.Add(this);
@@ -10017,7 +9888,7 @@ namespace UPC.SSIA2013.DL.DataModel
 					{
 						this._RubricaId = default(Nullable<int>);
 					}
-					this.SendPropertyChanged("Rubrica1");
+					this.SendPropertyChanged("Rubrica");
 				}
 			}
 		}
@@ -10056,7 +9927,7 @@ namespace UPC.SSIA2013.DL.DataModel
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Rubrica")]
-	public partial class Rubrica1 : INotifyPropertyChanging, INotifyPropertyChanged
+	public partial class Rubrica : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -10087,7 +9958,7 @@ namespace UPC.SSIA2013.DL.DataModel
     partial void OnRubricaActualChanged();
     #endregion
 		
-		public Rubrica1()
+		public Rubrica()
 		{
 			this._ResultadoRubricas = new EntitySet<ResultadoRubrica>(new Action<ResultadoRubrica>(this.attach_ResultadoRubricas), new Action<ResultadoRubrica>(this.detach_ResultadoRubricas));
 			this._RubricaxVersions = new EntitySet<RubricaxVersion>(new Action<RubricaxVersion>(this.attach_RubricaxVersions), new Action<RubricaxVersion>(this.detach_RubricaxVersions));
@@ -10164,7 +10035,7 @@ namespace UPC.SSIA2013.DL.DataModel
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Rubrica1_ResultadoRubrica", Storage="_ResultadoRubricas", ThisKey="RubricaId", OtherKey="RubricaId")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Rubrica_ResultadoRubrica", Storage="_ResultadoRubricas", ThisKey="RubricaId", OtherKey="RubricaId")]
 		public EntitySet<ResultadoRubrica> ResultadoRubricas
 		{
 			get
@@ -10177,7 +10048,7 @@ namespace UPC.SSIA2013.DL.DataModel
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Rubrica1_RubricaxVersion", Storage="_RubricaxVersions", ThisKey="RubricaId", OtherKey="RubricaId")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Rubrica_RubricaxVersion", Storage="_RubricaxVersions", ThisKey="RubricaId", OtherKey="RubricaId")]
 		public EntitySet<RubricaxVersion> RubricaxVersions
 		{
 			get
@@ -10190,7 +10061,7 @@ namespace UPC.SSIA2013.DL.DataModel
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CursoxEvaluacion_Rubrica1", Storage="_CursoxEvaluacion", ThisKey="CursoxEvaluacionId", OtherKey="CursoxEvaluacionId", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CursoxEvaluacion_Rubrica", Storage="_CursoxEvaluacion", ThisKey="CursoxEvaluacionId", OtherKey="CursoxEvaluacionId", IsForeignKey=true)]
 		public CursoxEvaluacion CursoxEvaluacion
 		{
 			get
@@ -10207,12 +10078,12 @@ namespace UPC.SSIA2013.DL.DataModel
 					if ((previousValue != null))
 					{
 						this._CursoxEvaluacion.Entity = null;
-						previousValue.Rubrica1s.Remove(this);
+						previousValue.Rubricas.Remove(this);
 					}
 					this._CursoxEvaluacion.Entity = value;
 					if ((value != null))
 					{
-						value.Rubrica1s.Add(this);
+						value.Rubricas.Add(this);
 						this._CursoxEvaluacionId = value.CursoxEvaluacionId;
 					}
 					else
@@ -10224,7 +10095,7 @@ namespace UPC.SSIA2013.DL.DataModel
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="RubricaxVersion_Rubrica1", Storage="_RubricaxVersion", ThisKey="RubricaActual", OtherKey="RubricaxVersionId", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="RubricaxVersion_Rubrica", Storage="_RubricaxVersion", ThisKey="RubricaActual", OtherKey="RubricaxVersionId", IsForeignKey=true)]
 		public RubricaxVersion RubricaxVersion
 		{
 			get
@@ -10241,12 +10112,12 @@ namespace UPC.SSIA2013.DL.DataModel
 					if ((previousValue != null))
 					{
 						this._RubricaxVersion.Entity = null;
-						previousValue.Rubrica1s.Remove(this);
+						previousValue.Rubricas.Remove(this);
 					}
 					this._RubricaxVersion.Entity = value;
 					if ((value != null))
 					{
-						value.Rubrica1s.Add(this);
+						value.Rubricas.Add(this);
 						this._RubricaActual = value.RubricaxVersionId;
 					}
 					else
@@ -10281,25 +10152,25 @@ namespace UPC.SSIA2013.DL.DataModel
 		private void attach_ResultadoRubricas(ResultadoRubrica entity)
 		{
 			this.SendPropertyChanging();
-			entity.Rubrica1 = this;
+			entity.Rubrica = this;
 		}
 		
 		private void detach_ResultadoRubricas(ResultadoRubrica entity)
 		{
 			this.SendPropertyChanging();
-			entity.Rubrica1 = null;
+			entity.Rubrica = null;
 		}
 		
 		private void attach_RubricaxVersions(RubricaxVersion entity)
 		{
 			this.SendPropertyChanging();
-			entity.Rubrica1 = this;
+			entity.Rubrica = this;
 		}
 		
 		private void detach_RubricaxVersions(RubricaxVersion entity)
 		{
 			this.SendPropertyChanging();
-			entity.Rubrica1 = null;
+			entity.Rubrica = null;
 		}
 	}
 	
@@ -10331,13 +10202,13 @@ namespace UPC.SSIA2013.DL.DataModel
 		
 		private EntitySet<CriterioxRubrica> _CriterioxRubricas;
 		
-		private EntitySet<Rubrica1> _Rubrica1s;
+		private EntitySet<Rubrica> _Rubricas;
 		
 		private EntityRef<Profesor> _Profesor;
 		
 		private EntityRef<Profesor> _Profesor1;
 		
-		private EntityRef<Rubrica1> _Rubrica1;
+		private EntityRef<Rubrica> _Rubrica;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -10368,10 +10239,10 @@ namespace UPC.SSIA2013.DL.DataModel
 		public RubricaxVersion()
 		{
 			this._CriterioxRubricas = new EntitySet<CriterioxRubrica>(new Action<CriterioxRubrica>(this.attach_CriterioxRubricas), new Action<CriterioxRubrica>(this.detach_CriterioxRubricas));
-			this._Rubrica1s = new EntitySet<Rubrica1>(new Action<Rubrica1>(this.attach_Rubrica1s), new Action<Rubrica1>(this.detach_Rubrica1s));
+			this._Rubricas = new EntitySet<Rubrica>(new Action<Rubrica>(this.attach_Rubricas), new Action<Rubrica>(this.detach_Rubricas));
 			this._Profesor = default(EntityRef<Profesor>);
 			this._Profesor1 = default(EntityRef<Profesor>);
-			this._Rubrica1 = default(EntityRef<Rubrica1>);
+			this._Rubrica = default(EntityRef<Rubrica>);
 			OnCreated();
 		}
 		
@@ -10406,7 +10277,7 @@ namespace UPC.SSIA2013.DL.DataModel
 			{
 				if ((this._RubricaId != value))
 				{
-					if (this._Rubrica1.HasLoadedOrAssignedValue)
+					if (this._Rubrica.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -10600,16 +10471,16 @@ namespace UPC.SSIA2013.DL.DataModel
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="RubricaxVersion_Rubrica1", Storage="_Rubrica1s", ThisKey="RubricaxVersionId", OtherKey="RubricaActual")]
-		public EntitySet<Rubrica1> Rubrica1s
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="RubricaxVersion_Rubrica", Storage="_Rubricas", ThisKey="RubricaxVersionId", OtherKey="RubricaActual")]
+		public EntitySet<Rubrica> Rubricas
 		{
 			get
 			{
-				return this._Rubrica1s;
+				return this._Rubricas;
 			}
 			set
 			{
-				this._Rubrica1s.Assign(value);
+				this._Rubricas.Assign(value);
 			}
 		}
 		
@@ -10681,26 +10552,26 @@ namespace UPC.SSIA2013.DL.DataModel
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Rubrica1_RubricaxVersion", Storage="_Rubrica1", ThisKey="RubricaId", OtherKey="RubricaId", IsForeignKey=true)]
-		public Rubrica1 Rubrica1
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Rubrica_RubricaxVersion", Storage="_Rubrica", ThisKey="RubricaId", OtherKey="RubricaId", IsForeignKey=true)]
+		public Rubrica Rubrica
 		{
 			get
 			{
-				return this._Rubrica1.Entity;
+				return this._Rubrica.Entity;
 			}
 			set
 			{
-				Rubrica1 previousValue = this._Rubrica1.Entity;
+				Rubrica previousValue = this._Rubrica.Entity;
 				if (((previousValue != value) 
-							|| (this._Rubrica1.HasLoadedOrAssignedValue == false)))
+							|| (this._Rubrica.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._Rubrica1.Entity = null;
+						this._Rubrica.Entity = null;
 						previousValue.RubricaxVersions.Remove(this);
 					}
-					this._Rubrica1.Entity = value;
+					this._Rubrica.Entity = value;
 					if ((value != null))
 					{
 						value.RubricaxVersions.Add(this);
@@ -10710,7 +10581,7 @@ namespace UPC.SSIA2013.DL.DataModel
 					{
 						this._RubricaId = default(int);
 					}
-					this.SendPropertyChanged("Rubrica1");
+					this.SendPropertyChanged("Rubrica");
 				}
 			}
 		}
@@ -10747,13 +10618,13 @@ namespace UPC.SSIA2013.DL.DataModel
 			entity.RubricaxVersion = null;
 		}
 		
-		private void attach_Rubrica1s(Rubrica1 entity)
+		private void attach_Rubricas(Rubrica entity)
 		{
 			this.SendPropertyChanging();
 			entity.RubricaxVersion = this;
 		}
 		
-		private void detach_Rubrica1s(Rubrica1 entity)
+		private void detach_Rubricas(Rubrica entity)
 		{
 			this.SendPropertyChanging();
 			entity.RubricaxVersion = null;
@@ -14021,6 +13892,431 @@ namespace UPC.SSIA2013.DL.DataModel
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="IFCDC.InformeFinCiclo")]
+	public partial class InformeFinCiclo : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _InformeFinCicloId;
+		
+		private string _PersonaId;
+		
+		private int _CursoId;
+		
+		private int _PeriodoId;
+		
+		private string _DesarrolloUnidades;
+		
+		private string _ComentarioInfraestructura;
+		
+		private string _ComentarioAlumnos;
+		
+		private string _ComentarioDelegados;
+		
+		private string _ComentarioEscuesta;
+		
+		private string _Estado;
+		
+		private System.DateTime _UltimaActualizacion;
+		
+		private EntityRef<Curso> _Curso;
+		
+		private EntityRef<Periodo> _Periodo;
+		
+		private EntityRef<Persona> _Persona;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnInformeFinCicloIdChanging(int value);
+    partial void OnInformeFinCicloIdChanged();
+    partial void OnPersonaIdChanging(string value);
+    partial void OnPersonaIdChanged();
+    partial void OnCursoIdChanging(int value);
+    partial void OnCursoIdChanged();
+    partial void OnPeriodoIdChanging(int value);
+    partial void OnPeriodoIdChanged();
+    partial void OnDesarrolloUnidadesChanging(string value);
+    partial void OnDesarrolloUnidadesChanged();
+    partial void OnComentarioInfraestructuraChanging(string value);
+    partial void OnComentarioInfraestructuraChanged();
+    partial void OnComentarioAlumnosChanging(string value);
+    partial void OnComentarioAlumnosChanged();
+    partial void OnComentarioDelegadosChanging(string value);
+    partial void OnComentarioDelegadosChanged();
+    partial void OnComentarioEscuestaChanging(string value);
+    partial void OnComentarioEscuestaChanged();
+    partial void OnEstadoChanging(string value);
+    partial void OnEstadoChanged();
+    partial void OnUltimaActualizacionChanging(System.DateTime value);
+    partial void OnUltimaActualizacionChanged();
+    #endregion
+		
+		public InformeFinCiclo()
+		{
+			this._Curso = default(EntityRef<Curso>);
+			this._Periodo = default(EntityRef<Periodo>);
+			this._Persona = default(EntityRef<Persona>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InformeFinCicloId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int InformeFinCicloId
+		{
+			get
+			{
+				return this._InformeFinCicloId;
+			}
+			set
+			{
+				if ((this._InformeFinCicloId != value))
+				{
+					this.OnInformeFinCicloIdChanging(value);
+					this.SendPropertyChanging();
+					this._InformeFinCicloId = value;
+					this.SendPropertyChanged("InformeFinCicloId");
+					this.OnInformeFinCicloIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PersonaId", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string PersonaId
+		{
+			get
+			{
+				return this._PersonaId;
+			}
+			set
+			{
+				if ((this._PersonaId != value))
+				{
+					if (this._Persona.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnPersonaIdChanging(value);
+					this.SendPropertyChanging();
+					this._PersonaId = value;
+					this.SendPropertyChanged("PersonaId");
+					this.OnPersonaIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CursoId", DbType="Int NOT NULL")]
+		public int CursoId
+		{
+			get
+			{
+				return this._CursoId;
+			}
+			set
+			{
+				if ((this._CursoId != value))
+				{
+					if (this._Curso.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnCursoIdChanging(value);
+					this.SendPropertyChanging();
+					this._CursoId = value;
+					this.SendPropertyChanged("CursoId");
+					this.OnCursoIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PeriodoId", DbType="Int NOT NULL")]
+		public int PeriodoId
+		{
+			get
+			{
+				return this._PeriodoId;
+			}
+			set
+			{
+				if ((this._PeriodoId != value))
+				{
+					if (this._Periodo.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnPeriodoIdChanging(value);
+					this.SendPropertyChanging();
+					this._PeriodoId = value;
+					this.SendPropertyChanged("PeriodoId");
+					this.OnPeriodoIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DesarrolloUnidades", DbType="VarChar(500)")]
+		public string DesarrolloUnidades
+		{
+			get
+			{
+				return this._DesarrolloUnidades;
+			}
+			set
+			{
+				if ((this._DesarrolloUnidades != value))
+				{
+					this.OnDesarrolloUnidadesChanging(value);
+					this.SendPropertyChanging();
+					this._DesarrolloUnidades = value;
+					this.SendPropertyChanged("DesarrolloUnidades");
+					this.OnDesarrolloUnidadesChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ComentarioInfraestructura", DbType="VarChar(500)")]
+		public string ComentarioInfraestructura
+		{
+			get
+			{
+				return this._ComentarioInfraestructura;
+			}
+			set
+			{
+				if ((this._ComentarioInfraestructura != value))
+				{
+					this.OnComentarioInfraestructuraChanging(value);
+					this.SendPropertyChanging();
+					this._ComentarioInfraestructura = value;
+					this.SendPropertyChanged("ComentarioInfraestructura");
+					this.OnComentarioInfraestructuraChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ComentarioAlumnos", DbType="VarChar(500)")]
+		public string ComentarioAlumnos
+		{
+			get
+			{
+				return this._ComentarioAlumnos;
+			}
+			set
+			{
+				if ((this._ComentarioAlumnos != value))
+				{
+					this.OnComentarioAlumnosChanging(value);
+					this.SendPropertyChanging();
+					this._ComentarioAlumnos = value;
+					this.SendPropertyChanged("ComentarioAlumnos");
+					this.OnComentarioAlumnosChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ComentarioDelegados", DbType="VarChar(500)")]
+		public string ComentarioDelegados
+		{
+			get
+			{
+				return this._ComentarioDelegados;
+			}
+			set
+			{
+				if ((this._ComentarioDelegados != value))
+				{
+					this.OnComentarioDelegadosChanging(value);
+					this.SendPropertyChanging();
+					this._ComentarioDelegados = value;
+					this.SendPropertyChanged("ComentarioDelegados");
+					this.OnComentarioDelegadosChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ComentarioEscuesta", DbType="VarChar(500)")]
+		public string ComentarioEscuesta
+		{
+			get
+			{
+				return this._ComentarioEscuesta;
+			}
+			set
+			{
+				if ((this._ComentarioEscuesta != value))
+				{
+					this.OnComentarioEscuestaChanging(value);
+					this.SendPropertyChanging();
+					this._ComentarioEscuesta = value;
+					this.SendPropertyChanged("ComentarioEscuesta");
+					this.OnComentarioEscuestaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Estado
+		{
+			get
+			{
+				return this._Estado;
+			}
+			set
+			{
+				if ((this._Estado != value))
+				{
+					this.OnEstadoChanging(value);
+					this.SendPropertyChanging();
+					this._Estado = value;
+					this.SendPropertyChanged("Estado");
+					this.OnEstadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UltimaActualizacion", DbType="Date NOT NULL")]
+		public System.DateTime UltimaActualizacion
+		{
+			get
+			{
+				return this._UltimaActualizacion;
+			}
+			set
+			{
+				if ((this._UltimaActualizacion != value))
+				{
+					this.OnUltimaActualizacionChanging(value);
+					this.SendPropertyChanging();
+					this._UltimaActualizacion = value;
+					this.SendPropertyChanged("UltimaActualizacion");
+					this.OnUltimaActualizacionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Curso_InformeFinCiclo", Storage="_Curso", ThisKey="CursoId", OtherKey="CursoId", IsForeignKey=true)]
+		public Curso Curso
+		{
+			get
+			{
+				return this._Curso.Entity;
+			}
+			set
+			{
+				Curso previousValue = this._Curso.Entity;
+				if (((previousValue != value) 
+							|| (this._Curso.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Curso.Entity = null;
+						previousValue.InformeFinCiclos.Remove(this);
+					}
+					this._Curso.Entity = value;
+					if ((value != null))
+					{
+						value.InformeFinCiclos.Add(this);
+						this._CursoId = value.CursoId;
+					}
+					else
+					{
+						this._CursoId = default(int);
+					}
+					this.SendPropertyChanged("Curso");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Periodo_InformeFinCiclo", Storage="_Periodo", ThisKey="PeriodoId", OtherKey="PeriodoId", IsForeignKey=true)]
+		public Periodo Periodo
+		{
+			get
+			{
+				return this._Periodo.Entity;
+			}
+			set
+			{
+				Periodo previousValue = this._Periodo.Entity;
+				if (((previousValue != value) 
+							|| (this._Periodo.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Periodo.Entity = null;
+						previousValue.InformeFinCiclos.Remove(this);
+					}
+					this._Periodo.Entity = value;
+					if ((value != null))
+					{
+						value.InformeFinCiclos.Add(this);
+						this._PeriodoId = value.PeriodoId;
+					}
+					else
+					{
+						this._PeriodoId = default(int);
+					}
+					this.SendPropertyChanged("Periodo");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Persona_InformeFinCiclo", Storage="_Persona", ThisKey="PersonaId", OtherKey="PersonaId", IsForeignKey=true)]
+		public Persona Persona
+		{
+			get
+			{
+				return this._Persona.Entity;
+			}
+			set
+			{
+				Persona previousValue = this._Persona.Entity;
+				if (((previousValue != value) 
+							|| (this._Persona.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Persona.Entity = null;
+						previousValue.InformeFinCiclos.Remove(this);
+					}
+					this._Persona.Entity = value;
+					if ((value != null))
+					{
+						value.InformeFinCiclos.Add(this);
+						this._PersonaId = value.PersonaId;
+					}
+					else
+					{
+						this._PersonaId = default(string);
+					}
+					this.SendPropertyChanged("Persona");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="RUBRICON.CriterioRubrica")]
 	public partial class CriterioRubrica : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -14045,9 +14341,9 @@ namespace UPC.SSIA2013.DL.DataModel
 		
 		private EntityRef<CriterioRubrica> _CriterioRubrica1;
 		
-		private EntityRef<Rubrica> _Rubrica;
-		
 		private EntityRef<GruposNivele> _GruposNivele;
+		
+		private EntityRef<Rubrica1> _Rubrica1;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -14072,8 +14368,8 @@ namespace UPC.SSIA2013.DL.DataModel
 			this._CriterioRubricas = new EntitySet<CriterioRubrica>(new Action<CriterioRubrica>(this.attach_CriterioRubricas), new Action<CriterioRubrica>(this.detach_CriterioRubricas));
 			this._PerformancesRubricas = new EntitySet<PerformancesRubrica>(new Action<PerformancesRubrica>(this.attach_PerformancesRubricas), new Action<PerformancesRubrica>(this.detach_PerformancesRubricas));
 			this._CriterioRubrica1 = default(EntityRef<CriterioRubrica>);
-			this._Rubrica = default(EntityRef<Rubrica>);
 			this._GruposNivele = default(EntityRef<GruposNivele>);
+			this._Rubrica1 = default(EntityRef<Rubrica1>);
 			OnCreated();
 		}
 		
@@ -14176,7 +14472,7 @@ namespace UPC.SSIA2013.DL.DataModel
 			{
 				if ((this._RubricaId != value))
 				{
-					if (this._Rubrica.HasLoadedOrAssignedValue)
+					if (this._Rubrica1.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -14269,40 +14565,6 @@ namespace UPC.SSIA2013.DL.DataModel
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Rubrica_CriterioRubrica", Storage="_Rubrica", ThisKey="RubricaId", OtherKey="RubricaId", IsForeignKey=true)]
-		public Rubrica Rubrica
-		{
-			get
-			{
-				return this._Rubrica.Entity;
-			}
-			set
-			{
-				Rubrica previousValue = this._Rubrica.Entity;
-				if (((previousValue != value) 
-							|| (this._Rubrica.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Rubrica.Entity = null;
-						previousValue.CriterioRubricas.Remove(this);
-					}
-					this._Rubrica.Entity = value;
-					if ((value != null))
-					{
-						value.CriterioRubricas.Add(this);
-						this._RubricaId = value.RubricaId;
-					}
-					else
-					{
-						this._RubricaId = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Rubrica");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="GruposNivele_CriterioRubrica", Storage="_GruposNivele", ThisKey="GrupoNivelId", OtherKey="GrupoNivelId", IsForeignKey=true)]
 		public GruposNivele GruposNivele
 		{
@@ -14333,6 +14595,40 @@ namespace UPC.SSIA2013.DL.DataModel
 						this._GrupoNivelId = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("GruposNivele");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Rubrica1_CriterioRubrica", Storage="_Rubrica1", ThisKey="RubricaId", OtherKey="RubricaId", IsForeignKey=true)]
+		public Rubrica1 Rubrica1
+		{
+			get
+			{
+				return this._Rubrica1.Entity;
+			}
+			set
+			{
+				Rubrica1 previousValue = this._Rubrica1.Entity;
+				if (((previousValue != value) 
+							|| (this._Rubrica1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Rubrica1.Entity = null;
+						previousValue.CriterioRubricas.Remove(this);
+					}
+					this._Rubrica1.Entity = value;
+					if ((value != null))
+					{
+						value.CriterioRubricas.Add(this);
+						this._RubricaId = value.RubricaId;
+					}
+					else
+					{
+						this._RubricaId = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Rubrica1");
 				}
 			}
 		}
@@ -14400,11 +14696,11 @@ namespace UPC.SSIA2013.DL.DataModel
 		
 		private string _Resultado;
 		
-		private EntitySet<RespuestasRubrica> _RespuestasRubricas;
-		
 		private EntityRef<ResultadosRubrica> _ResultadosRubrica;
 		
-		private EntityRef<Rubrica> _Rubrica;
+		private EntitySet<RespuestasRubrica> _RespuestasRubricas;
+		
+		private EntityRef<Rubrica1> _Rubrica1;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -14426,9 +14722,9 @@ namespace UPC.SSIA2013.DL.DataModel
 		
 		public Evaluacione()
 		{
-			this._RespuestasRubricas = new EntitySet<RespuestasRubrica>(new Action<RespuestasRubrica>(this.attach_RespuestasRubricas), new Action<RespuestasRubrica>(this.detach_RespuestasRubricas));
 			this._ResultadosRubrica = default(EntityRef<ResultadosRubrica>);
-			this._Rubrica = default(EntityRef<Rubrica>);
+			this._RespuestasRubricas = new EntitySet<RespuestasRubrica>(new Action<RespuestasRubrica>(this.attach_RespuestasRubricas), new Action<RespuestasRubrica>(this.detach_RespuestasRubricas));
+			this._Rubrica1 = default(EntityRef<Rubrica1>);
 			OnCreated();
 		}
 		
@@ -14523,7 +14819,7 @@ namespace UPC.SSIA2013.DL.DataModel
 			{
 				if ((this._RubricaId != value))
 				{
-					if (this._Rubrica.HasLoadedOrAssignedValue)
+					if (this._Rubrica1.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -14556,19 +14852,6 @@ namespace UPC.SSIA2013.DL.DataModel
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Evaluacione_RespuestasRubrica", Storage="_RespuestasRubricas", ThisKey="EvaluacionId", OtherKey="EvaluacionId")]
-		public EntitySet<RespuestasRubrica> RespuestasRubricas
-		{
-			get
-			{
-				return this._RespuestasRubricas;
-			}
-			set
-			{
-				this._RespuestasRubricas.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Evaluacione_ResultadosRubrica", Storage="_ResultadosRubrica", ThisKey="EvaluacionId", OtherKey="EvaluacionId", IsUnique=true, IsForeignKey=false)]
 		public ResultadosRubrica ResultadosRubrica
 		{
@@ -14598,26 +14881,39 @@ namespace UPC.SSIA2013.DL.DataModel
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Rubrica_Evaluacione", Storage="_Rubrica", ThisKey="RubricaId", OtherKey="RubricaId", IsForeignKey=true)]
-		public Rubrica Rubrica
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Evaluacione_RespuestasRubrica", Storage="_RespuestasRubricas", ThisKey="EvaluacionId", OtherKey="EvaluacionId")]
+		public EntitySet<RespuestasRubrica> RespuestasRubricas
 		{
 			get
 			{
-				return this._Rubrica.Entity;
+				return this._RespuestasRubricas;
 			}
 			set
 			{
-				Rubrica previousValue = this._Rubrica.Entity;
+				this._RespuestasRubricas.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Rubrica1_Evaluacione", Storage="_Rubrica1", ThisKey="RubricaId", OtherKey="RubricaId", IsForeignKey=true)]
+		public Rubrica1 Rubrica1
+		{
+			get
+			{
+				return this._Rubrica1.Entity;
+			}
+			set
+			{
+				Rubrica1 previousValue = this._Rubrica1.Entity;
 				if (((previousValue != value) 
-							|| (this._Rubrica.HasLoadedOrAssignedValue == false)))
+							|| (this._Rubrica1.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._Rubrica.Entity = null;
+						this._Rubrica1.Entity = null;
 						previousValue.Evaluaciones.Remove(this);
 					}
-					this._Rubrica.Entity = value;
+					this._Rubrica1.Entity = value;
 					if ((value != null))
 					{
 						value.Evaluaciones.Add(this);
@@ -14627,7 +14923,7 @@ namespace UPC.SSIA2013.DL.DataModel
 					{
 						this._RubricaId = default(int);
 					}
-					this.SendPropertyChanged("Rubrica");
+					this.SendPropertyChanged("Rubrica1");
 				}
 			}
 		}
@@ -15422,109 +15718,316 @@ namespace UPC.SSIA2013.DL.DataModel
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="RUBRICON.ResultadosRubricas")]
-	public partial class ResultadosRubrica : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="RUBRICON.Rubricas")]
+	public partial class Rubrica1 : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _EvaluacionId;
+		private int _RubricaId;
 		
-		private string _Resultado;
+		private int _CursoId;
 		
-		private EntityRef<Evaluacione> _Evaluacione;
+		private string _CodigoEvaluacion;
+		
+		private string _Version;
+		
+		private string _Descripcion;
+		
+		private System.DateTime _FechaCreacion;
+		
+		private string _CreadorId;
+		
+		private string _Estado;
+		
+		private string _AprobadorId;
+		
+		private System.Nullable<System.DateTime> _FechaAprobacion;
+		
+		private bool _EsPrincipal;
+		
+		private EntitySet<CriterioRubrica> _CriterioRubricas;
+		
+		private EntitySet<Evaluacione> _Evaluaciones;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnEvaluacionIdChanging(int value);
-    partial void OnEvaluacionIdChanged();
-    partial void OnResultadoChanging(string value);
-    partial void OnResultadoChanged();
+    partial void OnRubricaIdChanging(int value);
+    partial void OnRubricaIdChanged();
+    partial void OnCursoIdChanging(int value);
+    partial void OnCursoIdChanged();
+    partial void OnCodigoEvaluacionChanging(string value);
+    partial void OnCodigoEvaluacionChanged();
+    partial void OnVersionChanging(string value);
+    partial void OnVersionChanged();
+    partial void OnDescripcionChanging(string value);
+    partial void OnDescripcionChanged();
+    partial void OnFechaCreacionChanging(System.DateTime value);
+    partial void OnFechaCreacionChanged();
+    partial void OnCreadorIdChanging(string value);
+    partial void OnCreadorIdChanged();
+    partial void OnEstadoChanging(string value);
+    partial void OnEstadoChanged();
+    partial void OnAprobadorIdChanging(string value);
+    partial void OnAprobadorIdChanged();
+    partial void OnFechaAprobacionChanging(System.Nullable<System.DateTime> value);
+    partial void OnFechaAprobacionChanged();
+    partial void OnEsPrincipalChanging(bool value);
+    partial void OnEsPrincipalChanged();
     #endregion
 		
-		public ResultadosRubrica()
+		public Rubrica1()
 		{
-			this._Evaluacione = default(EntityRef<Evaluacione>);
+			this._CriterioRubricas = new EntitySet<CriterioRubrica>(new Action<CriterioRubrica>(this.attach_CriterioRubricas), new Action<CriterioRubrica>(this.detach_CriterioRubricas));
+			this._Evaluaciones = new EntitySet<Evaluacione>(new Action<Evaluacione>(this.attach_Evaluaciones), new Action<Evaluacione>(this.detach_Evaluaciones));
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EvaluacionId", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int EvaluacionId
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RubricaId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int RubricaId
 		{
 			get
 			{
-				return this._EvaluacionId;
+				return this._RubricaId;
 			}
 			set
 			{
-				if ((this._EvaluacionId != value))
+				if ((this._RubricaId != value))
 				{
-					if (this._Evaluacione.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnEvaluacionIdChanging(value);
+					this.OnRubricaIdChanging(value);
 					this.SendPropertyChanging();
-					this._EvaluacionId = value;
-					this.SendPropertyChanged("EvaluacionId");
-					this.OnEvaluacionIdChanged();
+					this._RubricaId = value;
+					this.SendPropertyChanged("RubricaId");
+					this.OnRubricaIdChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Resultado", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string Resultado
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CursoId", DbType="Int NOT NULL")]
+		public int CursoId
 		{
 			get
 			{
-				return this._Resultado;
+				return this._CursoId;
 			}
 			set
 			{
-				if ((this._Resultado != value))
+				if ((this._CursoId != value))
 				{
-					this.OnResultadoChanging(value);
+					this.OnCursoIdChanging(value);
 					this.SendPropertyChanging();
-					this._Resultado = value;
-					this.SendPropertyChanged("Resultado");
-					this.OnResultadoChanged();
+					this._CursoId = value;
+					this.SendPropertyChanged("CursoId");
+					this.OnCursoIdChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Evaluacione_ResultadosRubrica", Storage="_Evaluacione", ThisKey="EvaluacionId", OtherKey="EvaluacionId", IsForeignKey=true)]
-		public Evaluacione Evaluacione
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoEvaluacion", DbType="VarChar(5) NOT NULL", CanBeNull=false)]
+		public string CodigoEvaluacion
 		{
 			get
 			{
-				return this._Evaluacione.Entity;
+				return this._CodigoEvaluacion;
 			}
 			set
 			{
-				Evaluacione previousValue = this._Evaluacione.Entity;
-				if (((previousValue != value) 
-							|| (this._Evaluacione.HasLoadedOrAssignedValue == false)))
+				if ((this._CodigoEvaluacion != value))
 				{
+					this.OnCodigoEvaluacionChanging(value);
 					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Evaluacione.Entity = null;
-						previousValue.ResultadosRubrica = null;
-					}
-					this._Evaluacione.Entity = value;
-					if ((value != null))
-					{
-						value.ResultadosRubrica = this;
-						this._EvaluacionId = value.EvaluacionId;
-					}
-					else
-					{
-						this._EvaluacionId = default(int);
-					}
-					this.SendPropertyChanged("Evaluacione");
+					this._CodigoEvaluacion = value;
+					this.SendPropertyChanged("CodigoEvaluacion");
+					this.OnCodigoEvaluacionChanged();
 				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Version", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Version
+		{
+			get
+			{
+				return this._Version;
+			}
+			set
+			{
+				if ((this._Version != value))
+				{
+					this.OnVersionChanging(value);
+					this.SendPropertyChanging();
+					this._Version = value;
+					this.SendPropertyChanged("Version");
+					this.OnVersionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion", DbType="VarChar(1000) NOT NULL", CanBeNull=false)]
+		public string Descripcion
+		{
+			get
+			{
+				return this._Descripcion;
+			}
+			set
+			{
+				if ((this._Descripcion != value))
+				{
+					this.OnDescripcionChanging(value);
+					this.SendPropertyChanging();
+					this._Descripcion = value;
+					this.SendPropertyChanged("Descripcion");
+					this.OnDescripcionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaCreacion", DbType="DateTime NOT NULL")]
+		public System.DateTime FechaCreacion
+		{
+			get
+			{
+				return this._FechaCreacion;
+			}
+			set
+			{
+				if ((this._FechaCreacion != value))
+				{
+					this.OnFechaCreacionChanging(value);
+					this.SendPropertyChanging();
+					this._FechaCreacion = value;
+					this.SendPropertyChanged("FechaCreacion");
+					this.OnFechaCreacionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreadorId", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string CreadorId
+		{
+			get
+			{
+				return this._CreadorId;
+			}
+			set
+			{
+				if ((this._CreadorId != value))
+				{
+					this.OnCreadorIdChanging(value);
+					this.SendPropertyChanging();
+					this._CreadorId = value;
+					this.SendPropertyChanged("CreadorId");
+					this.OnCreadorIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="VarChar(3) NOT NULL", CanBeNull=false)]
+		public string Estado
+		{
+			get
+			{
+				return this._Estado;
+			}
+			set
+			{
+				if ((this._Estado != value))
+				{
+					this.OnEstadoChanging(value);
+					this.SendPropertyChanging();
+					this._Estado = value;
+					this.SendPropertyChanged("Estado");
+					this.OnEstadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AprobadorId", DbType="VarChar(20)")]
+		public string AprobadorId
+		{
+			get
+			{
+				return this._AprobadorId;
+			}
+			set
+			{
+				if ((this._AprobadorId != value))
+				{
+					this.OnAprobadorIdChanging(value);
+					this.SendPropertyChanging();
+					this._AprobadorId = value;
+					this.SendPropertyChanged("AprobadorId");
+					this.OnAprobadorIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaAprobacion", DbType="DateTime")]
+		public System.Nullable<System.DateTime> FechaAprobacion
+		{
+			get
+			{
+				return this._FechaAprobacion;
+			}
+			set
+			{
+				if ((this._FechaAprobacion != value))
+				{
+					this.OnFechaAprobacionChanging(value);
+					this.SendPropertyChanging();
+					this._FechaAprobacion = value;
+					this.SendPropertyChanged("FechaAprobacion");
+					this.OnFechaAprobacionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EsPrincipal", DbType="Bit NOT NULL")]
+		public bool EsPrincipal
+		{
+			get
+			{
+				return this._EsPrincipal;
+			}
+			set
+			{
+				if ((this._EsPrincipal != value))
+				{
+					this.OnEsPrincipalChanging(value);
+					this.SendPropertyChanging();
+					this._EsPrincipal = value;
+					this.SendPropertyChanged("EsPrincipal");
+					this.OnEsPrincipalChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Rubrica1_CriterioRubrica", Storage="_CriterioRubricas", ThisKey="RubricaId", OtherKey="RubricaId")]
+		public EntitySet<CriterioRubrica> CriterioRubricas
+		{
+			get
+			{
+				return this._CriterioRubricas;
+			}
+			set
+			{
+				this._CriterioRubricas.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Rubrica1_Evaluacione", Storage="_Evaluaciones", ThisKey="RubricaId", OtherKey="RubricaId")]
+		public EntitySet<Evaluacione> Evaluaciones
+		{
+			get
+			{
+				return this._Evaluaciones;
+			}
+			set
+			{
+				this._Evaluaciones.Assign(value);
 			}
 		}
 		
@@ -15546,6 +16049,30 @@ namespace UPC.SSIA2013.DL.DataModel
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_CriterioRubricas(CriterioRubrica entity)
+		{
+			this.SendPropertyChanging();
+			entity.Rubrica1 = this;
+		}
+		
+		private void detach_CriterioRubricas(CriterioRubrica entity)
+		{
+			this.SendPropertyChanging();
+			entity.Rubrica1 = null;
+		}
+		
+		private void attach_Evaluaciones(Evaluacione entity)
+		{
+			this.SendPropertyChanging();
+			entity.Rubrica1 = this;
+		}
+		
+		private void detach_Evaluaciones(Evaluacione entity)
+		{
+			this.SendPropertyChanging();
+			entity.Rubrica1 = null;
 		}
 	}
 	
@@ -15624,86 +16151,6 @@ namespace UPC.SSIA2013.DL.DataModel
 				if ((this._TipoPersona != value))
 				{
 					this._TipoPersona = value;
-				}
-			}
-		}
-	}
-	
-	public partial class up_IFCDC_Listar_Cursos_x_ProfesorResult
-	{
-		
-		private int _CursoId;
-		
-		private string _Codigo;
-		
-		private string _Nombre;
-		
-		private string _ProfesorId;
-		
-		public up_IFCDC_Listar_Cursos_x_ProfesorResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CursoId", DbType="Int NOT NULL")]
-		public int CursoId
-		{
-			get
-			{
-				return this._CursoId;
-			}
-			set
-			{
-				if ((this._CursoId != value))
-				{
-					this._CursoId = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Codigo", DbType="VarChar(50)")]
-		public string Codigo
-		{
-			get
-			{
-				return this._Codigo;
-			}
-			set
-			{
-				if ((this._Codigo != value))
-				{
-					this._Codigo = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="VarChar(150)")]
-		public string Nombre
-		{
-			get
-			{
-				return this._Nombre;
-			}
-			set
-			{
-				if ((this._Nombre != value))
-				{
-					this._Nombre = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProfesorId", DbType="VarChar(50)")]
-		public string ProfesorId
-		{
-			get
-			{
-				return this._ProfesorId;
-			}
-			set
-			{
-				if ((this._ProfesorId != value))
-				{
-					this._ProfesorId = value;
 				}
 			}
 		}
@@ -15944,6 +16391,292 @@ namespace UPC.SSIA2013.DL.DataModel
 				if ((this._FechaFin != value))
 				{
 					this._FechaFin = value;
+				}
+			}
+		}
+	}
+	
+	public partial class up_IFCDC_Listar_Cursos_x_ProfesorResult
+	{
+		
+		private int _CursoId;
+		
+		private string _Codigo;
+		
+		private string _Nombre;
+		
+		private string _ProfesorId;
+		
+		public up_IFCDC_Listar_Cursos_x_ProfesorResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CursoId", DbType="Int NOT NULL")]
+		public int CursoId
+		{
+			get
+			{
+				return this._CursoId;
+			}
+			set
+			{
+				if ((this._CursoId != value))
+				{
+					this._CursoId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Codigo", DbType="VarChar(50)")]
+		public string Codigo
+		{
+			get
+			{
+				return this._Codigo;
+			}
+			set
+			{
+				if ((this._Codigo != value))
+				{
+					this._Codigo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="VarChar(150)")]
+		public string Nombre
+		{
+			get
+			{
+				return this._Nombre;
+			}
+			set
+			{
+				if ((this._Nombre != value))
+				{
+					this._Nombre = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProfesorId", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string ProfesorId
+		{
+			get
+			{
+				return this._ProfesorId;
+			}
+			set
+			{
+				if ((this._ProfesorId != value))
+				{
+					this._ProfesorId = value;
+				}
+			}
+		}
+	}
+	
+	public partial class up_IFCDC_Obtener_InformeFinCicloResult
+	{
+		
+		private int _InformeFinCicloId;
+		
+		private string _CoordinadorId;
+		
+		private int _CursoId;
+		
+		private int _PeriodoId;
+		
+		private string _DesarrolloUnidades;
+		
+		private string _ComentarioAlumnos;
+		
+		private string _ComentarioInfraestructura;
+		
+		private string _ComentarioDelegados;
+		
+		private string _ComentarioEscuesta;
+		
+		private string _Estado;
+		
+		private string _UltimaActualizacion;
+		
+		public up_IFCDC_Obtener_InformeFinCicloResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InformeFinCicloId", DbType="Int NOT NULL")]
+		public int InformeFinCicloId
+		{
+			get
+			{
+				return this._InformeFinCicloId;
+			}
+			set
+			{
+				if ((this._InformeFinCicloId != value))
+				{
+					this._InformeFinCicloId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CoordinadorId", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string CoordinadorId
+		{
+			get
+			{
+				return this._CoordinadorId;
+			}
+			set
+			{
+				if ((this._CoordinadorId != value))
+				{
+					this._CoordinadorId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CursoId", DbType="Int NOT NULL")]
+		public int CursoId
+		{
+			get
+			{
+				return this._CursoId;
+			}
+			set
+			{
+				if ((this._CursoId != value))
+				{
+					this._CursoId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PeriodoId", DbType="Int NOT NULL")]
+		public int PeriodoId
+		{
+			get
+			{
+				return this._PeriodoId;
+			}
+			set
+			{
+				if ((this._PeriodoId != value))
+				{
+					this._PeriodoId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DesarrolloUnidades", DbType="VarChar(500)")]
+		public string DesarrolloUnidades
+		{
+			get
+			{
+				return this._DesarrolloUnidades;
+			}
+			set
+			{
+				if ((this._DesarrolloUnidades != value))
+				{
+					this._DesarrolloUnidades = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ComentarioAlumnos", DbType="VarChar(500)")]
+		public string ComentarioAlumnos
+		{
+			get
+			{
+				return this._ComentarioAlumnos;
+			}
+			set
+			{
+				if ((this._ComentarioAlumnos != value))
+				{
+					this._ComentarioAlumnos = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ComentarioInfraestructura", DbType="VarChar(500)")]
+		public string ComentarioInfraestructura
+		{
+			get
+			{
+				return this._ComentarioInfraestructura;
+			}
+			set
+			{
+				if ((this._ComentarioInfraestructura != value))
+				{
+					this._ComentarioInfraestructura = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ComentarioDelegados", DbType="VarChar(500)")]
+		public string ComentarioDelegados
+		{
+			get
+			{
+				return this._ComentarioDelegados;
+			}
+			set
+			{
+				if ((this._ComentarioDelegados != value))
+				{
+					this._ComentarioDelegados = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ComentarioEscuesta", DbType="VarChar(500)")]
+		public string ComentarioEscuesta
+		{
+			get
+			{
+				return this._ComentarioEscuesta;
+			}
+			set
+			{
+				if ((this._ComentarioEscuesta != value))
+				{
+					this._ComentarioEscuesta = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Estado
+		{
+			get
+			{
+				return this._Estado;
+			}
+			set
+			{
+				if ((this._Estado != value))
+				{
+					this._Estado = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UltimaActualizacion", DbType="VarChar(30)")]
+		public string UltimaActualizacion
+		{
+			get
+			{
+				return this._UltimaActualizacion;
+			}
+			set
+			{
+				if ((this._UltimaActualizacion != value))
+				{
+					this._UltimaActualizacion = value;
 				}
 			}
 		}

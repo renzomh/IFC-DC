@@ -10,6 +10,32 @@ namespace UPC.SSIA2013.DL.DALC
 {
     public class InformeFinCicloDALC
     {
+        public up_IFCDC_Obtener_InformeFinCicloResult obtenerInformeFinCiclo(String coordinadorID, int cursoId, int periodoId)
+        {
+            SSIA2013DataContext dataContext = null;
+
+            try
+            {
+                dataContext = new SSIA2013DataContext(ConfigurationManager.ConnectionStrings["CSSSIA2013"].ToString());
+                up_IFCDC_Obtener_InformeFinCicloResult informeFinCiclo = dataContext.up_IFCDC_Obtener_InformeFinCiclo(coordinadorID, cursoId, periodoId).SingleOrDefault();
+
+                return informeFinCiclo;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            finally
+            {
+                if (dataContext != null)
+                {
+                    dataContext.Dispose();
+                }
+            }
+        }
+
         /*
         public int registrarInformeFinCiclo(String profesorId, int cursoId, int periodoId, String comentarioInfraestructura,
                                         String comentarioAlumnos, String comentarioDelegado, int calificacionDelegado)
@@ -65,31 +91,6 @@ namespace UPC.SSIA2013.DL.DALC
                 }
             }
         }
-
-        public spObtenerInformeFinCicloxProfesorxCursoxPeriodoResult obtenerInformeFinCicloxProfesorxCursoxPeriodo(String profesorId, int cursoId, int periodoId)
-        {
-            SSIA2013DataContext dataContext = null;
-
-            try
-            {
-                dataContext = new SSIA2013DataContext(ConfigurationManager.ConnectionStrings["CSSSIA2013"].ToString());
-                spObtenerInformeFinCicloxProfesorxCursoxPeriodoResult informeFinCiclo = dataContext.spObtenerInformeFinCicloxProfesorxCursoxPeriodo(profesorId, cursoId, periodoId).SingleOrDefault();
-
-                return informeFinCiclo;
-            }
-
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-
-            finally
-            {
-                if (dataContext != null)
-                {
-                    dataContext.Dispose();
-                }
-            }
-        }*/
+        */
     }
 }

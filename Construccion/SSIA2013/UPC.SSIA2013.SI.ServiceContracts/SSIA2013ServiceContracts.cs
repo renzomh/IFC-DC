@@ -27,14 +27,13 @@ namespace UPC.SSIA2013.SI.ServiceContracts
 
         [OperationContract]
         InformeFinCicloDC WSObtenerInformeFinCiclo(InformeFinCicloDC objInformeFinCicloDC);
-
-        [OperationContract]
-        InformeFinCicloDC WSObtenerInformeFinCicloxProfesorxCursoxPeriodo(InformeFinCicloDC objInformeFinCicloDC);
-
         [OperationContract]
         int WSRegistrarInformeFinCiclo(InformeFinCicloDC objInformeFinCicloDC);
         */
-         
+        
+        [OperationContract]
+        InformeFinCicloDC WSObtenerInformeFinCiclo(InformeFinCicloDC objInformeFinCicloDC);
+
         //HALLAZGOS
         /*
         [OperationContract]

@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{A7CB4CDB-C60D-476E-A52D-B6250F104448}</ProjectGuid>
+    <ProjectGuid>{2E505E67-9AB9-4275-B4E6-7F1563C6DDE7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UPC_IFCDC_BC</RootNamespace>
-    <AssemblyName>UPC-IFCDC-BC</AssemblyName>
+    <RootNamespace>UPC.IFCDC.BC</RootNamespace>
+    <AssemblyName>UPC.IFCDC.BC</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\Utilitarios\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -39,8 +42,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="CursoxProfesorBC.cs" />
+    <Compile Include="InformeFinCicloBC.cs" />
+    <Compile Include="LogroBC.cs" />
+    <Compile Include="PeriodoBC.cs" />
+    <Compile Include="PersonaBC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResultadoProgramaxCursoBC.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UPC.IFCDC.BE\UPC.IFCDC.BE.csproj">
+      <Project>{F539C5A0-2217-4E54-A77F-133ED588F7E9}</Project>
+      <Name>UPC.IFCDC.BE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UPC.IFCDC.Utilitarios\UPC.IFCDC.Utilitarios.csproj">
+      <Project>{DC283C3F-DC9C-4F6F-BE5F-690041DC34B7}</Project>
+      <Name>UPC.IFCDC.Utilitarios</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("UPC-IFCDC-BC")]
+[assembly: AssemblyTitle("UPC.IFCDC.BC")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("UPC-IFCDC-BC")]
+[assembly: AssemblyProduct("UPC.IFCDC.BC")]
 [assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("b85f780d-1354-4a4d-9cae-a63d15c2452a")]
+[assembly: Guid("75a7826b-556f-4dc4-a936-3ec79515e570")]
 
 // Version information for an assembly consists of the following four values:
 //
