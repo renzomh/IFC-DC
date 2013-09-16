@@ -20,32 +20,25 @@ namespace UPC.IFCDC.BC
     {
         public ResultadoProgramaxCursoCollectionBE listarResultadoProgramaxCurso(ResultadoProgramaxCursoBE resultadoProgramaxCurso)
         {
+            ResultadoProgramaxCursoCollectionBE objCollectionResultadoProgramaxCursoBE = null;
+
+            HttpWebRequest hwr = null;
+            String json = "";
+            String sServicio = "WSListarResultadoProgramaxCurso";
+            ServiceHelper objServiceHelper = new ServiceHelper();
+
             try
             {
-                ResultadoProgramaxCursoCollectionBE objCollectionResultadoProgramaxCursoBE = null;
-
-                HttpWebRequest hwr = null;
-                String json = "";
-                String sServicio = "WSListarResultadoProgramaxCurso";
-                ServiceHelper objServiceHelper = new ServiceHelper();
-
-                try
-                {
-                    json = objServiceHelper.serializeObjectToJson(resultadoProgramaxCurso);
-                    hwr = objServiceHelper.createHttpWebRequest(sServicio);
-                    objCollectionResultadoProgramaxCursoBE = JsonConvert.DeserializeObject<ResultadoProgramaxCursoCollectionBE>(objServiceHelper.getObject(hwr, json).ReadToEnd());
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
-
-                return objCollectionResultadoProgramaxCursoBE;
+                json = objServiceHelper.serializeObjectToJson(resultadoProgramaxCurso);
+                hwr = objServiceHelper.createHttpWebRequest(sServicio);
+                objCollectionResultadoProgramaxCursoBE = JsonConvert.DeserializeObject<ResultadoProgramaxCursoCollectionBE>(objServiceHelper.getObject(hwr, json).ReadToEnd());
             }
             catch (Exception ex)
             {
                 throw ex;
             }
+
+            return objCollectionResultadoProgramaxCursoBE;
         }
     }
 }

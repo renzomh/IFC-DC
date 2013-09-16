@@ -20,32 +20,25 @@ namespace UPC.IFCDC.BC
     {
         public CursoxProfesorCollectionBE listarCursosxProfesor(CursoxProfesorBE cursosxProfesor)
         {
+            CursoxProfesorCollectionBE objColeccionCursosxProfesorBE = null;
+
+            HttpWebRequest hwr = null;
+            String json = "";
+            String sServicio = "WSListarCursosxProfesor";
+            ServiceHelper objServiceHelper = new ServiceHelper();
+
             try
             {
-                CursoxProfesorCollectionBE objColeccionCursosxProfesorBE = null;
-
-                HttpWebRequest hwr = null;
-                String json = "";
-                String sServicio = "WSListarCursosxProfesor";
-                ServiceHelper objServiceHelper = new ServiceHelper();
-
-                try
-                {
-                    json = objServiceHelper.serializeObjectToJson(cursosxProfesor);
-                    hwr = objServiceHelper.createHttpWebRequest(sServicio);
-                    objColeccionCursosxProfesorBE = JsonConvert.DeserializeObject<CursoxProfesorCollectionBE>(objServiceHelper.getObject(hwr, json).ReadToEnd());
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
-
-                return objColeccionCursosxProfesorBE;
+                json = objServiceHelper.serializeObjectToJson(cursosxProfesor);
+                hwr = objServiceHelper.createHttpWebRequest(sServicio);
+                objColeccionCursosxProfesorBE = JsonConvert.DeserializeObject<CursoxProfesorCollectionBE>(objServiceHelper.getObject(hwr, json).ReadToEnd());
             }
             catch (Exception ex)
             {
                 throw ex;
             }
+
+            return objColeccionCursosxProfesorBE;
         }
     }
 }
