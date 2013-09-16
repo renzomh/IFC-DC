@@ -1,8 +1,15 @@
 ﻿.vertical-centered-box{position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); -webkit-transform: translate(-50%, -50%); -moz-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); text-align:center; margin: 0 auto; background-color: White; border: 1px solid gray; padding:10px; box-shadow: 0px 0px 3px gray;}
 .right-box {margin: 0 auto; position:relative; text-align: right;}
 .user-photo {width: 20px; height:20px; vertical-align:middle; }
-#header2{ border-style:solid; border-width: 1px; border-color: Gray;  background-color:#FFF; width: 100%; height: 100px; box-shadow: 0px 0px 3px gray; }
+#header2{ border-bottom-style:solid; border-bottom-width: 1px; border-bottom-color: #AAA;  background-color:#FFF; width: 100%; height: 80px; box-shadow: 0px 0px 3px gray; }
 body{ margin: 0px; border: 0px; padding 0px; background-image: url(../Imagenes/background.png); }
 .right{ position: relative; margin-right:10px; margin-top:10px; text-align:right;} 
-.box-central{background-color: rgba(255,255,255,0.8); margin:10px; width: 100%; box-shadow: 0px 0px 3px gray; }
-
+.box-central{background-color: rgba(255,255,255,0.7); padding:5px; width: 95%; box-shadow: 0px 0px 3px gray; margin: 0 auto; position: relative; }
+.tabs{text-align:center;}
+.tabs>li { list-style-type: none;  -moz-box-shadow:inset 0px 1px 0px 0px #75aee0; -webkit-box-shadow:inset 0px 1px 0px 0px #75aee0; box-shadow:inset 0px 1px 0px 0px #75aee0; background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #005ca7), color-stop(1, #004480)); background:-moz-linear-gradient(top, #005ca7 5%, #004480 100%); background:-webkit-linear-gradient(top, #005ca7 5%, #004480 100%); background:-o-linear-gradient(top, #005ca7 5%, #004480 100%); background:-ms-linear-gradient(top, #005ca7 5%, #004480 100%); background:linear-gradient(to bottom, #005ca7 5%, #004480 100%); filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#005ca7', endColorstr='#004480',GradientType=0); background-color:#005ca7; border-right:1px solid #022a4d; display:inline-block; color:#ffffff; font-family:Arial; font-size:11px; font-weight:normal; padding:6px 20px; text-decoration:none; text-shadow:0px 1px 0px #0a5ea8; cursor:pointer; border-top:1px solid #022a4d; border-bottom:1px solid #022a4d; }
+.tabs>li:first-child{ border-left:1px solid #022a4d;}
+.tabs>li:active { position:relative; top:1px; }
+h1{ font-size:14px;}
+#accionesPrevias, #hallazgos, #accionesMejora, #comentario { display:none;}
+.disabled{ padding:5px; color:Gray; border: 1px solid #AAA;}
+.btn-informe {background-image: url(../Imagenes/informe.png); background-repeat:no-repeat; background-size:100%; width:24px; height:24px; cursor:pointer; outline:none; border:none;}

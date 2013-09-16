@@ -13,12 +13,13 @@
  
 <div class="vertical-centered-box">
 <div id="header"><img src="Imagenes/logoUPC.png" /></div>
+    <p>Sistema de Informes de Fin de Ciclo - SSIA</p>
     <form id="formularioLogin" class="textoLogin" runat="server" style="margin:0 auto">
-        
             <div class="right-box">Usuario: <asp:TextBox ID="texto_usuario" runat="server" />  </div>
             <div class="right-box">Password: <asp:TextBox TextMode="Password" ID="texto_password" runat="server" />  </div>
+            <br />
             <asp:Button ID="ingresar" CssClass="btn-ingresar" runat="server"  />
-        
+            <br />
     </form>
     </div>
 </body>

@@ -129,6 +129,7 @@
     <Content Include="Imagenes\icono\reloj.png" />
     <Content Include="Imagenes\ico_Eliminar.png" />
     <Content Include="Imagenes\imb_Regresar.png" />
+    <Content Include="Imagenes\informe.png" />
     <Content Include="Imagenes\lineaPunteada.gif" />
     <Content Include="Imagenes\logoFooter.png" />
     <Content Include="Imagenes\logoUPC - copia.png" />
@@ -148,6 +149,7 @@
     <Content Include="Scripts\jquery.ui.timepicker.js" />
     <Content Include="Scripts\jquery.watermark.js" />
     <Content Include="Scripts\load.js" />
+    <Content Include="Scripts\ownscript.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -156,7 +158,8 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Default.aspx" />
-    <Content Include="WebForm2.aspx" />
+    <Content Include="Coordinador.aspx" />
+    <Content Include="Curso.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -174,11 +177,19 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm2.aspx.cs">
-      <DependentUpon>WebForm2.aspx</DependentUpon>
+    <Compile Include="Coordinador.aspx.cs">
+      <DependentUpon>Coordinador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm2.aspx.designer.cs">
-      <DependentUpon>WebForm2.aspx</DependentUpon>
+    <Compile Include="Coordinador.aspx.designer.cs">
+      <DependentUpon>Coordinador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Curso.aspx.cs">
+      <DependentUpon>Curso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Curso.aspx.designer.cs">
+      <DependentUpon>Curso.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
