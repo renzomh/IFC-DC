@@ -157,9 +157,9 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Default.aspx" />
-    <Content Include="Coordinador.aspx" />
-    <Content Include="Curso.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="Informe.aspx" />
+    <Content Include="CursosxCoordinador.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -170,26 +170,26 @@
     <Compile Include="Site1.Master.designer.cs">
       <DependentUpon>Site1.Master</DependentUpon>
     </Compile>
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Coordinador.aspx.cs">
-      <DependentUpon>Coordinador.aspx</DependentUpon>
+    <Compile Include="Informe.aspx.cs">
+      <DependentUpon>Informe.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Coordinador.aspx.designer.cs">
-      <DependentUpon>Coordinador.aspx</DependentUpon>
+    <Compile Include="Informe.aspx.designer.cs">
+      <DependentUpon>Informe.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Curso.aspx.cs">
-      <DependentUpon>Curso.aspx</DependentUpon>
+    <Compile Include="CursosxCoordinador.aspx.cs">
+      <DependentUpon>CursosxCoordinador.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Curso.aspx.designer.cs">
-      <DependentUpon>Curso.aspx</DependentUpon>
+    <Compile Include="CursosxCoordinador.aspx.designer.cs">
+      <DependentUpon>CursosxCoordinador.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -198,6 +198,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Site1.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UPC.IFCDC.BC\UPC.IFCDC.BC.csproj">
+      <Project>{2E505E67-9AB9-4275-B4E6-7F1563C6DDE7}</Project>
+      <Name>UPC.IFCDC.BC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UPC.IFCDC.BE\UPC.IFCDC.BE.csproj">
+      <Project>{F539C5A0-2217-4E54-A77F-133ED588F7E9}</Project>
+      <Name>UPC.IFCDC.BE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UPC.IFCDC.Utilitarios\UPC.IFCDC.Utilitarios.csproj">
+      <Project>{DC283C3F-DC9C-4F6F-BE5F-690041DC34B7}</Project>
+      <Name>UPC.IFCDC.Utilitarios</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
