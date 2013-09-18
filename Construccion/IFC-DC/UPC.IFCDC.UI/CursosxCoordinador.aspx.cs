@@ -54,6 +54,26 @@ namespace UPC.IFCDC.UI
             {
                 if (e.CommandName.ToUpper().Equals("CMDINICIAR"))
                 {
+                    InformeFinCicloBC objInformeFinCicloBC = new InformeFinCicloBC();
+                    InformeFinCicloBE objInformeFinCicloBE = new InformeFinCicloBE();
+                    objInformeFinCicloBE.PeriodoId = objPeriodoBE.PeriodoId;
+                    objInformeFinCicloBE.CoordinadorId = sPersonaId;
+                    objInformeFinCicloBE.CursoId = Convert.ToInt32(e.CommandArgument.ToString());
+
+                    objInformeFinCicloBE = objInformeFinCicloBC.obtenerInformeFinCiclo(objInformeFinCicloBE);
+
+                    if (objInformeFinCicloBE != null)
+                    {
+                        if (!objInformeFinCicloBE.Estado.Equals(Constantes.ESTADO_INFORME_FINALIZADO))
+                        {
+                            Session["Informe"] = objInformeFinCicloBE;
+                            Session["Periodo"] = objPeriodoBE;
+                            Session["CursoxProfesor"] = obtenerCurso(objInformeFinCicloBE.CursoId);
+
+                            Response.Redirect("Informe.aspx");
+                        }
+                    }
+
                     //Context.Items.Add("Modo", "2");
                     //Context.Items.Add("CodAlumno", e.CommandArgument);
                     //Server.Transfer("Alumno.aspx");
@@ -69,6 +89,19 @@ namespace UPC.IFCDC.UI
         protected void grdCursos_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private CursoxProfesorBE obtenerCurso(int cursoId)
+        {
+            CursoxProfesorBE sRespuesta = null;
+
+            for (int i = 0; i < objCursoxProfesorCollectionBE.LstCursosxProfesor.Count; i++)
+            {
+                if (objCursoxProfesorCollectionBE.LstCursosxProfesor[i].CursoId == cursoId)
+                    sRespuesta = objCursoxProfesorCollectionBE.LstCursosxProfesor[i];
+            }
+
+            return sRespuesta;
         }
     }
 }

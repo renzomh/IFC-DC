@@ -207,6 +207,12 @@ namespace UPC.SSIA2013.DL.DataModel
     partial void InsertRubrica1(Rubrica1 instance);
     partial void UpdateRubrica1(Rubrica1 instance);
     partial void DeleteRubrica1(Rubrica1 instance);
+    partial void InsertHallazgo(Hallazgo instance);
+    partial void UpdateHallazgo(Hallazgo instance);
+    partial void DeleteHallazgo(Hallazgo instance);
+    partial void InsertAccionMejora(AccionMejora instance);
+    partial void UpdateAccionMejora(AccionMejora instance);
+    partial void DeleteAccionMejora(AccionMejora instance);
     #endregion
 		
 		public SSIA2013DataContext() : 
@@ -711,6 +717,22 @@ namespace UPC.SSIA2013.DL.DataModel
 			}
 		}
 		
+		public System.Data.Linq.Table<Hallazgo> Hallazgos
+		{
+			get
+			{
+				return this.GetTable<Hallazgo>();
+			}
+		}
+		
+		public System.Data.Linq.Table<AccionMejora> AccionMejoras
+		{
+			get
+			{
+				return this.GetTable<AccionMejora>();
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.[up.IFCDC_Obtener_Persona]")]
 		public ISingleResult<up_IFCDC_Obtener_PersonaResult> up_IFCDC_Obtener_Persona([global::System.Data.Linq.Mapping.ParameterAttribute(Name="PersonaId", DbType="VarChar(50)")] string personaId)
 		{
@@ -751,6 +773,13 @@ namespace UPC.SSIA2013.DL.DataModel
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), coordinadorId, cursoId, periodoId);
 			return ((ISingleResult<up_IFCDC_Obtener_InformeFinCicloResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.[up.IFCDC_Obtener_InformeFinCiclo_x_Id]")]
+		public ISingleResult<up_IFCDC_Obtener_InformeFinCiclo_x_IdResult> up_IFCDC_Obtener_InformeFinCiclo_x_Id([global::System.Data.Linq.Mapping.ParameterAttribute(Name="InformeFinCicloId", DbType="Int")] System.Nullable<int> informeFinCicloId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), informeFinCicloId);
+			return ((ISingleResult<up_IFCDC_Obtener_InformeFinCiclo_x_IdResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -13920,6 +13949,8 @@ namespace UPC.SSIA2013.DL.DataModel
 		
 		private System.DateTime _UltimaActualizacion;
 		
+		private EntitySet<Hallazgo> _Hallazgos;
+		
 		private EntityRef<Curso> _Curso;
 		
 		private EntityRef<Periodo> _Periodo;
@@ -13956,6 +13987,7 @@ namespace UPC.SSIA2013.DL.DataModel
 		
 		public InformeFinCiclo()
 		{
+			this._Hallazgos = new EntitySet<Hallazgo>(new Action<Hallazgo>(this.attach_Hallazgos), new Action<Hallazgo>(this.detach_Hallazgos));
 			this._Curso = default(EntityRef<Curso>);
 			this._Periodo = default(EntityRef<Periodo>);
 			this._Persona = default(EntityRef<Persona>);
@@ -14194,6 +14226,19 @@ namespace UPC.SSIA2013.DL.DataModel
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="InformeFinCiclo_Hallazgo", Storage="_Hallazgos", ThisKey="InformeFinCicloId", OtherKey="InformeFinCicloId")]
+		public EntitySet<Hallazgo> Hallazgos
+		{
+			get
+			{
+				return this._Hallazgos;
+			}
+			set
+			{
+				this._Hallazgos.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Curso_InformeFinCiclo", Storage="_Curso", ThisKey="CursoId", OtherKey="CursoId", IsForeignKey=true)]
 		public Curso Curso
 		{
@@ -14314,6 +14359,18 @@ namespace UPC.SSIA2013.DL.DataModel
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_Hallazgos(Hallazgo entity)
+		{
+			this.SendPropertyChanging();
+			entity.InformeFinCiclo = this;
+		}
+		
+		private void detach_Hallazgos(Hallazgo entity)
+		{
+			this.SendPropertyChanging();
+			entity.InformeFinCiclo = null;
 		}
 	}
 	
@@ -16076,6 +16133,456 @@ namespace UPC.SSIA2013.DL.DataModel
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="IFCDC.Hallazgo")]
+	public partial class Hallazgo : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _HallazgoId;
+		
+		private string _Codigo;
+		
+		private string _Descripcion;
+		
+		private int _InformeFinCicloId;
+		
+		private EntitySet<AccionMejora> _AccionMejoras;
+		
+		private EntityRef<InformeFinCiclo> _InformeFinCiclo;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnHallazgoIdChanging(int value);
+    partial void OnHallazgoIdChanged();
+    partial void OnCodigoChanging(string value);
+    partial void OnCodigoChanged();
+    partial void OnDescripcionChanging(string value);
+    partial void OnDescripcionChanged();
+    partial void OnInformeFinCicloIdChanging(int value);
+    partial void OnInformeFinCicloIdChanged();
+    #endregion
+		
+		public Hallazgo()
+		{
+			this._AccionMejoras = new EntitySet<AccionMejora>(new Action<AccionMejora>(this.attach_AccionMejoras), new Action<AccionMejora>(this.detach_AccionMejoras));
+			this._InformeFinCiclo = default(EntityRef<InformeFinCiclo>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HallazgoId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int HallazgoId
+		{
+			get
+			{
+				return this._HallazgoId;
+			}
+			set
+			{
+				if ((this._HallazgoId != value))
+				{
+					this.OnHallazgoIdChanging(value);
+					this.SendPropertyChanging();
+					this._HallazgoId = value;
+					this.SendPropertyChanged("HallazgoId");
+					this.OnHallazgoIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Codigo", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string Codigo
+		{
+			get
+			{
+				return this._Codigo;
+			}
+			set
+			{
+				if ((this._Codigo != value))
+				{
+					this.OnCodigoChanging(value);
+					this.SendPropertyChanging();
+					this._Codigo = value;
+					this.SendPropertyChanged("Codigo");
+					this.OnCodigoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion", DbType="VarChar(500)")]
+		public string Descripcion
+		{
+			get
+			{
+				return this._Descripcion;
+			}
+			set
+			{
+				if ((this._Descripcion != value))
+				{
+					this.OnDescripcionChanging(value);
+					this.SendPropertyChanging();
+					this._Descripcion = value;
+					this.SendPropertyChanged("Descripcion");
+					this.OnDescripcionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InformeFinCicloId", DbType="Int NOT NULL")]
+		public int InformeFinCicloId
+		{
+			get
+			{
+				return this._InformeFinCicloId;
+			}
+			set
+			{
+				if ((this._InformeFinCicloId != value))
+				{
+					if (this._InformeFinCiclo.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnInformeFinCicloIdChanging(value);
+					this.SendPropertyChanging();
+					this._InformeFinCicloId = value;
+					this.SendPropertyChanged("InformeFinCicloId");
+					this.OnInformeFinCicloIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Hallazgo_AccionMejora", Storage="_AccionMejoras", ThisKey="HallazgoId", OtherKey="HallazgoId")]
+		public EntitySet<AccionMejora> AccionMejoras
+		{
+			get
+			{
+				return this._AccionMejoras;
+			}
+			set
+			{
+				this._AccionMejoras.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="InformeFinCiclo_Hallazgo", Storage="_InformeFinCiclo", ThisKey="InformeFinCicloId", OtherKey="InformeFinCicloId", IsForeignKey=true)]
+		public InformeFinCiclo InformeFinCiclo
+		{
+			get
+			{
+				return this._InformeFinCiclo.Entity;
+			}
+			set
+			{
+				InformeFinCiclo previousValue = this._InformeFinCiclo.Entity;
+				if (((previousValue != value) 
+							|| (this._InformeFinCiclo.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._InformeFinCiclo.Entity = null;
+						previousValue.Hallazgos.Remove(this);
+					}
+					this._InformeFinCiclo.Entity = value;
+					if ((value != null))
+					{
+						value.Hallazgos.Add(this);
+						this._InformeFinCicloId = value.InformeFinCicloId;
+					}
+					else
+					{
+						this._InformeFinCicloId = default(int);
+					}
+					this.SendPropertyChanged("InformeFinCiclo");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_AccionMejoras(AccionMejora entity)
+		{
+			this.SendPropertyChanging();
+			entity.Hallazgo = this;
+		}
+		
+		private void detach_AccionMejoras(AccionMejora entity)
+		{
+			this.SendPropertyChanging();
+			entity.Hallazgo = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="IFCDC.AccionMejora")]
+	public partial class AccionMejora : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _AccionMejoraId;
+		
+		private int _HallazgoId;
+		
+		private int _InformeFinCicloId;
+		
+		private int _CicloEjecucion;
+		
+		private string _Codigo;
+		
+		private string _Descripcion;
+		
+		private string _Estado;
+		
+		private EntityRef<Hallazgo> _Hallazgo;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnAccionMejoraIdChanging(int value);
+    partial void OnAccionMejoraIdChanged();
+    partial void OnHallazgoIdChanging(int value);
+    partial void OnHallazgoIdChanged();
+    partial void OnInformeFinCicloIdChanging(int value);
+    partial void OnInformeFinCicloIdChanged();
+    partial void OnCicloEjecucionChanging(int value);
+    partial void OnCicloEjecucionChanged();
+    partial void OnCodigoChanging(string value);
+    partial void OnCodigoChanged();
+    partial void OnDescripcionChanging(string value);
+    partial void OnDescripcionChanged();
+    partial void OnEstadoChanging(string value);
+    partial void OnEstadoChanged();
+    #endregion
+		
+		public AccionMejora()
+		{
+			this._Hallazgo = default(EntityRef<Hallazgo>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccionMejoraId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int AccionMejoraId
+		{
+			get
+			{
+				return this._AccionMejoraId;
+			}
+			set
+			{
+				if ((this._AccionMejoraId != value))
+				{
+					this.OnAccionMejoraIdChanging(value);
+					this.SendPropertyChanging();
+					this._AccionMejoraId = value;
+					this.SendPropertyChanged("AccionMejoraId");
+					this.OnAccionMejoraIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HallazgoId", DbType="Int NOT NULL")]
+		public int HallazgoId
+		{
+			get
+			{
+				return this._HallazgoId;
+			}
+			set
+			{
+				if ((this._HallazgoId != value))
+				{
+					if (this._Hallazgo.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnHallazgoIdChanging(value);
+					this.SendPropertyChanging();
+					this._HallazgoId = value;
+					this.SendPropertyChanged("HallazgoId");
+					this.OnHallazgoIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InformeFinCicloId", DbType="Int NOT NULL")]
+		public int InformeFinCicloId
+		{
+			get
+			{
+				return this._InformeFinCicloId;
+			}
+			set
+			{
+				if ((this._InformeFinCicloId != value))
+				{
+					this.OnInformeFinCicloIdChanging(value);
+					this.SendPropertyChanging();
+					this._InformeFinCicloId = value;
+					this.SendPropertyChanged("InformeFinCicloId");
+					this.OnInformeFinCicloIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CicloEjecucion", DbType="Int NOT NULL")]
+		public int CicloEjecucion
+		{
+			get
+			{
+				return this._CicloEjecucion;
+			}
+			set
+			{
+				if ((this._CicloEjecucion != value))
+				{
+					this.OnCicloEjecucionChanging(value);
+					this.SendPropertyChanging();
+					this._CicloEjecucion = value;
+					this.SendPropertyChanged("CicloEjecucion");
+					this.OnCicloEjecucionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Codigo", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string Codigo
+		{
+			get
+			{
+				return this._Codigo;
+			}
+			set
+			{
+				if ((this._Codigo != value))
+				{
+					this.OnCodigoChanging(value);
+					this.SendPropertyChanging();
+					this._Codigo = value;
+					this.SendPropertyChanged("Codigo");
+					this.OnCodigoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion", DbType="VarChar(500)")]
+		public string Descripcion
+		{
+			get
+			{
+				return this._Descripcion;
+			}
+			set
+			{
+				if ((this._Descripcion != value))
+				{
+					this.OnDescripcionChanging(value);
+					this.SendPropertyChanging();
+					this._Descripcion = value;
+					this.SendPropertyChanged("Descripcion");
+					this.OnDescripcionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Estado
+		{
+			get
+			{
+				return this._Estado;
+			}
+			set
+			{
+				if ((this._Estado != value))
+				{
+					this.OnEstadoChanging(value);
+					this.SendPropertyChanging();
+					this._Estado = value;
+					this.SendPropertyChanged("Estado");
+					this.OnEstadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Hallazgo_AccionMejora", Storage="_Hallazgo", ThisKey="HallazgoId", OtherKey="HallazgoId", IsForeignKey=true)]
+		public Hallazgo Hallazgo
+		{
+			get
+			{
+				return this._Hallazgo.Entity;
+			}
+			set
+			{
+				Hallazgo previousValue = this._Hallazgo.Entity;
+				if (((previousValue != value) 
+							|| (this._Hallazgo.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Hallazgo.Entity = null;
+						previousValue.AccionMejoras.Remove(this);
+					}
+					this._Hallazgo.Entity = value;
+					if ((value != null))
+					{
+						value.AccionMejoras.Add(this);
+						this._HallazgoId = value.HallazgoId;
+					}
+					else
+					{
+						this._HallazgoId = default(int);
+					}
+					this.SendPropertyChanged("Hallazgo");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	public partial class up_IFCDC_Obtener_PersonaResult
 	{
 		
@@ -16502,6 +17009,212 @@ namespace UPC.SSIA2013.DL.DataModel
 		private string _UltimaActualizacion;
 		
 		public up_IFCDC_Obtener_InformeFinCicloResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InformeFinCicloId", DbType="Int NOT NULL")]
+		public int InformeFinCicloId
+		{
+			get
+			{
+				return this._InformeFinCicloId;
+			}
+			set
+			{
+				if ((this._InformeFinCicloId != value))
+				{
+					this._InformeFinCicloId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CoordinadorId", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string CoordinadorId
+		{
+			get
+			{
+				return this._CoordinadorId;
+			}
+			set
+			{
+				if ((this._CoordinadorId != value))
+				{
+					this._CoordinadorId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CursoId", DbType="Int NOT NULL")]
+		public int CursoId
+		{
+			get
+			{
+				return this._CursoId;
+			}
+			set
+			{
+				if ((this._CursoId != value))
+				{
+					this._CursoId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PeriodoId", DbType="Int NOT NULL")]
+		public int PeriodoId
+		{
+			get
+			{
+				return this._PeriodoId;
+			}
+			set
+			{
+				if ((this._PeriodoId != value))
+				{
+					this._PeriodoId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DesarrolloUnidades", DbType="VarChar(500)")]
+		public string DesarrolloUnidades
+		{
+			get
+			{
+				return this._DesarrolloUnidades;
+			}
+			set
+			{
+				if ((this._DesarrolloUnidades != value))
+				{
+					this._DesarrolloUnidades = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ComentarioAlumnos", DbType="VarChar(500)")]
+		public string ComentarioAlumnos
+		{
+			get
+			{
+				return this._ComentarioAlumnos;
+			}
+			set
+			{
+				if ((this._ComentarioAlumnos != value))
+				{
+					this._ComentarioAlumnos = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ComentarioInfraestructura", DbType="VarChar(500)")]
+		public string ComentarioInfraestructura
+		{
+			get
+			{
+				return this._ComentarioInfraestructura;
+			}
+			set
+			{
+				if ((this._ComentarioInfraestructura != value))
+				{
+					this._ComentarioInfraestructura = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ComentarioDelegados", DbType="VarChar(500)")]
+		public string ComentarioDelegados
+		{
+			get
+			{
+				return this._ComentarioDelegados;
+			}
+			set
+			{
+				if ((this._ComentarioDelegados != value))
+				{
+					this._ComentarioDelegados = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ComentarioEscuesta", DbType="VarChar(500)")]
+		public string ComentarioEscuesta
+		{
+			get
+			{
+				return this._ComentarioEscuesta;
+			}
+			set
+			{
+				if ((this._ComentarioEscuesta != value))
+				{
+					this._ComentarioEscuesta = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Estado
+		{
+			get
+			{
+				return this._Estado;
+			}
+			set
+			{
+				if ((this._Estado != value))
+				{
+					this._Estado = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UltimaActualizacion", DbType="VarChar(30)")]
+		public string UltimaActualizacion
+		{
+			get
+			{
+				return this._UltimaActualizacion;
+			}
+			set
+			{
+				if ((this._UltimaActualizacion != value))
+				{
+					this._UltimaActualizacion = value;
+				}
+			}
+		}
+	}
+	
+	public partial class up_IFCDC_Obtener_InformeFinCiclo_x_IdResult
+	{
+		
+		private int _InformeFinCicloId;
+		
+		private string _CoordinadorId;
+		
+		private int _CursoId;
+		
+		private int _PeriodoId;
+		
+		private string _DesarrolloUnidades;
+		
+		private string _ComentarioAlumnos;
+		
+		private string _ComentarioInfraestructura;
+		
+		private string _ComentarioDelegados;
+		
+		private string _ComentarioEscuesta;
+		
+		private string _Estado;
+		
+		private string _UltimaActualizacion;
+		
+		public up_IFCDC_Obtener_InformeFinCiclo_x_IdResult()
 		{
 		}
 		

@@ -78,15 +78,16 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
                                                                     objInformeFinCicloDC.ComentarioDelegado,
                                                                     objInformeFinCicloDC.CalificacionDelegado);
             }
+            */
 
             //OBTENER INFORME FIN CICLO
-            [WebInvoke(Method = "POST", ResponseFormat = WebMessageFormat.Json, UriTemplate = "/WSObtenerInformeFinCiclo")]
-            InformeFinCicloDC SSIA2013ServiceContracts.WSObtenerInformeFinCiclo(InformeFinCicloDC objInformeFinCicloDC)
+            [WebInvoke(Method = "POST", ResponseFormat = WebMessageFormat.Json, UriTemplate = "/WSObtenerInformeFinCicloxId")]
+            InformeFinCicloDC SSIA2013ServiceContracts.WSObtenerInformeFinCicloxId(InformeFinCicloDC objInformeFinCicloDC)
             {
                 InformeFinCicloBC objInformeFinCicloBC = new InformeFinCicloBC();
-                return TranslatorHelper.TranslateInformeFinCicloLRToInformeFinCicloDC(objInformeFinCicloBC.obtenerInformeFinCiclo(objInformeFinCicloDC.InformeFinCicloId));
+                return TranslatorHelper.TranslateInformeFinCicloxIdLRToInformeFinCicloDC(objInformeFinCicloBC.obtenerInformeFinCicloxId(objInformeFinCicloDC.InformeFinCicloId));
             }
-            */
+            
 
             //OBTENER INFORME FIN CICLO (CURSO, PROFESOR, PERIODO)
             [WebInvoke(Method = "POST", ResponseFormat = WebMessageFormat.Json, UriTemplate = "/WSObtenerInformeFinCiclo")]

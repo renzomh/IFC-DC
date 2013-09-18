@@ -24,38 +24,19 @@ namespace UPC.SSIA2013.BL.BC
             }
         }
 
-        /*
-        public int registrarInformeFinCiclo(String profesorId, Int32 cursoId, Int32 periodoId, String comentarioInfraestructura,
-                                        String comentarioAlumnos, String comentarioDelegados, Int32 calificacionDelegado)
+        public up_IFCDC_Obtener_InformeFinCiclo_x_IdResult obtenerInformeFinCicloxId(int informeFinCicloId)
         {
             InformeFinCicloDALC objInformeFinCicloDALC;
 
             try
             {
                 objInformeFinCicloDALC = new InformeFinCicloDALC();
-
-                return Convert.ToInt32(objInformeFinCicloDALC.registrarInformeFinCiclo(profesorId, cursoId, periodoId, comentarioInfraestructura, comentarioAlumnos, comentarioDelegados, calificacionDelegado));
+                return objInformeFinCicloDALC.obtenerInformeFinCicloxId(informeFinCicloId);
             }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
-
-        public spObtenerInformeFinCicloResult obtenerInformeFinCiclo(int informeFinCicloId)
-        {
-            InformeFinCicloDALC objInformeFinCicloDALC;
-
-            try
-            {
-                objInformeFinCicloDALC = new InformeFinCicloDALC();
-                return objInformeFinCicloDALC.obtenerInformeFinCicloxProfesorxCursoxPeriodo(informeFinCicloId);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-        */ 
     }
 }

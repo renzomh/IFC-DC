@@ -36,6 +36,32 @@ namespace UPC.SSIA2013.DL.DALC
             }
         }
 
+        public up_IFCDC_Obtener_InformeFinCiclo_x_IdResult obtenerInformeFinCicloxId(int informeFinCicloId)
+        {
+            SSIA2013DataContext dataContext = null;
+
+            try
+            {
+                dataContext = new SSIA2013DataContext(ConfigurationManager.ConnectionStrings["CSSSIA2013"].ToString());
+                up_IFCDC_Obtener_InformeFinCiclo_x_IdResult informeFinCiclo = dataContext.up_IFCDC_Obtener_InformeFinCiclo_x_Id(informeFinCicloId).SingleOrDefault();
+
+                return informeFinCiclo;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            finally
+            {
+                if (dataContext != null)
+                {
+                    dataContext.Dispose();
+                }
+            }
+        }
+
         /*
         public int registrarInformeFinCiclo(String profesorId, int cursoId, int periodoId, String comentarioInfraestructura,
                                         String comentarioAlumnos, String comentarioDelegado, int calificacionDelegado)

@@ -192,8 +192,8 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
         }
 
         //INFORME FIN CICLO
-        /*
-        public static InformeFinCicloDC TranslateInformeFinCicloLRToInformeFinCicloDC(spObtenerInformeFinCicloResult objLR)
+
+        public static InformeFinCicloDC TranslateInformeFinCicloxIdLRToInformeFinCicloDC(up_IFCDC_Obtener_InformeFinCiclo_x_IdResult objLR)
         {
             InformeFinCicloDC objInformeFinCiclo;
 
@@ -204,15 +204,16 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
                 if (objLR != null)
                 {
                     objInformeFinCiclo.InformeFinCicloId = objLR.InformeFinCicloId;
-                    objInformeFinCiclo.ProfesorId = objLR.ProfesorId;
+                    objInformeFinCiclo.CoordinadorId = objLR.CoordinadorId;
                     objInformeFinCiclo.CursoId = objLR.CursoId;
                     objInformeFinCiclo.PeriodoId = objLR.PeriodoId;
+                    objInformeFinCiclo.DesarrolloUnidades = objLR.DesarrolloUnidades;
                     objInformeFinCiclo.ComentarioInfraestructura = objLR.ComentarioInfraestructura;
                     objInformeFinCiclo.ComentarioAlumnos = objLR.ComentarioAlumnos;
-                    objInformeFinCiclo.ComentarioDelegado = objLR.ComentarioDelegado;
-                    objInformeFinCiclo.FechaIngreso = objLR.FechaIngreso.ToString();
-                    if(objLR.Estado != null)
-                        objInformeFinCiclo.Estado = Boolean.Parse(objLR.Estado.ToString());
+                    objInformeFinCiclo.ComentarioDelegados = objLR.ComentarioDelegados;
+                    objInformeFinCiclo.ComentarioEncuesta = objLR.ComentarioEscuesta;
+                    objInformeFinCiclo.UltimaActualizacion = objLR.UltimaActualizacion;
+                    objInformeFinCiclo.Estado = objLR.Estado;
                 }
 
                 return objInformeFinCiclo;
@@ -223,7 +224,6 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
                 throw ex;
             }
         }
-        */
     
         public static InformeFinCicloDC TranslateInformeFinCicloLRToInformeFinCicloDC(up_IFCDC_Obtener_InformeFinCicloResult objLR)
         {

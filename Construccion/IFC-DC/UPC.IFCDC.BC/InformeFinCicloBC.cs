@@ -14,6 +14,32 @@ namespace UPC.IFCDC.BC
 {
     public class InformeFinCicloBC
     {
+        public InformeFinCicloBE obtenerInformeFinCicloxId(InformeFinCicloBE informe)
+        {
+            InformeFinCicloBE objInformeFinCicloBE = null;
+
+            HttpWebRequest hwr = null;
+            String json = "";
+            String sServicio = "WSObtenerInformeFinCicloxId";
+            ServiceHelper objServiceHelper = null;
+
+            try
+            {
+                objServiceHelper = new ServiceHelper();
+                json = objServiceHelper.serializeObjectToJson(informe);
+                hwr = objServiceHelper.createHttpWebRequest(sServicio);
+
+                objInformeFinCicloBE = JsonConvert.DeserializeObject<InformeFinCicloBE>(objServiceHelper.getObject(hwr, json).ReadToEnd());
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return objInformeFinCicloBE;
+        }
+
         public InformeFinCicloBE obtenerInformeFinCiclo(InformeFinCicloBE informe)
         {
             InformeFinCicloBE objInformeFinCicloBE = null;

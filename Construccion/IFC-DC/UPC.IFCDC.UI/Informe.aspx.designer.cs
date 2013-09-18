@@ -13,40 +13,49 @@ namespace UPC.IFCDC.UI {
     public partial class WebForm2 {
         
         /// <summary>
-        /// Ciclo control.
+        /// texto_PeriodoActual control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Ciclo;
+        protected global::System.Web.UI.WebControls.Label texto_PeriodoActual;
         
         /// <summary>
-        /// FechaLimite control.
+        /// texto_FechaLimite control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label FechaLimite;
+        protected global::System.Web.UI.WebControls.Label texto_FechaLimite;
         
         /// <summary>
-        /// Curso control.
+        /// texto_DescripcionCurso control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Curso;
+        protected global::System.Web.UI.WebControls.Label texto_DescripcionCurso;
         
         /// <summary>
-        /// LogroTerminal control.
+        /// grdOutcomes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LogroTerminal;
+        protected global::System.Web.UI.WebControls.GridView grdOutcomes;
+        
+        /// <summary>
+        /// texto_LogroTerminal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label texto_LogroTerminal;
         
         /// <summary>
         /// btnEnviar control.

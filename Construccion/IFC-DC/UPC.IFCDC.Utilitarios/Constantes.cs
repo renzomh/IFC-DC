@@ -8,6 +8,11 @@ namespace UPC.IFCDC.Utilitarios
     public class Constantes
     {
         #region CONSTANTE DEL PROYECTO IFC-DC
+
+        public const String ESTADO_INFORME_NOREALIZADO = "NO REALIZADO";
+        public const String ESTADO_INFORME_ENPROCESO = "EN PROCESO";
+        public const String ESTADO_INFORME_FINALIZADO = "IMPLEMENTADO";
+
         #endregion
 
         #region Formatos
