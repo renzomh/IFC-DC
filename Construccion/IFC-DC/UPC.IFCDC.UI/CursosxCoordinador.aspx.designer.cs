@@ -13,39 +13,30 @@ namespace UPC.IFCDC.UI {
     public partial class WebForm3 {
         
         /// <summary>
-        /// Ciclo control.
+        /// texto_PeriodoActual control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Ciclo;
+        protected global::System.Web.UI.WebControls.Label texto_PeriodoActual;
         
         /// <summary>
-        /// FechaLimite control.
+        /// texto_FechaLimite control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label FechaLimite;
+        protected global::System.Web.UI.WebControls.Label texto_FechaLimite;
         
         /// <summary>
-        /// btnInforme01 control.
+        /// grdCursos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnInforme01;
-        
-        /// <summary>
-        /// Button1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.GridView grdCursos;
     }
 }

@@ -4,14 +4,38 @@
     <br />
 <div class="box-central">
     <h1>CURSOS</h1>
-    <p>Ciclo: <asp:Label ID="Ciclo" runat ="server" Text="TextoCiclo"></asp:Label></p>
-    <p>Fecha Límite: <asp:Label ID="FechaLimite" Text="FechaLímite" runat ="server"></asp:Label></p>
+    <p>Ciclo: <asp:Label ID="texto_PeriodoActual" runat ="server" Text="TextoCiclo"></asp:Label></p>
+    <p>Fecha Límite: <asp:Label ID="texto_FechaLimite" Text="FechaLímite" runat ="server"></asp:Label></p>
 
 <table class="TablaNested">
-    <thead><tr class="HeaderTabla"><th>Código</th><th>Nombre</th><th>Informe</th></tr></thead>
     <tbody>
-        <tr><td>SI254</td><td>EVOLUCION DE SOFTWARE</td><td><asp:Button CssClass="btn-informe" runat="server" ID="btnInforme01" /> </td></tr>
-        <tr><td>SI37</td><td>ARQUITECTURA DE SOFTWARE</td><td><asp:Button CssClass="btn-informe" runat="server" ID="Button1" /></td></tr>
+        <tr>
+        <td colspan="2" align="center" >
+            <asp:GridView ID="grdCursos" OnRowCommand="grdCursos_RowCommand" runat="server" Width="100%"
+             CellPadding="4" CellSpacing="1" Border="0" AutoGenerateColumns="false" onselectedindexchanged="grdCursos_SelectedIndexChanged" 
+                >
+             
+                <RowStyle CssClass="grdFilas"/>
+                <HeaderStyle CssClass="grdCabecera"/>
+                <AlternatingRowStyle CssClass="grdFilasAlternas"/>
+             
+                <Columns>                    
+                    <asp:BoundField HeaderText="Código del curso" DataField="Codigo" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="15%"/>
+                    <asp:BoundField HeaderText="Nombre del curso" DataField="Nombre" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Left" ItemStyle-Width="70%"/>
+                    
+                    <asp:TemplateField HeaderText="Informe" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="15%">
+                        <ItemTemplate>
+                            <asp:LinkButton ID="lnkInforme" runat="server" CommandName="cmdIniciar" CommandArgument='<%#Eval("CursoId")%>'>
+                                <img src="Imagenes/icono/icono-editar.png" width="16" height="16" alt="iniciar" border="0"/>
+                            </asp:LinkButton>                        
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    
+                </Columns>
+             
+            </asp:GridView>
+        </td>
+    </tr>
     </tbody>
     </table>
 </div>

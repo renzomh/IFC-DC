@@ -11,7 +11,7 @@ namespace UPC.IFCDC.UI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            texto_UsuarioRegistrado.Text = Session["NombreCompletoPersona"].ToString();
         }
     }
 }
