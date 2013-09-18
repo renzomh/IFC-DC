@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Informe.aspx.cs" Inherits="UPC.IFCDC.UI.WebForm2" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="Contenido" runat="server">
-<br />
+    <br />
 <div class="box-central">
     <h1>INFORME DE FIN DE CICLO</h1>
     <p>Ciclo: <asp:Label ID="texto_PeriodoActual" runat ="server" Text="TextoCiclo"></asp:Label></p>
@@ -19,7 +19,7 @@
         <tr>
         <td colspan="2" align="center" >
             <asp:GridView ID="grdOutcomes" runat="server" Width="100%"
-             CellPadding="4" CellSpacing="1" Border="0" AutoGenerateColumns="false" 
+             CellPadding="4" CellSpacing="1" Border="0" AutoGenerateColumns="false"
                 > 
                 <RowStyle CssClass="grdFilas"/>
                 <HeaderStyle CssClass="grdCabecera"/>
@@ -37,12 +37,6 @@
     </table>
     <h4>El Curso tiene planteado el siguiente logro terminal</h4>
     <asp:Label CssClass="disabled" Width="99%" ID="texto_LogroTerminal" Text="Logro terminal del curso" runat="server"></asp:Label>
-    <br /><br />
-    <div style="text-align:center;">
-    <asp:Button CssClass="btn-enviar" ID="btnEnviar" runat="server" />
-    <asp:Button CssClass="btn-guardar" ID="btnGuardar" runat="server" />
-    <asp:Button CssClass="btn-cancelar" ID="btnCancelar" runat="server" />
-    </div>
 </div>
 <div id="accionesPrevias" class="box-central">
     accionesPrevias
@@ -56,4 +50,12 @@
 <div id="comentario" class="box-central">
     Comentarios
 </div>
+
+<br /><br />
+    <div style="text-align:center;">
+    <asp:Button CssClass="btn-enviar" ID="btnEnviar" runat="server" />
+    <asp:Button CssClass="btn-guardar" ID="btnGuardar" runat="server" />
+    <asp:Button CssClass="btn-cancelar" ID="btnCancelar" runat="server" />
+    </div>
+
 </asp:Content>
