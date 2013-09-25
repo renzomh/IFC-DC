@@ -9,7 +9,8 @@
     <p>Curso: <asp:Label ID="texto_DescripcionCurso" runat="server" Text="TextoCurso" ></asp:Label></p>
 </div>
 <ul class="tabs">
-    <li onclick="change_view('#logros');" >Logros</li><li onclick="change_view('#accionesPrevias');" >Acciones Previas</li><li onclick="change_view('#hallazgos');" >Hallazgos</li><li onclick="change_view('#accionesMejora');" >Acciones de Mejora</li><li onclick="change_view('#comentario');" >Comentarios</li></ul>
+    <li onclick="change_view('#logros');" >Logros</li><li onclick="change_view('#accionesPrevias');" >Acciones Previas</li><li onclick="change_view('#hallazgos');" >Hallazgos</li><li onclick="change_view('#accionesMejora');" >Acciones de Mejora</li><li onclick="change_view('#comentario');" >Comentarios</li>
+ </ul>
 
 
 <div id="logros" class="box-central">
@@ -19,8 +20,7 @@
         <tr>
         <td colspan="2" align="center" >
             <asp:GridView ID="grdOutcomes" runat="server" Width="100%"
-             CellPadding="4" CellSpacing="1" Border="0" AutoGenerateColumns="false"
-                > 
+             CellPadding="4" CellSpacing="1" Border="0" AutoGenerateColumns="false"> 
                 <RowStyle CssClass="grdFilas"/>
                 <HeaderStyle CssClass="grdCabecera"/>
                 <AlternatingRowStyle CssClass="grdFilasAlternas"/>
@@ -39,13 +39,58 @@
     <asp:Label CssClass="disabled" Width="99%" ID="texto_LogroTerminal" Text="Logro terminal del curso" runat="server"></asp:Label>
 </div>
 <div id="accionesPrevias" class="box-central">
-    accionesPrevias
+     <asp:GridView ID="grdAccionesPrevias" runat="server" Width="100%"
+             CellPadding="4" CellSpacing="1" Border="0" AutoGenerateColumns="false" 
+                > 
+                <RowStyle CssClass="grdFilas"/>
+                <HeaderStyle CssClass="grdCabecera"/>
+                <AlternatingRowStyle CssClass="grdFilasAlternas"/>
+             
+                <Columns>                    
+                    <asp:BoundField HeaderText="Código" DataField="Codigo" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="20%"/>
+                    <asp:BoundField HeaderText="Descripción" DataField="Descricpion" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Left" ItemStyle-Width="60%"/>
+                    <asp:BoundField HeaderText="Estado" DataField="Estado" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="20%"/>                    
+                </Columns>
+                
+             
+            </asp:GridView>
 </div>
 <div id="hallazgos" class="box-central">
-    Hallazgos
+   <asp:GridView ID="grdHallazgos" runat="server" Width="100%"
+             CellPadding="4" CellSpacing="1" Border="0" AutoGenerateColumns="false" 
+                > 
+                <RowStyle CssClass="grdFilas"/>
+                <HeaderStyle CssClass="grdCabecera"/>
+                <AlternatingRowStyle CssClass="grdFilasAlternas"/>
+             
+                <Columns>                    
+                    <asp:BoundField HeaderText="Código" DataField="Codigo" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="20%"/>
+                    <asp:BoundField HeaderText="Descripción" DataField="Descricpion" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Left" ItemStyle-Width="60%"/>
+                    <asp:BoundField HeaderText="Accion de Mejora" DataField="AccionMejora" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="20%"/>                    
+                </Columns>
+                
+             
+            </asp:GridView>
 </div>
 <div id="accionesMejora" class="box-central">
-    Acciones de Mejora
+     <asp:GridView ID="grdAccionesdeMejora" runat="server" Width="100%"
+             CellPadding="4" CellSpacing="1" Border="0" AutoGenerateColumns="false" 
+                > 
+                <RowStyle CssClass="grdFilas"/>
+                <HeaderStyle CssClass="grdCabecera"/>
+                <AlternatingRowStyle CssClass="grdFilasAlternas"/>
+             
+                <Columns>                    
+                    <asp:BoundField HeaderText="Código" DataField="Codigo" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="20%"/>
+                    <asp:BoundField HeaderText="Descripción" DataField="Descricpion" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Left" ItemStyle-Width="30%"/>
+                    <asp:BoundField HeaderText="Ciclo" DataField="Ciclo" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="10%"/>
+                    <asp:BoundField HeaderText="Hallazgo" DataField="Hallazgo" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="20%"/>
+                    <asp:BoundField HeaderText="Editar" DataField="Editar" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="10%"/>
+                    <asp:BoundField HeaderText="Eliminar" DataField="Eliminar" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="10%"/>
+                </Columns>
+                
+             
+            </asp:GridView>
 </div>
 <div id="comentario" class="box-central">
     Comentarios

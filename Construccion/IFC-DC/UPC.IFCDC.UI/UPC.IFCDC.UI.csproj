@@ -160,6 +160,7 @@
     <Content Include="Login.aspx" />
     <Content Include="Informe.aspx" />
     <Content Include="CursosxCoordinador.aspx" />
+    <Content Include="Administrativo.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -190,6 +191,13 @@
     </Compile>
     <Compile Include="CursosxCoordinador.aspx.designer.cs">
       <DependentUpon>CursosxCoordinador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrativo.aspx.cs">
+      <DependentUpon>Administrativo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrativo.aspx.designer.cs">
+      <DependentUpon>Administrativo.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
