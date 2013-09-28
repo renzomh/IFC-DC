@@ -50,5 +50,13 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=RENZO-PC;Initial Catalog=SSIA2012-1;User ID=sa;Password=password</Value>
     </Setting>
+    <Setting Name="IFCDC_SSIA2013ConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=(local);Initial Catalog=IFCDC-SSIA2013;User ID=IFCDCadmin;Password=admin&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=(local);Initial Catalog=IFCDC-SSIA2013;User ID=IFCDCadmin;Password=admin</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

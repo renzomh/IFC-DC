@@ -1,762 +1,120 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SSIA2012-1" Class="SSIA2013DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=RENZO-PC;Initial Catalog=SSIA2012-1;User ID=sa" SettingsObjectName="UPC.SSIA2013.DL.DataModel.Properties.Settings" SettingsPropertyName="SSIA2012_1ConnectionString2" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.Administrativo" Member="Administrativos">
-    <Type Name="Administrativo">
-      <Column Name="AdministrativoId" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Association Name="Persona_Administrativo" Member="Persona" ThisKey="AdministrativoId" OtherKey="PersonaId" Type="Persona" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="RUBRICON.ResultadosRubricas" Member="ResultadosRubricas">
-    <Type Name="ResultadosRubrica">
-      <Column Name="EvaluacionId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Resultado" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="Evaluacione_ResultadosRubrica" Member="Evaluacione" ThisKey="EvaluacionId" OtherKey="EvaluacionId" Type="Evaluacione" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Alumno" Member="Alumnos">
-    <Type Name="Alumno">
-      <Column Name="AlumnoId" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="AporedaroId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="PeriodoId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Estado" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="CarreraId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="EsDelegado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="EsEgresado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="CreditosAprobados" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="CantPracticasCumplidas" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="Alumno_AlumnoxGrupo" Member="AlumnoxGrupos" ThisKey="AlumnoId" OtherKey="AlumnoId" Type="AlumnoxGrupo" />
-      <Association Name="Alumno_Archivo" Member="Archivos" ThisKey="AlumnoId" OtherKey="AlumnoId" Type="Archivo" />
-      <Association Name="Alumno_CursoxEvaluacionxAlumno" Member="CursoxEvaluacionxAlumnos" ThisKey="AlumnoId" OtherKey="AlumnoId" Type="CursoxEvaluacionxAlumno" />
-      <Association Name="Alumno_DelegadoxSeccionxCurso" Member="DelegadoxSeccionxCursos" ThisKey="AlumnoId" OtherKey="AlumnoId" Type="DelegadoxSeccionxCurso" />
-      <Association Name="Alumno_Grupo" Member="Grupos" ThisKey="AlumnoId" OtherKey="LiderId" Type="Grupo" />
-      <Association Name="Alumno_Matricula" Member="Matriculas" ThisKey="AlumnoId" OtherKey="AlumnoId" Type="Matricula" />
-      <Association Name="Alumno_ResultadoRubrica" Member="ResultadoRubricas" ThisKey="AlumnoId" OtherKey="AlumnoId" Type="ResultadoRubrica" />
-      <Association Name="Apoderado_Alumno" Member="Apoderado" ThisKey="AporedaroId" OtherKey="ApoderadoId" Type="Apoderado" IsForeignKey="true" />
-      <Association Name="Carrera_Alumno" Member="Carrera" ThisKey="CarreraId" OtherKey="CarreraId" Type="Carrera" IsForeignKey="true" />
-      <Association Name="Periodo_Alumno" Member="Periodo" ThisKey="PeriodoId" OtherKey="PeriodoId" Type="Periodo" IsForeignKey="true" />
-      <Association Name="Persona_Alumno" Member="Persona" ThisKey="AlumnoId" OtherKey="PersonaId" Type="Persona" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.AlumnoxGrupo" Member="AlumnoxGrupos">
-    <Type Name="AlumnoxGrupo">
-      <Column Name="AlumnoxGrupoId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="AlumnoId" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="GrupoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Nota" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="Alumno_AlumnoxGrupo" Member="Alumno" ThisKey="AlumnoId" OtherKey="AlumnoId" Type="Alumno" IsForeignKey="true" />
-      <Association Name="Grupo_AlumnoxGrupo" Member="Grupo" ThisKey="GrupoId" OtherKey="GrupoId" Type="Grupo" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Apoderado" Member="Apoderados">
-    <Type Name="Apoderado">
-      <Column Name="ApoderadoId" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Association Name="Apoderado_Alumno" Member="Alumnos" ThisKey="ApoderadoId" OtherKey="AporedaroId" Type="Alumno" />
-      <Association Name="Persona_Apoderado" Member="Persona" ThisKey="ApoderadoId" OtherKey="PersonaId" Type="Persona" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Archivo" Member="Archivos">
-    <Type Name="Archivo">
-      <Column Name="ArchivoId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Ruta" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
-      <Column Name="Nombre" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
-      <Column Name="AlumnoId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="FechaSubida" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Association Name="Archivo_ArchivoxGrupo" Member="ArchivoxGrupos" ThisKey="ArchivoId" OtherKey="ArchivoId" Type="ArchivoxGrupo" />
-      <Association Name="Alumno_Archivo" Member="Alumno" ThisKey="AlumnoId" OtherKey="AlumnoId" Type="Alumno" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.ArchivoxGrupo" Member="ArchivoxGrupos">
-    <Type Name="ArchivoxGrupo">
-      <Column Name="ArchivoxGrupoId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="ArchivoId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="GrupoId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="Archivo_ArchivoxGrupo" Member="Archivo" ThisKey="ArchivoId" OtherKey="ArchivoId" Type="Archivo" IsForeignKey="true" />
-      <Association Name="Grupo_ArchivoxGrupo" Member="Grupo" ThisKey="GrupoId" OtherKey="GrupoId" Type="Grupo" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Carrera" Member="Carreras">
-    <Type Name="Carrera">
-      <Column Name="CarreraId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Nombre" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
-      <Column Name="CoordinadorId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="EscuelaId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Association Name="Carrera_Alumno" Member="Alumnos" ThisKey="CarreraId" OtherKey="CarreraId" Type="Alumno" />
-      <Association Name="Carrera_Competencia" Member="Competencias" ThisKey="CarreraId" OtherKey="CarreraId" Type="Competencia" />
-      <Association Name="Carrera_Curricula" Member="Curriculas" ThisKey="CarreraId" OtherKey="CarreraId" Type="Curricula" />
-      <Association Name="Carrera_ResultadoPrograma" Member="ResultadoProgramas" ThisKey="CarreraId" OtherKey="CarreraId" Type="ResultadoPrograma" />
-      <Association Name="Carrera_SubArea" Member="SubAreas" ThisKey="CarreraId" OtherKey="CarreraId" Type="SubArea" />
-      <Association Name="Escuela_Carrera" Member="Escuela" ThisKey="EscuelaId" OtherKey="EscuelaId" Type="Escuela" IsForeignKey="true" />
-      <Association Name="Persona_Carrera" Member="Persona" ThisKey="CoordinadorId" OtherKey="PersonaId" Type="Persona" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Competencia" Member="Competencias">
-    <Type Name="Competencia">
-      <Column Name="CompetenciaId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Codigo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="Nombre" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
-      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
-      <Column Name="CarreraId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="PeriodoId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Association Name="Carrera_Competencia" Member="Carrera" ThisKey="CarreraId" OtherKey="CarreraId" Type="Carrera" IsForeignKey="true" />
-      <Association Name="Periodo_Competencia" Member="Periodo" ThisKey="PeriodoId" OtherKey="PeriodoId" Type="Periodo" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.CoordinadorxCurso" Member="CoordinadorxCursos">
-    <Type Name="CoordinadorxCurso">
-      <Column Name="CoordinadorxCursoId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="PeriodoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ProfesorId" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="CursoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="Curso_CoordinadorxCurso" Member="Curso" ThisKey="CursoId" OtherKey="CursoId" Type="Curso" IsForeignKey="true" />
-      <Association Name="Periodo_CoordinadorxCurso" Member="Periodo" ThisKey="PeriodoId" OtherKey="PeriodoId" Type="Periodo" IsForeignKey="true" />
-      <Association Name="Profesor_CoordinadorxCurso" Member="Profesor" ThisKey="ProfesorId" OtherKey="ProfesorId" Type="Profesor" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.CriterioxResultadoRubrica" Member="CriterioxResultadoRubricas">
-    <Type Name="CriterioxResultadoRubrica">
-      <Column Name="CriterioxResultadoRubricaId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="CriterioxRubricaId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ResultadoRubricaId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Puntaje" Type="System.Decimal" DbType="Decimal(14,2)" CanBeNull="true" />
-      <Association Name="CriterioxRubrica_CriterioxResultadoRubrica" Member="CriterioxRubrica" ThisKey="ResultadoRubricaId" OtherKey="CriterioxRubricaId" Type="CriterioxRubrica" IsForeignKey="true" />
-      <Association Name="ResultadoRubrica_CriterioxResultadoRubrica" Member="ResultadoRubrica" ThisKey="ResultadoRubricaId" OtherKey="ResultadoRubricaId" Type="ResultadoRubrica" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.CriterioxRubrica" Member="CriterioxRubricas">
-    <Type Name="CriterioxRubrica">
-      <Column Name="CriterioxRubricaId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="CriterioRubricaPadreId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Nombre" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
-      <Column Name="RubricaxVersionId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="CriterioxRubrica_CriterioxResultadoRubrica" Member="CriterioxResultadoRubricas" ThisKey="CriterioxRubricaId" OtherKey="ResultadoRubricaId" Type="CriterioxResultadoRubrica" />
-      <Association Name="CriterioxRubrica_CriterioxRubrica" Member="CriterioxRubricas" ThisKey="CriterioxRubricaId" OtherKey="CriterioRubricaPadreId" Type="CriterioxRubrica" />
-      <Association Name="CriterioxRubrica_CriterioxRubrica" Member="CriterioxRubrica1" ThisKey="CriterioRubricaPadreId" OtherKey="CriterioxRubricaId" Type="CriterioxRubrica" IsForeignKey="true" />
-      <Association Name="RubricaxVersion_CriterioxRubrica" Member="RubricaxVersion" ThisKey="RubricaxVersionId" OtherKey="RubricaxVersionId" Type="RubricaxVersion" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Curricula" Member="Curriculas">
-    <Type Name="Curricula">
-      <Column Name="CurriculaId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Codigo" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="PeriodoInicioId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="PeriodoFinId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="CarreraId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Association Name="Curricula_DetalleCurricula" Member="DetalleCurriculas" ThisKey="CurriculaId" OtherKey="CurriculaId" Type="DetalleCurricula" />
-      <Association Name="Carrera_Curricula" Member="Carrera" ThisKey="CarreraId" OtherKey="CarreraId" Type="Carrera" IsForeignKey="true" />
-      <Association Name="Periodo_Curricula" Member="Periodo" ThisKey="PeriodoInicioId" OtherKey="PeriodoId" Type="Periodo" IsForeignKey="true" />
-      <Association Name="Periodo_Curricula1" Member="Periodo1" ThisKey="PeriodoFinId" OtherKey="PeriodoId" Type="Periodo" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Curso" Member="Cursos">
-    <Type Name="Curso">
-      <Column Name="CursoId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Codigo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Nombre" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="Creditos" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="HorasTotales" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="HorasLaboratorio" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="HorasTeoria" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="TipoCursoId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="SubAreaId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="Curso_CoordinadorxCurso" Member="CoordinadorxCursos" ThisKey="CursoId" OtherKey="CursoId" Type="CoordinadorxCurso" />
-      <Association Name="Curso_CursoControl" Member="CursoControl" ThisKey="CursoId" OtherKey="CursoControlId" Type="CursoControl" Cardinality="One" />
-      <Association Name="Curso_CursoVerificacion" Member="CursoVerificacion" ThisKey="CursoId" OtherKey="CursoVerificacionId" Type="CursoVerificacion" Cardinality="One" />
-      <Association Name="Curso_CursoxResultadoPrograma" Member="CursoxResultadoProgramas" ThisKey="CursoId" OtherKey="CursoId" Type="CursoxResultadoPrograma" />
-      <Association Name="Curso_DetalleCurricula" Member="DetalleCurriculas" ThisKey="CursoId" OtherKey="CursoId" Type="DetalleCurricula" />
-      <Association Name="Curso_SeccionxCurso" Member="SeccionxCursos" ThisKey="CursoId" OtherKey="CursoId" Type="SeccionxCurso" />
-      <Association Name="Curso_InformeFinCiclo" Member="InformeFinCiclos" ThisKey="CursoId" OtherKey="CursoId" Type="InformeFinCiclo" />
-      <Association Name="SubArea_Curso" Member="SubArea" ThisKey="SubAreaId" OtherKey="SubAreaId" Type="SubArea" IsForeignKey="true" />
-      <Association Name="TipoCurso_Curso" Member="TipoCurso" ThisKey="TipoCursoId" OtherKey="TipoCursoId" Type="TipoCurso" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.CursoControl" Member="CursoControls">
-    <Type Name="CursoControl">
-      <Column Name="CursoControlId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Association Name="Curso_CursoControl" Member="Curso" ThisKey="CursoControlId" OtherKey="CursoId" Type="Curso" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.CursoVerificacion" Member="CursoVerificacions">
-    <Type Name="CursoVerificacion">
-      <Column Name="CursoVerificacionId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Association Name="Curso_CursoVerificacion" Member="Curso" ThisKey="CursoVerificacionId" OtherKey="CursoId" Type="Curso" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.CursoxEvaluacion" Member="CursoxEvaluacions">
-    <Type Name="CursoxEvaluacion">
-      <Column Name="CursoxEvaluacionId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="SeccionxCursoId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="EvaluacionId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Numero" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="CursoxEvaluacion_CursoxEvaluacionxAlumno" Member="CursoxEvaluacionxAlumnos" ThisKey="CursoxEvaluacionId" OtherKey="CursoxEvaluacionId" Type="CursoxEvaluacionxAlumno" />
-      <Association Name="CursoxEvaluacion_ResultadoProgramaxCursoxEvaluacion" Member="ResultadoProgramaxCursoxEvaluacions" ThisKey="CursoxEvaluacionId" OtherKey="CursoxEvaluacionId" Type="ResultadoProgramaxCursoxEvaluacion" />
-      <Association Name="CursoxEvaluacion_Rubrica" Member="Rubricas" ThisKey="CursoxEvaluacionId" OtherKey="CursoxEvaluacionId" Type="Rubrica" />
-      <Association Name="CursoxEvaluacion_Trabajo" Member="Trabajos" ThisKey="CursoxEvaluacionId" OtherKey="CursoxEvaluacionId" Type="Trabajo" />
-      <Association Name="Evaluacion_CursoxEvaluacion" Member="Evaluacion" ThisKey="EvaluacionId" OtherKey="EvaluacionId" Type="Evaluacion" IsForeignKey="true" />
-      <Association Name="SeccionxCurso_CursoxEvaluacion" Member="SeccionxCurso" ThisKey="SeccionxCursoId" OtherKey="SeccionxCursoId" Type="SeccionxCurso" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.CursoxEvaluacionxAlumno" Member="CursoxEvaluacionxAlumnos">
-    <Type Name="CursoxEvaluacionxAlumno">
-      <Column Name="CursoxEvaluacionxAlumnoId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="CursoxEvaluacionId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="AlumnoId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Nota" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Association Name="Alumno_CursoxEvaluacionxAlumno" Member="Alumno" ThisKey="AlumnoId" OtherKey="AlumnoId" Type="Alumno" IsForeignKey="true" />
-      <Association Name="CursoxEvaluacion_CursoxEvaluacionxAlumno" Member="CursoxEvaluacion" ThisKey="CursoxEvaluacionId" OtherKey="CursoxEvaluacionId" Type="CursoxEvaluacion" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.CursoxResultadoPrograma" Member="CursoxResultadoProgramas">
-    <Type Name="CursoxResultadoPrograma">
-      <Column Name="CursoxResultadoProgramaId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="ResultadoProgramaId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="CursoId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="Curso_CursoxResultadoPrograma" Member="Curso" ThisKey="CursoId" OtherKey="CursoId" Type="Curso" IsForeignKey="true" />
-      <Association Name="ResultadoPrograma_CursoxResultadoPrograma" Member="ResultadoPrograma" ThisKey="ResultadoProgramaId" OtherKey="ResultadoProgramaId" Type="ResultadoPrograma" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.DelegadoxSeccionxCurso" Member="DelegadoxSeccionxCursos">
-    <Type Name="DelegadoxSeccionxCurso">
-      <Column Name="DelegadoxSeccionxCursoId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="AlumnoId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="SeccionxCursoId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="Alumno_DelegadoxSeccionxCurso" Member="Alumno" ThisKey="AlumnoId" OtherKey="AlumnoId" Type="Alumno" IsForeignKey="true" />
-      <Association Name="SeccionxCurso_DelegadoxSeccionxCurso" Member="SeccionxCurso" ThisKey="SeccionxCursoId" OtherKey="SeccionxCursoId" Type="SeccionxCurso" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.DetalleCurricula" Member="DetalleCurriculas">
-    <Type Name="DetalleCurricula">
-      <Column Name="DetalleCurriculaId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="CursoId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="CurriculaId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Requisitos" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
-      <Column Name="Nivel" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Association Name="Curricula_DetalleCurricula" Member="Curricula" ThisKey="CurriculaId" OtherKey="CurriculaId" Type="Curricula" IsForeignKey="true" />
-      <Association Name="Curso_DetalleCurricula" Member="Curso" ThisKey="CursoId" OtherKey="CursoId" Type="Curso" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Escuela" Member="Escuelas">
-    <Type Name="Escuela">
-      <Column Name="EscuelaId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Nombre" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
-      <Column Name="DirectorId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Association Name="Escuela_Carrera" Member="Carreras" ThisKey="EscuelaId" OtherKey="EscuelaId" Type="Carrera" />
-      <Association Name="Persona_Escuela" Member="Persona" ThisKey="DirectorId" OtherKey="PersonaId" Type="Persona" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Evaluacion" Member="Evaluacions">
-    <Type Name="Evaluacion">
-      <Column Name="EvaluacionId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Codigo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="Descripcion" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Association Name="Evaluacion_CursoxEvaluacion" Member="CursoxEvaluacions" ThisKey="EvaluacionId" OtherKey="EvaluacionId" Type="CursoxEvaluacion" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Grupo" Member="Grupos">
-    <Type Name="Grupo">
-      <Column Name="GrupoId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TrabajoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Nota" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="LiderId" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="NombreTrabajo" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
-      <Association Name="Grupo_AlumnoxGrupo" Member="AlumnoxGrupos" ThisKey="GrupoId" OtherKey="GrupoId" Type="AlumnoxGrupo" />
-      <Association Name="Grupo_ArchivoxGrupo" Member="ArchivoxGrupos" ThisKey="GrupoId" OtherKey="GrupoId" Type="ArchivoxGrupo" />
-      <Association Name="Alumno_Grupo" Member="Alumno" ThisKey="LiderId" OtherKey="AlumnoId" Type="Alumno" IsForeignKey="true" />
-      <Association Name="Trabajo_Grupo" Member="Trabajo" ThisKey="TrabajoId" OtherKey="TrabajoId" Type="Trabajo" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.HorarioxSeccionxCurso" Member="HorarioxSeccionxCursos">
-    <Type Name="HorarioxSeccionxCurso">
-      <Column Name="HorarioxSeccionxCursoId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="SeccionxCursoId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Dia" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="HoraInicio" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
-      <Column Name="HoraFin" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
-      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="Aula" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="LocalId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="Local_HorarioxSeccionxCurso" Member="Local" ThisKey="LocalId" OtherKey="LocalId" Type="Local" IsForeignKey="true" />
-      <Association Name="SeccionxCurso_HorarioxSeccionxCurso" Member="SeccionxCurso" ThisKey="SeccionxCursoId" OtherKey="SeccionxCursoId" Type="SeccionxCurso" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Local" Member="Locals">
-    <Type Name="Local">
-      <Column Name="LocalId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Acronimo" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="Descripcion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Association Name="Local_HorarioxSeccionxCurso" Member="HorarioxSeccionxCursos" ThisKey="LocalId" OtherKey="LocalId" Type="HorarioxSeccionxCurso" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Logro" Member="Logros">
-    <Type Name="Logro">
-      <Column Name="LogroId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="SeccionxCursoId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Codigo" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="Descripcion" Type="System.String" DbType="VarChar(5000)" CanBeNull="true" />
-      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Association Name="SeccionxCurso_Logro" Member="SeccionxCurso" ThisKey="SeccionxCursoId" OtherKey="SeccionxCursoId" Type="SeccionxCurso" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Matricula" Member="Matriculas">
-    <Type Name="Matricula">
-      <Column Name="MatriculaId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="AlumnoId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="PeriodoId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="SeccionxCursoId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Nota" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
-      <Association Name="Alumno_Matricula" Member="Alumno" ThisKey="AlumnoId" OtherKey="AlumnoId" Type="Alumno" IsForeignKey="true" />
-      <Association Name="Periodo_Matricula" Member="Periodo" ThisKey="PeriodoId" OtherKey="PeriodoId" Type="Periodo" IsForeignKey="true" />
-      <Association Name="SeccionxCurso_Matricula" Member="SeccionxCurso" ThisKey="SeccionxCursoId" OtherKey="SeccionxCursoId" Type="SeccionxCurso" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Periodo" Member="Periodos">
-    <Type Name="Periodo">
-      <Column Name="PeriodoId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="EsActual" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="FechaInicio" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="FechaFin" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Association Name="Periodo_Alumno" Member="Alumnos" ThisKey="PeriodoId" OtherKey="PeriodoId" Type="Alumno" />
-      <Association Name="Periodo_Competencia" Member="Competencias" ThisKey="PeriodoId" OtherKey="PeriodoId" Type="Competencia" />
-      <Association Name="Periodo_CoordinadorxCurso" Member="CoordinadorxCursos" ThisKey="PeriodoId" OtherKey="PeriodoId" Type="CoordinadorxCurso" />
-      <Association Name="Periodo_Curricula" Member="Curriculas" ThisKey="PeriodoId" OtherKey="PeriodoInicioId" Type="Curricula" />
-      <Association Name="Periodo_Curricula1" Member="Curriculas1" ThisKey="PeriodoId" OtherKey="PeriodoFinId" Type="Curricula" />
-      <Association Name="Periodo_Matricula" Member="Matriculas" ThisKey="PeriodoId" OtherKey="PeriodoId" Type="Matricula" />
-      <Association Name="Periodo_SeccionxCurso" Member="SeccionxCursos" ThisKey="PeriodoId" OtherKey="PeriodoId" Type="SeccionxCurso" />
-      <Association Name="Periodo_InformeFinCiclo" Member="InformeFinCiclos" ThisKey="PeriodoId" OtherKey="PeriodoId" Type="InformeFinCiclo" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Persona" Member="Personas">
-    <Type Name="Persona">
-      <Column Name="PersonaId" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Nombres" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
-      <Column Name="Apellidos" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
-      <Column Name="NroDocumento" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="TipoDocumento" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="CorreoElectronico" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
-      <Column Name="Telefono1" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="Telefono2" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="Celular" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="Sexo" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
-      <Column Name="FechaNacimiento" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Association Name="Persona_Administrativo" Member="Administrativo" ThisKey="PersonaId" OtherKey="AdministrativoId" Type="Administrativo" Cardinality="One" />
-      <Association Name="Persona_Alumno" Member="Alumno" ThisKey="PersonaId" OtherKey="AlumnoId" Type="Alumno" Cardinality="One" />
-      <Association Name="Persona_Apoderado" Member="Apoderado" ThisKey="PersonaId" OtherKey="ApoderadoId" Type="Apoderado" Cardinality="One" />
-      <Association Name="Persona_Carrera" Member="Carreras" ThisKey="PersonaId" OtherKey="CoordinadorId" Type="Carrera" />
-      <Association Name="Persona_Escuela" Member="Escuelas" ThisKey="PersonaId" OtherKey="DirectorId" Type="Escuela" />
-      <Association Name="Persona_Profesor" Member="Profesor" ThisKey="PersonaId" OtherKey="ProfesorId" Type="Profesor" Cardinality="One" />
-      <Association Name="Persona_SubArea" Member="SubAreas" ThisKey="PersonaId" OtherKey="CoordinadorId" Type="SubArea" />
-      <Association Name="Persona_InformeFinCiclo" Member="InformeFinCiclos" ThisKey="PersonaId" OtherKey="PersonaId" Type="InformeFinCiclo" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Profesor" Member="Profesors">
-    <Type Name="Profesor">
-      <Column Name="ProfesorId" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="EsTC" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="Codigo" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="ClaveFirma" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
-      <Column Name="RutaFirma" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
-      <Association Name="Profesor_CoordinadorxCurso" Member="CoordinadorxCursos" ThisKey="ProfesorId" OtherKey="ProfesorId" Type="CoordinadorxCurso" />
-      <Association Name="Profesor_ProfesorxSeccionxCurso" Member="ProfesorxSeccionxCursos" ThisKey="ProfesorId" OtherKey="ProfesorId" Type="ProfesorxSeccionxCurso" />
-      <Association Name="Profesor_ResultadoRubrica" Member="ResultadoRubricas" ThisKey="ProfesorId" OtherKey="ProfesorId" Type="ResultadoRubrica" />
-      <Association Name="Profesor_RubricaxVersion" Member="RubricaxVersions" ThisKey="ProfesorId" OtherKey="CreadorId" Type="RubricaxVersion" />
-      <Association Name="Profesor_RubricaxVersion1" Member="RubricaxVersions1" ThisKey="ProfesorId" OtherKey="AprobadorId" Type="RubricaxVersion" />
-      <Association Name="Persona_Profesor" Member="Persona" ThisKey="ProfesorId" OtherKey="PersonaId" Type="Persona" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.ProfesorxSeccionxCurso" Member="ProfesorxSeccionxCursos">
-    <Type Name="ProfesorxSeccionxCurso">
-      <Column Name="ProfesorxSeccionxCursoId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="SeccionxCursoId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ProfesorId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Association Name="ProfesorxSeccionxCurso_Trabajo" Member="Trabajos" ThisKey="ProfesorxSeccionxCursoId" OtherKey="ProfesorxSeccionxCursoId" Type="Trabajo" />
-      <Association Name="Profesor_ProfesorxSeccionxCurso" Member="Profesor" ThisKey="ProfesorId" OtherKey="ProfesorId" Type="Profesor" IsForeignKey="true" />
-      <Association Name="SeccionxCurso_ProfesorxSeccionxCurso" Member="SeccionxCurso" ThisKey="SeccionxCursoId" OtherKey="SeccionxCursoId" Type="SeccionxCurso" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.ResultadoPrograma" Member="ResultadoProgramas">
-    <Type Name="ResultadoPrograma">
-      <Column Name="ResultadoProgramaId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Outcome" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
-      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
-      <Column Name="CarreraId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="ResultadoPrograma_CursoxResultadoPrograma" Member="CursoxResultadoProgramas" ThisKey="ResultadoProgramaId" OtherKey="ResultadoProgramaId" Type="CursoxResultadoPrograma" />
-      <Association Name="ResultadoPrograma_ResultadoProgramaxCursoxEvaluacion" Member="ResultadoProgramaxCursoxEvaluacions" ThisKey="ResultadoProgramaId" OtherKey="ResultadoProgramaId" Type="ResultadoProgramaxCursoxEvaluacion" />
-      <Association Name="ResultadoPrograma_SeccionxCursoxResultadoPrograma" Member="SeccionxCursoxResultadoProgramas" ThisKey="ResultadoProgramaId" OtherKey="ResultadoProgramaId" Type="SeccionxCursoxResultadoPrograma" />
-      <Association Name="Carrera_ResultadoPrograma" Member="Carrera" ThisKey="CarreraId" OtherKey="CarreraId" Type="Carrera" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.ResultadoProgramaxCursoxEvaluacion" Member="ResultadoProgramaxCursoxEvaluacions">
-    <Type Name="ResultadoProgramaxCursoxEvaluacion">
-      <Column Name="ResultadoProgramaxCursoxEvaluacionId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="ResultadoProgramaId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="CursoxEvaluacionId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="CursoxEvaluacion_ResultadoProgramaxCursoxEvaluacion" Member="CursoxEvaluacion" ThisKey="CursoxEvaluacionId" OtherKey="CursoxEvaluacionId" Type="CursoxEvaluacion" IsForeignKey="true" />
-      <Association Name="ResultadoPrograma_ResultadoProgramaxCursoxEvaluacion" Member="ResultadoPrograma" ThisKey="ResultadoProgramaId" OtherKey="ResultadoProgramaId" Type="ResultadoPrograma" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.ResultadoRubrica" Member="ResultadoRubricas">
-    <Type Name="ResultadoRubrica">
-      <Column Name="ResultadoRubricaId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="RubricaId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Nota" Type="System.Decimal" DbType="Decimal(14,2)" CanBeNull="true" />
-      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="AlumnoId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="ProfesorId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Association Name="ResultadoRubrica_CriterioxResultadoRubrica" Member="CriterioxResultadoRubricas" ThisKey="ResultadoRubricaId" OtherKey="ResultadoRubricaId" Type="CriterioxResultadoRubrica" />
-      <Association Name="Alumno_ResultadoRubrica" Member="Alumno" ThisKey="AlumnoId" OtherKey="AlumnoId" Type="Alumno" IsForeignKey="true" />
-      <Association Name="Profesor_ResultadoRubrica" Member="Profesor" ThisKey="ProfesorId" OtherKey="ProfesorId" Type="Profesor" IsForeignKey="true" />
-      <Association Name="Rubrica_ResultadoRubrica" Member="Rubrica" ThisKey="RubricaId" OtherKey="RubricaId" Type="Rubrica" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Rubrica" Member="Rubricas">
-    <Type Name="Rubrica">
-      <Column Name="RubricaId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="CursoxEvaluacionId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="RubricaActual" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="Rubrica_ResultadoRubrica" Member="ResultadoRubricas" ThisKey="RubricaId" OtherKey="RubricaId" Type="ResultadoRubrica" />
-      <Association Name="Rubrica_RubricaxVersion" Member="RubricaxVersions" ThisKey="RubricaId" OtherKey="RubricaId" Type="RubricaxVersion" />
-      <Association Name="CursoxEvaluacion_Rubrica" Member="CursoxEvaluacion" ThisKey="CursoxEvaluacionId" OtherKey="CursoxEvaluacionId" Type="CursoxEvaluacion" IsForeignKey="true" />
-      <Association Name="RubricaxVersion_Rubrica" Member="RubricaxVersion" ThisKey="RubricaActual" OtherKey="RubricaxVersionId" Type="RubricaxVersion" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.RubricaxVersion" Member="RubricaxVersions">
-    <Type Name="RubricaxVersion">
-      <Column Name="RubricaxVersionId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="RubricaId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Version" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="Descripcion" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
-      <Column Name="FechaCreacion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="CreadorId" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Estado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="EsActual" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="AprobadorId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="FechaAprobacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Association Name="RubricaxVersion_CriterioxRubrica" Member="CriterioxRubricas" ThisKey="RubricaxVersionId" OtherKey="RubricaxVersionId" Type="CriterioxRubrica" />
-      <Association Name="RubricaxVersion_Rubrica" Member="Rubricas" ThisKey="RubricaxVersionId" OtherKey="RubricaActual" Type="Rubrica" />
-      <Association Name="Profesor_RubricaxVersion" Member="Profesor" ThisKey="CreadorId" OtherKey="ProfesorId" Type="Profesor" IsForeignKey="true" />
-      <Association Name="Profesor_RubricaxVersion1" Member="Profesor1" ThisKey="AprobadorId" OtherKey="ProfesorId" Type="Profesor" IsForeignKey="true" />
-      <Association Name="Rubrica_RubricaxVersion" Member="Rubrica" ThisKey="RubricaId" OtherKey="RubricaId" Type="Rubrica" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.SeccionxCurso" Member="SeccionxCursos">
-    <Type Name="SeccionxCurso">
-      <Column Name="SeccionxCursoId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Seccion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="CursoId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="PeriodoId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="SeccionxCurso_CursoxEvaluacion" Member="CursoxEvaluacions" ThisKey="SeccionxCursoId" OtherKey="SeccionxCursoId" Type="CursoxEvaluacion" />
-      <Association Name="SeccionxCurso_DelegadoxSeccionxCurso" Member="DelegadoxSeccionxCursos" ThisKey="SeccionxCursoId" OtherKey="SeccionxCursoId" Type="DelegadoxSeccionxCurso" />
-      <Association Name="SeccionxCurso_HorarioxSeccionxCurso" Member="HorarioxSeccionxCursos" ThisKey="SeccionxCursoId" OtherKey="SeccionxCursoId" Type="HorarioxSeccionxCurso" />
-      <Association Name="SeccionxCurso_Logro" Member="Logros" ThisKey="SeccionxCursoId" OtherKey="SeccionxCursoId" Type="Logro" />
-      <Association Name="SeccionxCurso_Matricula" Member="Matriculas" ThisKey="SeccionxCursoId" OtherKey="SeccionxCursoId" Type="Matricula" />
-      <Association Name="SeccionxCurso_ProfesorxSeccionxCurso" Member="ProfesorxSeccionxCursos" ThisKey="SeccionxCursoId" OtherKey="SeccionxCursoId" Type="ProfesorxSeccionxCurso" />
-      <Association Name="SeccionxCurso_SeccionxCursoxResultadoPrograma" Member="SeccionxCursoxResultadoProgramas" ThisKey="SeccionxCursoId" OtherKey="SeccionxCursoId" Type="SeccionxCursoxResultadoPrograma" />
-      <Association Name="Curso_SeccionxCurso" Member="Curso" ThisKey="CursoId" OtherKey="CursoId" Type="Curso" IsForeignKey="true" />
-      <Association Name="Periodo_SeccionxCurso" Member="Periodo" ThisKey="PeriodoId" OtherKey="PeriodoId" Type="Periodo" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.SeccionxCursoxResultadoPrograma" Member="SeccionxCursoxResultadoProgramas">
-    <Type Name="SeccionxCursoxResultadoPrograma">
-      <Column Name="SeccionxCursoxResultadoProgramaId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="ResultadoProgramaId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="SeccionxCursoId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="SeccionxCurso_SeccionxCursoxResultadoPrograma" Member="SeccionxCurso" ThisKey="SeccionxCursoId" OtherKey="SeccionxCursoId" Type="SeccionxCurso" IsForeignKey="true" />
-      <Association Name="ResultadoPrograma_SeccionxCursoxResultadoPrograma" Member="ResultadoPrograma" ThisKey="ResultadoProgramaId" OtherKey="ResultadoProgramaId" Type="ResultadoPrograma" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.SubArea" Member="SubAreas">
-    <Type Name="SubArea">
-      <Column Name="SubAreaId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Nombre" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
-      <Column Name="CoordinadorId" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="CarreraId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Association Name="SubArea_Curso" Member="Cursos" ThisKey="SubAreaId" OtherKey="SubAreaId" Type="Curso" />
-      <Association Name="Carrera_SubArea" Member="Carrera" ThisKey="CarreraId" OtherKey="CarreraId" Type="Carrera" IsForeignKey="true" />
-      <Association Name="Persona_SubArea" Member="Persona" ThisKey="CoordinadorId" OtherKey="PersonaId" Type="Persona" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.TipoCurso" Member="TipoCursos">
-    <Type Name="TipoCurso">
-      <Column Name="TipoCursoId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Descripcion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Association Name="TipoCurso_Curso" Member="Cursos" ThisKey="TipoCursoId" OtherKey="TipoCursoId" Type="Curso" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Trabajo" Member="Trabajos">
-    <Type Name="Trabajo">
-      <Column Name="TrabajoId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Codigo" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="ProfesorxSeccionxCursoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="EsGrupal" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="Nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="FechaInicio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="FechaFin" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="Iniciativa" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
-      <Column Name="Instrucciones" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="CursoxEvaluacionId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="Trabajo_Grupo" Member="Grupos" ThisKey="TrabajoId" OtherKey="TrabajoId" Type="Grupo" />
-      <Association Name="CursoxEvaluacion_Trabajo" Member="CursoxEvaluacion" ThisKey="CursoxEvaluacionId" OtherKey="CursoxEvaluacionId" Type="CursoxEvaluacion" IsForeignKey="true" />
-      <Association Name="ProfesorxSeccionxCurso_Trabajo" Member="ProfesorxSeccionxCurso" ThisKey="ProfesorxSeccionxCursoId" OtherKey="ProfesorxSeccionxCursoId" Type="ProfesorxSeccionxCurso" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="EPSE.AlumnosGrupo" Member="AlumnosGrupos">
-    <Type Name="AlumnosGrupo">
-      <Column Name="AlumnoId" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="GrupoId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Nota" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="AlumnosGrupo_EvaluacionesAlumnosGrupoProfesor" Member="EvaluacionesAlumnosGrupoProfesors" ThisKey="AlumnoId,GrupoId" OtherKey="AlumnoId,GrupoId" Type="EvaluacionesAlumnosGrupoProfesor" />
-      <Association Name="Grupo1_AlumnosGrupo" Member="Grupo1" ThisKey="GrupoId" OtherKey="GrupoId" Type="Grupo1" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="EPSE.Archivos" Member="Archivo1s">
-    <Type Name="Archivo1">
-      <Column Name="ArchivoId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Ruta" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
-      <Column Name="Nombre" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
-      <Column Name="AlumnoId" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="FechaSubida" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Association Name="Archivo1_ArchivosGrupo" Member="ArchivosGrupos" ThisKey="ArchivoId" OtherKey="ArchivoId" Type="ArchivosGrupo" />
-    </Type>
-  </Table>
-  <Table Name="EPSE.ArchivosGrupo" Member="ArchivosGrupos">
-    <Type Name="ArchivosGrupo">
-      <Column Name="ArchivoId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="GrupoId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Association Name="Archivo1_ArchivosGrupo" Member="Archivo1" ThisKey="ArchivoId" OtherKey="ArchivoId" Type="Archivo1" IsForeignKey="true" />
-      <Association Name="Grupo1_ArchivosGrupo" Member="Grupo1" ThisKey="GrupoId" OtherKey="GrupoId" Type="Grupo1" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="EPSE.EvaluacionesAlumnosGrupoProfesor" Member="EvaluacionesAlumnosGrupoProfesors">
-    <Type Name="EvaluacionesAlumnosGrupoProfesor">
-      <Column Name="ProfesorId" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="GrupoId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="AlumnoId" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="EvaluacionId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Nota" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="AlumnosGrupo_EvaluacionesAlumnosGrupoProfesor" Member="AlumnosGrupo" ThisKey="AlumnoId,GrupoId" OtherKey="AlumnoId,GrupoId" Type="AlumnosGrupo" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="EPSE.EvaluacionesGruposProfesor" Member="EvaluacionesGruposProfesors">
-    <Type Name="EvaluacionesGruposProfesor">
-      <Column Name="ProfesorId" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="GrupoId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="EvaluacionId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Nota" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="Grupo1_EvaluacionesGruposProfesor" Member="Grupo1" ThisKey="GrupoId" OtherKey="GrupoId" Type="Grupo1" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="EPSE.EvaluacionesOutcomeProfesor" Member="EvaluacionesOutcomeProfesors">
-    <Type Name="EvaluacionesOutcomeProfesor">
-      <Column Name="ProfesorId" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="PeriodoId" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="OutcomeId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="AlumnoId" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Nota" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="EvaluacionId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="EPSE.Grupos" Member="Grupo1s">
-    <Type Name="Grupo1">
-      <Column Name="GrupoId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TrabajoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Nota" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="SeccionId" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
-      <Column Name="LiderId" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="NombreTrabajo" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
-      <Association Name="Grupo1_AlumnosGrupo" Member="AlumnosGrupos" ThisKey="GrupoId" OtherKey="GrupoId" Type="AlumnosGrupo" />
-      <Association Name="Grupo1_ArchivosGrupo" Member="ArchivosGrupos" ThisKey="GrupoId" OtherKey="GrupoId" Type="ArchivosGrupo" />
-      <Association Name="Grupo1_EvaluacionesGruposProfesor" Member="EvaluacionesGruposProfesors" ThisKey="GrupoId" OtherKey="GrupoId" Type="EvaluacionesGruposProfesor" />
-      <Association Name="Trabajo1_Grupo1" Member="Trabajo1" ThisKey="TrabajoId" OtherKey="TrabajoId" Type="Trabajo1" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="EPSE.Trabajos" Member="Trabajo1s">
-    <Type Name="Trabajo1">
-      <Column Name="TrabajoId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Codigo" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="CursoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="PeriodoId" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="EsGrupal" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="Nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="FechaInicio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="FechaFin" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="Iniciativa" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
-      <Column Name="Instrucciones" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-      <Association Name="Trabajo1_Grupo1" Member="Grupo1s" ThisKey="TrabajoId" OtherKey="TrabajoId" Type="Grupo1" />
-      <Association Name="Trabajo1_TrabajosOutcomeAlumno" Member="TrabajosOutcomeAlumnos" ThisKey="TrabajoId" OtherKey="TrabajoId" Type="TrabajosOutcomeAlumno" />
-    </Type>
-  </Table>
-  <Table Name="EPSE.TrabajosOutcomeAlumno" Member="TrabajosOutcomeAlumnos">
-    <Type Name="TrabajosOutcomeAlumno">
-      <Column Name="OutcomeId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="AlumnoId" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="TrabajoId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Association Name="Trabajo1_TrabajosOutcomeAlumno" Member="Trabajo1" ThisKey="TrabajoId" OtherKey="TrabajoId" Type="Trabajo1" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="IFCDC.InformeFinCiclo" Member="InformeFinCiclos">
-    <Type Name="InformeFinCiclo">
-      <Column Name="InformeFinCicloId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="PersonaId" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="CursoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="PeriodoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="DesarrolloUnidades" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
-      <Column Name="ComentarioInfraestructura" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
-      <Column Name="ComentarioAlumnos" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
-      <Column Name="ComentarioDelegados" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
-      <Column Name="ComentarioEscuesta" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
-      <Column Name="Estado" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="UltimaActualizacion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Association Name="InformeFinCiclo_Hallazgo" Member="Hallazgos" ThisKey="InformeFinCicloId" OtherKey="InformeFinCicloId" Type="Hallazgo" />
-      <Association Name="Curso_InformeFinCiclo" Member="Curso" ThisKey="CursoId" OtherKey="CursoId" Type="Curso" IsForeignKey="true" />
-      <Association Name="Periodo_InformeFinCiclo" Member="Periodo" ThisKey="PeriodoId" OtherKey="PeriodoId" Type="Periodo" IsForeignKey="true" />
-      <Association Name="Persona_InformeFinCiclo" Member="Persona" ThisKey="PersonaId" OtherKey="PersonaId" Type="Persona" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="RUBRICON.CriterioRubrica" Member="CriterioRubricas">
-    <Type Name="CriterioRubrica">
-      <Column Name="CriterioRubricaId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="CriterioRubricaPadreId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="GrupoNivelId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Nombre" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
-      <Column Name="RubricaId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Peso" Type="System.Decimal" DbType="Decimal(10,4)" CanBeNull="true" />
-      <Association Name="CriterioRubrica_CriterioRubrica" Member="CriterioRubricas" ThisKey="CriterioRubricaId" OtherKey="CriterioRubricaPadreId" Type="CriterioRubrica" />
-      <Association Name="CriterioRubrica_PerformancesRubrica" Member="PerformancesRubricas" ThisKey="CriterioRubricaId" OtherKey="CriterioRubricaId" Type="PerformancesRubrica" />
-      <Association Name="CriterioRubrica_CriterioRubrica" Member="CriterioRubrica1" ThisKey="CriterioRubricaPadreId" OtherKey="CriterioRubricaId" Type="CriterioRubrica" IsForeignKey="true" />
-      <Association Name="GruposNivele_CriterioRubrica" Member="GruposNivele" ThisKey="GrupoNivelId" OtherKey="GrupoNivelId" Type="GruposNivele" IsForeignKey="true" />
-      <Association Name="Rubrica1_CriterioRubrica" Member="Rubrica1" ThisKey="RubricaId" OtherKey="RubricaId" Type="Rubrica1" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="RUBRICON.Evaluaciones" Member="Evaluaciones">
-    <Type Name="Evaluacione">
-      <Column Name="EvaluacionId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="CodigoEvaluadoId" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="CodigoEvaluadorId" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="FechaEvaluacion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="RubricaId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Resultado" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Association Name="Evaluacione_ResultadosRubrica" Member="ResultadosRubrica" ThisKey="EvaluacionId" OtherKey="EvaluacionId" Type="ResultadosRubrica" Cardinality="One" />
-      <Association Name="Evaluacione_RespuestasRubrica" Member="RespuestasRubricas" ThisKey="EvaluacionId" OtherKey="EvaluacionId" Type="RespuestasRubrica" />
-      <Association Name="Rubrica1_Evaluacione" Member="Rubrica1" ThisKey="RubricaId" OtherKey="RubricaId" Type="Rubrica1" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="RUBRICON.GruposNiveles" Member="GruposNiveles">
-    <Type Name="GruposNivele">
-      <Column Name="GrupoNivelId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Association Name="GruposNivele_CriterioRubrica" Member="CriterioRubricas" ThisKey="GrupoNivelId" OtherKey="GrupoNivelId" Type="CriterioRubrica" />
-      <Association Name="GruposNivele_Nivele" Member="Niveles" ThisKey="GrupoNivelId" OtherKey="GrupoNivelId" Type="Nivele" />
-    </Type>
-  </Table>
-  <Table Name="RUBRICON.Niveles" Member="Niveles">
-    <Type Name="Nivele">
-      <Column Name="NivelId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="GrupoNivelId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Association Name="Nivele_PerformancesRubrica" Member="PerformancesRubricas" ThisKey="NivelId" OtherKey="NivelId" Type="PerformancesRubrica" />
-      <Association Name="GruposNivele_Nivele" Member="GruposNivele" ThisKey="GrupoNivelId" OtherKey="GrupoNivelId" Type="GruposNivele" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="RUBRICON.PerformancesRubrica" Member="PerformancesRubricas">
-    <Type Name="PerformancesRubrica">
-      <Column Name="PerformanceRubricaId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Nombre" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
-      <Column Name="Puntaje" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
-      <Column Name="CriterioRubricaId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="NivelId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="PerformancesRubrica_RespuestasRubrica" Member="RespuestasRubricas" ThisKey="PerformanceRubricaId" OtherKey="PerformanceRubricaId" Type="RespuestasRubrica" />
-      <Association Name="CriterioRubrica_PerformancesRubrica" Member="CriterioRubrica" ThisKey="CriterioRubricaId" OtherKey="CriterioRubricaId" Type="CriterioRubrica" IsForeignKey="true" />
-      <Association Name="Nivele_PerformancesRubrica" Member="Nivele" ThisKey="NivelId" OtherKey="NivelId" Type="Nivele" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="RUBRICON.RespuestasRubrica" Member="RespuestasRubricas">
-    <Type Name="RespuestasRubrica">
-      <Column Name="EvaluacionId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="PerformanceRubricaId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Association Name="Evaluacione_RespuestasRubrica" Member="Evaluacione" ThisKey="EvaluacionId" OtherKey="EvaluacionId" Type="Evaluacione" IsForeignKey="true" />
-      <Association Name="PerformancesRubrica_RespuestasRubrica" Member="PerformancesRubrica" ThisKey="PerformanceRubricaId" OtherKey="PerformanceRubricaId" Type="PerformancesRubrica" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="RUBRICON.Rubricas" Member="Rubrica1s">
-    <Type Name="Rubrica1">
-      <Column Name="RubricaId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="CursoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="CodigoEvaluacion" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
-      <Column Name="Version" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Descripcion" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
-      <Column Name="FechaCreacion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="CreadorId" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="Estado" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
-      <Column Name="AprobadorId" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="FechaAprobacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="EsPrincipal" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="Rubrica1_CriterioRubrica" Member="CriterioRubricas" ThisKey="RubricaId" OtherKey="RubricaId" Type="CriterioRubrica" />
-      <Association Name="Rubrica1_Evaluacione" Member="Evaluaciones" ThisKey="RubricaId" OtherKey="RubricaId" Type="Evaluacione" />
-    </Type>
-  </Table>
-  <Table Name="IFCDC.Hallazgo" Member="Hallazgos">
-    <Type Name="Hallazgo">
-      <Column Name="HallazgoId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Codigo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
-      <Column Name="InformeFinCicloId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="Hallazgo_AccionMejora" Member="AccionMejoras" ThisKey="HallazgoId" OtherKey="HallazgoId" Type="AccionMejora" />
-      <Association Name="InformeFinCiclo_Hallazgo" Member="InformeFinCiclo" ThisKey="InformeFinCicloId" OtherKey="InformeFinCicloId" Type="InformeFinCiclo" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="IFCDC.AccionMejora" Member="AccionMejoras">
-    <Type Name="AccionMejora">
-      <Column Name="AccionMejoraId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="IFCDC-SSIA2013" Class="SSIA2013DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(local);Initial Catalog=IFCDC-SSIA2013;User ID=IFCDCadmin" SettingsObjectName="UPC.SSIA2013.DL.DataModel.Properties.Settings" SettingsPropertyName="IFCDC_SSIA2013ConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.[up.IFCDC_Editar_AccionMejora]" Method="up_IFCDC_Editar_AccionMejora">
+    <Parameter Name="AccionMejoraId" Parameter="accionMejoraId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="InformeFinCicloId" Parameter="informeFinCicloId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CicloEjecucionId" Parameter="cicloEjecucionId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(500)" />
+    <ElementType Name="up_IFCDC_Editar_AccionMejoraResult">
+      <Column Name="AccionMejoraId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="HallazgoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="InformeFinCicloId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="CicloEjecucion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CicloEjecucionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Codigo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
       <Column Name="Estado" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="Hallazgo_AccionMejora" Member="Hallazgo" ThisKey="HallazgoId" OtherKey="HallazgoId" Type="Hallazgo" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Function Name="dbo.[up.IFCDC_Obtener_Persona]" Method="up_IFCDC_Obtener_Persona">
-    <Parameter Name="PersonaId" Parameter="personaId" Type="System.String" DbType="VarChar(50)" />
-    <ElementType Name="up_IFCDC_Obtener_PersonaResult">
-      <Column Name="PersonaId" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Nombres" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
-      <Column Name="Apellidos" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
-      <Column Name="TipoPersona" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EstaActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoHallazgo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="CicloEjecucion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.[up.IFCDC_Listar_ResultadoPrograma_x_Curso]" Method="up_IFCDC_Listar_ResultadoPrograma_x_Curso">
-    <Parameter Name="CursoId" Parameter="cursoId" Type="System.Int32" DbType="Int" />
-    <ElementType Name="up_IFCDC_Listar_ResultadoPrograma_x_CursoResult">
-      <Column Name="ResultadoProgramaId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="CarreraId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Outcome" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+  <Function Name="dbo.[up.IFCDC_Registrar_Hallazgo]" Method="up_IFCDC_Registrar_Hallazgo">
+    <Parameter Name="InformeFinCicloId" Parameter="informeFinCicloId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(500)" />
+    <ElementType Name="up_IFCDC_Registrar_HallazgoResult">
+      <Column Name="HallazgoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="InformeFinCicloId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EstaActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.[up.IFCDC_Obtener_Logro_x_Curso]" Method="up_IFCDC_Obtener_Logro_x_Curso">
+  <Function Name="dbo.[up.IFCDC_Editar_AccionMejora_Previa]" Method="up_IFCDC_Editar_AccionMejora_Previa">
     <Parameter Name="CursoId" Parameter="cursoId" Type="System.Int32" DbType="Int" />
-    <ElementType Name="up_IFCDC_Obtener_Logro_x_CursoResult">
-      <Column Name="LogroId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="CursoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Descripcion" Type="System.String" DbType="VarChar(5000)" CanBeNull="true" />
-      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    <Parameter Name="PeriodoId" Parameter="periodoId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="AccionMejoraId" Parameter="accionMejoraId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.String" DbType="VarChar(20)" />
+    <ElementType Name="up_IFCDC_Editar_AccionMejora_PreviaResult">
+      <Column Name="AccionMejoraId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HallazgoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InformeFinCicloId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CicloEjecucionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EstaActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoHallazgo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="CicloEjecucion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.[up.IFCDC_Obtener_PeriodoActual]" Method="up_IFCDC_Obtener_PeriodoActual">
-    <ElementType Name="up_IFCDC_Obtener_PeriodoActualResult">
-      <Column Name="PeriodoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="FechaInicio" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="FechaFin" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+  <Function Name="dbo.[up.IFCDC_Editar_Hallazgo]" Method="up_IFCDC_Editar_Hallazgo">
+    <Parameter Name="HallazgoId" Parameter="hallazgoId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(500)" />
+    <Parameter Name="InformeFinCicloId" Parameter="informeFinCicloId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_IFCDC_Editar_HallazgoResult">
+      <Column Name="HallazgoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="InformeFinCicloId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EstaActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.[up.IFCDC_Eliminar_AccionMejora]" Method="up_IFCDC_Eliminar_AccionMejora">
+    <Parameter Name="AccionMejoraId" Parameter="accionMejoraId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="InformeFinCicloId" Parameter="informeFinCicloId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_IFCDC_Eliminar_AccionMejoraResult">
+      <Column Name="AccionMejoraId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HallazgoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InformeFinCicloId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CicloEjecucionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EstaActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoHallazgo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="CicloEjecucion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.[up.IFCDC_Eliminar_Hallazgo]" Method="up_IFCDC_Eliminar_Hallazgo">
+    <Parameter Name="HallazgoId" Parameter="hallazgoId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="InformeFinCicloId" Parameter="informeFinCicloId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_IFCDC_Eliminar_HallazgoResult">
+      <Column Name="HallazgoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="InformeFinCicloId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EstaActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.[up.IFCDC_Listar_AccionMejora_Previas]" Method="up_IFCDC_Listar_AccionMejora_Previas">
+    <Parameter Name="CursoId" Parameter="cursoId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PeriodoId" Parameter="periodoId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_IFCDC_Listar_AccionMejora_PreviasResult">
+      <Column Name="AccionMejoraId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HallazgoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InformeFinCicloId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CicloEjecucionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EstaActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoHallazgo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="CicloEjecucion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.[up.IFCDC_Listar_AccionMejora_x_InformeFinCiclo]" Method="up_IFCDC_Listar_AccionMejora_x_InformeFinCiclo">
+    <Parameter Name="InformeFinCicloId" Parameter="informeFinCicloId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_IFCDC_Listar_AccionMejora_x_InformeFinCicloResult">
+      <Column Name="AccionMejoraId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HallazgoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InformeFinCicloId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CicloEjecucionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EstaActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoHallazgo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="CicloEjecucion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
   <Function Name="dbo.[up.IFCDC_Listar_Cursos_x_Profesor]" Method="up_IFCDC_Listar_Cursos_x_Profesor">
@@ -766,6 +124,35 @@
       <Column Name="Codigo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Nombre" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
       <Column Name="ProfesorId" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.[up.IFCDC_Listar_Hallazgos_x_InformeFinCiclo]" Method="up_IFCDC_Listar_Hallazgos_x_InformeFinCiclo">
+    <Parameter Name="InformeFinCicloId" Parameter="informeFinCicloId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_IFCDC_Listar_Hallazgos_x_InformeFinCicloResult">
+      <Column Name="HallazgoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="InformeFinCicloId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EstaActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.[up.IFCDC_Listar_Periodos]" Method="up_IFCDC_Listar_Periodos">
+    <ElementType Name="up_IFCDC_Listar_PeriodosResult">
+      <Column Name="PeriodoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="EsActual" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FechaInicio" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FechaFin" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.[up.IFCDC_Listar_ResultadoPrograma_x_Curso]" Method="up_IFCDC_Listar_ResultadoPrograma_x_Curso">
+    <Parameter Name="CursoId" Parameter="cursoId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_IFCDC_Listar_ResultadoPrograma_x_CursoResult">
+      <Column Name="ResultadoProgramaId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CarreraId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Outcome" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
     </ElementType>
   </Function>
   <Function Name="dbo.[up.IFCDC_Obtener_InformeFinCiclo]" Method="up_IFCDC_Obtener_InformeFinCiclo">
@@ -800,6 +187,50 @@
       <Column Name="ComentarioEscuesta" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
       <Column Name="Estado" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="UltimaActualizacion" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.[up.IFCDC_Obtener_Logro_x_Curso]" Method="up_IFCDC_Obtener_Logro_x_Curso">
+    <Parameter Name="CursoId" Parameter="cursoId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_IFCDC_Obtener_Logro_x_CursoResult">
+      <Column Name="LogroId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CursoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(5000)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.[up.IFCDC_Obtener_PeriodoActual]" Method="up_IFCDC_Obtener_PeriodoActual">
+    <ElementType Name="up_IFCDC_Obtener_PeriodoActualResult">
+      <Column Name="PeriodoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FechaInicio" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="FechaFin" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.[up.IFCDC_Obtener_Persona]" Method="up_IFCDC_Obtener_Persona">
+    <Parameter Name="PersonaId" Parameter="personaId" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="up_IFCDC_Obtener_PersonaResult">
+      <Column Name="PersonaId" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombres" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Apellidos" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="TipoPersona" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.[up.IFCDC_Registrar_AccionMejora]" Method="up_IFCDC_Registrar_AccionMejora">
+    <Parameter Name="HallazgoId" Parameter="hallazgoId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="InformeFinCicloId" Parameter="informeFinCicloId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CicloEjecucionId" Parameter="cicloEjecucionId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(500)" />
+    <ElementType Name="up_IFCDC_Registrar_AccionMejoraResult">
+      <Column Name="AccionMejoraId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HallazgoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InformeFinCicloId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CicloEjecucionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EstaActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoHallazgo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="CicloEjecucion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

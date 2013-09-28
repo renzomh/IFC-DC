@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CursoxProfesorBC.cs" />
+    <Compile Include="HallazgoBC.cs" />
     <Compile Include="InformeFinCicloBC.cs" />
     <Compile Include="LogroBC.cs" />
     <Compile Include="PeriodoBC.cs" />

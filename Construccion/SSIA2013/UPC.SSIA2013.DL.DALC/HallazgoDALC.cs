@@ -10,16 +10,16 @@ namespace UPC.SSIA2013.DL.DALC
 {
     public class HallazgoDALC
     {
-        /*
-        public int registrarHallazgo(Int32? informeFinCicloId, String codigo, String descripcion)
+        public List<up_IFCDC_Registrar_HallazgoResult> registrarHallazgo(int infomeFinCicloID, String descripcion)
         {
             SSIA2013DataContext dataContext = null;
+
             try
             {
                 dataContext = new SSIA2013DataContext(ConfigurationManager.ConnectionStrings["CSSSIA2013"].ToString());
-                int hallazgoId = dataContext.spRegistrarHallazgo(informeFinCicloId, codigo, descripcion);
-                
-                return hallazgoId;
+                List<up_IFCDC_Registrar_HallazgoResult> lstHallazgos = dataContext.up_IFCDC_Registrar_Hallazgo(infomeFinCicloID, descripcion).ToList();
+
+                return lstHallazgos;
             }
             catch (Exception ex)
             {
@@ -34,14 +34,14 @@ namespace UPC.SSIA2013.DL.DALC
             }
         }
 
-        public List<spListarHallazgosxInformeFinCicloResult> listarHallazgosxInformeFinCiclo(int? informeFinCicloId)
+        public List<up_IFCDC_Listar_Hallazgos_x_InformeFinCicloResult> listarHallazgosxInformeFinCiclo(int informeFinCicloId)
         {
             SSIA2013DataContext dataContext = null;
             
             try
             {
                 dataContext = new SSIA2013DataContext(ConfigurationManager.ConnectionStrings["CSSSIA2013"].ToString());
-                List<spListarHallazgosxInformeFinCicloResult> lstHallazgos = dataContext.spListarHallazgosxInformeFinCiclo(informeFinCicloId).ToList();
+                List<up_IFCDC_Listar_Hallazgos_x_InformeFinCicloResult> lstHallazgos = dataContext.up_IFCDC_Listar_Hallazgos_x_InformeFinCiclo(informeFinCicloId).ToList();
                 
                 return lstHallazgos;
             }
@@ -60,13 +60,15 @@ namespace UPC.SSIA2013.DL.DALC
             }
         }
 
-        public void editarHallazgo(Int32 hallazgoId, String descripcion)
+        public List<up_IFCDC_Editar_HallazgoResult> editarHallazgo(int hallazgoId, int informeFinCicloId, String descripcion)
         {
             SSIA2013DataContext dataContext = null;
             try
             {
                 dataContext = new SSIA2013DataContext(ConfigurationManager.ConnectionStrings["CSSSIA2013"].ToString());
-                dataContext.spEditarHallazgo(hallazgoId, descripcion);
+                List<up_IFCDC_Editar_HallazgoResult> lstHallazgos = dataContext.up_IFCDC_Editar_Hallazgo(hallazgoId, descripcion, informeFinCicloId).ToList();
+
+                return lstHallazgos;
             }
             catch (Exception ex)
             {
@@ -81,13 +83,15 @@ namespace UPC.SSIA2013.DL.DALC
             }
         }
 
-        public void eliminarHallazgo(Int32 hallazgoId)
+        public List<up_IFCDC_Eliminar_HallazgoResult> eliminarHallazgo(int hallazgoId, int informeFinCicloId)
         {
             SSIA2013DataContext dataContext = null;
             try
             {
                 dataContext = new SSIA2013DataContext(ConfigurationManager.ConnectionStrings["CSSSIA2013"].ToString());
-                dataContext.spEliminarHallazgo(hallazgoId);
+                List<up_IFCDC_Eliminar_HallazgoResult> lstHallazgos = dataContext.up_IFCDC_Eliminar_Hallazgo(hallazgoId, informeFinCicloId).ToList();
+
+                return lstHallazgos;
             }
             catch (Exception ex)
             {
@@ -100,6 +104,6 @@ namespace UPC.SSIA2013.DL.DALC
                     dataContext.Dispose();
                 }
             }
-        }*/
+        }
     }
 }

@@ -41,6 +41,8 @@
   <ItemGroup>
     <Compile Include="CursoxProfesorBE.cs" />
     <Compile Include="CursoxProfesorCollectionBE.cs" />
+    <Compile Include="HallazgoBE.cs" />
+    <Compile Include="HallazgoCollectionBE.cs" />
     <Compile Include="InformeFinCicloBE.cs" />
     <Compile Include="LogroBE.cs" />
     <Compile Include="PeriodoBE.cs" />

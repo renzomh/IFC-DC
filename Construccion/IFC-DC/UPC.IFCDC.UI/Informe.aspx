@@ -56,21 +56,34 @@
             </asp:GridView>
 </div>
 <div id="hallazgos" class="box-central">
-   <asp:GridView ID="grdHallazgos" runat="server" Width="100%"
-             CellPadding="4" CellSpacing="1" Border="0" AutoGenerateColumns="false" 
-                > 
+    <table class="TablaNested">
+    <tbody>
+        <tr>
+        <td colspan="2" align="center" >
+            <asp:GridView ID="grdHallazgos" runat="server" Width="100%" CellPadding="4" CellSpacing="1" Border="0" AutoGenerateColumns="false"> 
                 <RowStyle CssClass="grdFilas"/>
                 <HeaderStyle CssClass="grdCabecera"/>
                 <AlternatingRowStyle CssClass="grdFilasAlternas"/>
              
                 <Columns>                    
                     <asp:BoundField HeaderText="Código" DataField="Codigo" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="20%"/>
-                    <asp:BoundField HeaderText="Descripción" DataField="Descricpion" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Left" ItemStyle-Width="60%"/>
-                    <asp:BoundField HeaderText="Accion de Mejora" DataField="AccionMejora" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="20%"/>                    
-                </Columns>
+                    <asp:BoundField HeaderText="Descripción" DataField="Descripcion" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Left" ItemStyle-Width="60%"/>
                 
-             
+                    <asp:TemplateField HeaderText="Visualizar" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="60px">
+                        <ItemTemplate>
+                            <asp:LinkButton ID="lnkVisualizar" runat="server" CommandName="cmdVisualizar" CommandArgument='<%#Eval("CodAlumno")%>'>
+                                <img src="images/view.png" width="16" height="16" alt="visualizar" border="0"/>
+                            </asp:LinkButton>                        
+                        </ItemTemplate>
+                    </asp:TemplateField>
+
+                </Columns>
+                   
             </asp:GridView>
+        </td>
+        </tr>
+    </tbody>
+    </table>
 </div>
 <div id="accionesMejora" class="box-central">
      <asp:GridView ID="grdAccionesdeMejora" runat="server" Width="100%"

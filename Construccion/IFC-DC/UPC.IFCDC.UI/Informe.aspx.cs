@@ -23,6 +23,9 @@ namespace UPC.IFCDC.UI
         ResultadoProgramaxCursoBC objResultadoProgramaBC = null;
         ResultadoProgramaxCursoCollectionBE objResultadoProgramaxCursoCollectionBE = null;
 
+        HallazgoBC objHallazgoBC = null;
+        HallazgoCollectionBE objHallazgoCollectionBE = null;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             objPeriodoBE = (PeriodoBE)Session["Periodo"];
@@ -42,7 +45,26 @@ namespace UPC.IFCDC.UI
 
             texto_LogroTerminal.Text = objLogroBE.Descripcion;
 
+            //OBTENIENDO STUDENT OUTCOMES
             grdOutcomesDataBind();
+
+            //OBTENIENDO HALLAZGOS
+            objHallazgoBC = new HallazgoBC();
+
+            if (objHallazgoCollectionBE == null)
+            {
+                HallazgoBE objHallazgoBE = new HallazgoBE();
+                objHallazgoBE.InformeFinCicloId = objInformeBE.InformeFinCicloId;
+                objHallazgoCollectionBE = objHallazgoBC.listarHallazgos(objHallazgoBE);
+            }
+
+            grdHallazgosDataBind();
+        }
+
+        private void grdHallazgosDataBind()
+        {
+            grdHallazgos.DataSource = objHallazgoCollectionBE.LstHallazgos;
+            grdHallazgos.DataBind();
         }
 
         private void grdOutcomesDataBind()

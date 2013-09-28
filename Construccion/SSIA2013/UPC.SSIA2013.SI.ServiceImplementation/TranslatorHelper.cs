@@ -331,8 +331,8 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
         }
 
         //HALLAZGO
-        /*
-        public static HallazgoCollectionDC TranslateHallazgosLRToHallazgosCollection(List<spListarHallazgosxInformeFinCicloResult> lstLR)
+
+        public static HallazgoCollectionDC TranslateHallazgosRegistrarLRToHallazgosCollection(List<up_IFCDC_Registrar_HallazgoResult> lstLR)
         {
             HallazgoCollectionDC collection;
 
@@ -343,7 +343,7 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
 
                 for (int i = 0; i < lstLR.Count; i++)
                 {
-                    collection.LstHallazgos.Add(TranslateHallazgoxInformeFinCicloLRToHallazgoDC(lstLR[i]));
+                    collection.LstHallazgos.Add(TranslateHallazgoRegistrarLRToHallazgoDC(lstLR[i]));
                 }
 
                 return collection;
@@ -355,7 +355,7 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
             }
         }
 
-        public static HallazgoDC TranslateHallazgoxInformeFinCicloLRToHallazgoDC(spListarHallazgosxInformeFinCicloResult objLR)
+        public static HallazgoDC TranslateHallazgoRegistrarLRToHallazgoDC(up_IFCDC_Registrar_HallazgoResult objLR)
         {
             HallazgoDC objHallazgoDC;
 
@@ -376,8 +376,142 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
                 throw ex;
             }
         }
-        */
-         
+
+        public static HallazgoCollectionDC TranslateHallazgosListarLRToHallazgosCollection(List<up_IFCDC_Listar_Hallazgos_x_InformeFinCicloResult> lstLR)
+        {
+            HallazgoCollectionDC collection;
+
+            try
+            {
+                collection = new HallazgoCollectionDC();
+                collection.LstHallazgos = new Collection<HallazgoDC>();
+
+                for (int i = 0; i < lstLR.Count; i++)
+                {
+                    collection.LstHallazgos.Add(TranslateHallazgoListarLRToHallazgoDC(lstLR[i]));
+                }
+
+                return collection;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static HallazgoDC TranslateHallazgoListarLRToHallazgoDC(up_IFCDC_Listar_Hallazgos_x_InformeFinCicloResult objLR)
+        {
+            HallazgoDC objHallazgoDC;
+
+            try
+            {
+                objHallazgoDC = new HallazgoDC();
+
+                objHallazgoDC.HallazgoId = objLR.HallazgoId;
+                objHallazgoDC.InformeFinCicloId = objLR.InformeFinCicloId;
+                objHallazgoDC.Codigo = objLR.Codigo;
+                objHallazgoDC.Descripcion = objLR.Descripcion;
+
+                return objHallazgoDC;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static HallazgoCollectionDC TranslateHallazgosEditarLRToHallazgosCollection(List<up_IFCDC_Editar_HallazgoResult> lstLR)
+        {
+            HallazgoCollectionDC collection;
+
+            try
+            {
+                collection = new HallazgoCollectionDC();
+                collection.LstHallazgos = new Collection<HallazgoDC>();
+
+                for (int i = 0; i < lstLR.Count; i++)
+                {
+                    collection.LstHallazgos.Add(TranslateHallazgoEditarLRToHallazgoDC(lstLR[i]));
+                }
+
+                return collection;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static HallazgoDC TranslateHallazgoEditarLRToHallazgoDC(up_IFCDC_Editar_HallazgoResult objLR)
+        {
+            HallazgoDC objHallazgoDC;
+
+            try
+            {
+                objHallazgoDC = new HallazgoDC();
+
+                objHallazgoDC.HallazgoId = objLR.HallazgoId;
+                objHallazgoDC.InformeFinCicloId = objLR.InformeFinCicloId;
+                objHallazgoDC.Codigo = objLR.Codigo;
+                objHallazgoDC.Descripcion = objLR.Descripcion;
+
+                return objHallazgoDC;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static HallazgoCollectionDC TranslateHallazgosEliminarLRToHallazgosCollection(List<up_IFCDC_Eliminar_HallazgoResult> lstLR)
+        {
+            HallazgoCollectionDC collection;
+
+            try
+            {
+                collection = new HallazgoCollectionDC();
+                collection.LstHallazgos = new Collection<HallazgoDC>();
+
+                for (int i = 0; i < lstLR.Count; i++)
+                {
+                    collection.LstHallazgos.Add(TranslateHallazgoEliminarLRToHallazgoDC(lstLR[i]));
+                }
+
+                return collection;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static HallazgoDC TranslateHallazgoEliminarLRToHallazgoDC(up_IFCDC_Eliminar_HallazgoResult objLR)
+        {
+            HallazgoDC objHallazgoDC;
+
+            try
+            {
+                objHallazgoDC = new HallazgoDC();
+
+                objHallazgoDC.HallazgoId = objLR.HallazgoId;
+                objHallazgoDC.InformeFinCicloId = objLR.InformeFinCicloId;
+                objHallazgoDC.Codigo = objLR.Codigo;
+                objHallazgoDC.Descripcion = objLR.Descripcion;
+
+                return objHallazgoDC;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         #endregion
     }
 }

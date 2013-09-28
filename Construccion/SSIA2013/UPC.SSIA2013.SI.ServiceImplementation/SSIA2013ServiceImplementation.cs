@@ -100,13 +100,13 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
             #endregion
 
             #region Hallazgos
-            /*
+
             //REGISTRAR HALLAZGO
             [WebInvoke(Method = "POST", ResponseFormat = WebMessageFormat.Json, UriTemplate = "/WSRegistrarHallazgo")]
-            int SSIA2013ServiceContracts.WSRegistrarHallazgo(HallazgoDC objHallazgoDC)
+            HallazgoCollectionDC SSIA2013ServiceContracts.WSRegistrarHallazgo(HallazgoDC objHallazgoDC)
             {
                 HallazgoBC objHallazgoBC = new HallazgoBC();
-                return objHallazgoBC.registrarHallazgo(objHallazgoDC.InformeFinCicloId, objHallazgoDC.Codigo, objHallazgoDC.Descripcion);
+                return TranslatorHelper.TranslateHallazgosRegistrarLRToHallazgosCollection(objHallazgoBC.registrarHallazgo(objHallazgoDC.InformeFinCicloId, objHallazgoDC.Descripcion));
             }
 
             //LISTAR HALLAZGOS
@@ -114,25 +114,25 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
             HallazgoCollectionDC SSIA2013ServiceContracts.WSListarHallazgosxInformeFinCiclo(HallazgoDC objHallazgoDC)
             {
                 HallazgoBC objHallazgoBC = new HallazgoBC();
-                return TranslatorHelper.TranslateHallazgosLRToHallazgosCollection(objHallazgoBC.listarHallazgosxInformeFinCiclo(objHallazgoDC.InformeFinCicloId));
+                return TranslatorHelper.TranslateHallazgosListarLRToHallazgosCollection(objHallazgoBC.listarHallazgosxInformeFinCiclo(objHallazgoDC.InformeFinCicloId));
             }
 
             //EDITAR HALLAZGO
             [WebInvoke(Method = "POST", ResponseFormat = WebMessageFormat.Json, UriTemplate = "/WSEditarHallazgo")]
-            void SSIA2013ServiceContracts.WSEditarHallazgo(HallazgoDC objHallazgoDC)
+            HallazgoCollectionDC SSIA2013ServiceContracts.WSEditarHallazgo(HallazgoDC objHallazgoDC)
             {
                 HallazgoBC objHallazgoBC = new HallazgoBC();
-                objHallazgoBC.editarHallazgo(objHallazgoDC.HallazgoId, objHallazgoDC.Descripcion);
+                return TranslatorHelper.TranslateHallazgosEditarLRToHallazgosCollection(objHallazgoBC.editarHallazgo(objHallazgoDC.HallazgoId, objHallazgoDC.InformeFinCicloId, objHallazgoDC.Descripcion));
             }
 
             //ELIMINAR HALLAZGO
             [WebInvoke(Method = "POST", ResponseFormat = WebMessageFormat.Json, UriTemplate = "/WSEliminarHallazgo")]
-            void SSIA2013ServiceContracts.WSEliminarHallazgo(HallazgoDC objHallazgoDC)
+            HallazgoCollectionDC SSIA2013ServiceContracts.WSEliminarHallazgo(HallazgoDC objHallazgoDC)
             {
                 HallazgoBC objHallazgoBC = new HallazgoBC();
-                objHallazgoBC.eliminarHallazgo(objHallazgoDC.HallazgoId);
+                return TranslatorHelper.TranslateHallazgosEliminarLRToHallazgosCollection(objHallazgoBC.eliminarHallazgo(objHallazgoDC.HallazgoId, objHallazgoDC.InformeFinCicloId));
             }
-            */ 
+ 
             #endregion
 
             #region Acciones de Mejora

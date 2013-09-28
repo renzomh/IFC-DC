@@ -9,16 +9,15 @@ namespace UPC.SSIA2013.BL.BC
 {
     public class HallazgoBC
     {
-        /*
-        public int registrarHallazgo(Int32? informeFinCicloId, String codigo, String descripcion)
+        public List<up_IFCDC_Registrar_HallazgoResult> registrarHallazgo(int informeFinCicloId, String descripcion)
         {
             HallazgoDALC objHallazgoDALC;
             
             try
             {
                 objHallazgoDALC = new HallazgoDALC();
-                
-                return objHallazgoDALC.registrarHallazgo(informeFinCicloId, codigo, descripcion);
+
+                return objHallazgoDALC.registrarHallazgo(informeFinCicloId, descripcion);
             }
             catch (Exception ex)
             {
@@ -26,7 +25,7 @@ namespace UPC.SSIA2013.BL.BC
             }
         }
 
-        public List<spListarHallazgosxInformeFinCicloResult> listarHallazgosxInformeFinCiclo(int? informeFinCicloId)
+        public List<up_IFCDC_Listar_Hallazgos_x_InformeFinCicloResult> listarHallazgosxInformeFinCiclo(int informeFinCicloId)
         {
             HallazgoDALC objHallazgoDALC;
 
@@ -41,14 +40,14 @@ namespace UPC.SSIA2013.BL.BC
             }
         }
 
-        public void editarHallazgo(Int32 hallazgoId, String descripcion)
+        public List<up_IFCDC_Editar_HallazgoResult> editarHallazgo(int hallazgoId, int informeFinCicloId, String descripcion)
         {
             HallazgoDALC objHallazgoDALC;
 
             try
             {
                 objHallazgoDALC = new HallazgoDALC();
-                objHallazgoDALC.editarHallazgo(hallazgoId, descripcion);
+                return objHallazgoDALC.editarHallazgo(hallazgoId, informeFinCicloId, descripcion);
             }
             catch (Exception ex)
             {
@@ -56,19 +55,19 @@ namespace UPC.SSIA2013.BL.BC
             }
         }
 
-        public void eliminarHallazgo(Int32 hallazgoId)
+        public List<up_IFCDC_Eliminar_HallazgoResult> eliminarHallazgo(int hallazgoId, int informeFinCicloId)
         {
             HallazgoDALC objHallazgoDALC;
 
             try
             {
                 objHallazgoDALC = new HallazgoDALC();
-                objHallazgoDALC.eliminarHallazgo(hallazgoId);
+                return objHallazgoDALC.eliminarHallazgo(hallazgoId, informeFinCicloId);
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-        }*/
+        }
     }
 }
