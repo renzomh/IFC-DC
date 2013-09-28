@@ -69,14 +69,6 @@
                     <asp:BoundField HeaderText="Código" DataField="Codigo" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="20%"/>
                     <asp:BoundField HeaderText="Descripción" DataField="Descripcion" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Left" ItemStyle-Width="60%"/>
                 
-                    <asp:TemplateField HeaderText="Visualizar" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="60px">
-                        <ItemTemplate>
-                            <asp:LinkButton ID="lnkVisualizar" runat="server" CommandName="cmdVisualizar" CommandArgument='<%#Eval("CodAlumno")%>'>
-                                <img src="images/view.png" width="16" height="16" alt="visualizar" border="0"/>
-                            </asp:LinkButton>                        
-                        </ItemTemplate>
-                    </asp:TemplateField>
-
                 </Columns>
                    
             </asp:GridView>
@@ -84,6 +76,7 @@
         </tr>
     </tbody>
     </table>
+    <button type="button" onclick="popup('#pHallazgo');">Nuevo Hallazgo</button>
 </div>
 <div id="accionesMejora" class="box-central">
      <asp:GridView ID="grdAccionesdeMejora" runat="server" Width="100%"
@@ -115,5 +108,12 @@
     <asp:Button CssClass="btn-guardar" ID="btnGuardar" runat="server" />
     <asp:Button CssClass="btn-cancelar" ID="btnCancelar" runat="server" />
     </div>
-
+<!-- ZONA DE POPUPS -->
+<div class="dark-side">
+    <div class="pop-up" id="pAccionesMejora"><div class="pHeader">Acciones de Mejora <div class="pClose">&times;</div></div>Contenido</div>
+    <div class="pop-up" id="pHallazgo">
+        <div class="pHeader">Hallazgo<div class="pClose" onclick="close_popup('#pHallazgo');">&times;</div></div>
+        <div class="contentP"><asp:TextBox Width="400px" Height="200px" runat="server"> </asp:TextBox> <br /> <br /><asp:TextBox> <asp:Button ID="btnAgregarH" runat="server" CssClass="btn-agregar" /> <asp:Button ID="btnCancelarH" runat="server" CssClass="btn-cancelar" /></div>
+     </div>
+</div>
 </asp:Content>

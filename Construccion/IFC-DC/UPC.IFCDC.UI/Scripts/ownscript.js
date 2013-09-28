@@ -6,3 +6,12 @@ function change_view(show) {
         actual = show;
     }
 }
+function popup(idpopup) {
+    $(".dark-side").show();
+    $(idpopup).show(500);
+}
+function close_popup(idpopup) {
+    $(idpopup).fadeOut(500);
+    $(".dark-side").fadeOut(500);
+    
+}
