@@ -77,5 +77,44 @@ namespace UPC.IFCDC.UI
             grdOutcomes.DataSource = objResultadoProgramaxCursoCollectionBE.LstResultadoProgramaxCurso;
             grdOutcomes.DataBind();
         }
+
+        protected void popup_buttonRegistrarHallazgo_Click(object sender, EventArgs e)
+        {
+            objHallazgoBC = new HallazgoBC();
+
+            HallazgoBE objHallazgoBE = new HallazgoBE();
+            objHallazgoBE.InformeFinCicloId = objInformeBE.InformeFinCicloId;
+            objHallazgoBE.Descripcion = popup_textoDescripcionHallazgo.Text;
+            
+            objHallazgoCollectionBE = objHallazgoBC.resgistrarHallazgo(objHallazgoBE);
+            grdHallazgosDataBind();
+        }
+
+        public void grdHallazgos_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            try
+            {
+                if (e.CommandName.ToUpper().Equals("CMDELIMINARHALLAZGO"))
+                {
+                    objHallazgoBC = new HallazgoBC();
+
+                    HallazgoBE objHallazgoBE = new HallazgoBE();
+                    objHallazgoBE.HallazgoId = Convert.ToInt32(e.CommandArgument.ToString());
+                    objHallazgoBE.InformeFinCicloId = objInformeBE.InformeFinCicloId;
+
+                    objHallazgoCollectionBE = objHallazgoBC.eliminarHallazgo(objHallazgoBE);
+                    grdHallazgosDataBind();
+
+                    //Context.Items.Add("Modo", "2");
+                    //Context.Items.Add("CodAlumno", e.CommandArgument);
+                    //Server.Transfer("Alumno.aspx");
+                }
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

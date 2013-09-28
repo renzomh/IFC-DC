@@ -16,7 +16,7 @@ namespace UPC.SSIA2013.BL.BC
             try
             {
                 objAccionMejoraDALC = new AccionMejoraDALC();
-                return objAccionMejoraDALC.registrarAccionMejora(hallazgoId, informeFinCicloId, cicloEjecucionId, descripcion)
+                return objAccionMejoraDALC.registrarAccionMejora(hallazgoId, informeFinCicloId, cicloEjecucionId, descripcion);
             }
             catch (Exception ex)
             {
@@ -69,7 +69,7 @@ namespace UPC.SSIA2013.BL.BC
             }
         }
 
-        public List<up_IFCDC_Editar_AccionMejora_PreviaResult> editarAccionMejora(int cursoId, int periodoId, int accionMejoraId, String estado)
+        public List<up_IFCDC_Editar_AccionMejora_PreviaResult> editarAccionMejoraPrevia(int cursoId, int periodoId, int accionMejoraId, String estado)
         {
             AccionMejoraDALC objAccionMejoraDALC;
 

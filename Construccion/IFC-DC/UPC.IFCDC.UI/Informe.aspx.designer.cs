@@ -130,39 +130,39 @@ namespace UPC.IFCDC.UI {
         protected global::System.Web.UI.WebControls.DropDownList pCiclo;
         
         /// <summary>
-        /// TextBox1 control.
+        /// popup_textoDescripcionAccionMejora control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox popup_textoDescripcionAccionMejora;
         
         /// <summary>
-        /// pAgregarAccionMejora control.
+        /// popup_buttonRegistrarAccionMejora control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button pAgregarAccionMejora;
+        protected global::System.Web.UI.WebControls.Button popup_buttonRegistrarAccionMejora;
         
         /// <summary>
-        /// pDescripcionHallazgo control.
+        /// popup_textoDescripcionHallazgo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox pDescripcionHallazgo;
+        protected global::System.Web.UI.WebControls.TextBox popup_textoDescripcionHallazgo;
         
         /// <summary>
-        /// btnAgregarH control.
+        /// popup_buttonRegistrarHallazgo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAgregarH;
+        protected global::System.Web.UI.WebControls.Button popup_buttonRegistrarHallazgo;
     }
 }

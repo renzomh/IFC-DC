@@ -73,6 +73,7 @@
     <Content Include="css\ownstyle.css" />
     <Content Include="css\reset.css" />
     <Content Include="css\Site.css" />
+    <Content Include="Imagenes\add.png" />
     <Content Include="Imagenes\background.png" />
     <Content Include="Imagenes\Botones\anular.png" />
     <Content Include="Imagenes\Botones\boton_ingresar.png" />
@@ -97,6 +98,8 @@
     <Content Include="Imagenes\Botones\inprimir.png" />
     <Content Include="Imagenes\Botones\sincronizar.png" />
     <Content Include="Imagenes\Botones\terminar.png" />
+    <Content Include="Imagenes\delete.png" />
+    <Content Include="Imagenes\edit.png" />
     <Content Include="Imagenes\fondo\fondoLogin.png" />
     <Content Include="Imagenes\frmBackLogin.gif" />
     <Content Include="Imagenes\icono\agregar.png" />

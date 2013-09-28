@@ -60,15 +60,40 @@
     <tbody>
         <tr>
         <td colspan="2" align="center" >
-            <asp:GridView ID="grdHallazgos" runat="server" Width="100%" CellPadding="4" CellSpacing="1" Border="0" AutoGenerateColumns="false"> 
+            <asp:GridView ID="grdHallazgos" runat="server" Width="100%" CellPadding="4" CellSpacing="1" Border="0" AutoGenerateColumns="false"
+                OnRowCommand="grdHallazgos_RowCommand"> 
                 <RowStyle CssClass="grdFilas"/>
                 <HeaderStyle CssClass="grdCabecera"/>
                 <AlternatingRowStyle CssClass="grdFilasAlternas"/>
              
                 <Columns>                    
-                    <asp:BoundField HeaderText="Código" DataField="Codigo" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="20%"/>
-                    <asp:BoundField HeaderText="Descripción" DataField="Descripcion" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Left" ItemStyle-Width="60%"/>
+                    <asp:BoundField HeaderText="Código" DataField="Codigo" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="15%"/>
+                    <asp:BoundField HeaderText="Descripción" DataField="Descripcion" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Left" ItemStyle-Width="40%"/>
                 
+                    <asp:TemplateField HeaderText="Acción de Mejora" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="15%">
+                        <ItemTemplate>
+                            <asp:LinkButton ID="lnkAddAccionMejora" runat="server" CommandName="cmdAgregarAccionMejora" CommandArgument='<%#Eval("HallazgoId")%>'>
+                                <img src="Imagenes/add.png" width="16" height="16" alt="addaccionmejora" border="0"  onclick="popup('#pAccionesMejora');"/>
+                            </asp:LinkButton>                        
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    
+                    <asp:TemplateField HeaderText="Editar" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="15%">
+                        <ItemTemplate>
+                            <asp:LinkButton ID="lnkEditarHallazgo" runat="server" CommandName="cmdEditarHallazgo" CommandArgument='<%#Eval("HallazgoId")%>'>
+                                <img src="Imagenes/edit.png" width="16" height="16" alt="edithallazgo" border="0" onclick="popup('#pHallazgo');"/>
+                            </asp:LinkButton>                        
+                        </ItemTemplate>
+                    </asp:TemplateField>
+
+                    <asp:TemplateField HeaderText="Eliminar" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="15%">
+                        <ItemTemplate>
+                            <asp:LinkButton ID="lnkEliminarHallazgo" runat="server" CommandName="cmdEliminarHallazgo" CommandArgument='<%#Eval("HallazgoId")%>'>
+                                <img src="Imagenes/delete.png" width="16" height="16" alt="deletehallazgo" border="0"/>
+                            </asp:LinkButton>                        
+                        </ItemTemplate>
+                    </asp:TemplateField>
+
                 </Columns>
                    
             </asp:GridView>
@@ -109,27 +134,40 @@
     <asp:Button CssClass="btn-guardar" ID="btnGuardar" runat="server" />
     <asp:Button CssClass="btn-cancelar" ID="btnCancelar" runat="server" />
     </div>
+
 <!-- ZONA DE POPUPS -->
 <div class="dark-side">
     <div class="pop-up" id="pAccionesMejora">
-        <div class="pHeader">Acciones de Mejora <div class="pClose"  onclick="close_popup('#pAccionesMejora');">&times;</div> </div>
-        <div class="contentP">Codigo de Hallazgo: <asp:TextBox Enabled="false" ID="pCodigoHallazgo" Text="SI2014-2012-02" runat="server" /><br />
-        Ciclo: <asp:DropDownList ID="pCiclo" runat="server"><asp:ListItem Text="2012-1"></asp:ListItem> </asp:DropDownList><br />
-        Descripcion:<br />
-         <asp:TextBox ID="TextBox1" Width="400px" Height="200px" runat="server"> </asp:TextBox><br />
-         <asp:Button ID="pAgregarAccionMejora" runat="server" CssClass="btn-agregar" />
-          <button type="button" class="btn-cancelar" onclick="close_popup('#pAccionesMejora');"></button>
+        <div class="pHeader">Acciones de Mejora
+            <div class="pClose" onclick="close_popup('#pAccionesMejora');">&times;</div>
         </div>
-    
+        <div class="contentP">Codigo de Hallazgo: 
+            <asp:TextBox Enabled="false" ID="pCodigoHallazgo" Text="SI2014-2012-02" runat="server" />
+            <br />
+            Ciclo:
+            <asp:DropDownList ID="pCiclo" runat="server">
+                <asp:ListItem Text="2012-1"></asp:ListItem>
+            </asp:DropDownList>
+            <br />
+            Descripcion:
+            <br />
+            <asp:TextBox ID="popup_textoDescripcionAccionMejora" Width="400px" Height="200px" runat="server"></asp:TextBox>
+            <br />
+            <asp:Button ID="popup_buttonRegistrarAccionMejora" runat="server" CssClass="btn-agregar" />
+            <button type="button" class="btn-cancelar" onclick="close_popup('#pAccionesMejora');"></button>
+        </div>
+    </div>
     
     <div class="pop-up" id="pHallazgo">
-        <div class="pHeader">Hallazgo<div class="pClose" onclick="close_popup('#pHallazgo');">&times;</div></div>
+        <div class="pHeader">Hallazgo
+            <div class="pClose" onclick="close_popup('#pHallazgo');">&times;</div>
+        </div>
         <div class="contentP">
-         <asp:TextBox ID="pDescripcionHallazgo" Width="400px" Height="200px" runat="server"> </asp:TextBox>
-          <br />
-          <asp:Button ID="btnAgregarH" runat="server" CssClass="btn-agregar" />
-          <button type="button" class="btn-cancelar" onclick="close_popup('#pHallazgo');"></button>
-     </div>
-     </div>
+            <asp:TextBox ID="popup_textoDescripcionHallazgo" Width="400px" Height="200px" runat="server"> </asp:TextBox>
+            <br />
+            <asp:Button ID="popup_buttonRegistrarHallazgo" runat="server" CssClass="btn-agregar" OnClick="popup_buttonRegistrarHallazgo_Click"/>
+            <button type="button" class="btn-cancelar" onclick="close_popup('#pHallazgo');"></button>
+        </div>
+    </div>
 </div>
 </asp:Content>
