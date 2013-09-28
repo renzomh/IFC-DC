@@ -9,15 +9,14 @@ namespace UPC.SSIA2013.BL.BC
 {
     public class AccionMejoraBC
     {
-        /*
-        public void registrarAccionMejora(Int32 hallazgoId, Int32 informeFinCicloId, String codigo, String descripcion)
+        public List<up_IFCDC_Registrar_AccionMejoraResult> registrarAccionMejora(int hallazgoId, int informeFinCicloId, int cicloEjecucionId, String descripcion)
         {
             AccionMejoraDALC objAccionMejoraDALC;
             
             try
             {
                 objAccionMejoraDALC = new AccionMejoraDALC();
-                objAccionMejoraDALC.registrarAccionMejora(hallazgoId, informeFinCicloId, codigo, descripcion);
+                return objAccionMejoraDALC.registrarAccionMejora(hallazgoId, informeFinCicloId, cicloEjecucionId, descripcion)
             }
             catch (Exception ex)
             {
@@ -25,7 +24,7 @@ namespace UPC.SSIA2013.BL.BC
             }
         }
 
-        public List<spListarAccionesMejoraxHallazgoResult> listarAccionesMejoraxInformeFinCiclo(int informeFinCicloId)
+        public List<up_IFCDC_Listar_AccionMejora_x_InformeFinCicloResult> listarAccionesMejoraxInformeFinCiclo(int informeFinCicloId)
         {
             AccionMejoraDALC objAccionesMejoraDALC;
 
@@ -40,14 +39,14 @@ namespace UPC.SSIA2013.BL.BC
             }
         }
 
-        public void editarAccionMejora(Int32 accionMejoraId, String descripcion)
+        public List<up_IFCDC_Listar_AccionMejora_PreviasResult> listarAccionesMejoraPrevias(int cursoId, int periodoId)
         {
-            AccionMejoraDALC objAccionMejoraDALC;
+            AccionMejoraDALC objAccionesMejoraDALC;
 
             try
             {
-                objAccionMejoraDALC = new AccionMejoraDALC();
-                objAccionMejoraDALC.editarAccionMejora(accionMejoraId ,descripcion);
+                objAccionesMejoraDALC = new AccionMejoraDALC();
+                return objAccionesMejoraDALC.listarAccionesMejoraPrevias(cursoId, periodoId);
             }
             catch (Exception ex)
             {
@@ -55,19 +54,49 @@ namespace UPC.SSIA2013.BL.BC
             }
         }
 
-        public void eliminarAccionMejora(Int32 accionMejoraId)
+        public List<up_IFCDC_Editar_AccionMejoraResult> editarAccionMejora(int accionMejoraId, int informeFinCicloId, int cicloEjecucionId, String descripcion)
         {
             AccionMejoraDALC objAccionMejoraDALC;
 
             try
             {
                 objAccionMejoraDALC = new AccionMejoraDALC();
-                objAccionMejoraDALC.eliminarAccionMejora(accionMejoraId);
+                return objAccionMejoraDALC.editarAccionMejora(accionMejoraId, informeFinCicloId, cicloEjecucionId, descripcion);
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-        }*/
+        }
+
+        public List<up_IFCDC_Editar_AccionMejora_PreviaResult> editarAccionMejora(int cursoId, int periodoId, int accionMejoraId, String estado)
+        {
+            AccionMejoraDALC objAccionMejoraDALC;
+
+            try
+            {
+                objAccionMejoraDALC = new AccionMejoraDALC();
+                return objAccionMejoraDALC.editarAccionMejoraPrevia(cursoId, periodoId, accionMejoraId, estado);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public List<up_IFCDC_Eliminar_AccionMejoraResult> eliminarAccionMejora(int accionMejoraId, int informeFinCicloId)
+        {
+            AccionMejoraDALC objAccionMejoraDALC;
+
+            try
+            {
+                objAccionMejoraDALC = new AccionMejoraDALC();
+                return objAccionMejoraDALC.eliminarAccionMejora(accionMejoraId, informeFinCicloId);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

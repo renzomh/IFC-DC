@@ -109,7 +109,7 @@ namespace UPC.SSIA2013.DL.DALC
             }
         }
 
-        public List<up_IFCDC_Editar_AccionMejora_PreviaResult> editarAccionMejora(int cursoId, int periodoId, int accioneMejoraId, String estado)
+        public List<up_IFCDC_Editar_AccionMejora_PreviaResult> editarAccionMejoraPrevia(int cursoId, int periodoId, int accioneMejoraId, String estado)
         {
             SSIA2013DataContext dataContext = null;
             try
