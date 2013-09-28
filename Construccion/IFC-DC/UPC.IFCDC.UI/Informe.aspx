@@ -77,6 +77,7 @@
     </tbody>
     </table>
     <button type="button" onclick="popup('#pHallazgo');">Nuevo Hallazgo</button>
+    <button type="button" onclick="popup('#pAccionesMejora');">Test Acciones de Mejora</button>
 </div>
 <div id="accionesMejora" class="box-central">
      <asp:GridView ID="grdAccionesdeMejora" runat="server" Width="100%"
@@ -110,10 +111,25 @@
     </div>
 <!-- ZONA DE POPUPS -->
 <div class="dark-side">
-    <div class="pop-up" id="pAccionesMejora"><div class="pHeader">Acciones de Mejora <div class="pClose">&times;</div></div>Contenido</div>
+    <div class="pop-up" id="pAccionesMejora">
+        <div class="pHeader">Acciones de Mejora <div class="pClose"  onclick="close_popup('#pAccionesMejora');">&times;</div> </div>
+        <div class="contentP">Codigo de Hallazgo: <asp:TextBox Enabled="false" ID="pCodigoHallazgo" Text="SI2014-2012-02" runat="server" /><br />
+        Ciclo: <asp:DropDownList ID="pCiclo" runat="server"><asp:ListItem Text="2012-1"></asp:ListItem> </asp:DropDownList><br />
+        Descripcion:<br />
+         <asp:TextBox ID="TextBox1" Width="400px" Height="200px" runat="server"> </asp:TextBox><br />
+         <asp:Button ID="pAgregarAccionMejora" runat="server" CssClass="btn-agregar" />
+          <button type="button" class="btn-cancelar" onclick="close_popup('#pAccionesMejora');"></button>
+        </div>
+    
+    
     <div class="pop-up" id="pHallazgo">
         <div class="pHeader">Hallazgo<div class="pClose" onclick="close_popup('#pHallazgo');">&times;</div></div>
-        <div class="contentP"><asp:TextBox Width="400px" Height="200px" runat="server"> </asp:TextBox> <br /> <br /><asp:TextBox> <asp:Button ID="btnAgregarH" runat="server" CssClass="btn-agregar" /> <asp:Button ID="btnCancelarH" runat="server" CssClass="btn-cancelar" /></div>
+        <div class="contentP">
+         <asp:TextBox ID="pDescripcionHallazgo" Width="400px" Height="200px" runat="server"> </asp:TextBox>
+          <br />
+          <asp:Button ID="btnAgregarH" runat="server" CssClass="btn-agregar" />
+          <button type="button" class="btn-cancelar" onclick="close_popup('#pHallazgo');"></button>
+     </div>
      </div>
 </div>
 </asp:Content>
