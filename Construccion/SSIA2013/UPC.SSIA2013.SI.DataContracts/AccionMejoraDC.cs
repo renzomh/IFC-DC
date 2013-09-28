@@ -3,48 +3,94 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using System.Runtime.Serialization;
+using System.Collections;
+using System.Collections.ObjectModel;
+
 namespace UPC.SSIA2013.SI.DataContracts
 {
+    [DataContract]
     public class AccionMejoraDC
     {
-        private Int32 _AccionMejoraId;
+        private int _accionMejoraId;
 
-        public Int32 AccionMejoraId
+        [DataMember]
+        public int AccionMejoraId
         {
-            get { return _AccionMejoraId; }
-            set { _AccionMejoraId = value; }
+            get { return _accionMejoraId; }
+            set { _accionMejoraId = value; }
         }
 
-        private Int32 _HallazgoId;
+        private int _hallazgoId;
 
-        public Int32 HallazgoId
+        [DataMember]
+        public int HallazgoId
         {
-            get { return _HallazgoId; }
-            set { _HallazgoId = value; }
+            get { return _hallazgoId; }
+            set { _hallazgoId = value; }
         }
 
-        private Int32 _InformeFinCicloId;
+        private int _informeFinCicloId;
 
-        public Int32 InformeFinCicloId
+        [DataMember]
+        public int InformeFinCicloId
         {
-            get { return _InformeFinCicloId; }
-            set { _InformeFinCicloId = value; }
+            get { return _informeFinCicloId; }
+            set { _informeFinCicloId = value; }
         }
 
-        private String _Codigo;
+        private int _cicloEjecucionId;
 
+        [DataMember]
+        public int CicloEjecucionId
+        {
+            get { return _cicloEjecucionId; }
+            set { _cicloEjecucionId = value; }
+        }
+
+        private String _codigo;
+
+        [DataMember]
         public String Codigo
         {
-            get { return _Codigo; }
-            set { _Codigo = value; }
+            get { return _codigo; }
+            set { _codigo = value; }
         }
 
-        private String _Descripcion;
+        private String _descripcion;
 
+        [DataMember]
         public String Descripcion
         {
-            get { return _Descripcion; }
-            set { _Descripcion = value; }
+            get { return _descripcion; }
+            set { _descripcion = value; }
+        }
+
+        private String _estado;
+
+        [DataMember]
+        public String Estado
+        {
+            get { return _estado; }
+            set { _estado = value; }
+        }
+
+        private String _codigoHallazgo;
+
+        [DataMember]
+        public String CodigoHallazgo
+        {
+            get { return _codigoHallazgo; }
+            set { _codigoHallazgo = value; }
+        }
+
+        private String _cicloEjecucion;
+
+        [DataMember]
+        public String CicloEjecucion
+        {
+            get { return _cicloEjecucion; }
+            set { _cicloEjecucion = value; }
         }
     }
 }
