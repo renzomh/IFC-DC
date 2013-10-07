@@ -125,7 +125,28 @@
             </asp:GridView>
 </div>
 <div id="comentario" class="box-central">
-    Comentarios
+    <div class="sandbox">
+    <p>Desarrollo del Aprendizaje: </p><div class="tooltip"  >?<div id="tp_apr" class="cont_tp">Contenido del Tooltip de aprendizaje</div></div>
+    <asp:TextBox CssClass="textComentarios" runat="server"></asp:TextBox>
+    </div>
+    <div class="sandbox">
+    <p>Infraestructura:</p><div class="tooltip"  >?<div id="tp_infr" class="cont_tp">Contenido del Tooltip de Infraestructura</div></div>
+    <asp:TextBox CssClass="textComentarios" runat="server"></asp:TextBox>
+    </div>
+    <div class="sandbox">
+    <p>Alumnos:</p><div class="tooltip"  >?<div id="tp_alum" class="cont_tp">Contenido del Tooltip de Alumnos</div></div>
+    <asp:TextBox ID="TextBox1" CssClass="textComentarios" runat="server"></asp:TextBox>
+    </div>
+    <div class="sandbox">
+    <p>Apreciacion del delegado del curso:</p><div class="tooltip"  >?<div id="tp_del" class="cont_tp">Contenido del Tooltip del delegado</div></div>
+    <asp:TextBox ID="TextBox2" CssClass="textComentarios" runat="server"></asp:TextBox>
+    </div>
+    <div class="sandbox">
+    <p>Comentarios de la encuesta académica:</p><div class="tooltip"  >?<div id="tp_enc" class="cont_tp">Contenido del Tooltip de la encuesta</div></div>
+    <asp:TextBox ID="TextBox3" CssClass="textComentarios" runat="server"></asp:TextBox>
+    </div>
+     <br />
+      <br />
 </div>
 
 <br /><br />

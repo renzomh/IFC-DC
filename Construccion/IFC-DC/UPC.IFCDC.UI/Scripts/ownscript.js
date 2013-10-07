@@ -13,5 +13,5 @@ function popup(idpopup) {
 function close_popup(idpopup) {
     $(idpopup).fadeOut(500);
     $(".dark-side").fadeOut(500);
-    
+
 }
