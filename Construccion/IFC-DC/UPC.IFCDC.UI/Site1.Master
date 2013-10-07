@@ -11,7 +11,7 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
-<body class="box-central"> 
+<body> 
    <div id="header2"><img id="UPCImageLogo" src="Imagenes/logoUPC.png" /> <div class="right"><img class="user-photo" src="Imagenes/noImage.jpg" alt="user" /> &nbsp; <asp:Label ID="texto_UsuarioRegistrado" Text="Usuario Registrado" runat="server" /><br /> <a href="#">Cerrar Sesión</a> </div> </div>
     <form id="form1" runat="server">
     <div>
