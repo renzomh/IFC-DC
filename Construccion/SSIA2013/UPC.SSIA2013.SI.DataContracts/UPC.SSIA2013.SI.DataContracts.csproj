@@ -42,11 +42,17 @@
   <ItemGroup>
     <Compile Include="AccionMejoraCollectionDC.cs" />
     <Compile Include="AccionMejoraDC.cs" />
+    <Compile Include="AccionMejoraReporteCollectionDC.cs" />
+    <Compile Include="AccionMejoraReporteDC.cs" />
     <Compile Include="CursoxProfesorCollectionDC.cs" />
     <Compile Include="CursoxProfesorDC.cs" />
     <Compile Include="HallazgoCollectionDC.cs" />
     <Compile Include="HallazgoDC.cs" />
+    <Compile Include="HallazgoReporteCollectionDC.cs" />
+    <Compile Include="HallazgoReporteDC.cs" />
     <Compile Include="InformeFinCicloDC.cs" />
+    <Compile Include="InformeFinCicloReporteCollectionDC.cs" />
+    <Compile Include="InformeFinCicloReporteDC.cs" />
     <Compile Include="LogroDC.cs" />
     <Compile Include="PeriodoDC.cs" />
     <Compile Include="PersonaDC.cs" />

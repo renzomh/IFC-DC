@@ -20,8 +20,7 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
         
         //ACCIONES DE MEJORA
 
-        /*
-        public static AccionMejoraCollectionDC TranslateAccionesMejoraLRToAccionesMejoraCollection(List<spListarAccionesMejoraxHallazgoResult> lstLR)
+        public static AccionMejoraCollectionDC TranslateAccionesMejoraRegistrarLRToAccionMejoraCollection(List<up_IFCDC_Registrar_AccionMejoraResult> lstLR)
         {
             AccionMejoraCollectionDC collection;
 
@@ -32,7 +31,7 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
 
                 for (int i = 0; i < lstLR.Count; i++)
                 {
-                    collection.LstAccionesMejora.Add(TranslateAccionMejoraLRToAccionMejoraDC(lstLR[i]));
+                    collection.LstAccionesMejora.Add(TranslateAccionMejoraRegistrarLRToAccionMejoraDC(lstLR[i]));
                 }
 
                 return collection;
@@ -43,8 +42,7 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
                 throw ex;
             }
         }
-
-        public static AccionMejoraDC TranslateAccionMejoraLRToAccionMejoraDC(spListarAccionesMejoraxHallazgoResult objLR)
+        public static AccionMejoraDC TranslateAccionMejoraRegistrarLRToAccionMejoraDC(up_IFCDC_Registrar_AccionMejoraResult objLR)
         {
             AccionMejoraDC obj;
 
@@ -57,6 +55,10 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
                 obj.InformeFinCicloId = objLR.InformeFinCicloId;
                 obj.Codigo = objLR.Codigo;
                 obj.Descripcion = objLR.Descripcion;
+                obj.CicloEjecucionId = objLR.CicloEjecucionId;
+                obj.CicloEjecucion = objLR.CicloEjecucion;
+                obj.CodigoHallazgo = objLR.CodigoHallazgo;
+                obj.Estado = objLR.Estado;
 
                 return obj;
             }
@@ -66,8 +68,297 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
                 throw ex;
             }
         }
-        */
-         
+
+        public static AccionMejoraCollectionDC TranslateAccionesMejoraListarLRToAccionMejoraCollection(List<up_IFCDC_Listar_AccionMejora_x_InformeFinCicloResult> lstLR)
+        {
+            AccionMejoraCollectionDC collection;
+
+            try
+            {
+                collection = new AccionMejoraCollectionDC();
+                collection.LstAccionesMejora = new Collection<AccionMejoraDC>();
+
+                for (int i = 0; i < lstLR.Count; i++)
+                {
+                    collection.LstAccionesMejora.Add(TranslateAccionMejoraListarLRToAccionMejoraDC(lstLR[i]));
+                }
+
+                return collection;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public static AccionMejoraDC TranslateAccionMejoraListarLRToAccionMejoraDC(up_IFCDC_Listar_AccionMejora_x_InformeFinCicloResult objLR)
+        {
+            AccionMejoraDC obj;
+
+            try
+            {
+                obj = new AccionMejoraDC();
+
+                obj.AccionMejoraId = objLR.AccionMejoraId;
+                obj.HallazgoId = objLR.HallazgoId;
+                obj.InformeFinCicloId = objLR.InformeFinCicloId;
+                obj.Codigo = objLR.Codigo;
+                obj.Descripcion = objLR.Descripcion;
+                obj.CicloEjecucionId = objLR.CicloEjecucionId;
+                obj.CicloEjecucion = objLR.CicloEjecucion;
+                obj.CodigoHallazgo = objLR.CodigoHallazgo;
+                obj.Estado = objLR.Estado;
+
+                return obj;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static AccionMejoraCollectionDC TranslateAccionesPreviasListarLRToAccionMejoraCollection(List<up_IFCDC_Listar_AccionMejora_PreviasResult> lstLR)
+        {
+            AccionMejoraCollectionDC collection;
+
+            try
+            {
+                collection = new AccionMejoraCollectionDC();
+                collection.LstAccionesMejora = new Collection<AccionMejoraDC>();
+
+                for (int i = 0; i < lstLR.Count; i++)
+                {
+                    collection.LstAccionesMejora.Add(TranslateAccionMejoraPreviaListarLRToAccionMejoraDC(lstLR[i]));
+                }
+
+                return collection;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public static AccionMejoraDC TranslateAccionMejoraPreviaListarLRToAccionMejoraDC(up_IFCDC_Listar_AccionMejora_PreviasResult objLR)
+        {
+            AccionMejoraDC obj;
+
+            try
+            {
+                obj = new AccionMejoraDC();
+
+                obj.AccionMejoraId = objLR.AccionMejoraId;
+                obj.HallazgoId = objLR.HallazgoId;
+                obj.InformeFinCicloId = objLR.InformeFinCicloId;
+                obj.Codigo = objLR.Codigo;
+                obj.Descripcion = objLR.Descripcion;
+                obj.CicloEjecucionId = objLR.CicloEjecucionId;
+                obj.CicloEjecucion = objLR.CicloEjecucion;
+                obj.CodigoHallazgo = objLR.CodigoHallazgo;
+                obj.Estado = objLR.Estado;
+
+                return obj;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static AccionMejoraCollectionDC TranslateAccionesMejoraEditarLRToAccionMejoraCollection(List<up_IFCDC_Editar_AccionMejoraResult> lstLR)
+        {
+            AccionMejoraCollectionDC collection;
+
+            try
+            {
+                collection = new AccionMejoraCollectionDC();
+                collection.LstAccionesMejora = new Collection<AccionMejoraDC>();
+
+                for (int i = 0; i < lstLR.Count; i++)
+                {
+                    collection.LstAccionesMejora.Add(TranslateAccionMejoraEditarLRToAccionMejoraDC(lstLR[i]));
+                }
+
+                return collection;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public static AccionMejoraDC TranslateAccionMejoraEditarLRToAccionMejoraDC(up_IFCDC_Editar_AccionMejoraResult objLR)
+        {
+            AccionMejoraDC obj;
+
+            try
+            {
+                obj = new AccionMejoraDC();
+
+                obj.AccionMejoraId = objLR.AccionMejoraId;
+                obj.HallazgoId = objLR.HallazgoId;
+                obj.InformeFinCicloId = objLR.InformeFinCicloId;
+                obj.Codigo = objLR.Codigo;
+                obj.Descripcion = objLR.Descripcion;
+                obj.CicloEjecucionId = objLR.CicloEjecucionId;
+                obj.CicloEjecucion = objLR.CicloEjecucion;
+                obj.CodigoHallazgo = objLR.CodigoHallazgo;
+                obj.Estado = objLR.Estado;
+
+                return obj;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static AccionMejoraCollectionDC TranslateAccionesMejoraPreviaEditarLRToAccionMejoraCollection(List<up_IFCDC_Editar_AccionMejora_PreviaResult> lstLR)
+        {
+            AccionMejoraCollectionDC collection;
+
+            try
+            {
+                collection = new AccionMejoraCollectionDC();
+                collection.LstAccionesMejora = new Collection<AccionMejoraDC>();
+
+                for (int i = 0; i < lstLR.Count; i++)
+                {
+                    collection.LstAccionesMejora.Add(TranslateAccionMejoraPreviaEditarLRToAccionMejoraDC(lstLR[i]));
+                }
+
+                return collection;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public static AccionMejoraDC TranslateAccionMejoraPreviaEditarLRToAccionMejoraDC(up_IFCDC_Editar_AccionMejora_PreviaResult objLR)
+        {
+            AccionMejoraDC obj;
+
+            try
+            {
+                obj = new AccionMejoraDC();
+
+                obj.AccionMejoraId = objLR.AccionMejoraId;
+                obj.HallazgoId = objLR.HallazgoId;
+                obj.InformeFinCicloId = objLR.InformeFinCicloId;
+                obj.Codigo = objLR.Codigo;
+                obj.Descripcion = objLR.Descripcion;
+                obj.CicloEjecucionId = objLR.CicloEjecucionId;
+                obj.CicloEjecucion = objLR.CicloEjecucion;
+                obj.CodigoHallazgo = objLR.CodigoHallazgo;
+                obj.Estado = objLR.Estado;
+
+                return obj;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static AccionMejoraCollectionDC TranslateAccionesMejoraEliminarLRToAccionMejoraCollection(List<up_IFCDC_Eliminar_AccionMejoraResult> lstLR)
+        {
+            AccionMejoraCollectionDC collection;
+
+            try
+            {
+                collection = new AccionMejoraCollectionDC();
+                collection.LstAccionesMejora = new Collection<AccionMejoraDC>();
+
+                for (int i = 0; i < lstLR.Count; i++)
+                {
+                    collection.LstAccionesMejora.Add(TranslateAccionMejoraEliminarLRToAccionMejoraDC(lstLR[i]));
+                }
+
+                return collection;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public static AccionMejoraDC TranslateAccionMejoraEliminarLRToAccionMejoraDC(up_IFCDC_Eliminar_AccionMejoraResult objLR)
+        {
+            AccionMejoraDC obj;
+
+            try
+            {
+                obj = new AccionMejoraDC();
+
+                obj.AccionMejoraId = objLR.AccionMejoraId;
+                obj.HallazgoId = objLR.HallazgoId;
+                obj.InformeFinCicloId = objLR.InformeFinCicloId;
+                obj.Codigo = objLR.Codigo;
+                obj.Descripcion = objLR.Descripcion;
+                obj.CicloEjecucionId = objLR.CicloEjecucionId;
+                obj.CicloEjecucion = objLR.CicloEjecucion;
+                obj.CodigoHallazgo = objLR.CodigoHallazgo;
+                obj.Estado = objLR.Estado;
+
+                return obj;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static AccionMejoraReporteCollectionDC TranslateAccionesMejoraEliminarLRToAccionMejoraCollection(List<up_IFCDC_Listar_Reporte_AccionMejoraResult> lstLR)
+        {
+            AccionMejoraReporteCollectionDC collection;
+
+            try
+            {
+                collection = new AccionMejoraReporteCollectionDC();
+                collection.LstAccionMejoraReporte = new Collection<AccionMejoraReporteDC>();
+
+                for (int i = 0; i < lstLR.Count; i++)
+                {
+                    collection.LstAccionMejoraReporte.Add(TranslateAccionMejoraReporteLRToAccionMejoraDC(lstLR[i]));
+                }
+
+                return collection;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public static AccionMejoraReporteDC TranslateAccionMejoraReporteLRToAccionMejoraDC(up_IFCDC_Listar_Reporte_AccionMejoraResult objLR)
+        {
+            AccionMejoraReporteDC obj;
+
+            try
+            {
+                obj = new AccionMejoraReporteDC();
+
+                obj.AccionMejoraId = objLR.AccionMejoraId;
+                obj.Descripcion = objLR.Descripcion;
+                obj.CodigoAccionMejora = objLR.CodigoAccionMejora;
+                obj.CodigoHallazgo = objLR.CodigoHallazgo;
+                obj.Estado = objLR.Estado;
+
+                return obj;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         //RESULTADO_PROGRAMA_CURSO
         public static ResultadoProgramaxCursoCollectionDC TranslateResultadoProgramasxCursoLRToResultadoProgramaCollection(List<up_IFCDC_Listar_ResultadoPrograma_x_CursoResult> lstLR)
         {
@@ -256,7 +547,52 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
                 throw ex;
             }
         }
-        
+
+        public static InformeFinCicloReporteCollectionDC TranslateInformeFinCicloReporteLRToInformeFinCicloReporteCollection(List<up_IFCDC_Listar_Reporte_InformeFinCicloResult> lstLR)
+        {
+            InformeFinCicloReporteCollectionDC collection;
+
+            try
+            {
+                collection = new InformeFinCicloReporteCollectionDC();
+                collection.LstInformeFinCicloReporte = new Collection<InformeFinCicloReporteDC>();
+
+                for (int i = 0; i < lstLR.Count; i++)
+                {
+                    collection.LstInformeFinCicloReporte.Add(TranslateInformeFinCicloReporteLRToInformeFinCicloReporteDC(lstLR[i]));
+                }
+
+                return collection;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public static InformeFinCicloReporteDC TranslateInformeFinCicloReporteLRToInformeFinCicloReporteDC(up_IFCDC_Listar_Reporte_InformeFinCicloResult objLR)
+        {
+            InformeFinCicloReporteDC obj;
+
+            try
+            {
+                obj = new InformeFinCicloReporteDC();
+
+                obj.InformeFinCicloId = objLR.InformeFinCicloId;
+                obj.NombreCurso = objLR.NombreCurso;
+                obj.NombreProfesor = objLR.NombrePeofesor;
+                obj.CodigoCurso = objLR.CodigoCurso;
+                obj.Estado = objLR.Estado;
+                obj.FechaActualizacion = objLR.FechaActualizacion;
+
+                return obj;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
         //LOGRO
         public static LogroDC TranslateLogroLRToLogroDC(up_IFCDC_Obtener_Logro_x_CursoResult objLR)
@@ -354,7 +690,6 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
                 throw ex;
             }
         }
-
         public static HallazgoDC TranslateHallazgoRegistrarLRToHallazgoDC(up_IFCDC_Registrar_HallazgoResult objLR)
         {
             HallazgoDC objHallazgoDC;
@@ -399,7 +734,6 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
                 throw ex;
             }
         }
-
         public static HallazgoDC TranslateHallazgoListarLRToHallazgoDC(up_IFCDC_Listar_Hallazgos_x_InformeFinCicloResult objLR)
         {
             HallazgoDC objHallazgoDC;
@@ -444,7 +778,6 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
                 throw ex;
             }
         }
-
         public static HallazgoDC TranslateHallazgoEditarLRToHallazgoDC(up_IFCDC_Editar_HallazgoResult objLR)
         {
             HallazgoDC objHallazgoDC;
@@ -489,7 +822,6 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
                 throw ex;
             }
         }
-
         public static HallazgoDC TranslateHallazgoEliminarLRToHallazgoDC(up_IFCDC_Eliminar_HallazgoResult objLR)
         {
             HallazgoDC objHallazgoDC;
@@ -504,6 +836,50 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
                 objHallazgoDC.Descripcion = objLR.Descripcion;
 
                 return objHallazgoDC;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static HallazgoReporteCollectionDC TranslateHallazgoReporteLRToHallazgoReporteCollection(List<up_IFCDC_Listar_Reporte_HallazgoResult> lstLR)
+        {
+            HallazgoReporteCollectionDC collection;
+
+            try
+            {
+                collection = new HallazgoReporteCollectionDC();
+                collection.LstHallazgoReporte = new Collection<HallazgoReporteDC>();
+
+                for (int i = 0; i < lstLR.Count; i++)
+                {
+                    collection.LstHallazgoReporte.Add(TranslateHallazgoReporteLRToHallazgoReporteDC(lstLR[i]));
+                }
+
+                return collection;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public static HallazgoReporteDC TranslateHallazgoReporteLRToHallazgoReporteDC(up_IFCDC_Listar_Reporte_HallazgoResult objLR)
+        {
+            HallazgoReporteDC obj;
+
+            try
+            {
+                obj = new HallazgoReporteDC();
+
+                obj.HallazogId = objLR.HallazgoId;
+                obj.CodigoHallazgo = objLR.CodigoHallazgo;
+                obj.Descripcion = objLR.Descripcion;
+                obj.NombreCurso = objLR.NombreCurso;
+
+                return obj;
             }
 
             catch (Exception ex)

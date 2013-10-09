@@ -69,5 +69,20 @@ namespace UPC.SSIA2013.BL.BC
                 throw ex;
             }
         }
+
+        public List<up_IFCDC_Listar_Reporte_HallazgoResult> listarReporteHallazgo(int cursoId, int periodoId)
+        {
+            HallazgoDALC objHallazgoDALC;
+
+            try
+            {
+                objHallazgoDALC = new HallazgoDALC();
+                return objHallazgoDALC.listarReporteHallazgo(cursoId, periodoId);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

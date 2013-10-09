@@ -98,5 +98,20 @@ namespace UPC.SSIA2013.BL.BC
                 throw ex;
             }
         }
+
+        public List<up_IFCDC_Listar_Reporte_AccionMejoraResult> listarReporteAccionMejora(int cursoId, int periodoId, String estado)
+        {
+            AccionMejoraDALC objAccionMejoraDALC;
+
+            try
+            {
+                objAccionMejoraDALC = new AccionMejoraDALC();
+                return objAccionMejoraDALC.listarReporteAccionMejora(cursoId, periodoId, estado);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

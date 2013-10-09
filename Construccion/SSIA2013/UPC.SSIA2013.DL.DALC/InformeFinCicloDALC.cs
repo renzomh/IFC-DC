@@ -118,5 +118,31 @@ namespace UPC.SSIA2013.DL.DALC
             }
         }
         */
+
+        public List<up_IFCDC_Listar_Reporte_InformeFinCicloResult> listarReporteInformeInformeFinCiclo(int cursoId, int periodoId, String estado)
+        {
+            SSIA2013DataContext dataContext = null;
+
+            try
+            {
+                dataContext = new SSIA2013DataContext(ConfigurationManager.ConnectionStrings["CSSSIA2013"].ToString());
+                List<up_IFCDC_Listar_Reporte_InformeFinCicloResult> lstInformes = dataContext.up_IFCDC_Listar_Reporte_InformeFinCiclo(cursoId, periodoId, estado).ToList();
+
+                return lstInformes;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            finally
+            {
+                if (dataContext != null)
+                {
+                    dataContext.Dispose();
+                }
+            }
+        }
     }
 }

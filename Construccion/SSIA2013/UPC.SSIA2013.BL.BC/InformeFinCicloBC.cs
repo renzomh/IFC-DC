@@ -38,5 +38,20 @@ namespace UPC.SSIA2013.BL.BC
                 throw ex;
             }
         }
+
+        public List<up_IFCDC_Listar_Reporte_InformeFinCicloResult> listarReporteInformeFinCiclo(int cursoId, int periodoId, String estado)
+        {
+            InformeFinCicloDALC objInformeFinCicloDALC;
+
+            try
+            {
+                objInformeFinCicloDALC = new InformeFinCicloDALC();
+                return objInformeFinCicloDALC.listarReporteInformeInformeFinCiclo(cursoId, periodoId, estado);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

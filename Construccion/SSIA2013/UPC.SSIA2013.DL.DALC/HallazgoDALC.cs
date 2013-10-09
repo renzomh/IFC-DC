@@ -105,5 +105,31 @@ namespace UPC.SSIA2013.DL.DALC
                 }
             }
         }
+
+        public List<up_IFCDC_Listar_Reporte_HallazgoResult> listarReporteHallazgo(int cursoId, int periodoId)
+        {
+            SSIA2013DataContext dataContext = null;
+
+            try
+            {
+                dataContext = new SSIA2013DataContext(ConfigurationManager.ConnectionStrings["CSSSIA2013"].ToString());
+                List<up_IFCDC_Listar_Reporte_HallazgoResult> lstHallazgos = dataContext.up_IFCDC_Listar_Reporte_Hallazgo(cursoId, periodoId).ToList();
+
+                return lstHallazgos;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            finally
+            {
+                if (dataContext != null)
+                {
+                    dataContext.Dispose();
+                }
+            }
+        }
     }
 }

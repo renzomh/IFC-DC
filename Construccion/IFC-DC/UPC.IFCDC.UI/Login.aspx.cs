@@ -40,8 +40,9 @@ namespace UPC.IFCDC.UI
                 switch (objPersonaBE.TipoPersona)
                 {
                     //ADMINISTRATIVO
-                    case 0: break;
-
+                    case 0: 
+                        Response.Redirect("Administrativo.aspx");
+                        break;
                     //COORDINADOR
                     case 1:
                         Response.Redirect("CursosxCoordinador.aspx");

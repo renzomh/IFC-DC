@@ -137,13 +137,12 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
 
             #region Acciones de Mejora
                 
-            /*
             //REGISTRAR ACCION DE MEJORA
             [WebInvoke(Method = "POST", ResponseFormat = WebMessageFormat.Json, UriTemplate = "/WSRegistrarAccionMejora")]
-            void SSIA2013ServiceContracts.WSRegistrarAccionMejora(AccionMejoraDC objAccionMejoraDC)
+            AccionMejoraCollectionDC SSIA2013ServiceContracts.WSRegistrarAccionMejora(AccionMejoraDC objAccionMejoraDC)
             {
                 AccionMejoraBC objAccionMejoraBC = new AccionMejoraBC();
-                objAccionMejoraBC.registrarAccionMejora(objAccionMejoraDC.HallazgoId, objAccionMejoraDC.InformeFinCicloId, objAccionMejoraDC.Codigo, objAccionMejoraDC.Descripcion);
+                return TranslatorHelper.TranslateAccionesMejoraRegistrarLRToAccionMejoraCollection(objAccionMejoraBC.registrarAccionMejora(objAccionMejoraDC.HallazgoId, objAccionMejoraDC.InformeFinCicloId, objAccionMejoraDC.CicloEjecucionId, objAccionMejoraDC.Descripcion));
             }
 
             //LISTAR ACCIONES DE MEJORA
@@ -151,25 +150,40 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
             AccionMejoraCollectionDC SSIA2013ServiceContracts.WSListarAccionesMejoraxInformeFinCiclo(AccionMejoraDC objAccionMejoraDC)
             {
                 AccionMejoraBC objAccionMejoraBC = new AccionMejoraBC();
-                return TranslatorHelper.TranslateAccionesMejoraLRToAccionesMejoraCollection(objAccionMejoraBC.listarAccionesMejoraxInformeFinCiclo(objAccionMejoraDC.InformeFinCicloId));
+                return TranslatorHelper.TranslateAccionesMejoraListarLRToAccionMejoraCollection(objAccionMejoraBC.listarAccionesMejoraxInformeFinCiclo(objAccionMejoraDC.InformeFinCicloId));
+            }
+
+            //LISTAR ACCIONES DE MEJORA PREVIAS
+            [WebInvoke(Method = "POST", ResponseFormat = WebMessageFormat.Json, UriTemplate = "/WSListarAccionesMejoraPrevia")]
+            AccionMejoraCollectionDC SSIA2013ServiceContracts.WSListarAccionesMejoraPrevias(InformeFinCicloDC informeFinCicloDC)
+            {
+                AccionMejoraBC objAccionMejoraBC = new AccionMejoraBC();
+                return TranslatorHelper.TranslateAccionesPreviasListarLRToAccionMejoraCollection(objAccionMejoraBC.listarAccionesMejoraPrevias(informeFinCicloDC.CursoId, informeFinCicloDC.PeriodoId));
             }
 
             //EDITAR ACCION DE MEJORA
             [WebInvoke(Method = "POST", ResponseFormat = WebMessageFormat.Json, UriTemplate = "/WSEditarAccionMejora")]
-            void SSIA2013ServiceContracts.WSEditarAccionMejora(AccionMejoraDC objAccionMejoraDC)
+            AccionMejoraCollectionDC SSIA2013ServiceContracts.WSEditarAccionMejora(AccionMejoraDC objAccionMejoraDC)
             {
                 AccionMejoraBC objAccionMejoraBC = new AccionMejoraBC();
-                objAccionMejoraBC.editarAccionMejora(objAccionMejoraDC.AccionMejoraId, objAccionMejoraDC.Descripcion);
+                return TranslatorHelper.TranslateAccionesMejoraEditarLRToAccionMejoraCollection(objAccionMejoraBC.editarAccionMejora(objAccionMejoraDC.AccionMejoraId, objAccionMejoraDC.InformeFinCicloId, objAccionMejoraDC.CicloEjecucionId, objAccionMejoraDC.Descripcion));
             }
+
+            //EDITAR ACCION DE MEJORA PREVIAS
+            //[WebInvoke(Method = "POST", ResponseFormat = WebMessageFormat.Json, UriTemplate = "/WSEditarAccionMejoraPrevia")]
+            //AccionMejoraCollectionDC SSIA2013ServiceContracts.WSEditarAccionMejoraPrevia(InformeFinCicloDC objInformeFinCicloDC, AccionMejoraDC objAccionMejoraDC)
+            //{
+            //    AccionMejoraBC objAccionMejoraBC = new AccionMejoraBC();
+            //   return TranslatorHelper.TranslateAccionesMejoraPreviaEditarLRToAccionMejoraCollection(objAccionMejoraBC.editarAccionMejoraPrevia(objInformeFinCicloDC.CursoId, objInformeFinCicloDC.PeriodoId, objAccionMejoraDC.AccionMejoraId, objAccionMejoraDC.Estado));
+            //}
 
             //ELIMINAR ACCION DE MEJORA
             [WebInvoke(Method = "POST", ResponseFormat = WebMessageFormat.Json, UriTemplate = "/WSEliminarAccionMejora")]
-            void SSIA2013ServiceContracts.WSEliminarAccionMejora(AccionMejoraDC objAccionMejoraDC)
+            AccionMejoraCollectionDC SSIA2013ServiceContracts.WSEliminarAccionMejora(AccionMejoraDC objAccionMejoraDC)
             {
                 AccionMejoraBC objAccionMejoraBC = new AccionMejoraBC();
-                objAccionMejoraBC.eliminarAccionMejora(objAccionMejoraDC.AccionMejoraId);
+                return TranslatorHelper.TranslateAccionesMejoraEliminarLRToAccionMejoraCollection(objAccionMejoraBC.eliminarAccionMejora(objAccionMejoraDC.AccionMejoraId, objAccionMejoraDC.InformeFinCicloId));
             }
-            */
             #endregion
 
             #region Persona

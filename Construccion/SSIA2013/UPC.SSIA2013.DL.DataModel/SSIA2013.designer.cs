@@ -62,18 +62,18 @@ namespace UPC.SSIA2013.DL.DataModel
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.[up.IFCDC_Editar_AccionMejora]")]
-		public ISingleResult<up_IFCDC_Editar_AccionMejoraResult> up_IFCDC_Editar_AccionMejora([global::System.Data.Linq.Mapping.ParameterAttribute(Name="AccionMejoraId", DbType="Int")] System.Nullable<int> accionMejoraId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="InformeFinCicloId", DbType="Int")] System.Nullable<int> informeFinCicloId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CicloEjecucionId", DbType="Int")] System.Nullable<int> cicloEjecucionId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="VarChar(500)")] string descripcion)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accionMejoraId, informeFinCicloId, cicloEjecucionId, descripcion);
-			return ((ISingleResult<up_IFCDC_Editar_AccionMejoraResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.[up.IFCDC_Registrar_Hallazgo]")]
 		public ISingleResult<up_IFCDC_Registrar_HallazgoResult> up_IFCDC_Registrar_Hallazgo([global::System.Data.Linq.Mapping.ParameterAttribute(Name="InformeFinCicloId", DbType="Int")] System.Nullable<int> informeFinCicloId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="VarChar(500)")] string descripcion)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), informeFinCicloId, descripcion);
 			return ((ISingleResult<up_IFCDC_Registrar_HallazgoResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.[up.IFCDC_Editar_AccionMejora]")]
+		public ISingleResult<up_IFCDC_Editar_AccionMejoraResult> up_IFCDC_Editar_AccionMejora([global::System.Data.Linq.Mapping.ParameterAttribute(Name="AccionMejoraId", DbType="Int")] System.Nullable<int> accionMejoraId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="InformeFinCicloId", DbType="Int")] System.Nullable<int> informeFinCicloId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CicloEjecucionId", DbType="Int")] System.Nullable<int> cicloEjecucionId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descripcion", DbType="VarChar(500)")] string descripcion)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accionMejoraId, informeFinCicloId, cicloEjecucionId, descripcion);
+			return ((ISingleResult<up_IFCDC_Editar_AccionMejoraResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.[up.IFCDC_Editar_AccionMejora_Previa]")]
@@ -139,6 +139,27 @@ namespace UPC.SSIA2013.DL.DataModel
 			return ((ISingleResult<up_IFCDC_Listar_PeriodosResult>)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.[up.IFCDC_Listar_Reporte_AccionMejora]")]
+		public ISingleResult<up_IFCDC_Listar_Reporte_AccionMejoraResult> up_IFCDC_Listar_Reporte_AccionMejora([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CursoId", DbType="Int")] System.Nullable<int> cursoId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PeriodoId", DbType="Int")] System.Nullable<int> periodoId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Estado", DbType="VarChar(20)")] string estado)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cursoId, periodoId, estado);
+			return ((ISingleResult<up_IFCDC_Listar_Reporte_AccionMejoraResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.[up.IFCDC_Listar_Reporte_Hallazgo]")]
+		public ISingleResult<up_IFCDC_Listar_Reporte_HallazgoResult> up_IFCDC_Listar_Reporte_Hallazgo([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CursoId", DbType="Int")] System.Nullable<int> cursoId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PeriodoId", DbType="Int")] System.Nullable<int> periodoId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cursoId, periodoId);
+			return ((ISingleResult<up_IFCDC_Listar_Reporte_HallazgoResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.[up.IFCDC_Listar_Reporte_InformeFinCiclo]")]
+		public ISingleResult<up_IFCDC_Listar_Reporte_InformeFinCicloResult> up_IFCDC_Listar_Reporte_InformeFinCiclo([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CursoId", DbType="Int")] System.Nullable<int> cursoId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PeriodoId", DbType="Int")] System.Nullable<int> periodoId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Estado", DbType="VarChar(20)")] string estado)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cursoId, periodoId, estado);
+			return ((ISingleResult<up_IFCDC_Listar_Reporte_InformeFinCicloResult>)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.[up.IFCDC_Listar_ResultadoPrograma_x_Curso]")]
 		public ISingleResult<up_IFCDC_Listar_ResultadoPrograma_x_CursoResult> up_IFCDC_Listar_ResultadoPrograma_x_Curso([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CursoId", DbType="Int")] System.Nullable<int> cursoId)
 		{
@@ -186,6 +207,122 @@ namespace UPC.SSIA2013.DL.DataModel
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), hallazgoId, informeFinCicloId, cicloEjecucionId, descripcion);
 			return ((ISingleResult<up_IFCDC_Registrar_AccionMejoraResult>)(result.ReturnValue));
+		}
+	}
+	
+	public partial class up_IFCDC_Registrar_HallazgoResult
+	{
+		
+		private int _HallazgoId;
+		
+		private string _Codigo;
+		
+		private string _Descripcion;
+		
+		private int _InformeFinCicloId;
+		
+		private bool _EstaActivo;
+		
+		private int _PeriodoId;
+		
+		public up_IFCDC_Registrar_HallazgoResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HallazgoId", DbType="Int NOT NULL")]
+		public int HallazgoId
+		{
+			get
+			{
+				return this._HallazgoId;
+			}
+			set
+			{
+				if ((this._HallazgoId != value))
+				{
+					this._HallazgoId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Codigo", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string Codigo
+		{
+			get
+			{
+				return this._Codigo;
+			}
+			set
+			{
+				if ((this._Codigo != value))
+				{
+					this._Codigo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion", DbType="VarChar(500)")]
+		public string Descripcion
+		{
+			get
+			{
+				return this._Descripcion;
+			}
+			set
+			{
+				if ((this._Descripcion != value))
+				{
+					this._Descripcion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InformeFinCicloId", DbType="Int NOT NULL")]
+		public int InformeFinCicloId
+		{
+			get
+			{
+				return this._InformeFinCicloId;
+			}
+			set
+			{
+				if ((this._InformeFinCicloId != value))
+				{
+					this._InformeFinCicloId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EstaActivo", DbType="Bit NOT NULL")]
+		public bool EstaActivo
+		{
+			get
+			{
+				return this._EstaActivo;
+			}
+			set
+			{
+				if ((this._EstaActivo != value))
+				{
+					this._EstaActivo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PeriodoId", DbType="Int NOT NULL")]
+		public int PeriodoId
+		{
+			get
+			{
+				return this._PeriodoId;
+			}
+			set
+			{
+				if ((this._PeriodoId != value))
+				{
+					this._PeriodoId = value;
+				}
+			}
 		}
 	}
 	
@@ -372,104 +509,6 @@ namespace UPC.SSIA2013.DL.DataModel
 				if ((this._CicloEjecucion != value))
 				{
 					this._CicloEjecucion = value;
-				}
-			}
-		}
-	}
-	
-	public partial class up_IFCDC_Registrar_HallazgoResult
-	{
-		
-		private int _HallazgoId;
-		
-		private string _Codigo;
-		
-		private string _Descripcion;
-		
-		private int _InformeFinCicloId;
-		
-		private bool _EstaActivo;
-		
-		public up_IFCDC_Registrar_HallazgoResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HallazgoId", DbType="Int NOT NULL")]
-		public int HallazgoId
-		{
-			get
-			{
-				return this._HallazgoId;
-			}
-			set
-			{
-				if ((this._HallazgoId != value))
-				{
-					this._HallazgoId = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Codigo", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
-		public string Codigo
-		{
-			get
-			{
-				return this._Codigo;
-			}
-			set
-			{
-				if ((this._Codigo != value))
-				{
-					this._Codigo = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion", DbType="VarChar(500)")]
-		public string Descripcion
-		{
-			get
-			{
-				return this._Descripcion;
-			}
-			set
-			{
-				if ((this._Descripcion != value))
-				{
-					this._Descripcion = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InformeFinCicloId", DbType="Int NOT NULL")]
-		public int InformeFinCicloId
-		{
-			get
-			{
-				return this._InformeFinCicloId;
-			}
-			set
-			{
-				if ((this._InformeFinCicloId != value))
-				{
-					this._InformeFinCicloId = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EstaActivo", DbType="Bit NOT NULL")]
-		public bool EstaActivo
-		{
-			get
-			{
-				return this._EstaActivo;
-			}
-			set
-			{
-				if ((this._EstaActivo != value))
-				{
-					this._EstaActivo = value;
 				}
 			}
 		}
@@ -676,6 +715,8 @@ namespace UPC.SSIA2013.DL.DataModel
 		
 		private bool _EstaActivo;
 		
+		private int _PeriodoId;
+		
 		public up_IFCDC_Editar_HallazgoResult()
 		{
 		}
@@ -756,6 +797,22 @@ namespace UPC.SSIA2013.DL.DataModel
 				if ((this._EstaActivo != value))
 				{
 					this._EstaActivo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PeriodoId", DbType="Int NOT NULL")]
+		public int PeriodoId
+		{
+			get
+			{
+				return this._PeriodoId;
+			}
+			set
+			{
+				if ((this._PeriodoId != value))
+				{
+					this._PeriodoId = value;
 				}
 			}
 		}
@@ -962,6 +1019,8 @@ namespace UPC.SSIA2013.DL.DataModel
 		
 		private bool _EstaActivo;
 		
+		private int _PeriodoId;
+		
 		public up_IFCDC_Eliminar_HallazgoResult()
 		{
 		}
@@ -1042,6 +1101,22 @@ namespace UPC.SSIA2013.DL.DataModel
 				if ((this._EstaActivo != value))
 				{
 					this._EstaActivo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PeriodoId", DbType="Int NOT NULL")]
+		public int PeriodoId
+		{
+			get
+			{
+				return this._PeriodoId;
+			}
+			set
+			{
+				if ((this._PeriodoId != value))
+				{
+					this._PeriodoId = value;
 				}
 			}
 		}
@@ -1516,6 +1591,8 @@ namespace UPC.SSIA2013.DL.DataModel
 		
 		private bool _EstaActivo;
 		
+		private int _PeriodoId;
+		
 		public up_IFCDC_Listar_Hallazgos_x_InformeFinCicloResult()
 		{
 		}
@@ -1596,6 +1673,22 @@ namespace UPC.SSIA2013.DL.DataModel
 				if ((this._EstaActivo != value))
 				{
 					this._EstaActivo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PeriodoId", DbType="Int NOT NULL")]
+		public int PeriodoId
+		{
+			get
+			{
+				return this._PeriodoId;
+			}
+			set
+			{
+				if ((this._PeriodoId != value))
+				{
+					this._PeriodoId = value;
 				}
 			}
 		}
@@ -1712,6 +1805,318 @@ namespace UPC.SSIA2013.DL.DataModel
 				if ((this._FechaFin != value))
 				{
 					this._FechaFin = value;
+				}
+			}
+		}
+	}
+	
+	public partial class up_IFCDC_Listar_Reporte_AccionMejoraResult
+	{
+		
+		private int _AccionMejoraId;
+		
+		private string _CodigoAccionMejora;
+		
+		private string _Descripcion;
+		
+		private string _Estado;
+		
+		private string _CodigoHallazgo;
+		
+		public up_IFCDC_Listar_Reporte_AccionMejoraResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccionMejoraId", DbType="Int NOT NULL")]
+		public int AccionMejoraId
+		{
+			get
+			{
+				return this._AccionMejoraId;
+			}
+			set
+			{
+				if ((this._AccionMejoraId != value))
+				{
+					this._AccionMejoraId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoAccionMejora", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string CodigoAccionMejora
+		{
+			get
+			{
+				return this._CodigoAccionMejora;
+			}
+			set
+			{
+				if ((this._CodigoAccionMejora != value))
+				{
+					this._CodigoAccionMejora = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion", DbType="VarChar(500)")]
+		public string Descripcion
+		{
+			get
+			{
+				return this._Descripcion;
+			}
+			set
+			{
+				if ((this._Descripcion != value))
+				{
+					this._Descripcion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Estado
+		{
+			get
+			{
+				return this._Estado;
+			}
+			set
+			{
+				if ((this._Estado != value))
+				{
+					this._Estado = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoHallazgo", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string CodigoHallazgo
+		{
+			get
+			{
+				return this._CodigoHallazgo;
+			}
+			set
+			{
+				if ((this._CodigoHallazgo != value))
+				{
+					this._CodigoHallazgo = value;
+				}
+			}
+		}
+	}
+	
+	public partial class up_IFCDC_Listar_Reporte_HallazgoResult
+	{
+		
+		private int _HallazgoId;
+		
+		private string _CodigoHallazgo;
+		
+		private string _Descripcion;
+		
+		private string _NombreCurso;
+		
+		public up_IFCDC_Listar_Reporte_HallazgoResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HallazgoId", DbType="Int NOT NULL")]
+		public int HallazgoId
+		{
+			get
+			{
+				return this._HallazgoId;
+			}
+			set
+			{
+				if ((this._HallazgoId != value))
+				{
+					this._HallazgoId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoHallazgo", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string CodigoHallazgo
+		{
+			get
+			{
+				return this._CodigoHallazgo;
+			}
+			set
+			{
+				if ((this._CodigoHallazgo != value))
+				{
+					this._CodigoHallazgo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion", DbType="VarChar(500)")]
+		public string Descripcion
+		{
+			get
+			{
+				return this._Descripcion;
+			}
+			set
+			{
+				if ((this._Descripcion != value))
+				{
+					this._Descripcion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NombreCurso", DbType="VarChar(150)")]
+		public string NombreCurso
+		{
+			get
+			{
+				return this._NombreCurso;
+			}
+			set
+			{
+				if ((this._NombreCurso != value))
+				{
+					this._NombreCurso = value;
+				}
+			}
+		}
+	}
+	
+	public partial class up_IFCDC_Listar_Reporte_InformeFinCicloResult
+	{
+		
+		private int _InformeFinCicloId;
+		
+		private string _CodigoCurso;
+		
+		private string _NombreCurso;
+		
+		private string _NombrePeofesor;
+		
+		private string _FechaActualizacion;
+		
+		private string _Estado;
+		
+		private string _Periodo;
+		
+		public up_IFCDC_Listar_Reporte_InformeFinCicloResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InformeFinCicloId", DbType="Int NOT NULL")]
+		public int InformeFinCicloId
+		{
+			get
+			{
+				return this._InformeFinCicloId;
+			}
+			set
+			{
+				if ((this._InformeFinCicloId != value))
+				{
+					this._InformeFinCicloId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodigoCurso", DbType="VarChar(50)")]
+		public string CodigoCurso
+		{
+			get
+			{
+				return this._CodigoCurso;
+			}
+			set
+			{
+				if ((this._CodigoCurso != value))
+				{
+					this._CodigoCurso = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NombreCurso", DbType="VarChar(150)")]
+		public string NombreCurso
+		{
+			get
+			{
+				return this._NombreCurso;
+			}
+			set
+			{
+				if ((this._NombreCurso != value))
+				{
+					this._NombreCurso = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NombrePeofesor", DbType="VarChar(602)")]
+		public string NombrePeofesor
+		{
+			get
+			{
+				return this._NombrePeofesor;
+			}
+			set
+			{
+				if ((this._NombrePeofesor != value))
+				{
+					this._NombrePeofesor = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaActualizacion", DbType="VarChar(30)")]
+		public string FechaActualizacion
+		{
+			get
+			{
+				return this._FechaActualizacion;
+			}
+			set
+			{
+				if ((this._FechaActualizacion != value))
+				{
+					this._FechaActualizacion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Estado
+		{
+			get
+			{
+				return this._Estado;
+			}
+			set
+			{
+				if ((this._Estado != value))
+				{
+					this._Estado = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Periodo", DbType="VarChar(50)")]
+		public string Periodo
+		{
+			get
+			{
+				return this._Periodo;
+			}
+			set
+			{
+				if ((this._Periodo != value))
+				{
+					this._Periodo = value;
 				}
 			}
 		}

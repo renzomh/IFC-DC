@@ -46,19 +46,24 @@ namespace UPC.SSIA2013.SI.ServiceContracts
         HallazgoCollectionDC WSEliminarHallazgo(HallazgoDC objHallazgoDC);
          
         //ACCIONES DE MEJORA
-        /*
-        [OperationContract]
-        void WSRegistrarAccionMejora(AccionMejoraDC objAccionMejoraDC);
 
         [OperationContract]
-        AccionMejoraCollectionDC WSListarAccionesMejoraxInformeFinCiclo(AccionMejoraDC objAccionMejoraDC);
+        AccionMejoraCollectionDC WSRegistrarAccionMejora(AccionMejoraDC objAccionMejoraDC);
 
         [OperationContract]
-        void WSEditarAccionMejora(AccionMejoraDC objAccionMejoraDC);
+        AccionMejoraCollectionDC  WSListarAccionesMejoraxInformeFinCiclo(AccionMejoraDC objAccionMejoraDC);
 
         [OperationContract]
-        void WSEliminarAccionMejora(AccionMejoraDC objAccionMejoraDC);
-        */
+        AccionMejoraCollectionDC WSListarAccionesMejoraPrevias(InformeFinCicloDC informeFinCicloDC);
+
+        [OperationContract]
+        AccionMejoraCollectionDC WSEditarAccionMejora(AccionMejoraDC objAccionMejoraDC);
+
+        //[OperationContract]
+        //AccionMejoraCollectionDC WSEditarAccionMejoraPrevia(InformeFinCicloDC informeFinCicloDc, AccionMejoraDC objAccionMejoraDC);
+
+        [OperationContract]
+        AccionMejoraCollectionDC WSEliminarAccionMejora(AccionMejoraDC objAccionMejoraDC);
         
         //PERSONA
         [OperationContract]

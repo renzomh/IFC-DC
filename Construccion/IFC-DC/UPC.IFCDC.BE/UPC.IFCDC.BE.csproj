@@ -39,6 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccionMejoraBE.cs" />
+    <Compile Include="AccionMejoraCollectionBE.cs" />
     <Compile Include="CursoxProfesorBE.cs" />
     <Compile Include="CursoxProfesorCollectionBE.cs" />
     <Compile Include="HallazgoBE.cs" />

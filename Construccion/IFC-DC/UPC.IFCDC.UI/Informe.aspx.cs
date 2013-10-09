@@ -26,6 +26,12 @@ namespace UPC.IFCDC.UI
         HallazgoBC objHallazgoBC = null;
         HallazgoCollectionBE objHallazgoCollectionBE = null;
 
+        AccionMejoraBC objAccionMejoraBC = null;
+        AccionMejoraCollectionBE objAccionesMejoraCollectionBE = null;
+
+        AccionMejoraBC objAccionesPreviasBC = null;
+        AccionMejoraCollectionBE objAccionesPreviasCollectionBE = null;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             objPeriodoBE = (PeriodoBE)Session["Periodo"];
@@ -59,7 +65,42 @@ namespace UPC.IFCDC.UI
             }
 
             grdHallazgosDataBind();
+
+            //OBTENER ACCIONES DE MEJORA
+            objAccionMejoraBC = new AccionMejoraBC();
+
+            if (objAccionesMejoraCollectionBE == null)
+            {
+                AccionMejoraBE objAccionMejoraBE = new AccionMejoraBE();
+                objAccionMejoraBE.InformeFinCicloId = objInformeBE.InformeFinCicloId;
+                objAccionesMejoraCollectionBE = objAccionMejoraBC.listarAccionesMejora(objAccionMejoraBE);
+            }
+
+            grdAccionesMejoraDataBind();
+
+            //OBTENER ACCIONES PREVIAS
+            objAccionesPreviasBC = new AccionMejoraBC();
+
+            if(objAccionesPreviasCollectionBE == null)
+            {
+                InformeFinCicloBE objInformeAccioneMejoraBE = new InformeFinCicloBE();
+                objInformeAccioneMejoraBE.CursoId = objCursoxProfesorBE.CursoId;
+                objInformeAccioneMejoraBE.PeriodoId = objPeriodoBE.PeriodoId;
+                objAccionesPreviasCollectionBE = objAccionesPreviasBC.listarAccionesPrevias(objInformeAccioneMejoraBE);
+            }
+
+            grdAccionesPreviasDataBind();
+
+            //SETEANDO DATOS DE INFORME DE FIN DE CICLO
+            txt_DesarrolloAprendizaje.Text = objInformeBE.DesarrolloUnidades;
+            txt_Infraestructura.Text = objInformeBE.ComentarioInfraestructura;
+            txt_Alumnos.Text = objInformeBE.ComentarioAlumnos;
+            txt_Delegados.Text = objInformeBE.ComentarioDelegados;
+            txt_EncuestaAcademica.Text = objInformeBE.ComentarioEncuesta;
         }
+
+
+        //DATA BINDS
 
         private void grdHallazgosDataBind()
         {
@@ -78,17 +119,56 @@ namespace UPC.IFCDC.UI
             grdOutcomes.DataBind();
         }
 
+        private void grdAccionesMejoraDataBind()
+        {
+            AccionMejoraBE objAccionMejoraBE = new AccionMejoraBE();
+            objAccionMejoraBE.InformeFinCicloId = objInformeBE.InformeFinCicloId;
+            objAccionesMejoraCollectionBE = objAccionMejoraBC.listarAccionesMejora(objAccionMejoraBE);
+
+            grdAccionesdeMejora.DataSource = objAccionesMejoraCollectionBE.LstAccionesMejora;
+            grdAccionesdeMejora.DataBind();
+        }
+
+        private void grdAccionesPreviasDataBind()
+        {
+            InformeFinCicloBE objInformeAccionPreviaBE = new InformeFinCicloBE();
+            objInformeAccionPreviaBE.CursoId = objCursoxProfesorBE.CursoId;
+            objInformeAccionPreviaBE.PeriodoId = objPeriodoBE.PeriodoId;
+            objAccionesPreviasCollectionBE = objAccionesPreviasBC.listarAccionesPrevias(objInformeAccionPreviaBE);
+
+            grdAccionesPrevias.DataSource = objAccionesPreviasCollectionBE.LstAccionesMejora;
+            grdAccionesPrevias.DataBind();
+        }
+
+
+        //POPUPS
+        
         protected void popup_buttonRegistrarHallazgo_Click(object sender, EventArgs e)
         {
             objHallazgoBC = new HallazgoBC();
 
             HallazgoBE objHallazgoBE = new HallazgoBE();
             objHallazgoBE.InformeFinCicloId = objInformeBE.InformeFinCicloId;
-            objHallazgoBE.Descripcion = popup_textoDescripcionHallazgo.Text;
-            
+            objHallazgoBE.Descripcion = popup_textoDescripcionHallazgoRegistrar.Text;
             objHallazgoCollectionBE = objHallazgoBC.resgistrarHallazgo(objHallazgoBE);
             grdHallazgosDataBind();
         }
+
+        protected void popup_buttonEditarHallazgo_Click(object sender, EventArgs e)
+        {
+            objHallazgoBC = new HallazgoBC();
+
+            HallazgoBE objHallazgoBE = new HallazgoBE();
+            objHallazgoBE.InformeFinCicloId = objInformeBE.InformeFinCicloId;
+            objHallazgoBE.Descripcion = popup_textoDescripcionHallazgoEditar.Text;
+            //HallazgoId?
+
+            objHallazgoCollectionBE = objHallazgoBC.editarHallazgo(objHallazgoBE);
+            grdHallazgosDataBind();
+        }
+
+
+        //ROW COMMANDS
 
         public void grdHallazgos_RowCommand(object sender, GridViewCommandEventArgs e)
         {
@@ -104,10 +184,14 @@ namespace UPC.IFCDC.UI
 
                     objHallazgoCollectionBE = objHallazgoBC.eliminarHallazgo(objHallazgoBE);
                     grdHallazgosDataBind();
+                }
 
-                    //Context.Items.Add("Modo", "2");
-                    //Context.Items.Add("CodAlumno", e.CommandArgument);
-                    //Server.Transfer("Alumno.aspx");
+                if (e.CommandName.ToUpper().Equals("CMDAGREGARACCIONMEJORA"))
+                {
+                }
+
+                if (e.CommandName.ToUpper().Equals("CMDEDITARHALLAZGO"))
+                {
                 }
             }
 
@@ -115,6 +199,37 @@ namespace UPC.IFCDC.UI
             {
                 throw ex;
             }
+        }
+
+        public void grdAccionesMejora_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            try
+            {
+                if (e.CommandName.ToUpper().Equals("CMDELIMINARACCIONMEJORA"))
+                {
+                    objAccionMejoraBC = new AccionMejoraBC();
+
+                    AccionMejoraBE objAccionMejoraBE = new AccionMejoraBE();
+                    objAccionMejoraBE.AccionMejoraId = Convert.ToInt32(e.CommandArgument.ToString());
+                    objAccionMejoraBE.InformeFinCicloId = objInformeBE.InformeFinCicloId;
+
+                    objAccionesMejoraCollectionBE = objAccionMejoraBC.eliminarAccionMejora(objAccionMejoraBE);
+                    grdAccionesMejoraDataBind();
+                }
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        protected void grdvAccionesPrevias_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+        }
+
+        protected void dpdListEstatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
         }
     }
 }

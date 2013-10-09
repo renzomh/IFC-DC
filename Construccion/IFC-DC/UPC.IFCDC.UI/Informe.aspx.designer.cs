@@ -85,31 +85,49 @@ namespace UPC.IFCDC.UI {
         protected global::System.Web.UI.WebControls.GridView grdAccionesdeMejora;
         
         /// <summary>
-        /// TextBox1 control.
+        /// txt_DesarrolloAprendizaje control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox txt_DesarrolloAprendizaje;
         
         /// <summary>
-        /// TextBox2 control.
+        /// txt_Infraestructura control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox txt_Infraestructura;
         
         /// <summary>
-        /// TextBox3 control.
+        /// txt_Alumnos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox3;
+        protected global::System.Web.UI.WebControls.TextBox txt_Alumnos;
+        
+        /// <summary>
+        /// txt_Delegados control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_Delegados;
+        
+        /// <summary>
+        /// txt_EncuestaAcademica control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_EncuestaAcademica;
         
         /// <summary>
         /// btnEnviar control.
@@ -175,13 +193,13 @@ namespace UPC.IFCDC.UI {
         protected global::System.Web.UI.WebControls.Button popup_buttonRegistrarAccionMejora;
         
         /// <summary>
-        /// popup_textoDescripcionHallazgo control.
+        /// popup_textoDescripcionHallazgoRegistrar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox popup_textoDescripcionHallazgo;
+        protected global::System.Web.UI.WebControls.TextBox popup_textoDescripcionHallazgoRegistrar;
         
         /// <summary>
         /// popup_buttonRegistrarHallazgo control.
@@ -191,5 +209,23 @@ namespace UPC.IFCDC.UI {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button popup_buttonRegistrarHallazgo;
+        
+        /// <summary>
+        /// popup_textoDescripcionHallazgoEditar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox popup_textoDescripcionHallazgoEditar;
+        
+        /// <summary>
+        /// popup_buttonEditarHallazgo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button popup_buttonEditarHallazgo;
     }
 }
