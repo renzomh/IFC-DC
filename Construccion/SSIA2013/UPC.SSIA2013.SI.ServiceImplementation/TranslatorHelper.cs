@@ -548,6 +548,38 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
             }
         }
 
+        public static InformeFinCicloDC TranslateEditarInformeFinCicloLRToInformeFinCicloDC(up_IFCDC_Editar_InformFinCicloResult objLR)
+        {
+            InformeFinCicloDC objInformeFinCiclo;
+
+            try
+            {
+                objInformeFinCiclo = new InformeFinCicloDC();
+
+                if (objLR != null)
+                {
+                    objInformeFinCiclo.InformeFinCicloId = objLR.InformeFinCicloId;
+                    objInformeFinCiclo.CoordinadorId = objLR.CoordinadorId;
+                    objInformeFinCiclo.CursoId = objLR.CursoId;
+                    objInformeFinCiclo.PeriodoId = objLR.PeriodoId;
+                    objInformeFinCiclo.DesarrolloUnidades = objLR.DesarrolloUnidades;
+                    objInformeFinCiclo.ComentarioInfraestructura = objLR.ComentarioInfraestructura;
+                    objInformeFinCiclo.ComentarioAlumnos = objLR.ComentarioAlumnos;
+                    objInformeFinCiclo.ComentarioDelegados = objLR.ComentarioDelegados;
+                    objInformeFinCiclo.ComentarioEncuesta = objLR.ComentarioEscuesta;
+                    objInformeFinCiclo.UltimaActualizacion = objLR.UltimaActualizacion;
+                    objInformeFinCiclo.Estado = objLR.Estado;
+                }
+
+                return objInformeFinCiclo;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public static InformeFinCicloReporteCollectionDC TranslateInformeFinCicloReporteLRToInformeFinCicloReporteCollection(List<up_IFCDC_Listar_Reporte_InformeFinCicloResult> lstLR)
         {
             InformeFinCicloReporteCollectionDC collection;

@@ -24,6 +24,21 @@ namespace UPC.SSIA2013.BL.BC
             }
         }
 
+        public up_IFCDC_Editar_InformFinCicloResult editarInformeFinCiclo(int informeFinCicloId, String estado, String unidades, String infraestructura, String alumnos, String delegados, String encuesta)
+        {
+            InformeFinCicloDALC objInformeFinCicloDALC;
+
+            try
+            {
+                objInformeFinCicloDALC = new InformeFinCicloDALC();
+                return objInformeFinCicloDALC.editarInformeFinCiclo(informeFinCicloId, estado, unidades, infraestructura, alumnos, delegados, encuesta);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public up_IFCDC_Obtener_InformeFinCiclo_x_IdResult obtenerInformeFinCicloxId(int informeFinCicloId)
         {
             InformeFinCicloDALC objInformeFinCicloDALC;

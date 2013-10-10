@@ -144,5 +144,31 @@ namespace UPC.SSIA2013.DL.DALC
                 }
             }
         }
+
+        public up_IFCDC_Editar_InformFinCicloResult editarInformeFinCiclo(int informeFinCicloId, String estado, String unidades, String infraestructura, String alumnos, String delegados, String encuesta)
+        {
+            SSIA2013DataContext dataContext = null;
+
+            try
+            {
+                dataContext = new SSIA2013DataContext(ConfigurationManager.ConnectionStrings["CSSSIA2013"].ToString());
+                up_IFCDC_Editar_InformFinCicloResult informeFinCiclo = dataContext.up_IFCDC_Editar_InformFinCiclo(informeFinCicloId, estado, unidades, infraestructura, alumnos, delegados, encuesta).SingleOrDefault();
+
+                return informeFinCiclo;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            finally
+            {
+                if (dataContext != null)
+                {
+                    dataContext.Dispose();
+                }
+            }
+        }
     }
 }

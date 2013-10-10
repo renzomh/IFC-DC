@@ -32,6 +32,9 @@ namespace UPC.SSIA2013.SI.ServiceContracts
         [OperationContract]
         InformeFinCicloDC WSObtenerInformeFinCiclo(InformeFinCicloDC objInformeFinCicloDC);
 
+        [OperationContract]
+        InformeFinCicloDC WSEditarInformeFinCiclo(InformeFinCicloDC objInformeFinCicloDC);
+        
         //HALLAZGOS
         [OperationContract]
         HallazgoCollectionDC WSRegistrarHallazgo(HallazgoDC objHallazgoDC);

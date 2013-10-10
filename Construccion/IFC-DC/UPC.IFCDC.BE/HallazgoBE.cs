@@ -38,5 +38,13 @@ namespace UPC.IFCDC.BE
             get { return _Descripcion; }
             set { _Descripcion = value; }
         }
+
+        private int _PeriodoId;
+
+        public int PeriodoId
+        {
+            get { return _PeriodoId; }
+            set { _PeriodoId = value; }
+        }
     }
 }

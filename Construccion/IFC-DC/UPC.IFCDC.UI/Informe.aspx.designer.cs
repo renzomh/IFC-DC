@@ -130,15 +130,6 @@ namespace UPC.IFCDC.UI {
         protected global::System.Web.UI.WebControls.TextBox txt_EncuestaAcademica;
         
         /// <summary>
-        /// btnEnviar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEnviar;
-        
-        /// <summary>
         /// btnGuardar control.
         /// </summary>
         /// <remarks>
@@ -157,31 +148,31 @@ namespace UPC.IFCDC.UI {
         protected global::System.Web.UI.WebControls.Button btnCancelar;
         
         /// <summary>
-        /// pCodigoHallazgo control.
+        /// pCodigoHallazgoRegistrar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox pCodigoHallazgo;
+        protected global::System.Web.UI.WebControls.TextBox pCodigoHallazgoRegistrar;
         
         /// <summary>
-        /// pCiclo control.
+        /// pCicloHallazgoRegistrar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList pCiclo;
+        protected global::System.Web.UI.WebControls.DropDownList pCicloHallazgoRegistrar;
         
         /// <summary>
-        /// popup_textoDescripcionAccionMejora control.
+        /// popup_textoDescripcionAccionMejoraRegistrar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox popup_textoDescripcionAccionMejora;
+        protected global::System.Web.UI.WebControls.TextBox popup_textoDescripcionAccionMejoraRegistrar;
         
         /// <summary>
         /// popup_buttonRegistrarAccionMejora control.
@@ -191,6 +182,42 @@ namespace UPC.IFCDC.UI {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button popup_buttonRegistrarAccionMejora;
+        
+        /// <summary>
+        /// pCodigoHallazgoEditar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox pCodigoHallazgoEditar;
+        
+        /// <summary>
+        /// pCicloHallazgoEditar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList pCicloHallazgoEditar;
+        
+        /// <summary>
+        /// popup_textoDescripcionAccionMejoraEditar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox popup_textoDescripcionAccionMejoraEditar;
+        
+        /// <summary>
+        /// popup_buttonEditarAccionMejora control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button popup_buttonEditarAccionMejora;
         
         /// <summary>
         /// popup_textoDescripcionHallazgoRegistrar control.

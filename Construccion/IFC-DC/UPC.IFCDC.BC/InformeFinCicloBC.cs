@@ -65,5 +65,31 @@ namespace UPC.IFCDC.BC
 
             return objInformeFinCicloBE;
         }
+
+        public InformeFinCicloBE editarInformeFinCiclo(InformeFinCicloBE informe)
+        {
+            InformeFinCicloBE objInformeFinCicloBE = null;
+
+            HttpWebRequest hwr = null;
+            String json = "";
+            String sServicio = "WSEditarInformeFinCiclo";
+            ServiceHelper objServiceHelper = null;
+
+            try
+            {
+                objServiceHelper = new ServiceHelper();
+                json = objServiceHelper.serializeObjectToJson(informe);
+                hwr = objServiceHelper.createHttpWebRequest(sServicio);
+
+                objInformeFinCicloBE = JsonConvert.DeserializeObject<InformeFinCicloBE>(objServiceHelper.getObject(hwr, json).ReadToEnd());
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return objInformeFinCicloBE;
+        }
     }
 }

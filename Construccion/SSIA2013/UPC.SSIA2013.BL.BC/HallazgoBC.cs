@@ -9,7 +9,7 @@ namespace UPC.SSIA2013.BL.BC
 {
     public class HallazgoBC
     {
-        public List<up_IFCDC_Registrar_HallazgoResult> registrarHallazgo(int informeFinCicloId, String descripcion)
+        public List<up_IFCDC_Registrar_HallazgoResult> registrarHallazgo(int informeFinCicloId, String descripcion, int periodoId)
         {
             HallazgoDALC objHallazgoDALC;
             
@@ -17,7 +17,7 @@ namespace UPC.SSIA2013.BL.BC
             {
                 objHallazgoDALC = new HallazgoDALC();
 
-                return objHallazgoDALC.registrarHallazgo(informeFinCicloId, descripcion);
+                return objHallazgoDALC.registrarHallazgo(informeFinCicloId, descripcion, periodoId);
             }
             catch (Exception ex)
             {

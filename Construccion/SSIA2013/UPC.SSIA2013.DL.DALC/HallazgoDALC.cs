@@ -10,14 +10,14 @@ namespace UPC.SSIA2013.DL.DALC
 {
     public class HallazgoDALC
     {
-        public List<up_IFCDC_Registrar_HallazgoResult> registrarHallazgo(int infomeFinCicloID, String descripcion)
+        public List<up_IFCDC_Registrar_HallazgoResult> registrarHallazgo(int infomeFinCicloID, String descripcion, int periodoId)
         {
             SSIA2013DataContext dataContext = null;
 
             try
             {
                 dataContext = new SSIA2013DataContext(ConfigurationManager.ConnectionStrings["CSSSIA2013"].ToString());
-                List<up_IFCDC_Registrar_HallazgoResult> lstHallazgos = dataContext.up_IFCDC_Registrar_Hallazgo(infomeFinCicloID, descripcion).ToList();
+                List<up_IFCDC_Registrar_HallazgoResult> lstHallazgos = dataContext.up_IFCDC_Registrar_Hallazgo(infomeFinCicloID, descripcion, periodoId).ToList();
 
                 return lstHallazgos;
             }

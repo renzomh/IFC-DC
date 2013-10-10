@@ -88,7 +88,6 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
                 return TranslatorHelper.TranslateInformeFinCicloxIdLRToInformeFinCicloDC(objInformeFinCicloBC.obtenerInformeFinCicloxId(objInformeFinCicloDC.InformeFinCicloId));
             }
             
-
             //OBTENER INFORME FIN CICLO (CURSO, PROFESOR, PERIODO)
             [WebInvoke(Method = "POST", ResponseFormat = WebMessageFormat.Json, UriTemplate = "/WSObtenerInformeFinCiclo")]
             InformeFinCicloDC SSIA2013ServiceContracts.WSObtenerInformeFinCiclo(InformeFinCicloDC objInformeFinCicloDC)
@@ -96,7 +95,16 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
                 InformeFinCicloBC objInformeFinCicloBC = new InformeFinCicloBC();
                 return TranslatorHelper.TranslateInformeFinCicloLRToInformeFinCicloDC(objInformeFinCicloBC.obtenerInformeFinCiclo(objInformeFinCicloDC.CoordinadorId, objInformeFinCicloDC.CursoId, objInformeFinCicloDC.PeriodoId));
             }
-            
+
+            //OBTENER INFORME FIN CICLO
+            [WebInvoke(Method = "POST", ResponseFormat = WebMessageFormat.Json, UriTemplate = "/WSEditarInformeFinCiclo")]
+            InformeFinCicloDC SSIA2013ServiceContracts.WSEditarInformeFinCiclo(InformeFinCicloDC objInformeFinCicloDC)
+            {
+                InformeFinCicloBC objInformeFinCicloBC = new InformeFinCicloBC();
+                return TranslatorHelper.TranslateEditarInformeFinCicloLRToInformeFinCicloDC(objInformeFinCicloBC.editarInformeFinCiclo(objInformeFinCicloDC.InformeFinCicloId, objInformeFinCicloDC.Estado, objInformeFinCicloDC.DesarrolloUnidades,
+                        objInformeFinCicloDC.ComentarioInfraestructura, objInformeFinCicloDC.ComentarioAlumnos, objInformeFinCicloDC.ComentarioDelegados, objInformeFinCicloDC.ComentarioEncuesta));
+            }
+
             #endregion
 
             #region Hallazgos
@@ -106,7 +114,7 @@ namespace UPC.SSIA2013.SI.ServiceImplementation
             HallazgoCollectionDC SSIA2013ServiceContracts.WSRegistrarHallazgo(HallazgoDC objHallazgoDC)
             {
                 HallazgoBC objHallazgoBC = new HallazgoBC();
-                return TranslatorHelper.TranslateHallazgosRegistrarLRToHallazgosCollection(objHallazgoBC.registrarHallazgo(objHallazgoDC.InformeFinCicloId, objHallazgoDC.Descripcion));
+                return TranslatorHelper.TranslateHallazgosRegistrarLRToHallazgosCollection(objHallazgoBC.registrarHallazgo(objHallazgoDC.InformeFinCicloId, objHallazgoDC.Descripcion, objHallazgoDC.PeriodoId));
             }
 
             //LISTAR HALLAZGOS

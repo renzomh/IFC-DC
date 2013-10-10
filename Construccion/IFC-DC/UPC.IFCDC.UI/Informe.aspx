@@ -1,5 +1,29 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Informe.aspx.cs" Inherits="UPC.IFCDC.UI.WebForm2" %>
 
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+
+    <script type = "text/javascript">
+        function Confirm()
+        {
+            var confirm_value = document.createElement("INPUT");
+            confirm_value.type = "hidden";
+            confirm_value.name = "confirm_value";
+
+            if (confirm("La información ingresada ha sido almacenada. ¿Desea finalizar y enviar el Informe de Fin de Ciclo?"))
+            {
+                confirm_value.value = "YES";
+            }
+            else
+            {
+                confirm_value.value = "NO";
+            }
+
+            document.forms[0].appendChild(confirm_value);
+        }
+    </script>
+
+</asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="Contenido" runat="server">
     <br />
 <div class="box-central">
@@ -93,7 +117,7 @@
                     <asp:TemplateField HeaderText="Acción de Mejora" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="15%">
                         <ItemTemplate>
                             <asp:LinkButton ID="lnkAddAccionMejora" CommandName="cmdAgregarAccionMejora" CommandArgument='<%#Eval("HallazgoId")%>'>
-                                <img src="Imagenes/add.png" width="16" height="16" alt="addaccionmejora" border="0"  onclick="popup('#pAccionesMejora');"/>
+                                <img src="Imagenes/add.png" width="16" height="16" alt="addaccionmejora" border="0"  onclick="popup('#pAccionesMejoraRegistrar');"/>
                             </asp:LinkButton>                       
                         </ItemTemplate>
                     </asp:TemplateField>
@@ -122,7 +146,7 @@
     </tbody>
     </table>
     <button type="button" onclick="popup('#pHallazgoRegistrar');">Nuevo Hallazgo</button>
-    <button type="button" onclick="popup('#pAccionesMejora');">Test Acciones de Mejora</button>
+    <button type="button" onclick="popup('#pAccionesMejoraRegistrar');">Test Acciones de Mejora</button>
 </div>
 
 <!--ZONA DE ACCIONES DE MEJORA-->
@@ -146,7 +170,7 @@
                     <asp:TemplateField HeaderText="Editar" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="10%">
                         <ItemTemplate>
                             <asp:LinkButton ID="lnkEditarAccionMejora" CommandName="cmdEditarAccionMejora" CommandArgument='<%#Eval("AccionMejoraId")%>'>
-                                <img src="Imagenes/edit.png" width="16" height="16" alt="editaccion" border="0" onclick="popup('#pHallazgoEditar');"/>
+                                <img src="Imagenes/edit.png" width="16" height="16" alt="editaccion" border="0" onclick="popup('#pAccionesMejoraEditar');"/>
                             </asp:LinkButton>                        
                         </ItemTemplate>
                     </asp:TemplateField>
@@ -203,34 +227,54 @@
 <br />
 
 <div style="text-align:center;">
-    <asp:Button CssClass="btn-enviar" ID="btnEnviar" runat="server" />
-    <asp:Button CssClass="btn-guardar" ID="btnGuardar" runat="server" />
-    <asp:Button CssClass="btn-cancelar" ID="btnCancelar" runat="server" />
+    <asp:Button CssClass="btn-guardar" ID="btnGuardar" runat="server" onclick = "OnConfirm"/> <!--OnClientClick="Confirm()"-->
+    <asp:Button CssClass="btn-cancelar" ID="btnCancelar" runat="server" onClick = "OnCancel"/>
 </div>
 
 <!-- ZONA DE POPUPS -->
 <div class="dark-side">
-    <div class="pop-up" id="pAccionesMejora">
-        <div class="pHeader">Acciones de Mejora
-            <div class="pClose" onclick="close_popup('#pAccionesMejora');">&times;</div>
+    <div class="pop-up" id="pAccionesMejoraRegistrar">
+        <div class="pHeader">NUEVA ACCIÓN DE MEJORA
+            <div class="pClose" onclick="close_popup('#pAccionesMejoraRegistrar');">&times;</div>
         </div>
         <div class="contentP">Codigo de Hallazgo: 
-            <asp:TextBox Enabled="false" ID="pCodigoHallazgo" Text="SI2014-2012-02" runat="server" />
+            <asp:TextBox Enabled="false" ID="pCodigoHallazgoRegistrar" Text="SI2014-2012-02" runat="server" />
             <br />
             Ciclo:
-            <asp:DropDownList ID="pCiclo" runat="server">
+            <asp:DropDownList ID="pCicloHallazgoRegistrar" runat="server">
                 <asp:ListItem Text="2012-1"></asp:ListItem>
             </asp:DropDownList>
             <br />
             Descripcion:
             <br />
-            <asp:TextBox ID="popup_textoDescripcionAccionMejora" Width="400px" Height="200px" runat="server"></asp:TextBox>
+            <asp:TextBox ID="popup_textoDescripcionAccionMejoraRegistrar" Width="400px" Height="200px" runat="server" TextMode="MultiLine"></asp:TextBox>
             <br />
             <asp:Button ID="popup_buttonRegistrarAccionMejora" runat="server" CssClass="btn-agregar"/>
-            <button type="button" class="btn-cancelar" onclick="close_popup('#pAccionesMejora');"></button>
+            <button type="button" class="btn-cancelar" onclick="close_popup('#pAccionesMejoraRegistrar');"></button>
         </div>
     </div>
     
+    <div class="pop-up" id="pAccionesMejoraEditar">
+        <div class="pHeader">EDITAR ACCIÓN DE MEJORA
+            <div class="pClose" onclick="close_popup('#pAccionesMejoraEditar');">&times;</div>
+        </div>
+        <div class="contentP">Codigo de Hallazgo: 
+            <asp:TextBox Enabled="false" ID="pCodigoHallazgoEditar" Text="SI2014-2012-02" runat="server" />
+            <br />
+            Ciclo:
+            <asp:DropDownList ID="pCicloHallazgoEditar" runat="server">
+                <asp:ListItem Text="2012-1"></asp:ListItem>
+            </asp:DropDownList>
+            <br />
+            Descripcion:
+            <br />
+            <asp:TextBox ID="popup_textoDescripcionAccionMejoraEditar" Width="400px" Height="200px" runat="server" TextMode="MultiLine"></asp:TextBox>
+            <br />
+            <asp:Button ID="popup_buttonEditarAccionMejora" runat="server" CssClass="btn-agregar"/>
+            <button type="button" class="btn-cancelar" onclick="close_popup('#pAccionesMejoraEditar');"></button>
+        </div>
+    </div>
+
     <div class="pop-up" id="pHallazgoRegistrar">
         <div class="pHeader">NUEVO HALLAZGO
             <div class="pClose" onclick="close_popup('#pHallazgoRegistrar');">&times;</div>
@@ -240,7 +284,7 @@
             <br />
             <br />
             <asp:Button ID="popup_buttonRegistrarHallazgo" runat="server" CssClass="btn-agregar" OnClick="popup_buttonRegistrarHallazgo_Click"/>
-            <button type="button" class="btn-cancelar" onclick="close_popup('#pHallazgo');"></button>
+            <button type="button" class="btn-cancelar" onclick="close_popup('#pHallazgoRegistrar');"></button>
         </div>
     </div>
 
@@ -253,7 +297,7 @@
             <br />
             <br />
             <asp:Button ID="popup_buttonEditarHallazgo" runat="server" CssClass="btn-agregar" OnClick="popup_buttonEditarHallazgo_Click"/>
-            <button type="button" class="btn-cancelar" onclick="close_popup('#pHallazgo');"></button>
+            <button type="button" class="btn-cancelar" onclick="close_popup('#pHallazgoEditar');"></button>
         </div>
     </div>
 

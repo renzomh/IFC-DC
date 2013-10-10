@@ -1,17 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="IFCDC-SSIA2013" Class="SSIA2013DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=(local);Initial Catalog=IFCDC-SSIA2013;User ID=IFCDCadmin" SettingsObjectName="UPC.SSIA2013.DL.DataModel.Properties.Settings" SettingsPropertyName="IFCDC_SSIA2013ConnectionString" Provider="System.Data.SqlClient" />
-  <Function Name="dbo.[up.IFCDC_Registrar_Hallazgo]" Method="up_IFCDC_Registrar_Hallazgo">
-    <Parameter Name="InformeFinCicloId" Parameter="informeFinCicloId" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(500)" />
-    <ElementType Name="up_IFCDC_Registrar_HallazgoResult">
-      <Column Name="HallazgoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Codigo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
-      <Column Name="InformeFinCicloId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="EstaActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="PeriodoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.[up.IFCDC_Editar_AccionMejora]" Method="up_IFCDC_Editar_AccionMejora">
     <Parameter Name="AccionMejoraId" Parameter="accionMejoraId" Type="System.Int32" DbType="Int" />
     <Parameter Name="InformeFinCicloId" Parameter="informeFinCicloId" Type="System.Int32" DbType="Int" />
@@ -271,6 +259,41 @@
       <Column Name="EstaActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="CodigoHallazgo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="CicloEjecucion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.[up.IFCDC_Registrar_Hallazgo]" Method="up_IFCDC_Registrar_Hallazgo">
+    <Parameter Name="InformeFinCicloId" Parameter="informeFinCicloId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="VarChar(500)" />
+    <Parameter Name="PeriodoId" Parameter="periodoId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="up_IFCDC_Registrar_HallazgoResult">
+      <Column Name="HallazgoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="InformeFinCicloId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EstaActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="PeriodoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.[up.IFCDC_Editar_InformFinCiclo]" Method="up_IFCDC_Editar_InformFinCiclo">
+    <Parameter Name="InformeFinCicloId" Parameter="informeFinCicloId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="DesarrolloUnidades" Parameter="desarrolloUnidades" Type="System.String" DbType="VarChar(500)" />
+    <Parameter Name="Infraestructura" Parameter="infraestructura" Type="System.String" DbType="VarChar(500)" />
+    <Parameter Name="Alumnos" Parameter="alumnos" Type="System.String" DbType="VarChar(500)" />
+    <Parameter Name="Delegados" Parameter="delegados" Type="System.String" DbType="VarChar(500)" />
+    <Parameter Name="Encuesta" Parameter="encuesta" Type="System.String" DbType="VarChar(500)" />
+    <ElementType Name="up_IFCDC_Editar_InformFinCicloResult">
+      <Column Name="InformeFinCicloId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CoordinadorId" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CursoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PeriodoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DesarrolloUnidades" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ComentarioAlumnos" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ComentarioInfraestructura" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ComentarioDelegados" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ComentarioEscuesta" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UltimaActualizacion" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

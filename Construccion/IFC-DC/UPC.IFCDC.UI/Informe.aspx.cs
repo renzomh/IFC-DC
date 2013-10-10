@@ -150,6 +150,7 @@ namespace UPC.IFCDC.UI
             HallazgoBE objHallazgoBE = new HallazgoBE();
             objHallazgoBE.InformeFinCicloId = objInformeBE.InformeFinCicloId;
             objHallazgoBE.Descripcion = popup_textoDescripcionHallazgoRegistrar.Text;
+            objHallazgoBE.PeriodoId = objPeriodoBE.PeriodoId;
             objHallazgoCollectionBE = objHallazgoBC.resgistrarHallazgo(objHallazgoBE);
             grdHallazgosDataBind();
         }
@@ -230,6 +231,57 @@ namespace UPC.IFCDC.UI
 
         protected void dpdListEstatus_SelectedIndexChanged(object sender, EventArgs e)
         {
+        }
+
+        public void OnConfirm(object sender, EventArgs e)
+        {
+            InformeFinCicloBC objInformeFinCicloBC = new InformeFinCicloBC();
+            InformeFinCicloBE objInformeFinCicloBE = new InformeFinCicloBE();
+
+            objInformeFinCicloBE.InformeFinCicloId = objInformeBE.InformeFinCicloId;
+            objInformeFinCicloBE.DesarrolloUnidades = txt_DesarrolloAprendizaje.Text;
+            objInformeFinCicloBE.ComentarioInfraestructura = txt_Infraestructura.Text;
+            objInformeFinCicloBE.ComentarioAlumnos = txt_Alumnos.Text;
+            objInformeFinCicloBE.ComentarioDelegados = txt_Delegados.Text;
+            objInformeFinCicloBE.ComentarioEncuesta = txt_EncuestaAcademica.Text;
+            objInformeFinCicloBE.Estado = "EN PROCESO";
+
+            //string confirmValue = Request.Form["confirm_value"];
+            //if (confirmValue == "YES")
+            //{
+                if (!existenCamposVacios() && objHallazgoCollectionBE.LstHallazgos.Count < 0)
+                {
+                    objInformeFinCicloBE.Estado = "FINALIZADO";
+                    objInformeBE = objInformeFinCicloBC.editarInformeFinCiclo(objInformeFinCicloBE);
+                    //this.Page.ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Usted ha finalizado el Informe de Fin de Ciclo satisfactorimente.')", true);
+                }
+
+                else
+                {
+                    objInformeBE = objInformeFinCicloBC.editarInformeFinCiclo(objInformeFinCicloBE);
+                    //this.Page.ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Usted debe llenar todos los campos para completar el Informe de Fin de Ciclo.')", true);
+                }
+               
+            //}
+            //else
+            //{
+            //    objInformeBE = objInformeFinCicloBC.editarInformeFinCiclo(objInformeFinCicloBE);
+            //    //this.Page.ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('La información ha sido almacenada. Para finalizar el Informe de Fin de Ciclo, debe enviar el Informe.')", true);
+            //}
+        }
+
+        public void OnCancel(object sender, EventArgs e)
+        {
+            Response.Redirect("CursosxCoordinador.aspx");
+        }
+
+        private bool existenCamposVacios()
+        {
+            if (txt_DesarrolloAprendizaje.Text.Equals("") || txt_Infraestructura.Text.Equals("") ||
+                txt_Alumnos.Text.Equals("") || txt_Delegados.Text.Equals("") ||
+                txt_EncuestaAcademica.Text.Equals(""))
+                return true;
+            return false;
         }
     }
 }
