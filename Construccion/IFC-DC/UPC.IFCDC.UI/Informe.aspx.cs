@@ -42,6 +42,7 @@ namespace UPC.IFCDC.UI
             texto_FechaLimite.Text = objPeriodoBE.FechaFin;
             texto_DescripcionCurso.Text = objCursoxProfesorBE.Codigo + " - " + objCursoxProfesorBE.Nombre;
 
+            
             //OBTENIENDO LOGRO TERMINAL
             objLogroBE = new LogroBE();
             objLogroBE.CursoId = objCursoxProfesorBE.CursoId;
@@ -231,10 +232,37 @@ namespace UPC.IFCDC.UI
 
         protected void dpdListEstatus_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
         }
-
+        /*
+        public void selectedItem( CommandEventArgs e)
+        {
+            for (int i = 0; i < objAccionesPreviasCollectionBE.LstAccionesMejora.Count; i++)
+            {
+                if (int.Parse(e.CommandName) == objAccionesPreviasCollectionBE.LstAccionesMejora[i].AccionMejoraId)
+                {
+                    if (objAccionesPreviasCollectionBE.LstAccionesMejora[i].Estado == "EN PROCESO")
+                    { 
+                        //seteo el index en EN PROCESO
+                        grdAccionesPrevias.
+                        dpdListEstatus.SelectedIndex = 0;
+                    }
+                    if (objAccionesPreviasCollectionBE.LstAccionesMejora[i].Estado == "NO REALIZADO")
+                    {
+                        //seteo el index en EN PROCESO
+                        dpdListEstatus.SelectedIndex = 1;
+                    }
+                    if (objAccionesPreviasCollectionBE.LstAccionesMejora[i].Estado == "IMPLEMENTADO")
+                    {
+                        //seteo el index en EN PROCESO
+                        dpdListEstatus.SelectedIndex = 2;
+                    }
+                }
+            }
+        }*/
         public void OnConfirm(object sender, EventArgs e)
         {
+           
             InformeFinCicloBC objInformeFinCicloBC = new InformeFinCicloBC();
             InformeFinCicloBE objInformeFinCicloBE = new InformeFinCicloBE();
 

@@ -81,7 +81,7 @@
                     
                     <asp:TemplateField HeaderText="Estado" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="20%">
                         <ItemTemplate>
-                            <asp:DropDownList ID="dpdListEstatus" runat="server" OnSelectedIndexChanged="dpdListEstatus_SelectedIndexChanged" AutoPostBack="True">
+                            <asp:DropDownList ID="dpdListEstatus" runat="server"  AutoPostBack="True" >
                                 <asp:ListItem>NO REALIZADO</asp:ListItem>
                                 <asp:ListItem>EN PROCESO</asp:ListItem>
                                 <asp:ListItem>IMPLEMENTADO</asp:ListItem>
@@ -117,7 +117,7 @@
                     <asp:TemplateField HeaderText="Acción de Mejora" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="15%">
                         <ItemTemplate>
                             <asp:LinkButton ID="lnkAddAccionMejora" CommandName="cmdAgregarAccionMejora" CommandArgument='<%#Eval("HallazgoId")%>'>
-                                <img src="Imagenes/add.png" width="16" height="16" alt="addaccionmejora" border="0"  onclick="popup('#pAccionesMejoraRegistrar');"/>
+                                <img src="Imagenes/add.png" width="16" height="16" alt="addaccionmejora" border="0"  onclick="llamarpopupNuevaAcciondeMejora('#pAccionesMejoraRegistrar','<%#Eval("Codigo")%>','<%#Eval("HallazgoId")%>');"/>
                             </asp:LinkButton>                       
                         </ItemTemplate>
                     </asp:TemplateField>
@@ -125,7 +125,7 @@
                     <asp:TemplateField HeaderText="Editar" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="15%">
                         <ItemTemplate>
                             <asp:LinkButton ID="lnkEditarHallazgo" CommandName="cmdEditarHallazgo" CommandArgument='<%#Eval("HallazgoId")%>'>
-                                <img src="Imagenes/edit.png" width="16" height="16" alt="edithallazgo" border="0" onclick="popup('#pHallazgoEditar');"/>
+                                <img src="Imagenes/edit.png" width="16" height="16" alt="edithallazgo" border="0" onclick="llamarpopupEditarHallazgo('#pHallazgoEditar','<%#Eval("Descripcion")%>','<%#Eval("HallazgoId")%>');"/>
                             </asp:LinkButton>                        
                         </ItemTemplate>
                     </asp:TemplateField>
@@ -146,7 +146,7 @@
     </tbody>
     </table>
     <button type="button" onclick="popup('#pHallazgoRegistrar');">Nuevo Hallazgo</button>
-    <button type="button" onclick="popup('#pAccionesMejoraRegistrar');">Test Acciones de Mejora</button>
+    <button type="button" onclick="llamarpopupNuevaAcciondeMejora('#pAccionesMejoraRegistrar','234','fufufu');">Test Acciones de Mejora</button>
 </div>
 
 <!--ZONA DE ACCIONES DE MEJORA-->
@@ -170,7 +170,7 @@
                     <asp:TemplateField HeaderText="Editar" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="10%">
                         <ItemTemplate>
                             <asp:LinkButton ID="lnkEditarAccionMejora" CommandName="cmdEditarAccionMejora" CommandArgument='<%#Eval("AccionMejoraId")%>'>
-                                <img src="Imagenes/edit.png" width="16" height="16" alt="editaccion" border="0" onclick="popup('#pAccionesMejoraEditar');"/>
+                                <img src="Imagenes/edit.png" width="16" height="16" alt="editaccion" border="0" onclick="llammarpopupEditarAcciondeMejora('#pAccionesMejoraEditar','<%#Eval("Codigo")%>','<%#Eval("Descripcion")%>','<%#Eval("AccionMejoraId")%>');"/>
                             </asp:LinkButton>                        
                         </ItemTemplate>
                     </asp:TemplateField>
@@ -237,8 +237,9 @@
         <div class="pHeader">NUEVA ACCIÓN DE MEJORA
             <div class="pClose" onclick="close_popup('#pAccionesMejoraRegistrar');">&times;</div>
         </div>
+        <input type="hidden" id="hiddenAC" />
         <div class="contentP">Codigo de Hallazgo: 
-            <asp:TextBox Enabled="false" ID="pCodigoHallazgoRegistrar" Text="SI2014-2012-02" runat="server" />
+            <input type="text" id="codigoHallazgoAC" disabled /> 
             <br />
             Ciclo:
             <asp:DropDownList ID="pCicloHallazgoRegistrar" runat="server">
@@ -258,6 +259,7 @@
         <div class="pHeader">EDITAR ACCIÓN DE MEJORA
             <div class="pClose" onclick="close_popup('#pAccionesMejoraEditar');">&times;</div>
         </div>
+        <input type="hidden" id="hiddenEAC" />
         <div class="contentP">Codigo de Hallazgo: 
             <asp:TextBox Enabled="false" ID="pCodigoHallazgoEditar" Text="SI2014-2012-02" runat="server" />
             <br />
@@ -292,6 +294,7 @@
         <div class="pHeader">EDITAR HALLAZGO
             <div class="pClose" onclick="close_popup('#pHallazgoEditar');">&times;</div>
         </div>
+        <input type="hidden" id="hiddenAE" />
         <div class="contentP">
             <asp:TextBox ID="popup_textoDescripcionHallazgoEditar" Width="400px" Height="100px" runat="server" CssClass="CajaTextoNormal" TextMode="MultiLine"></asp:TextBox>
             <br />

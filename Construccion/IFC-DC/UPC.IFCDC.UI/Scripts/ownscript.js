@@ -1,5 +1,26 @@
 ﻿var actual = "#logros";
 var actual2 = "#informesFinCiclo";
+
+function llamarpopupNuevaAcciondeMejora(idLlamar, codigo, id) {
+    popup(idLlamar);
+    document.getElementById('codigoHallazgoAC').value = codigo;
+    document.getElementById('hiddenAC').value = id;
+
+}
+//--------------------------
+function llamarpopupEditarHallazgo(idLlamar, texto, id) {
+    popup(idLlamar);
+    document.getElementById('ctl00_Contenido_popup_textoDescripcionHallazgoEditar').innerHTML = texto; 
+
+    document.getElementById('hiddenAE').value= id ;
+}
+function llammarpopupEditarAcciondeMejora(idLlamar, codigo, texto, id) {
+    popup(idLlamar);
+    document.getElementById('ctl00_Contenido_pCodigoHallazgoEditar').value = codigo;
+    document.getElementById('ctl00_Contenido_popup_textoDescripcionAccionMejoraEditar').innerHTML = texto;
+    document.getElementById('hiddenEAC').value = id;
+
+}
 //--------------------------
 function change_view(show) {
     if (show !== actual) {
